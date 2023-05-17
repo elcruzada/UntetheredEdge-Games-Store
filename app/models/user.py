@@ -13,6 +13,14 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    profile_image = db.Column(db.String(255))
+    account_capital = db.Column(db.Numeric(10,2))
+
+    game_creator = db.relationship('Game', back_populates='game', cascade='all, delete-orphan')
+
+    cart_user = db.relationship(
+        'Game', back_populates='user', cascade='all, delete-orphan'
+    )
 
     @property
     def password(self):
@@ -29,5 +37,7 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'profile_image': self.profile_image,
+            'account_capital': self.account_capital
         }
