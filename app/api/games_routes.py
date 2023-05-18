@@ -1,7 +1,7 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required
-from app.models import Game, User
-from ..forms import GameForm
+from app.models import db, Game, User
+from ..forms.game_form import GameForm
 from sqlalchemy import desc
 
 games_routes = Blueprint('games', __name__, url_prefix='/api/games')
@@ -24,4 +24,23 @@ def get_single_game(id):
 @games_routes.route('/new', methods=['POST'])
 @login_required
 def create_game():
-    pass
+    form = GameForm()
+
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_game = Game(
+            name=form.data['name'],
+            description=form.data['description'],
+            release_date=form.data['date'],
+            developer=form.data['developer'],
+            publisher=form.data['publisher'],
+            price=form.data['price'],
+            genre=form.data['genre'],
+            is_promoted=form.data['is_promoted'],
+            is_on_sale=form.data['is_promoted']
+        )
+
+        db.session.add(new_game)
+        db.session.commit()
+        return new_game.to_dict()
+    return { "error": "Form you submitted is invalid"}

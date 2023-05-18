@@ -36,7 +36,9 @@ def seed_database():
         developer='CD Projekt Blue',
         publisher='UntetheredEdge Interactive',
         price=59.99,
-        genre='RPG'
+        genre='RPG',
+        is_promoted=False,
+        is_on_sale=False
     )
 
     game2 = Game (
@@ -47,7 +49,9 @@ def seed_database():
         developer='Gizzard',
         publisher='UntetheredEdge Interactive',
         price=29.99,
-        genre='First-Person Shooter'
+        genre='First-Person Shooter',
+        is_promoted=False,
+        is_on_sale=False
     )
 
     game_image1preview = GameImage (
