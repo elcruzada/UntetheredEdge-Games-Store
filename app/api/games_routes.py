@@ -10,8 +10,6 @@ games_routes = Blueprint('games', __name__, url_prefix='/api/games')
 @games_routes.route('/')
 def get_all_games():
     games = Game.query.all()
-    # print(games.game_images)
-    print('GAAAMES', games)
     return { "games": [game.to_dict() for game in games] }
 
 @games_routes.route('/<int:id>', methods=['GET'])
@@ -46,7 +44,7 @@ def create_game():
         return new_game.to_dict()
     return { "error": "Form you submitted is invalid"}
 
-@games_routes.route("/new", methods=["PUT"])
+@games_routes.route("/<int:id>", methods=["PUT"])
 @login_required
 def update_game(id):
     form = GameForm()
@@ -55,7 +53,7 @@ def update_game(id):
     game_to_edit = Game.query.get(id)
 
     if game_to_edit.creator_id != current_user.id:
-        return { "erorrs": "You are not the owner of this game"}
+        return { "errors": "You are not the owner of this game"}
 
     if game_to_edit:
         if form.validate_on_submit():

@@ -16,8 +16,8 @@ class Game(db.Model):
     publisher = db.Column(db.String(255))
     price = db.Column(db.Float)
     genre = db.Column(db.String(30))
-    is_promoted = db.Column(db.Boolean)
-    is_on_sale = db.Column(db.Boolean)
+    is_promoted = db.Column(db.Boolean, default=False)
+    is_on_sale = db.Column(db.Boolean, default=False)
 
     creator = db.relationship('User', back_populates="game_creator")
 
@@ -38,5 +38,7 @@ class Game(db.Model):
             'publisher': self.publisher,
             'price': self.price,
             'genre': self.genre,
+            'is_promoted': self.is_promoted,
+            'is_on_sale': self.is_on_sale,
             'game_images' : [game_image.to_dict() for game_image in self.game_images]
         }
