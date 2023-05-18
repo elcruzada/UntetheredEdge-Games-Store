@@ -16,7 +16,8 @@ class Game(db.Model):
     publisher = db.Column(db.String(255))
     price = db.Column(db.Numeric(10,2))
     genre = db.Column(db.String(30))
-
+    #is_promoted = db.Column(db.Boolean)
+    #is_on_sale = db.Column(db.Boolean)
 
     creator = db.relationship('User', back_populates="game_creator")
 
