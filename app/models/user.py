@@ -16,10 +16,10 @@ class User(db.Model, UserMixin):
     profile_image = db.Column(db.String(255))
     account_capital = db.Column(db.Numeric(10,2))
 
-    game_creator = db.relationship('Game', back_populates='game', cascade='all, delete-orphan')
+    game_creator = db.relationship('Game', back_populates='games', cascade='all, delete-orphan')
 
     cart_user = db.relationship(
-        'Game', back_populates='user', cascade='all, delete-orphan'
+        'Game', back_populates='cart_game', cascade='all, delete-orphan'
     )
 
     @property
