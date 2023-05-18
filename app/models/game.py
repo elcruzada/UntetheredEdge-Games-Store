@@ -36,5 +36,6 @@ class Game(db.Model):
             'developer': self.developer,
             'publisher': self.publisher,
             'price': self.price,
-            'genres': self.genres
+            'genre': self.genre,
+            'game_images' : [game_image.to_dict() for game_image in self.game_images]
         }

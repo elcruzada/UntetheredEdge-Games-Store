@@ -26,7 +26,7 @@ def seed_database():
     godmode = User(
         username='godmode', email='godmode@aa.io', password='password',
         profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
-        account_capital=1133.77
+        account_capital=1133377.77
         )
 
     game1 = Game (
@@ -35,6 +35,7 @@ def seed_database():
         release_date=date(2015, 6, 22),
         creator_id=1,
         developer='CD Projekt Blue',
+        publisher='UntetheredEdge Interactive',
         price=59.99,
         genre='RPG'
     )
@@ -45,6 +46,7 @@ def seed_database():
         release_date=date(2020, 3, 17),
         creator_id=2,
         developer='Gizzard',
+        publisher='UntetheredEdge Interactive',
         price=29.99,
         genre='First-Person Shooter'
     )
