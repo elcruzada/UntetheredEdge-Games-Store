@@ -14,7 +14,7 @@ class Game(db.Model):
     creator_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False) #put foreign key to user
     developer = db.Column(db.String(255))
     publisher = db.Column(db.String(255))
-    price = db.Column(db.Numeric(10,2))
+    price = db.Column(db.Float)
     genre = db.Column(db.String(30))
     #is_promoted = db.Column(db.Boolean)
     #is_on_sale = db.Column(db.Boolean)

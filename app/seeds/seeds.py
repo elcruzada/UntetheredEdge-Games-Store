@@ -1,4 +1,3 @@
-
 from app.models import db, User, Game, GameImage, Order, environment, SCHEMA
 from sqlalchemy.sql import text
 from datetime import date

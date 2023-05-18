@@ -9,7 +9,7 @@ class Order (db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
-    price_total = db.Column('price_total', db.Numeric(10, 2))
+    price_total = db.Column('price_total', db.Float)
 
 
     user = db.relationship('User', back_populates='orders')
