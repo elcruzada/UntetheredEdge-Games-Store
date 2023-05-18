@@ -103,3 +103,13 @@ def undo_database():
         db.session.execute(text("DELETE FROM game_images"))
 
     db.session.commit()
+
+# def undo_users():
+#     if environment == "production":
+#         db.session.execute(f"TRUNCATE table {SCHEMA}.games RESTART IDENTITY CASCADE;")
+#     else:
+#         db.session.execute(text("DELETE FROM users"))
+#         db.session.execute(text("DELETE FROM games"))
+#         db.session.execute(text("DELETE FROM game_images"))
+
+#     db.session.commit()
