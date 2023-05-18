@@ -1,7 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-
+from .join_tables import cart
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -16,10 +16,12 @@ class User(db.Model, UserMixin):
     profile_image = db.Column(db.String(255))
     account_capital = db.Column(db.Numeric(10,2))
 
-    game_creator = db.relationship('Game', back_populates='games', cascade='all, delete-orphan')
+    orders = db.relationship('Order', back_populates='user')
+
+    game_creator = db.relationship('Game', back_populates='creator', cascade='all, delete-orphan')
 
     cart_user = db.relationship(
-        'Game', back_populates='cart_game', cascade='all, delete-orphan'
+        'Game', secondary=cart, back_populates='users_in_cart'
     )
 
     @property

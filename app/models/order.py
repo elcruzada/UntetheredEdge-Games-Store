@@ -1,4 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
+from .join_tables import orders_and_product
 
 class Order (db.Model):
     __tablename__ = "orders"
@@ -10,8 +11,11 @@ class Order (db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     price_total = db.Column('price_total', db.Numeric(10, 2))
 
-    order_and_products = db.relationship(
-        "OrderAndProduct", back_populates="order", cascade="all, delete-orphan"
+
+    user = db.relationship('User', back_populates='orders')
+
+    games = db.relationship(
+        "Game", secondary=orders_and_product, back_populates='orders'
     )
 
     def to_dict(self):

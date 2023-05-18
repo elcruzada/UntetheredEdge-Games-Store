@@ -16,22 +16,15 @@ class Game(db.Model):
     publisher = db.Column(db.String(255))
     price = db.Column(db.Numeric(10,2))
     genre = db.Column(db.String(30))
-    # platforms = db.Column(db.String(255))
+
 
     creator = db.relationship('User', back_populates="game_creator")
 
-    # users = db.relationship('User', back_populates='cart_user', secondary=cart, cascade='all, delete-orphan')
-    user = db.relationship('User', back_populates="cart_user", secondary=cart)
-
     game_images = db.relationship('GameImage', back_populates="game", cascade="all, delete-orphan")
 
-    cart_game = db.relationship(
-        'User', back_populates='user', cascade='all, delete-orphan'
-    )
+    users_in_cart = db.relationship('User', secondary=cart, back_populates='cart_user')
 
-    orders_and_products = db.relationship(
-        'Order', secondary=orders_and_product, back_populates='games'
-    )
+    orders = db.relationship('Order', secondary=orders_and_product, back_populates='games')
 
     def to_dict(self):
         return {
@@ -43,6 +36,5 @@ class Game(db.Model):
             'developer': self.developer,
             'publisher': self.publisher,
             'price': self.price,
-            'genres': self.genres,
-            'platform': self.platform
+            'genres': self.genres
         }

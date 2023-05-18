@@ -1,24 +1,38 @@
 
-from app.models import db, User, Game, GameImage, environment, SCHEMA
+from app.models import db, User, Game, GameImage, Order, environment, SCHEMA
 from sqlalchemy.sql import text
+from datetime import date
+
+# Define the start and end dates for the range
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_database():
     demo = User(
-        username='Demo', email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password')
+        username='Demo', email='demo@aa.io', password='password',
+        profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
+        account_capital=1133.77
+        )
+    gahyeon = User(
+        username='gahyeon', email='gahyeon@aa.io', password='password',
+        profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
+        account_capital=1133.77
+        )
     bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password')
+        username='bobbie', email='bobbie@aa.io', password='password',
+        profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
+        account_capital=1133.77
+        )
     godmode = User(
-        username='melonhusk', email='godmode@aa.io', password='password'
-    )
+        username='godmode', email='godmode@aa.io', password='password',
+        profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
+        account_capital=1133.77
+        )
 
     game1 = Game (
         name='The Glitcher 3: Wild Bugs',
         description='Fizzle in and out in this open world adventure',
-        release_date='2015-5-31',
+        release_date=date(2015, 6, 22),
         creator_id=1,
         developer='CD Projekt Blue',
         price=59.99,
@@ -28,11 +42,11 @@ def seed_database():
     game2 = Game (
         name='Ogrewatch',
         description='This shooter will give you a shrekking good time.',
-        release_date='2019-8-22',
+        release_date=date(2020, 3, 17),
         creator_id=2,
         developer='Gizzard',
         price=29.99,
-        genre='First-person shooter'
+        genre='First-Person Shooter'
     )
 
     game_image1preview = GameImage (
@@ -47,10 +61,22 @@ def seed_database():
         preview=True
     )
 
+
+
+    # Add order instances to the session
+
+    # Commit the changes to the database
+
+
+    # Add OrderAndProduct instances to the session
+
     db.session.add(demo)
-    db.session.add(marnie)
+    db.session.add(gahyeon)
     db.session.add(bobbie)
     db.session.add(godmode)
+
+    db.session.add(game1)
+    db.session.add(game2)
 
     db.session.add(game_image1preview)
     db.session.add(game_image2preview)
