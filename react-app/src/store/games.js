@@ -54,7 +54,7 @@ export const createGameThunk = (gameInputs) => async (dispatch) => {
 
     if (res.ok) {
         const gameData = await res.json()
-        console.log('GAAAMEDATA', gameData)
+        // console.log('GAAAMEDATA', gameData)
         dispatch(createGameAction(gameData))
         return gameData
     }

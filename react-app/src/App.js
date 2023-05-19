@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/GamesPages/Homepage";
 import GameDeveloperForm from "./components/GamesPages/GameDeveloperForm";
+import GameDeveloperPage from "./components/GamesPages/GameDeveloperPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route exact path='/developer'>
+            <GameDeveloperPage />
           </Route>
           <Route exact path="/developer/form">
             <GameDeveloperForm />

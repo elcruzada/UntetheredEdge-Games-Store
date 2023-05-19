@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import db, Game, User
+from app.models import db, Game, GameImage, User
 from sqlalchemy import desc
 from datetime import date
 from ..forms.game_form import GameForm
@@ -24,7 +24,7 @@ def get_single_game(id):
 @login_required
 def create_game():
     form = GameForm()
-    print(form)
+    # print(form)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         new_game = Game (
@@ -90,7 +90,7 @@ def add_images(id):
         return { "errors": "Game does not exist" }
 
     if form.validate_on_submit:
-        new_game_image = GameImagesForm (
+        new_game_image = GameImage (
             game_id=game_to_add_image.id,
             url=form.data['url'],
             preview=form.data['preview']
@@ -99,4 +99,26 @@ def add_images(id):
         db.session.add(new_game_image)
         db.session.commit()
         return new_game_image.to_dict()
-    return { "error": "Image you have submitted is invalid" }
+    return { "errors": form.errors }
+
+# @games_routes.route('/images', methods=['POST'])
+# @login_required
+# def add_images():
+#     form = GameImagesForm()
+
+
+#     if form.validate_on_submit:
+#         game_id=request.form['game_id']
+#         game_to_add_image = Game.query.get(game_id)
+#         if not game_to_add_image:
+#             return {"errors": "Game does not exist"}
+#         new_game_image = GameImage (
+#             game_id=game_to_add_image.id,
+#             url=form.data['url'],
+#             preview=form.data['preview']
+#         )
+
+#         db.session.add(new_game_image)
+#         db.session.commit()
+#         return new_game_image.to_dict()
+#     return { "errors": form.errors }

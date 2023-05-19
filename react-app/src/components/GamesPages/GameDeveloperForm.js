@@ -8,6 +8,7 @@ import { createGameThunk } from '../../store/games'
 const GameDeveloperForm = () => {
     const history = useHistory()
     const dispatch = useDispatch()
+    const [id, setId] = useState('')
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [developer, setDeveloper] = useState('')
@@ -16,6 +17,8 @@ const GameDeveloperForm = () => {
     const [price, setPrice] = useState(0)
     const [releaseDate, setReleaseDate] = useState('')
     const [isPromoted, setIsPromoted] = useState(false)
+    const [imageURLs, setImageURLs] = useState([])
+    const [newURL, setNewURL] = useState('')
 
     const [errors, setErrors] = useState({})
 
@@ -31,10 +34,37 @@ const GameDeveloperForm = () => {
             formData.append('genre', genre)
             formData.append('price', price)
             formData.append('is_promoted', isPromoted)
+            imageURLs.forEach((url) => {
+                formData.append('images', url)
+            })
         }
 
-        await dispatch(createGameThunk(formData))
-        history.push('/')
+        const res = await dispatch(createGameThunk(formData))
+        // history.push('/')
+    }
+
+    const addImageHandler = async () => {
+        if (newURL.trim() !== '') {
+            const res = await fetch('/api/games/images', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({game_id: id, url: newURL})
+            })
+
+            if (res.ok) {
+                const newGameImage = await res.json()
+                setImageURLs([...imageURLs, newURL])
+                setNewURL('')
+            }
+        }
+    }
+
+    const removeImageHandler = (i) => {
+        const updatedURLs = [...imageURLs]
+        updatedURLs.splice(i, 1)
+        setImageURLs(updatedURLs)
     }
 
     // useEffect(() => {
@@ -43,6 +73,10 @@ const GameDeveloperForm = () => {
     //     if (!description) errors.description = "Description is required"
 
     // }, [name, description, developer, publisher, genre, price, isPromoted])
+
+    useEffect(() => {
+        console.log(imageURLs)
+    },[imageURLs])
 
     return (
         <>
@@ -130,6 +164,35 @@ const GameDeveloperForm = () => {
                         >
                         </input>
                     </div>
+                    <label>Update Images</label>
+                    {imageURLs.map((imageURL, index) => {
+                        <div
+                            key={index}
+                            className='image-container'
+                        >
+                            <input
+                                type='text'
+                                value={imageURL}
+                                disabled
+                            >Your images</input>
+                            <button
+                                onClick={() => removeImageHandler(index)}
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    })}
+                    <input
+                        type='text'
+                        placeholder='Enter your image URL here'
+                        value={newURL}
+                        onChange={(e) => setNewURL(e.target.value)}
+                    />
+                    <button
+                        onClick={addImageHandler}
+                    >
+                        Add Image
+                    </button>
                     <div className='create-game-button'>
                         <button type='submit'> Submit Game </button>
                     </div>
