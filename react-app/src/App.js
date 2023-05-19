@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/">
             <Homepage />
           </Route>
-          <Route exact path="/account/developer-form">
+          <Route exact path="/developer/form">
             <GameDeveloperForm />
           </Route>
           <Route path="/login" >

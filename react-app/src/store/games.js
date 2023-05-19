@@ -48,14 +48,13 @@ export const getSingleGameThunk = (gameId) => async (dispatch) => {
 export const createGameThunk = (gameInputs) => async (dispatch) => {
     const res = await fetch('/api/games/new', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(gameInputs)
+        body: gameInputs
     })
+    // console.log('REES', res)
 
     if (res.ok) {
         const gameData = await res.json()
+        console.log('GAAAMEDATA', gameData)
         dispatch(createGameAction(gameData))
         return gameData
     }

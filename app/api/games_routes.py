@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import db, Game, User
 from sqlalchemy import desc
-from datetime import datetime
+from datetime import date
 from ..forms.game_form import GameForm
 from ..forms.game_images_form import GameImagesForm
 
@@ -24,13 +24,13 @@ def get_single_game(id):
 @login_required
 def create_game():
     form = GameForm()
-
+    print(form)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         new_game = Game (
             name=form.data['name'],
             description=form.data['description'],
-            release_date=datetime.now(),
+            release_date=form.data['release_date'],
             creator_id=current_user.id,
             developer=form.data['developer'],
             publisher=form.data['publisher'],
@@ -42,7 +42,7 @@ def create_game():
         db.session.add(new_game)
         db.session.commit()
         return new_game.to_dict()
-    return { "error": "Form you submitted is invalid"}
+    return { "errors": form.errors}
 
 @games_routes.route("/<int:id>", methods=["PUT"])
 @login_required
@@ -67,7 +67,7 @@ def update_game(id):
 
             db.session.commit()
             return game_to_edit.to_dict()
-    return { "error": "Game not found" }
+    return { "errors": form.errors }
 
 @games_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
