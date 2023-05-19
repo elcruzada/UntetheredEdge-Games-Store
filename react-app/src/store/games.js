@@ -1,6 +1,7 @@
 const GET_ALLGAMES = "games/GET_ALLGAMES"
 const GET_SINGLEGAME = "games/GET_SINGLEGAME"
 const CREATE_GAME = "games/CREATE_GAME"
+const UPDATE_GAME = "games/UPDATE_GAME"
 
 const getAllGamesAction = (games) => ({
 	type: GET_ALLGAMES,
@@ -12,9 +13,14 @@ const getSingleGameAction = (game) => ({
     game
 })
 
-const createGameAction = (game) => ({
+const createGameAction = (gameInputs) => ({
     type: CREATE_GAME,
-    game
+    gameInputs
+})
+
+const updateGameAction = (updateInputs) => ({
+    type: UPDATE_GAME,
+    updateInputs
 })
 
 export const getAllGamesThunk = () => async (dispatch) => {
@@ -49,8 +55,26 @@ export const createGameThunk = (gameInputs) => async (dispatch) => {
     }
 }
 
+export const updateGameThunk = (gameId, gameInputs) => async (dispatch) => {
+    const res = await fetch(`/api/games/${gameId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(gameInputs)
+    })
 
-const initialState = { allGames: {}, singleGame: {} }
+    if (res.ok) {
+        const updatedGame = await res.json()
+        dispatch(updateGameAction(updatedGame))
+        return updatedGame
+    }
+}
+
+const initialState = {
+    allGames: {},
+    singleGame: {}
+}
 
 export default function gamesReducer(state = initialState, action) {
     let newGamesState;
@@ -64,7 +88,9 @@ export default function gamesReducer(state = initialState, action) {
             return newGamesState
         case CREATE_GAME:
             newGamesState = { ...state,  allGames: {...state.allGames} }
+            newGamesState.singleGame[action.gameInputs.id] = action.gameInputs
             return newGamesState
+
 		default:
 			return state;
 	}

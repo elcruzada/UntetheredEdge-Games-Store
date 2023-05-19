@@ -11,4 +11,3 @@ class GameForm(FlaskForm):
     price = FloatField('price')
     genre = StringField('genre', validators=[DataRequired()])
     is_promoted = BooleanField('is_promoted', default=False)
-    is_on_sale = BooleanField('is_on_sale', default=False)

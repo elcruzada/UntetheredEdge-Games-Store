@@ -4,6 +4,7 @@ from app.models import db, Game, User
 from sqlalchemy import desc
 from datetime import datetime
 from ..forms.game_form import GameForm
+from ..forms.game_images_form import GameImagesForm
 
 games_routes = Blueprint('games', __name__, url_prefix='/api/games')
 
@@ -36,7 +37,6 @@ def create_game():
             price=form.data['price'],
             genre=form.data['genre'],
             is_promoted=form.data['is_promoted'],
-            is_on_sale=form.data['is_on_sale']
         )
 
         db.session.add(new_game)
@@ -63,8 +63,7 @@ def update_game(id):
             game_to_edit.publisher=form.data['publisher'],
             game_to_edit.price=form.data['price'],
             game_to_edit.genre=form.data['genre'],
-            game_to_edit.is_promoted=form.data['is_promoted'],
-            game_to_edit.is_on_sale=form.data['is_on_sale']
+            game_to_edit.is_promoted=form.data['is_promoted']
 
             db.session.commit()
             return game_to_edit.to_dict()
@@ -80,3 +79,24 @@ def delete_game(id):
     db.session.delete(game)
     db.session.commit()
     return { "success": "Your game has been deleted" }
+
+@games_routes.route('/<int:id>/images', methods=['POST'])
+@login_required
+def add_images(id):
+    form = GameImagesForm()
+
+    game_to_add_image = Game.query.get(id)
+    if not game_to_add_image:
+        return { "errors": "Game does not exist" }
+
+    if form.validate_on_submit:
+        new_game_image = GameImagesForm (
+            game_id=game_to_add_image.id,
+            url=form.data['url'],
+            preview=form.data['preview']
+        )
+
+        db.session.add(new_game_image)
+        db.session.commit()
+        return new_game_image.to_dict()
+    return { "error": "Image you have submitted is invalid" }
