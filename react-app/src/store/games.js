@@ -2,25 +2,31 @@ const GET_ALLGAMES = "games/GET_ALLGAMES"
 const GET_SINGLEGAME = "games/GET_SINGLEGAME"
 const CREATE_GAME = "games/CREATE_GAME"
 const UPDATE_GAME = "games/UPDATE_GAME"
+const DELETE_GAME = "games/DELETE_GAME"
 
-const getAllGamesAction = (games) => ({
+export const getAllGamesAction = (games) => ({
 	type: GET_ALLGAMES,
     games
 });
 
-const getSingleGameAction = (game) => ({
+export const getSingleGameAction = (game) => ({
     type: GET_SINGLEGAME,
     game
 })
 
-const createGameAction = (gameInputs) => ({
+export const createGameAction = (gameInputs) => ({
     type: CREATE_GAME,
     gameInputs
 })
 
-const updateGameAction = (updateInputs) => ({
+export const updateGameAction = (updateInputs) => ({
     type: UPDATE_GAME,
     updateInputs
+})
+
+export const deleteGameAction = (game) => ({
+    type: DELETE_GAME,
+    game
 })
 
 export const getAllGamesThunk = () => async (dispatch) => {
@@ -71,7 +77,18 @@ export const updateGameThunk = (gameId, gameInputs) => async (dispatch) => {
     }
 }
 
+export const deleteGameThunk = (gameId) => async (dispatch) => {
+    const res = await fetch(`/api/games/${gameId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
 
+    if (res.ok) {
+        dispatch(deleteGameThunk(gameId))
+    }
+}
 
 const initialState = {
     allGames: {},
@@ -83,7 +100,7 @@ export default function gamesReducer(state = initialState, action) {
 	switch (action.type) {
 		case GET_ALLGAMES:
             newGamesState = { ...state, allGames: { ...action.allGames }}
-            action.games.games.forEach(game => newState.allGames[game.id] = game)
+            action.games.games.forEach(game => newGamesState.allGames[game.id] = game)
             return newGamesState
         case GET_SINGLEGAME:
             newGamesState = { ...state, singleGame: action.game}
@@ -92,7 +109,10 @@ export default function gamesReducer(state = initialState, action) {
             newGamesState = { ...state,  allGames: {...state.allGames} }
             newGamesState.singleGame[action.gameInputs.id] = action.gameInputs
             return newGamesState
-
+        case DELETE_GAME:
+            newGamesState = { ...state, allGames: {...state.allGames} }
+            delete newGamesState.allGames[action.game]
+            return newGamesState
 		default:
 			return state;
 	}

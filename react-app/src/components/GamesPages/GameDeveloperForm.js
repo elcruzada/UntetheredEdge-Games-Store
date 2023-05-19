@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import './GameDeveloperPage.css'
+import './GameDeveloperForm.css'
 
 const GameDeveloperForm = () => {
     const history = useHistory()
@@ -19,6 +19,8 @@ const GameDeveloperForm = () => {
         if (!Object.values(errors).length) {
             const newGameData = new FormData()
             newGameData.append('name', name)
+            newGameData.append('description', description)
+            // newGameData.append()
             // newGameData.append()
         }
     }
