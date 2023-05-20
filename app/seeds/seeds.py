@@ -37,7 +37,7 @@ def seed_database():
         publisher='UntetheredEdge Interactive',
         price=59.99,
         genre='RPG',
-        is_promoted=False,
+        is_promoted=True,
         is_on_sale=False
     )
 
@@ -50,7 +50,20 @@ def seed_database():
         publisher='UntetheredEdge Interactive',
         price=29.99,
         genre='First-Person Shooter',
-        is_promoted=False,
+        is_promoted=True,
+        is_on_sale=False
+    )
+
+    game3 = Game (
+        name='Ogrewatch',
+        description='This shooter will give you a shrekking good time.',
+        release_date=date(2020, 3, 17),
+        creator_id=2,
+        developer='Gizzard',
+        publisher='UntetheredEdge Interactive',
+        price=29.99,
+        genre='First-Person Shooter',
+        is_promoted=True,
         is_on_sale=False
     )
 
@@ -60,10 +73,58 @@ def seed_database():
         preview=True
     )
 
-    game_image2preview = GameImage (
+    game_image2 = GameImage (
+        game_id=1,
+        url='https://www.trustedreviews.com/wp-content/uploads/sites/54/2015/05/The-Witcher-3-Wild-Hunt-They-call-this-civilization-I-feel-safer-in-the-woods-1.png',
+        preview=False
+    )
+
+    game_image3 = GameImage (
+        game_id=1,
+        url='https://cdn.wccftech.com/wp-content/uploads/2023/01/The-Witcher-3-Benis-Lighting-Mod-scaled.jpg',
+        preview=False
+    )
+
+    game_image4 = GameImage (
+        game_id=1,
+        url='https://uploads-ssl.webflow.com/5a33f05fcb37b70001e76674/63b349eff481e4aa896495ee_witchy2.jpg',
+        preview=False
+    )
+
+    game_image5 = GameImage (
+        game_id=1,
+        url='https://images.pushsquare.com/57f26986881c7/the-witcher-3-wild-hunt-ps4-playstation-4-combat-guide.large.jpg',
+        preview=False
+    )
+
+    game2_image_preview = GameImage (
         game_id=2,
         url='https://i.chzbgr.com/full/8804529408/hBF54E19E/a-game-with-layers',
         preview=True
+    )
+
+    game2_image_2 = GameImage (
+        game_id=2,
+        url='https://www.denofgeek.com/wp-content/uploads/2022/04/Overwatch-2.jpg?fit=3840%2C2160',
+        preview=False
+    )
+
+    game2_image_3 = GameImage (
+        game_id=2,
+        url='https://www.denofgeek.com/wp-content/uploads/2022/04/Overwatch-2.jpg?fit=3840%2C2160',
+        preview=False
+    )
+
+    game2_image_4 = GameImage (
+        game_id=2,
+        url='https://www.denofgeek.com/wp-content/uploads/2022/04/Overwatch-2.jpg?fit=3840%2C2160',
+        preview=False
+    )
+
+    game2_image_5 = GameImage (
+        game_id=2,
+        url='https://www.denofgeek.com/wp-content/uploads/2022/04/Overwatch-2.jpg?fit=3840%2C2160',
+        preview=False
     )
 
 
@@ -84,7 +145,7 @@ def seed_database():
     db.session.add(game2)
 
     db.session.add(game_image1preview)
-    db.session.add(game_image2preview)
+    db.session.add(game2_image_preview)
 
     db.session.commit()
 
