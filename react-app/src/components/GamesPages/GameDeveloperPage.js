@@ -3,14 +3,24 @@ import GameDeveloperForm from "./GameDeveloperForm"
 import { useState } from "react"
 
 const GameDeveloperPage = () => {
-    const gameId = 1
+    //this page is to post new images onto a developer page
+    //make sure that you pass in an actual gameId that isn't hard-coded
+
+    //also need a way later to uncheck those that you don't want as preview image
+    //or find a way that when you update an image, you can check preview image
+    const gameId = 3
     const [imageUrls, setImageUrls] = useState([]);
     const [newImageUrl, setNewImageUrl] = useState('');
+    // const [previewStates, setPreviewStates] = useState({})
     const [errors, setErrors] = useState({});
 
     const handleAddImage = () => {
         if (newImageUrl.trim() !== '') {
             setImageUrls([...imageUrls, newImageUrl]);
+            // setPreviewStates({
+            //     ...previewStates,
+            //     [newImageUrl]: false
+            // })
             setNewImageUrl('');
         }
     };
@@ -20,6 +30,13 @@ const GameDeveloperPage = () => {
         updatedImageUrls.splice(index, 1);
         setImageUrls(updatedImageUrls);
     };
+
+    // const handlePreviewChange = (imageUrl, isChecked) => {
+    //     setPreviewStates({
+    //         ...previewStates,
+    //         [imageUrl]: isChecked
+    //     })
+    // }
 
     const handleImageUpload = async (e) => {
         e.preventDefault();
@@ -33,7 +50,8 @@ const GameDeveloperPage = () => {
         // Create a new FormData object
         const formData = new FormData();
         imageUrls.forEach((imageUrl) => {
-            formData.append('url', imageUrl);
+            formData.append(`urls`, imageUrl);
+            // formData.append(`preview[${index}]`, previewStates[imageUrl])
         });
 
         try {
@@ -50,6 +68,7 @@ const GameDeveloperPage = () => {
                 // Reset the form fields
                 setImageUrls([]);
                 setNewImageUrl('');
+                // setPreviewStates({})
                 setErrors({});
             } else {
                 // Handle errors if the request was not successful
@@ -77,6 +96,13 @@ const GameDeveloperPage = () => {
                         <button type="button" onClick={() => handleRemoveImage(index)}>
                             Remove
                         </button>
+                        {/* <input
+                            type='checkbox'
+                            checked={previewStates[imageUrl] || false}
+                            onChange={(e) => handlePreviewChange(imageUrl, e.target.checked)}
+                        /> */}
+                        {/* <label>Preview</label> */}
+                        <input type="hidden" name="urls" value={imageUrl} />
                     </div>
                 ))}
                 <div>

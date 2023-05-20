@@ -78,28 +78,68 @@ def delete_game(id):
 
     db.session.delete(game)
     db.session.commit()
-    return { "success": "Your game has been deleted" }
+    return { "success": "Your game has been deleted from the store" }
+
+# @games_routes.route('/<int:id>/images', methods=['POST'])
+# @login_required
+# def add_images(id):
+#     form = GameImagesForm()
+
+#     game_to_add_image = Game.query.get(id)
+#     if not game_to_add_image:
+#         return { "errors": "Game does not exist" }
+
+#     if form.validate_on_submit:
+#         new_game_image = GameImage (
+#             game_id=game_to_add_image.id,
+#             url=form.data['url'],
+#             preview=form.data['preview']
+#         )
+
+#         db.session.add(new_game_image)
+#         db.session.commit()
+#         return new_game_image.to_dict()
+#     return { "errors": form.errors }
 
 @games_routes.route('/<int:id>/images', methods=['POST'])
 @login_required
 def add_images(id):
-    form = GameImagesForm()
-
     game_to_add_image = Game.query.get(id)
     if not game_to_add_image:
         return { "errors": "Game does not exist" }
 
-    if form.validate_on_submit:
+    urls = request.form.getlist('urls')
+    if not urls:
+        return { "errors": "No image URLs provided" }
+
+    images = []
+    for url in urls:
         new_game_image = GameImage (
             game_id=game_to_add_image.id,
-            url=form.data['url'],
-            preview=form.data['preview']
+            url=url,
+            preview=False  # Set the preview value as desired
         )
-
         db.session.add(new_game_image)
-        db.session.commit()
-        return new_game_image.to_dict()
-    return { "errors": form.errors }
+        images.append(new_game_image)
+
+    db.session.commit()
+    return { "images": [image.to_dict() for image in images] }
+
+@games_routes.route('/<int:id>/images/<int:image_id>', methods=['DELETE'])
+@login_required
+def delete_image(id, image_id):
+    game = Game.query.get(id)
+    if not game:
+        return { "errors": "Game does not exist" }
+
+    image = GameImage.query.get(image_id)
+    if not image or image.game_id != game.id:
+        return { "errors": "Image does not exist or is not associated with the game" }
+
+    db.session.delete(image)
+    db.session.commit()
+
+    return { "deletedImage": image.to_dict() }
 
 # @games_routes.route('/images', methods=['POST'])
 # @login_required

@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux'
 import { createGameThunk } from '../../store/games'
 
 const GameDeveloperForm = () => {
+    //only after the user has craeated the Game can you add images
+
     const history = useHistory()
     const dispatch = useDispatch()
     const [id, setId] = useState('')
@@ -18,7 +20,7 @@ const GameDeveloperForm = () => {
     const [releaseDate, setReleaseDate] = useState('')
     const [isPromoted, setIsPromoted] = useState(false)
     const [imageURLs, setImageURLs] = useState([])
-    const [newURL, setNewURL] = useState('')
+    // const [newURL, setNewURL] = useState('')
 
     const [errors, setErrors] = useState({})
 
@@ -34,38 +36,38 @@ const GameDeveloperForm = () => {
             formData.append('genre', genre)
             formData.append('price', price)
             formData.append('is_promoted', isPromoted)
-            imageURLs.forEach((url) => {
-                formData.append('images', url)
-            })
+            // imageURLs.forEach((url) => {
+            //     formData.append('images', url)
+            // })
         }
 
         const res = await dispatch(createGameThunk(formData))
         // history.push('/')
     }
 
-    const addImageHandler = async () => {
-        if (newURL.trim() !== '') {
-            const res = await fetch('/api/games/images', {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify({game_id: id, url: newURL})
-            })
+    // const addImageHandler = async () => {
+    //     if (newURL.trim() !== '') {
+    //         const res = await fetch('/api/games/images', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-type': 'application/json'
+    //             },
+    //             body: JSON.stringify({game_id: id, url: newURL})
+    //         })
 
-            if (res.ok) {
-                const newGameImage = await res.json()
-                setImageURLs([...imageURLs, newURL])
-                setNewURL('')
-            }
-        }
-    }
+    //         if (res.ok) {
+    //             const newGameImage = await res.json()
+    //             setImageURLs([...imageURLs, newURL])
+    //             setNewURL('')
+    //         }
+    //     }
+    // }
 
-    const removeImageHandler = (i) => {
-        const updatedURLs = [...imageURLs]
-        updatedURLs.splice(i, 1)
-        setImageURLs(updatedURLs)
-    }
+    // const removeImageHandler = (i) => {
+    //     const updatedURLs = [...imageURLs]
+    //     updatedURLs.splice(i, 1)
+    //     setImageURLs(updatedURLs)
+    // }
 
     // useEffect(() => {
     //     const errors = {}
@@ -74,9 +76,9 @@ const GameDeveloperForm = () => {
 
     // }, [name, description, developer, publisher, genre, price, isPromoted])
 
-    useEffect(() => {
-        console.log(imageURLs)
-    },[imageURLs])
+    // useEffect(() => {
+    //     console.log(imageURLs)
+    // },[imageURLs])
 
     return (
         <>
@@ -164,7 +166,7 @@ const GameDeveloperForm = () => {
                         >
                         </input>
                     </div>
-                    <label>Update Images</label>
+                    {/* <label>Update Images</label>
                     {imageURLs.map((imageURL, index) => {
                         <div
                             key={index}
@@ -192,7 +194,7 @@ const GameDeveloperForm = () => {
                         onClick={addImageHandler}
                     >
                         Add Image
-                    </button>
+                    </button> */}
                     <div className='create-game-button'>
                         <button type='submit'> Submit Game </button>
                     </div>
