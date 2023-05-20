@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
 import GameDeveloperForm from "./GameDeveloperForm"
 import { useState } from "react"
+import gamingGif from '../../images/aac_vtp_capacitor.gif'
 
 const GameDeveloperPage = () => {
     //this page is to post new images onto a developer page
@@ -83,41 +84,49 @@ const GameDeveloperPage = () => {
 
     return (
         <>
-            <h1>Publish with us!</h1>
-            <NavLink exact to='/developer/form'>
-                Submit your application here
-            </NavLink>
-            <h2>Add images to your game!</h2>
-            <form onSubmit={handleImageUpload}>
-                <h2>Add Images</h2>
-                {imageUrls.map((imageUrl, index) => (
-                    <div key={index}>
-                        <img src={imageUrl} alt={`Image ${index + 1}`} />
-                        <button type="button" onClick={() => handleRemoveImage(index)}>
-                            Remove
-                        </button>
-                        {/* <input
+            <div className='global-outer-container'>
+                <div className='global-inner-container'>
+                    <img
+                    src={gamingGif}
+                    ></img>
+
+                    <h1>Publish with us!</h1>
+                    <NavLink exact to='/developer/form'>
+                        Submit your application today!
+                    </NavLink>
+                    <h2>Add images to your game</h2>
+                    <form onSubmit={handleImageUpload}>
+                        <h2>Add Images</h2>
+                        {imageUrls.map((imageUrl, index) => (
+                            <div key={index}>
+                                <img src={imageUrl} alt={`Image ${index + 1}`} />
+                                <button type="button" onClick={() => handleRemoveImage(index)}>
+                                    Remove
+                                </button>
+                                {/* <input
                             type='checkbox'
                             checked={previewStates[imageUrl] || false}
                             onChange={(e) => handlePreviewChange(imageUrl, e.target.checked)}
                         /> */}
-                        {/* <label>Preview</label> */}
-                        <input type="hidden" name="urls" value={imageUrl} />
-                    </div>
-                ))}
-                <div>
-                    <input
-                        type="text"
-                        value={newImageUrl}
-                        onChange={(e) => setNewImageUrl(e.target.value)}
-                    />
-                    <button type="button" onClick={handleAddImage}>
-                        Add Image
-                    </button>
+                                {/* <label>Preview</label> */}
+                                <input type="hidden" name="urls" value={imageUrl} />
+                            </div>
+                        ))}
+                        <div>
+                            <input
+                                type="text"
+                                value={newImageUrl}
+                                onChange={(e) => setNewImageUrl(e.target.value)}
+                            />
+                            <button type="button" onClick={handleAddImage}>
+                                Add Image
+                            </button>
+                        </div>
+                        {errors.imageUrls && <span className="error">{errors.imageUrls}</span>}
+                        <button type="submit">Upload Images</button>
+                    </form>
                 </div>
-                {errors.imageUrls && <span className="error">{errors.imageUrls}</span>}
-                <button type="submit">Upload Images</button>
-            </form>
+            </div>
         </>
     )
 }
