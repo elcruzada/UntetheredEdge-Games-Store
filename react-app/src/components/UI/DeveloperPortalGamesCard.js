@@ -1,6 +1,8 @@
 import { useHistory } from "react-router-dom"
 import UpdateGameDeveloperForm from "../GamesPages/UpdateGameDeveloperForm"
 import OpenModalButton from "../OpenModalButton"
+import DeleteGameModal from "../GamesPages/DeleteGameModal"
+import { useSelector } from "react-redux"
 
 const DeveloperPortalGamesCard = ({game}) => {
     //game image will be at the left
@@ -30,9 +32,13 @@ const DeveloperPortalGamesCard = ({game}) => {
 
             <OpenModalButton
             buttonText="Update your game info!"
-            modalComponent={<UpdateGameDeveloperForm />}
+            modalComponent={<UpdateGameDeveloperForm gameId={game.id}/>}
             />
-            {/* <UpdateGameDeveloperForm /> */}
+
+            <OpenModalButton
+            buttonText="Delete your game"
+            modalComponent={<DeleteGameModal gameId={game.id}/>}
+            />
         </div>
     )
 }

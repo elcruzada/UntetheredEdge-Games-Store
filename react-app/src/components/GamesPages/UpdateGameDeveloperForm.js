@@ -2,14 +2,15 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getSingleGameThunk, updateGameThunk } from "../../store/games"
 import { useModal } from "../../context/Modal"
+import { useHistory } from "react-router-dom"
 
-const UpdateGameDeveloperForm = () => {
+const UpdateGameDeveloperForm = ({gameId}) => {
     const dispatch = useDispatch()
-
+    const history = useHistory()
     //eventually you're going to pass in the id of the game instead of a hardcoded value
     const singleGame = useSelector(state => state.games.singleGame)
     const { closeModal } =useModal()
-    const hardcodedId = 3
+    // const hardcodedId = 3
 
     // <OpenModalButton
     //           buttonText="Log In"
@@ -43,7 +44,9 @@ const UpdateGameDeveloperForm = () => {
         // }
 
         closeModal()
-        await dispatch(updateGameThunk(hardcodedId, formData))
+        await dispatch(updateGameThunk(gameId, formData))
+        history.push(`/games/${gameId}`)
+
     }
 
     useEffect(() => {
@@ -60,8 +63,8 @@ const UpdateGameDeveloperForm = () => {
     }, [singleGame])
 
     useEffect(() => {
-        dispatch(getSingleGameThunk(hardcodedId))
-    }, [dispatch, hardcodedId])
+        dispatch(getSingleGameThunk(gameId))
+    }, [dispatch, gameId])
 
     return (
         <>

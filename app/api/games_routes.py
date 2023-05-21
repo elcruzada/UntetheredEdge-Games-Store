@@ -162,7 +162,7 @@ def add_images(id):
         new_game_image = GameImage (
             game_id=game_to_add_image.id,
             url=url,
-            preview=False  # Set the preview value as desired
+            preview=False
         )
         db.session.add(new_game_image)
         images.append(new_game_image)
