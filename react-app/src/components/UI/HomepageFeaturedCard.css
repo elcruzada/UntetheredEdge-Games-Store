@@ -2,27 +2,62 @@
     display: grid;
     grid-template-columns: 5fr 1fr;
     grid-gap: .5rem;
-    width: 65rem;
+    width: 66rem;
     height: 35rem;
     padding: 2.5rem;
-  }
+}
 
-  .featured-games-homepage-big-picture-left-column {
 
-  }
-  
-  .featured-games-homepage-big-picture-left-column img {
+.featured-games-homepage-big-picture-left-column img {
+    display: inline-block;
     height: 36rem;
     width: 55rem;
-  }
+    border-radius: 10px;
+    transition: filter 0.3s;
+}
 
-  .featured-games-homepage-little-pictures-right-column {
-    background-color: #f0f0f0; /* Just for visualization */
+.featured-games-homepage-big-picture-left-column img:hover {
+    filter: brightness(1.2);
+    cursor:pointer;
+}
+
+.featured-games-homepage-little-pictures-right-column {
+    /* background-color: gray; */
     display: flex;
     flex-direction: column;
-    }
+    padding: .2rem;
+}
 
-    .featured-games-homepage-little-pictures-right-column img {
-        height: 6rem;
-        width: 5rem;
-      }
+.featured-games-homepage-little-pictures-right-column-image-title-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    color: white;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.featured-games-homepage-little-pictures-right-column-image-title-card:hover {
+    background-color: #643843;
+}
+
+.featured-games-homepage-little-pictures-right-column-image-title-card img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.6rem;
+    width: 4rem;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.featured-games-homepage-little-pictures-right-column-image-title-card-image-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

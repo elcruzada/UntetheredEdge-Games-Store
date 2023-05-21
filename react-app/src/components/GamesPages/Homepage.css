@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     min-height: 80rem;
-    background-color: #1E0411;
+    background-color:rgb(100, 56, 67);
     height: fit-content;
     border-radius: 3px;
 }
@@ -10,7 +10,7 @@
 .global-inner-container {
     display: flex;
     flex-direction: column;
-    background-color: #FDF0F6;
+    background-color: #99627A;
     width: 70rem;
     min-height: 80rem;
     height: fit-content;
