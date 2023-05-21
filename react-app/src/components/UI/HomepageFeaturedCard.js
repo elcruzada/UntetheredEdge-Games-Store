@@ -5,13 +5,27 @@ import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const HomepageFeaturedCard = ({ allGames }) => {
+    const history = useHistory()
     const promotedGames = Object.values(allGames)
     const [bigPictureSource, setBigPictureSource] = useState('');
+    const [currentGameId, setCurrentGameId] = useState('')
 
     const cardClickHandler = (previewImage) => {
         setBigPictureSource(previewImage);
+        // setCurrentGameId()
     };
 
+    const setGameIdHandler = (id) => {
+        setCurrentGameId(id)
+    }
+
+    const singleGameDetailsPageRedirect = () => {
+        if (currentGameId) {
+            history.push(`/games/${currentGameId}`)
+        } else {
+            history.push(`/games/${firstPromotedGamePreview.id}`)
+        }
+    }
 
     useEffect(() => {
         console.log('BIIIIG', bigPictureSource)
@@ -51,7 +65,9 @@ const HomepageFeaturedCard = ({ allGames }) => {
     return (
         <>
             <div className="featured-games-homepage-wrapper">
-                <div className="featured-games-homepage-big-picture-left-column">
+                <div className="featured-games-homepage-big-picture-left-column"
+                onClick={singleGameDetailsPageRedirect}
+                >
                     <img
                         src={bigPictureSource || previewImage.url}
                         alt='featured-big-picture-preview'>
@@ -61,40 +77,52 @@ const HomepageFeaturedCard = ({ allGames }) => {
 
 
                     <HomepageFeaturedRightColumnCard
+                        currentGameId={firstPromotedGamePreview.id}
                         previewImage={previewImage.url}
                         title={firstPromotedGamePreview.name}
                         alt={`Featured preview: ${firstPromotedGamePreview.id}`}
                         cardClickHandler={cardClickHandler}
+                        setGameIdHandler={setGameIdHandler}
                     />
                     <HomepageFeaturedRightColumnCard
+                        currentGameId={secondPromotedGamePreview.id}
                         previewImage={secondPreviewImage.url}
                         title={secondPromotedGamePreview.name}
                         alt={`Featured preview: ${secondPromotedGamePreview.id}`}
                         cardClickHandler={cardClickHandler}
+                        setGameIdHandler={setGameIdHandler}
                     />
                     <HomepageFeaturedRightColumnCard
+                        currentGameId={thirdPromotedGamePreview.id}
                         previewImage={thirdPreviewImage.url}
                         title={thirdPromotedGamePreview.name}
                         alt={`Featured preview: ${thirdPromotedGamePreview.id}`}
                         cardClickHandler={cardClickHandler}
+                        setGameIdHandler={setGameIdHandler}
                     />
                     <HomepageFeaturedRightColumnCard
+                        currentGameId={fourthPromotedGamePreview.id}
                         previewImage={fourthPreviewImage.url}
                         title={fourthPromotedGamePreview.name}
                         alt={`Featured preview: ${fourthPromotedGamePreview.id}`}
                         cardClickHandler={cardClickHandler}
+                        setGameIdHandler={setGameIdHandler}
                     />
                     <HomepageFeaturedRightColumnCard
+                        currentGameId={fifthPromotedGamePreview.id}
                         previewImage={fifthPreviewImage.url}
                         title={fifthPromotedGamePreview.name}
                         alt={`Featured preview: ${fifthPromotedGamePreview.id}`}
                         cardClickHandler={cardClickHandler}
+                        setGameIdHandler={setGameIdHandler}
                     />
                     <HomepageFeaturedRightColumnCard
+                        currentGameId={sixthPromotedGamePreview.id}
                         previewImage={sixthPreviewImage.url}
                         title={sixthPromotedGamePreview.name}
                         alt={`Featured preview: ${sixthPromotedGamePreview.id}`}
                         cardClickHandler={cardClickHandler}
+                        setGameIdHandler={setGameIdHandler}
                     />
 
                 </div>

@@ -1,8 +1,10 @@
-const HomepageFeaturedRightColumnCard = ({previewImage, title, alt, cardClickHandler}) => {
+const HomepageFeaturedRightColumnCard = ({currentGameId, previewImage, title, alt, cardClickHandler, setGameIdHandler}) => {
 
 
     return (
-        <>
+        <div
+        onClick={() => setGameIdHandler(currentGameId)}
+        >
             <div className='featured-games-homepage-little-pictures-right-column-image-title-card'
             onClick={() => cardClickHandler(previewImage)}
             >
@@ -17,7 +19,7 @@ const HomepageFeaturedRightColumnCard = ({previewImage, title, alt, cardClickHan
                     <p>{title}</p>
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }
