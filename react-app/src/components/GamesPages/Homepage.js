@@ -9,14 +9,17 @@ import HomepageFeaturedCard from '../UI/HomepageFeaturedCard'
 const Homepage = () => {
     const dispatch = useDispatch()
     const allGames = useSelector(state => state.games.allGames)
-    // const firstPromotedGame = Object.values(allGames)[0]
-
 
     useEffect(() => {
         dispatch(getAllGamesThunk())
     },[dispatch])
 
     if (!allGames) return null
+
+
+
+
+    // console.log(promotedGames[0])
 
     return (
         <>

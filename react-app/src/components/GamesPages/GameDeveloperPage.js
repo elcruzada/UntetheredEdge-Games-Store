@@ -88,6 +88,7 @@ const GameDeveloperPage = () => {
                 <div className='global-inner-container'>
                     <img
                     src={gamingGif}
+                    alt='gamingGif'
                     ></img>
 
                     <h1>Publish with us!</h1>
@@ -99,7 +100,7 @@ const GameDeveloperPage = () => {
                         <h2>Add Images</h2>
                         {imageUrls.map((imageUrl, index) => (
                             <div key={index}>
-                                <img src={imageUrl} alt={`Image ${index + 1}`} />
+                                <img src={imageUrl} alt={`gamePreview ${index + 1}`} />
                                 <button type="button" onClick={() => handleRemoveImage(index)}>
                                     Remove
                                 </button>

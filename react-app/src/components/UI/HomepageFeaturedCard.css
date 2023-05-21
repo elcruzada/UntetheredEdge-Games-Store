@@ -1,0 +1,28 @@
+.featured-games-homepage-wrapper {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: .5rem;
+    width: 65rem;
+    height: 35rem;
+    padding: 2.5rem;
+  }
+
+  .featured-games-homepage-big-picture-left-column {
+
+  }
+  
+  .featured-games-homepage-big-picture-left-column img {
+    height: 36rem;
+    width: 55rem;
+  }
+
+  .featured-games-homepage-little-pictures-right-column {
+    background-color: #f0f0f0; /* Just for visualization */
+    display: flex;
+    flex-direction: column;
+    }
+
+    .featured-games-homepage-little-pictures-right-column img {
+        height: 6rem;
+        width: 5rem;
+      }
