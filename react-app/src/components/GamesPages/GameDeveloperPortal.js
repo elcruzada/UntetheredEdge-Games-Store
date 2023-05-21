@@ -20,7 +20,7 @@ const GameDeveloperPortal = () => {
     const convertedSessionUserGames = Object.values(sessionUserGames)
 
     const developerPortalGames = convertedSessionUserGames.filter(game => game.creator_id === sessionUser.id)
-    console.log(developerPortalGames)
+    // console.log(developerPortalGames)
 
     return (
         <>

@@ -1,13 +1,21 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getSingleGameThunk } from "../../store/games"
+import { getSingleGameThunk, updateGameThunk } from "../../store/games"
+import { useModal } from "../../context/Modal"
 
 const UpdateGameDeveloperForm = () => {
     const dispatch = useDispatch()
+
     //eventually you're going to pass in the id of the game instead of a hardcoded value
     const singleGame = useSelector(state => state.games.singleGame)
+    const { closeModal } =useModal()
     const hardcodedId = 3
 
+    // <OpenModalButton
+    //           buttonText="Log In"
+    //           onItemClick={closeMenu}
+    //           modalComponent={<LoginFormModal />}
+    //         />
 
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
@@ -17,6 +25,26 @@ const UpdateGameDeveloperForm = () => {
     const [price, setPrice] = useState(0)
     const [releaseDate, setReleaseDate] = useState('')
     const [isPromoted, setIsPromoted] = useState('')
+    const [errors, setErrors] = useState({})
+
+    const submitHandler = async (e) => {
+        e.preventDefault()
+        const formData = new FormData()
+
+        // if (!Object.values(errors).length) {
+            formData.append('name', name)
+            formData.append('description', description)
+            // formData.append('release_date', releaseDate)
+            formData.append('developer', developer)
+            formData.append('publisher', publisher)
+            formData.append('genre', genre)
+            formData.append('price', price)
+            formData.append('is_promoted', isPromoted)
+        // }
+
+        closeModal()
+        await dispatch(updateGameThunk(hardcodedId, formData))
+    }
 
     useEffect(() => {
         if (singleGame) {
@@ -32,7 +60,7 @@ const UpdateGameDeveloperForm = () => {
     }, [singleGame])
 
     useEffect(() => {
-        useDispatch(getSingleGameThunk(hardcodedId))
+        dispatch(getSingleGameThunk(hardcodedId))
     }, [dispatch, hardcodedId])
 
     return (
@@ -105,12 +133,12 @@ const UpdateGameDeveloperForm = () => {
                         >
                         </textarea>
                     </div>
-                    <input
+                    {/* <input
                         id="gameReleaseDate"
                         type="date"
                         value={releaseDate}
                         onChange={(e) => setReleaseDate(e.target.value)}
-                    />
+                    /> */}
                     <div className='form-row'>
                         <label>Want your game promoted?</label>
                         <input

@@ -102,12 +102,12 @@ def update_game(id):
 
     if game_to_edit:
         if form.validate_on_submit():
-            game_to_edit.name=form.data['name'],
-            game_to_edit.description=form.data['description'],
-            game_to_edit.developer=form.data['developer'],
-            game_to_edit.publisher=form.data['publisher'],
-            game_to_edit.price=form.data['price'],
-            game_to_edit.genre=form.data['genre'],
+            game_to_edit.name=form.data['name']
+            game_to_edit.description=form.data['description']
+            game_to_edit.developer=form.data['developer']
+            game_to_edit.publisher=form.data['publisher']
+            game_to_edit.price=form.data['price']
+            game_to_edit.genre=form.data['genre']
             game_to_edit.is_promoted=form.data['is_promoted']
 
             db.session.commit()

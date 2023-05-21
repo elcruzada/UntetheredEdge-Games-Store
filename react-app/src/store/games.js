@@ -63,10 +63,7 @@ export const createGameThunk = (gameInputs) => async (dispatch) => {
 export const updateGameThunk = (gameId, gameInputs) => async (dispatch) => {
     const res = await fetch(`/api/games/${gameId}`, {
         method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(gameInputs)
+        body: gameInputs
     })
 
     if (res.ok) {
