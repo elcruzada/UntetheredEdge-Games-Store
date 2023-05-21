@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/">
             <Homepage />
           </Route>
-          <Route>
+          <Route exact path='/games/:gameId'>
             <SingleGameDetailsPage />
           </Route>
           <Route exact path='/developer'>
