@@ -228,9 +228,32 @@ def seed_database():
 
     db.session.add(game1)
     db.session.add(game2)
+    db.session.add(game3)
+    db.session.add(game4)
+    db.session.add(game5)
+    db.session.add(game6)
 
     db.session.add(game_image1preview)
+    db.session.add(game_image2)
+    db.session.add(game_image3)
+    db.session.add(game_image4)
+    db.session.add(game_image5)
+
     db.session.add(game2_image_preview)
+    db.session.add(game2_image_2)
+    db.session.add(game2_image_3)
+    db.session.add(game2_image_4)
+    db.session.add(game2_image_5)
+
+    db.session.add(game3_image_preview)
+    db.session.add(game3_image_2)
+    db.session.add(game3_image_3)
+    db.session.add(game3_image_4)
+    db.session.add(game3_image_5)
+
+    db.session.add(game4_image_preview)
+    db.session.add(game5_image_preview)
+    db.session.add(game6_image_preview)
 
     db.session.commit()
 
