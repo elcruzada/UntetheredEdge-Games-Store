@@ -9,6 +9,8 @@ import Homepage from "./components/GamesPages/Homepage";
 import GameDeveloperForm from "./components/GamesPages/GameDeveloperForm";
 import GameDeveloperPage from "./components/GamesPages/GameDeveloperPage";
 import SingleGameDetailsPage from "./components/GamesPages/SingleGameDetailsPage";
+import GameDeveloperImages from "./components/GamesPages/GameDeveloperImages";
+import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +35,12 @@ function App() {
           </Route>
           <Route exact path="/developer/form">
             <GameDeveloperForm />
+          </Route>
+          <Route exact path="/developer/portal">
+            <GameDeveloperPortal />
+          </Route>
+          <Route exact path="developer/images">
+            <GameDeveloperImages />
           </Route>
           <Route path="/login" >
             <LoginFormPage />
