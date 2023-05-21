@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Homepage from "./components/GamesPages/Homepage";
 import GameDeveloperForm from "./components/GamesPages/GameDeveloperForm";
 import GameDeveloperPage from "./components/GamesPages/GameDeveloperPage";
+import SingleGameDetailsPage from "./components/GamesPages/SingleGameDetailsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route>
+            <SingleGameDetailsPage />
           </Route>
           <Route exact path='/developer'>
             <GameDeveloperPage />
