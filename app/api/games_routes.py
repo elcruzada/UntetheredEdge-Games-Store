@@ -8,16 +8,61 @@ from ..forms.game_images_form import GameImagesForm
 
 games_routes = Blueprint('games', __name__, url_prefix='/api/games')
 
+# @games_routes.route('/')
+# def get_all_games():
+#     games = Game.query.all()
+#     # games_info = []
+
+#     # for game in games:
+#     #     preview_image = game.game_images.filter_by(preview=True).first()
+#     #     other_image = game.game_images.first()
+#     #     preview_image_url = preview_image.url if preview_image else None
+
+#     #     game_info = game.to_dict()
+#     #     game_info["preview_image"] = preview_image_url
+#     #     games_info.append(game_info)
+
+#     # return { 'games': games_info }
+#     return { "games": [game.to_dict() for game in games] }
 @games_routes.route('/')
 def get_all_games():
-    games = Game.query.all()
-    return { "games": [game.to_dict() for game in games] }
+    games = Game.query.order_by(desc(Game.release_date)).all()
+    games_info = []
+
+    for game in games:
+        preview_image = None
+        for game_image in game.game_images:
+            if game_image.preview:
+                preview_image = game_image
+                break
+            if not game_image.preview:
+                preview_image = game_image
+                break
+
+        # other_image = game.game_images.filter_by(preview=False).first()
+        # print('OOOTHER', other_image)
+        # preview_image_url = preview_image.url if preview_image else other_image.url if other_image else None
+        preview_image_url = preview_image.url if preview_image else None
+
+        game_info = game.to_dict()
+        game_info["preview"] = preview_image_url
+        games_info.append(game_info)
+    # print(games_data)
+    return { "games": games_info }
+
 
 @games_routes.route('/<int:id>', methods=['GET'])
 def get_single_game(id):
     game = Game.query.get(id)
     if not game:
         return { "errors": "Game not found"}
+    # preview_image = game.game_images.filter_by(preview=True).first()
+    # preview_image_url = preview_image.url if preview_image else None
+    # return {
+    #     "id": game.id,
+    #     "title": game.title,
+    #     "preview_image": preview_image_url
+    # }
     return game.to_dict()
 
 @games_routes.route('/new', methods=['POST'])
