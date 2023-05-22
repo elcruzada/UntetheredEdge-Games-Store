@@ -68,6 +68,8 @@ export default function commentsReducer(state = initialState, action) {
     }
 	switch (action.type) {
         case GET_ALLCOMMENTS:
+            console.log('newcommentsstate', newCommentsState)
+            console.log('AAACTION', action)
             newCommentsState = { ...state, game: {} }
             normalizerFunction((action.allComments.comments), (newCommentsState.game))
             return newCommentsState

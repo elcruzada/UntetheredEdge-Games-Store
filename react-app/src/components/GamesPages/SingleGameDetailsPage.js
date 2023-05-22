@@ -3,15 +3,24 @@ import './SingleGameDetailsPage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getSingleGameThunk } from '../../store/games'
+import { getAllCommentsThunk } from '../../store/comments'
 
 const SingleGameDetailsPage = () => {
     const { gameId } = useParams()
     const dispatch = useDispatch()
     const singleGameDetails = useSelector(state => state.games.singleGame)
+    console.log('COMMMENTS', singleGameDetails.comments)
+    const allGameComments = useSelector(state => state.comments)
+    console.log(allGameComments)
+    const sessionUser = useSelector(state => state.session.user)
 
     // console.log(singleGameDetails)
     useEffect(() => {
         dispatch(getSingleGameThunk(gameId))
+    }, [dispatch, gameId])
+
+    useEffect(() => {
+        dispatch(getAllCommentsThunk(gameId))
     }, [dispatch, gameId])
 
     if (!singleGameDetails) return null
@@ -29,6 +38,7 @@ const SingleGameDetailsPage = () => {
         day: '2-digit',
         year: '2-digit'
     })
+
 
     console.log('GAAAMEIMAGES', game_images)
 
@@ -53,6 +63,29 @@ const SingleGameDetailsPage = () => {
             <p>{singleGameDetails.genre}</p>
             <p>{singleGameDetails.price}</p>
             <p>{releaseDateFormatting}</p>
+
+            <hr style={{ color: 'black', backgroundColor: 'black', height: 1 }} />
+
+            <div className='comments-list'>
+                <ul>
+                    {singleGameDetails &&
+                        singleGameDetails.comments
+                        && singleGameDetails.comments.map(comment =>
+                        (
+                            <li key={comment.id}>
+                                <p>{new Date(comment.created_at).toLocaleDateString('en-US', {
+                                    month: '2-digit',
+                                    day: '2-digit',
+                                    year: '2-digit'
+                                })}</p>
+                                <p>{comment.comment}</p>
+                            </li>
+                        )
+
+                        )
+                    }
+                </ul>
+            </div>
         </>
     )
 }
