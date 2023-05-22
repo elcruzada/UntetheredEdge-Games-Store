@@ -239,3 +239,22 @@ def create_comment(id):
         return new_comment.to_dict()
 
     return {'errors': form.errors}
+
+@games_routes.route("/<int:id>/comments", methods=["PUT"])
+@login_required
+def update_comment(id):
+    form = CommentForm()
+
+    form['csrf_token'].data = request.cookies['csrf_token']
+    comment_to_edit = Comment.query.get(id)
+
+    if comment_to_edit.creator_id != current_user.id:
+        return { "errors": "You are not the owner of this game"}
+
+    if comment_to_edit:
+        if form.validate_on_submit():
+            comment_to_edit.description=form.data['comment']
+
+            db.session.commit()
+            return comment_to_edit.to_dict()
+    return { "errors": form.errors }
