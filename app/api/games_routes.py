@@ -2,9 +2,10 @@ from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import db, Game, GameImage, Comment, User
 from sqlalchemy import desc
-from datetime import date
+from datetime import date, datetime
 from ..forms.game_form import GameForm
 from ..forms.game_images_form import GameImagesForm
+from ..forms.comment_form import CommentForm
 
 games_routes = Blueprint('games', __name__, url_prefix='/api/games')
 
@@ -151,7 +152,7 @@ def delete_game(id):
 def add_images(id):
     game_to_add_image = Game.query.get(id)
     if not game_to_add_image:
-        return { "errors": "Game does not exist" }
+        return { "errors": "Game not found" }
 
     urls = request.form.getlist('urls')
     if not urls:
@@ -213,3 +214,28 @@ def delete_image(id, image_id):
 #     game = Game.query.get(id)
 #     if not game:
 #         return { "errors": "Game does not exist" }
+
+@games_routes.route('/<int:id>/comments', methods=['POST'])
+@login_required
+def create_comment(id):
+    form = CommentForm()
+
+    game_to_comment = Game.query.get(id)
+
+    if not game_to_comment:
+        return {'error': 'Game could not be found'}
+
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_comment = Comment (
+            game_id=game_to_comment.id,
+            user_id=current_user.id,
+            comment=form.data['comment'],
+            created_at=datetime.utcnow()
+        )
+
+        db.session.add(new_comment)
+        db.session.commit()
+        return new_comment.to_dict()
+
+    return {'errors': form.errors}
