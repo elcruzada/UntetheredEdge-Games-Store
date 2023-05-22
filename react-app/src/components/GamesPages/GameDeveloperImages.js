@@ -1,15 +1,15 @@
-
-import GameDeveloperForm from "./GameDeveloperForm"
 import { useState } from "react"
+import { useModal } from "../../context/Modal";
 
 
-const GameDeveloperImages = () => {
+const GameDeveloperImages = ({gameId}) => {
     //this page is to post new images onto a developer page
     //make sure that you pass in an actual gameId that isn't hard-coded
 
     //also need a way later to uncheck those that you don't want as preview image
     //or find a way that when you update an image, you can check preview image
-    const gameId = 3
+    // const gameId = 3
+    const { closeModal } = useModal()
     const [imageUrls, setImageUrls] = useState([]);
     const [newImageUrl, setNewImageUrl] = useState('');
     // const [previewStates, setPreviewStates] = useState({})
@@ -80,6 +80,8 @@ const GameDeveloperImages = () => {
         } catch (error) {
             console.error('Image upload error:', error);
         }
+
+        closeModal()
     };
 
     return (
@@ -92,7 +94,9 @@ const GameDeveloperImages = () => {
                         <h2>Add Images</h2>
                         {imageUrls.map((imageUrl, index) => (
                             <div key={index}>
-                                <img src={imageUrl} alt={`gamePreview ${index + 1}`} />
+                                <img src={imageUrl} alt={`gamePreview ${index + 1}`}
+                                style={{maxHeight: '10rem'}}
+                                />
                                 <button type="button" onClick={() => handleRemoveImage(index)}>
                                     Remove
                                 </button>

@@ -28,19 +28,31 @@ const SingleGameDetailsPage = () => {
         month: '2-digit',
         day: '2-digit',
         year: '2-digit'
-      })
+    })
+
+    console.log('GAAAMEIMAGES', game_images)
 
     return (
         <>
-        <h1>WHOOA</h1>
-        <img
-            src={previewImage.url} alt='single-game-preview'
-        />
-        <p>{singleGameDetails.description}</p>
-        <p>{singleGameDetails.developer}</p>
-        <p>{singleGameDetails.genre}</p>
-        <p>{singleGameDetails.price}</p>
-        <p>{releaseDateFormatting}</p>
+            <h1>WHOOA</h1>
+            <img
+                src={previewImage.url} alt='single-game-preview'
+            />
+            {game_images.map((image) => {
+                return (
+                    <img
+                        src={image.url}
+                        alt={`Details page images ${image.id}`}
+                        style={{ maxHeight: '15rem' }}
+                    >
+                    </img>
+                )
+            })}
+            <p>{singleGameDetails.description}</p>
+            <p>{singleGameDetails.developer}</p>
+            <p>{singleGameDetails.genre}</p>
+            <p>{singleGameDetails.price}</p>
+            <p>{releaseDateFormatting}</p>
         </>
     )
 }

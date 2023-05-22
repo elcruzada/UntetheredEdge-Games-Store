@@ -3,6 +3,7 @@ import UpdateGameDeveloperForm from "../GamesPages/UpdateGameDeveloperForm"
 import OpenModalButton from "../OpenModalButton"
 import DeleteGameModal from "../GamesPages/DeleteGameModal"
 import { useSelector } from "react-redux"
+import GameDeveloperImages from "../GamesPages/GameDeveloperImages"
 
 const DeveloperPortalGamesCard = ({game}) => {
     //game image will be at the left
@@ -38,6 +39,11 @@ const DeveloperPortalGamesCard = ({game}) => {
             <OpenModalButton
             buttonText="Delete your game"
             modalComponent={<DeleteGameModal gameId={game.id}/>}
+            />
+
+            <OpenModalButton
+            buttonText="Add images to your game!"
+            modalComponent={<GameDeveloperImages gameId={game.id}/>}
             />
         </div>
     )
