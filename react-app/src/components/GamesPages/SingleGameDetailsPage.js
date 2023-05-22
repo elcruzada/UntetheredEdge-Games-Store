@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getSingleGameThunk } from '../../store/games'
 import { getAllCommentsThunk } from '../../store/comments'
+import OpenModalButton from '../OpenModalButton'
+import DeleteCommentModal from '../DeleteCommentModal/DeleteComment'
 
 const SingleGameDetailsPage = () => {
     const { gameId } = useParams()
@@ -79,9 +81,14 @@ const SingleGameDetailsPage = () => {
                                     year: '2-digit'
                                 })}</p>
                                 <p>{comment.comment}</p>
+                                <OpenModalButton
+                                buttonText="Delete"
+                                modalComponent={<DeleteCommentModal commentId={comment.id}/>}
+                                />
+
+                                
                             </li>
                         )
-
                         )
                     }
                 </ul>
