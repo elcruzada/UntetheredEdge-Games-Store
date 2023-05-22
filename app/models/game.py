@@ -19,6 +19,8 @@ class Game(db.Model):
     is_promoted = db.Column(db.Boolean, default=False)
     is_on_sale = db.Column(db.Boolean, default=False)
 
+    comments = db.relationship('Comment', back_populates='game')
+
     creator = db.relationship('User', back_populates="game_creator")
 
     game_images = db.relationship('GameImage', back_populates="game", cascade="all, delete-orphan")
@@ -40,5 +42,6 @@ class Game(db.Model):
             'genre': self.genre,
             'is_promoted': self.is_promoted,
             'is_on_sale': self.is_on_sale,
-            'game_images' : [game_image.to_dict() for game_image in self.game_images]
+            'game_images' : [game_image.to_dict() for game_image in self.game_images],
+            'comments': [comment.to_dict() for comment in self.comments]
         }

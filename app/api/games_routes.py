@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import db, Game, GameImage, User
+from app.models import db, Game, GameImage, Comment, User
 from sqlalchemy import desc
 from datetime import date
 from ..forms.game_form import GameForm
@@ -207,3 +207,9 @@ def delete_image(id, image_id):
 #         db.session.commit()
 #         return new_game_image.to_dict()
 #     return { "errors": form.errors }
+
+# @games_routes.route('/<int:id>/comments', methods=['GET'])
+# def get_game_comments():
+#     game = Game.query.get(id)
+#     if not game:
+#         return { "errors": "Game does not exist" }

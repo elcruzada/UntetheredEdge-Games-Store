@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     profile_image = db.Column(db.String(255))
     account_capital = db.Column(db.Numeric(10,2))
 
+    comments = db.relationship('Comment', back_populates='user')
     orders = db.relationship('Order', back_populates='user')
 
     game_creator = db.relationship('Game', back_populates='creator', cascade='all, delete-orphan')

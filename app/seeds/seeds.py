@@ -1,4 +1,4 @@
-from app.models import db, User, Game, GameImage, Order, environment, SCHEMA
+from app.models import db, User, Game, GameImage, Comment, Order, environment, SCHEMA
 from sqlalchemy.sql import text
 from datetime import date
 
@@ -217,7 +217,48 @@ def seed_database():
     # Add order instances to the session
 
     # Commit the changes to the database
-
+    comment1 = Comment (
+        game_id=1,
+        user_id=2,
+        comment='OMG this game is just OMG wut OMG so good OMG',
+        created_at=date(2023, 4, 13)
+    )
+    comment2 = Comment (
+        game_id=2,
+        user_id=1,
+        comment='WHOA this has never happend to WHOA omg this has never',
+        created_at=date(1991, 2, 16)
+    )
+    comment3 = Comment (
+        game_id=3,
+        user_id=2,
+        comment='ARE you SERIOUS right now wut mate SERIOUS',
+        created_at=date(2020, 6, 13)
+    )
+    comment4 = Comment (
+        game_id=4,
+        user_id=3,
+        comment='I mean come on just insane come on just insane come on',
+        created_at=date(2018, 12, 25)
+    )
+    comment5 = Comment (
+        game_id=5,
+        user_id=1,
+        comment='Jeez, like wut goodness, jeez like WHOA WHOA WHOA',
+        created_at=date(2022, 5, 15)
+    )
+    comment6 = Comment (
+        game_id=1,
+        user_id=4,
+        comment='LIKE JUST LIKE JUST WUT LIKE WHOA WHOA LIKE',
+        created_at=date(2021, 10, 23)
+    )
+    comment7 = Comment (
+        game_id=1,
+        user_id=3,
+        comment='You have GOT TO BE just GOT TO BE just GOT',
+        created_at=date(2023, 1, 29)
+    )
 
     # Add OrderAndProduct instances to the session
 
@@ -254,6 +295,14 @@ def seed_database():
     db.session.add(game4_image_preview)
     db.session.add(game5_image_preview)
     db.session.add(game6_image_preview)
+
+    db.session.add(comment1)
+    db.session.add(comment2)
+    db.session.add(comment3)
+    db.session.add(comment4)
+    db.session.add(comment5)
+    db.session.add(comment6)
+    db.session.add(comment7)
 
     db.session.commit()
 
