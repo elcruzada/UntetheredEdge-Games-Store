@@ -260,6 +260,7 @@ if environment == "production":
         op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
         op.execute(f"ALTER TABLE games SET SCHEMA {SCHEMA};")
         op.execute(f"ALTER TABLE orders SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE comments SET SCHEMA {SCHEMA};")
         op.execute(f"ALTER TABLE carts SET SCHEMA {SCHEMA};")
         op.execute(f"ALTER TABLE game_images SET SCHEMA {SCHEMA};")
         op.execute(f"ALTER TABLE orders_and_products SET SCHEMA {SCHEMA};")

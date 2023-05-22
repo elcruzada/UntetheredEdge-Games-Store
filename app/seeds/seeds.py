@@ -318,10 +318,12 @@ def undo_database():
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.games RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.game_images RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.comments RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM users"))
         db.session.execute(text("DELETE FROM games"))
         db.session.execute(text("DELETE FROM game_images"))
+        db.session.execute(text("DELETE FROM comments"))
 
     db.session.commit()
 
