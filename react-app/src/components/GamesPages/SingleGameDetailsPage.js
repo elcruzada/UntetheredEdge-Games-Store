@@ -81,12 +81,15 @@ const SingleGameDetailsPage = () => {
                                     year: '2-digit'
                                 })}</p>
                                 <p>{comment.comment}</p>
+                                {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
+
                                 <OpenModalButton
                                 buttonText="Delete"
                                 modalComponent={<DeleteCommentModal commentId={comment.id}/>}
                                 />
+                                }
 
-                                
+
                             </li>
                         )
                         )

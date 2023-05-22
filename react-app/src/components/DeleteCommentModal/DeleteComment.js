@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import './DeleteGameModal.css'
+// import './DeleteComment.css'
 import { useDispatch } from 'react-redux'
 import { deleteGameThunk, getAllGamesThunk } from '../../store/games'
 import { useModal } from '../../context/Modal'
