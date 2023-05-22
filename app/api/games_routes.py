@@ -118,7 +118,7 @@ def update_game(id):
 @login_required
 def delete_game(id):
     game = Game.query.get(id)
-    if game.creator_id != current_user:
+    if game.creator_id != current_user.id:
         return { "error": "You are not authorized to delete this game" }
 
     db.session.delete(game)

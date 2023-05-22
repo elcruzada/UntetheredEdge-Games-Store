@@ -76,9 +76,7 @@ export const updateGameThunk = (gameId, gameInputs) => async (dispatch) => {
 export const deleteGameThunk = (gameId) => async (dispatch) => {
     const res = await fetch(`/api/games/${gameId}`, {
         method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        body: gameId
     })
 
     if (res.ok) {

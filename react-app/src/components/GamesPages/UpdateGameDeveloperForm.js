@@ -9,7 +9,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
     const history = useHistory()
     //eventually you're going to pass in the id of the game instead of a hardcoded value
     const singleGame = useSelector(state => state.games.singleGame)
-    const { closeModal } =useModal()
+    const { closeModal } = useModal()
     // const hardcodedId = 3
 
     // <OpenModalButton
