@@ -3,10 +3,11 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteGameThunk, getAllGamesThunk } from '../../store/games'
 import { useModal } from '../../context/Modal'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { deleteCommentThunk } from '../../store/comments'
 
 const DeleteCommentModal = ({commentId}) => {
+    const { gameId } = useParams()
     const dispatch = useDispatch()
     const history = useHistory()
     const { closeModal } = useModal()
@@ -20,7 +21,7 @@ const DeleteCommentModal = ({commentId}) => {
         dispatch(deleteCommentThunk(commentId))
         closeModal()
         dispatch(getAllGamesThunk())
-        // history.push('/games/')
+        history.push(`/games/${gameId}`)
     }
 
     return (

@@ -228,7 +228,7 @@ def create_comment(id):
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         new_comment = Comment (
-            game_id=game_to_comment.id,
+            game_id=form.data['game_id'],
             user_id=current_user.id,
             comment=form.data['comment'],
             created_at=datetime.utcnow()

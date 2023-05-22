@@ -5,7 +5,8 @@ import { useEffect } from 'react'
 import { getSingleGameThunk } from '../../store/games'
 import { getAllCommentsThunk } from '../../store/comments'
 import OpenModalButton from '../OpenModalButton'
-import DeleteCommentModal from '../DeleteCommentModal/DeleteComment'
+import DeleteCommentModal from '../CommentModals/DeleteComment'
+import PostCommentModal from '../CommentModals/PostComment'
 
 const SingleGameDetailsPage = () => {
     const { gameId } = useParams()
@@ -67,7 +68,12 @@ const SingleGameDetailsPage = () => {
             <p>{releaseDateFormatting}</p>
 
             <hr style={{ color: 'black', backgroundColor: 'black', height: 1 }} />
-
+            {gameId && sessionUser &&
+            <OpenModalButton
+                buttonText='Let the developer know what you think!'
+                modalComponent={<PostCommentModal gameId={gameId}/>}
+            />
+            }
             <div className='comments-list'>
                 <ul>
                     {singleGameDetails &&
@@ -83,10 +89,10 @@ const SingleGameDetailsPage = () => {
                                 <p>{comment.comment}</p>
                                 {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
 
-                                <OpenModalButton
-                                buttonText="Delete"
-                                modalComponent={<DeleteCommentModal commentId={comment.id}/>}
-                                />
+                                    <OpenModalButton
+                                        buttonText="Delete"
+                                        modalComponent={<DeleteCommentModal commentId={comment.id} />}
+                                    />
                                 }
 
 

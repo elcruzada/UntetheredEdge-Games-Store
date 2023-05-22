@@ -29,16 +29,17 @@ export const getAllCommentsThunk = (gameId) => async (dispatch) => {
     }
 }
 
-export const postCommentThunk = (commentInput) => async (dispatch) => {
+export const postCommentThunk = (id, commentInput) => async (dispatch) => {
     // const { game_id, comment } = commentInput
-    const res = await fetch(`/api/games/${commentInput.game_id}/comments`, {
+    // console.log('COMMMENTIIINPUT', commentInput)
+    const res = await fetch(`/api/games/${id}/comments`, {
         method: 'POST',
         body: commentInput
     })
 
     if (res.ok) {
-        const commentPost = await res.json()
-        dispatch(postCommentAction(commentPost))
+        // const commentPost = await res.json()
+        dispatch(postCommentAction(commentInput))
     }
 }
 
@@ -68,15 +69,15 @@ export default function commentsReducer(state = initialState, action) {
     }
 	switch (action.type) {
         case GET_ALLCOMMENTS:
-            console.log('newcommentsstate', newCommentsState)
-            console.log('AAACTION', action)
-            newCommentsState = { ...state, game: {} }
+            // console.log('newcommentsstate', newCommentsState)
+            // console.log('AAACTION', action)
+            newCommentsState = { ...state, game: {...state.game} }
             normalizerFunction((action.allComments.comments), (newCommentsState.game))
             return newCommentsState
         case POST_COMMENT:
             newCommentsState = { ...state, game: { ...state.game }, user: { ...state.user } }
-            newCommentsState.game = action.userInput
-            newCommentsState.user = action.userInput
+            newCommentsState.game[action.userInput.id] = action.userInput
+            newCommentsState.user[action.userInput.id] = action.userInput
             return newCommentsState
         case DELETE_COMMENT:
             newCommentsState = { ...state, game: { ...state.game }, user: { ...state.user } }
