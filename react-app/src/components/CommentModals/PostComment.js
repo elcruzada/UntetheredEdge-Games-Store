@@ -4,37 +4,36 @@ import { useHistory } from 'react-router-dom'
 import { useModal } from '../../context/Modal'
 
 import './PostComment.css'
-import { postCommentThunk } from '../../store/comments'
+import { getAllCommentsThunk, postCommentThunk } from '../../store/comments'
+import { getAllGamesThunk } from '../../store/games'
 
 
 //need star rating
 const PostCommentModal = ({ gameId }) => {
     const dispatch = useDispatch()
+    const comments = useSelector(state => state.comments)
     const history = useHistory()
     const [comment, setComment] = useState('')
     const [errors, setErrors] = useState({})
-
+    const [,forceRerender] = useState('')
     const { closeModal } = useModal()
 
 
-
-
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault()
         const formData = new FormData()
         formData.append('game_id', gameId)
         formData.append('comment', comment)
 
-        dispatch(postCommentThunk(gameId, formData)).then(() => {
-            closeModal()
-        }).catch(async (res) => {
-            const data = await res.json();
-            if (data && data.errors) {
-                setErrors(data.errors);
-            }
-        });
+        await dispatch(postCommentThunk(gameId, formData))
 
-        history.push(`/games/${gameId}`);
+
+
+        await dispatch(getAllGamesThunk())
+        closeModal()
+        forceRerender()
+        history.push('/games')
+        history.push(`/games/${gameId}`)
 
     }
 

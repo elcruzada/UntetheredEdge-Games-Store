@@ -43,15 +43,20 @@ export const postCommentThunk = (id, commentInput) => async (dispatch) => {
     }
 }
 
+export const updateCommentThunk = (id, commentInput) => async (dispatch) => {
+
+}
+
 export const deleteCommentThunk = (commentId) => async (dispatch) => {
     const res = await fetch(`/api/comments/${commentId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        body: commentId
     })
 
     if (res.ok) {
-        const deletedComment = await res.json()
+        // const deletedComment = await res.json()
         dispatch(deleteCommentAction(commentId))
-        return deletedComment
+        // return deletedComment
     }
 }
 

@@ -91,7 +91,9 @@ const SingleGameDetailsPage = () => {
 
                                     <OpenModalButton
                                         buttonText="Delete"
-                                        modalComponent={<DeleteCommentModal commentId={comment.id} />}
+                                        modalComponent={<DeleteCommentModal
+                                            gameId={gameId}
+                                            commentId={comment.id} />}
                                     />
                                 }
 

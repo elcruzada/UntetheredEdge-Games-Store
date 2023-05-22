@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 // import './DeleteComment.css'
 import { useDispatch } from 'react-redux'
 import { deleteGameThunk, getAllGamesThunk } from '../../store/games'
@@ -6,21 +6,25 @@ import { useModal } from '../../context/Modal'
 import { useHistory, useParams } from 'react-router-dom'
 import { deleteCommentThunk } from '../../store/comments'
 
-const DeleteCommentModal = ({commentId}) => {
-    const { gameId } = useParams()
+const DeleteCommentModal = ({gameId, commentId}) => {
+    // const { gameId } = useParams()
     const dispatch = useDispatch()
     const history = useHistory()
     const { closeModal } = useModal()
+    const [,forceRerender2] = useState('')
+
 
     const cancelGameDeleteHandler = () => {
         closeModal()
     }
 
 
-    const deleteCommentHandler = (commentId) => {
-        dispatch(deleteCommentThunk(commentId))
+    const deleteCommentHandler = async (commentId) => {
+       await dispatch(deleteCommentThunk(commentId))
+        // dispatch(getAllGamesThunk())
         closeModal()
-        dispatch(getAllGamesThunk())
+        forceRerender2()
+        history.push('/games')
         history.push(`/games/${gameId}`)
     }
 
@@ -30,7 +34,7 @@ const DeleteCommentModal = ({commentId}) => {
             <h2>This action cannot be reversed.</h2>
 
             <button
-            onClick={cancelGameDeleteHandler}
+            onClick={() => cancelGameDeleteHandler()}
             >Cancel</button>
             <button
             onClick={() => deleteCommentHandler(commentId)}
