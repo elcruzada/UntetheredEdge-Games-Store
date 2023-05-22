@@ -7,6 +7,7 @@ import { getAllCommentsThunk } from '../../store/comments'
 import OpenModalButton from '../OpenModalButton'
 import DeleteCommentModal from '../CommentModals/DeleteComment'
 import PostCommentModal from '../CommentModals/PostComment'
+import UpdateCommentModal from '../CommentModals/UpdateComment'
 
 const SingleGameDetailsPage = () => {
     const { gameId } = useParams()
@@ -22,9 +23,9 @@ const SingleGameDetailsPage = () => {
         dispatch(getSingleGameThunk(gameId))
     }, [dispatch, gameId])
 
-    useEffect(() => {
-        dispatch(getAllCommentsThunk(gameId))
-    }, [dispatch, gameId])
+    // useEffect(() => {
+    //     dispatch(getAllCommentsThunk(gameId))
+    // }, [dispatch, gameId])
 
     if (!singleGameDetails) return null
 
@@ -69,10 +70,10 @@ const SingleGameDetailsPage = () => {
 
             <hr style={{ color: 'black', backgroundColor: 'black', height: 1 }} />
             {gameId && sessionUser &&
-            <OpenModalButton
-                buttonText='Let the developer know what you think!'
-                modalComponent={<PostCommentModal gameId={gameId}/>}
-            />
+                <OpenModalButton
+                    buttonText='Let the developer know what you think!'
+                    modalComponent={<PostCommentModal gameId={gameId} />}
+                />
             }
             <div className='comments-list'>
                 <ul>
@@ -89,6 +90,17 @@ const SingleGameDetailsPage = () => {
                                 <p>{comment.comment}</p>
                                 {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
 
+
+                                    <OpenModalButton
+                                        buttonText="Update"
+                                        modalComponent={<UpdateCommentModal
+                                            commentId={comment.id}
+                                            gameId={gameId}
+                                        />}
+                                    />
+                                }
+
+                                {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
                                     <OpenModalButton
                                         buttonText="Delete"
                                         modalComponent={<DeleteCommentModal
@@ -96,7 +108,6 @@ const SingleGameDetailsPage = () => {
                                             commentId={comment.id} />}
                                     />
                                 }
-
 
                             </li>
                         )

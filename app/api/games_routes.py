@@ -240,21 +240,26 @@ def create_comment(id):
 
     return {'errors': form.errors}
 
+
 @games_routes.route("/<int:id>/comments", methods=["PUT"])
 @login_required
 def update_comment(id):
     form = CommentForm()
 
-    form['csrf_token'].data = request.cookies['csrf_token']
     comment_to_edit = Comment.query.get(id)
 
-    if comment_to_edit.creator_id != current_user.id:
+    if not comment_to_edit:
+        return { "errors": "Comment not found" }
+
+    if comment_to_edit.user_id != current_user.id:
         return { "errors": "You are not the owner of this game"}
 
-    if comment_to_edit:
-        if form.validate_on_submit():
-            comment_to_edit.description=form.data['comment']
+    form['csrf_token'].data = request.cookies['csrf_token']
+    # if comment_to_edit:
+    if form.validate_on_submit():
+        comment_to_edit.game_id=form.data['game_id']
+        comment_to_edit.comment=form.data['comment']
 
-            db.session.commit()
-            return comment_to_edit.to_dict()
+        db.session.commit()
+        return comment_to_edit.to_dict()
     return { "errors": form.errors }

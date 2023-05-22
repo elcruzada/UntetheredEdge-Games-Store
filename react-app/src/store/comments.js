@@ -3,6 +3,7 @@ import { getAllGamesThunk } from "./games"
 const GET_ALLCOMMENTS = "comments/GET_ALLCOMMENTS"
 const POST_COMMENT = "comments/POST_COMMENT"
 const DELETE_COMMENT = "comments/DELETE_COMMENT"
+const UPDATE_COMMENT = "comments/UPDATE_COMMENT"
 
 export const getAllCommentsAction = (allComments) => ({
     type: GET_ALLCOMMENTS,
@@ -17,6 +18,11 @@ export const postCommentAction = (userInput) => ({
 export const deleteCommentAction = (input) => ({
     type: DELETE_COMMENT,
     input
+})
+
+export const updateCommentAction = (update) => ({
+    type: UPDATE_COMMENT,
+    update
 })
 
 export const getAllCommentsThunk = (gameId) => async (dispatch) => {
@@ -38,13 +44,24 @@ export const postCommentThunk = (id, commentInput) => async (dispatch) => {
     })
 
     if (res.ok) {
-        // const commentPost = await res.json()
+        const commentPost = await res.json()
         dispatch(postCommentAction(commentInput))
+        return commentPost
     }
 }
 
 export const updateCommentThunk = (id, commentInput) => async (dispatch) => {
+    const res = await fetch(`/api/games/${id}/comments`, {
+        method: 'PUT',
+        body: commentInput
+    })
 
+    if (res.ok) {
+        console.log('REEES', res)
+        const commentUpdates = await res.json()
+        dispatch(updateCommentAction(commentUpdates))
+        return commentUpdates
+    }
 }
 
 export const deleteCommentThunk = (commentId) => async (dispatch) => {
@@ -83,6 +100,11 @@ export default function commentsReducer(state = initialState, action) {
             newCommentsState = { ...state, game: { ...state.game }, user: { ...state.user } }
             newCommentsState.game[action.userInput.id] = action.userInput
             newCommentsState.user[action.userInput.id] = action.userInput
+            return newCommentsState
+        case UPDATE_COMMENT:
+            newCommentsState = { ...state, game: { ...state.game }, user: { ...state.user } }
+            newCommentsState.game[action.update.id] = action.update
+            newCommentsState.user[action.update.id] = action.update
             return newCommentsState
         case DELETE_COMMENT:
             newCommentsState = { ...state, game: { ...state.game }, user: { ...state.user } }
