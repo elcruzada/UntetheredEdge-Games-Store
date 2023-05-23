@@ -18,6 +18,10 @@ const PostCommentModal = ({ gameId }) => {
     const [,forceRerender] = useState('')
     const { closeModal } = useModal()
 
+    useEffect(() => {
+        if (!comment) errors.comment = "Comment is required"
+        if (comment.length < 10) errors.comment = "Comment must be longer than 10 characters"
+    }, [comment])
 
     const submitHandler = async (e) => {
         e.preventDefault()
@@ -53,7 +57,7 @@ const PostCommentModal = ({ gameId }) => {
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                 />
-
+                {errors && errors.comment && <p>{errors.comment}</p>}
                 <button
                     className='post-review-modal-button'
                     disabled={comment.length < 10 ? true : false}

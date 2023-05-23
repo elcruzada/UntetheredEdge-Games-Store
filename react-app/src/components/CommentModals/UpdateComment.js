@@ -11,6 +11,12 @@ const UpdateCommentModal = ({commentId, gameId}) => {
     const { closeModal } = useModal()
     const [editComment, setEditComment] = useState('')
     const history = useHistory()
+    const [errors, setErrors] = useState({})
+
+    useEffect(() => {
+        if (!editComment) errors.comment = "Comment is required"
+        if (editComment.length < 10) errors.comment = "Comment must be longer than 10 characters"
+    }, [editComment])
 
     const submitHandler = async (e) => {
         e.preventDefault()
@@ -31,7 +37,6 @@ const UpdateCommentModal = ({commentId, gameId}) => {
                 className="post-review-modal-container"
                 onSubmit={submitHandler}
             >
-
                 <h1 className='how-stay'>Thoughts?</h1>
                 <textarea
                     className="commentModalText"
@@ -41,7 +46,7 @@ const UpdateCommentModal = ({commentId, gameId}) => {
                     value={editComment}
                     onChange={(e) => setEditComment(e.target.value)}
                 />
-
+                {errors && errors.comment && <p>{errors.comment}</p>}
                 <button
                     className='post-review-modal-button'
                     disabled={editComment.length < 10 ? true : false}

@@ -57,7 +57,7 @@ const GameDeveloperForm = () => {
         }
 
         const res = await dispatch(createGameThunk(formData))
-        // history.push('/')
+        history.push('/developer/portal')
     }
 
     // const addImageHandler = async () => {

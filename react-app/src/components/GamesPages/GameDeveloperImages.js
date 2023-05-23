@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useModal } from "../../context/Modal";
+import { useHistory } from "react-router-dom";
 
 
 const GameDeveloperImages = ({gameId}) => {
@@ -9,6 +10,7 @@ const GameDeveloperImages = ({gameId}) => {
     //also need a way later to uncheck those that you don't want as preview image
     //or find a way that when you update an image, you can check preview image
     // const gameId = 3
+    const history = useHistory()
     const { closeModal } = useModal()
     const [imageUrls, setImageUrls] = useState([]);
     const [newImageUrl, setNewImageUrl] = useState('');
@@ -80,7 +82,8 @@ const GameDeveloperImages = ({gameId}) => {
         } catch (error) {
             console.error('Image upload error:', error);
         }
-
+        history.push('/games')
+        history.push('/developer/portal')
         closeModal()
     };
 
