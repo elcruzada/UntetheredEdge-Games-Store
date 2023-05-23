@@ -73,8 +73,6 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
             history.push(`/games/${gameId}`)
         }
 
-
-
     }
 
     useEffect(() => {

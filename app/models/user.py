@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     profile_image = db.Column(db.String(255))
-    account_capital = db.Column(db.Numeric(10,2))
+    account_capital = db.Column(db.Float)
 
     comments = db.relationship('Comment', back_populates='user')
     orders = db.relationship('Order', back_populates='user')

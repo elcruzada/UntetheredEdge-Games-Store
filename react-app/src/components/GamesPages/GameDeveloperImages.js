@@ -89,8 +89,8 @@ const GameDeveloperImages = ({gameId}) => {
 
     return (
         <>
-            <div className='global-outer-container'>
-                <div className='global-inner-container'>
+            {/* <div className='global-outer-container'> */}
+                <div className='modal'>
 
                     <h2>Add images to your game</h2>
                     <form onSubmit={handleImageUpload}>
@@ -126,7 +126,7 @@ const GameDeveloperImages = ({gameId}) => {
                         <button type="submit">Upload Images</button>
                     </form>
                 </div>
-            </div>
+            {/* </div> */}
         </>
     )
 }

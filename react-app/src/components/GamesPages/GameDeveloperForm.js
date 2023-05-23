@@ -54,10 +54,10 @@ const GameDeveloperForm = () => {
             // imageURLs.forEach((url) => {
             //     formData.append('images', url)
             // })
+            const res = await dispatch(createGameThunk(formData))
+            history.push('/developer/portal')
         }
 
-        const res = await dispatch(createGameThunk(formData))
-        history.push('/developer/portal')
     }
 
     // const addImageHandler = async () => {

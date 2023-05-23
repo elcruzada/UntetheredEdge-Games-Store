@@ -41,7 +41,7 @@ function SignupFormModal() {
 				<label>
 					Email
 					<input
-						type="text"
+						type="email"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 
@@ -71,7 +71,7 @@ function SignupFormModal() {
 						type="password"
 						value={confirmPassword}
 						onChange={(e) => setConfirmPassword(e.target.value)}
-						
+
 					/>
 				</label>
 				<button type="submit">Sign Up</button>
