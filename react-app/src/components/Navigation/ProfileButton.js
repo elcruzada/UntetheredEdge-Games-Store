@@ -5,6 +5,7 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import { NavLink } from "react-router-dom";
+import './ProfileButton.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -39,15 +40,17 @@ function ProfileButton({ user }) {
   const closeMenu = () => setShowMenu(false);
 
   return (
-    <>
+   <>
       <button onClick={openMenu}>
         <i className="fas fa-user-circle" />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-              <NavLink exact to='/developer/portal'>
-                Developer Portal
+              <NavLink exact to='/developer/portal'
+              style={{color: 'white'}}
+              >
+                Your Developer Portal
               </NavLink>
             <li>{user.username}</li>
             <li>{user.email}</li>
@@ -73,7 +76,7 @@ function ProfileButton({ user }) {
           </>
         )}
       </ul>
-    </>
+      </>
   );
 }
 

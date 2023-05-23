@@ -8,6 +8,8 @@ import OpenModalButton from '../OpenModalButton'
 import DeleteCommentModal from '../CommentModals/DeleteComment'
 import PostCommentModal from '../CommentModals/PostComment'
 import UpdateCommentModal from '../CommentModals/UpdateComment'
+import Carousel from '../UI/Carousel'
+import './SingleGameDetailsPage.css'
 
 const SingleGameDetailsPage = () => {
     const { gameId } = useParams()
@@ -33,6 +35,7 @@ const SingleGameDetailsPage = () => {
     if (!game_images || game_images.length === 0) return null
 
     const previewImage = singleGameDetails.game_images.find(game => game.preview === true)
+    // const previewImage = singleGameDetails.preview
     if (!previewImage.url) return null
 
     const dateFormatting = new Date(singleGameDetails.release_date)
@@ -44,15 +47,21 @@ const SingleGameDetailsPage = () => {
     })
 
 
-    console.log('GAAAMEIMAGES', game_images)
+    // console.log('GAAAMEIMAGES', game_images)
 
     return (
         <>
-            <h1>WHOOA</h1>
+        <div className='single-details-page-wrapper'>
+
+        <div className='single-details-page-inner-wrapper'>
+
+
+
+            <h1>{singleGameDetails && singleGameDetails.name}</h1>
             <img
                 src={previewImage.url} alt='single-game-preview'
             />
-            {game_images.map((image) => {
+            {/* {game_images.map((image) => {
                 return (
                     <img
                         src={image.url}
@@ -61,7 +70,8 @@ const SingleGameDetailsPage = () => {
                     >
                     </img>
                 )
-            })}
+            })} */}
+            <Carousel images={game_images}/>
             <p>{singleGameDetails.description}</p>
             <p>{singleGameDetails.developer}</p>
             <p>{singleGameDetails.genre}</p>
@@ -69,6 +79,9 @@ const SingleGameDetailsPage = () => {
             <p>{releaseDateFormatting}</p>
 
             <hr style={{ color: 'black', backgroundColor: 'black', height: 1 }} />
+
+            {!sessionUser && <h2>Log in to leave a comment!</h2>}
+
             {gameId && sessionUser &&
                 <OpenModalButton
                     buttonText='Let the developer know what you think!'
@@ -114,6 +127,8 @@ const SingleGameDetailsPage = () => {
                         )
                     }
                 </ul>
+            </div>
+            </div>
             </div>
         </>
     )

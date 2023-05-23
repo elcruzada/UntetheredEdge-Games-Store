@@ -1,5 +1,23 @@
+.navbar-wrapper {
+  height: 5rem;
+  margin: none;
+  background-color: rgb(115, 95, 50);
+  color: white;
+}
+
+.navbar-wrapper li {
+  padding: .4rem;
+}
+
 .profile-dropdown {
+  /* position: absolute; */
+  margin-right: auto;
+}
+
+.profile-button-wrapper {
   position: absolute;
+  top: 4rem;
+  right: 8rem;
 }
 
 .hidden {
