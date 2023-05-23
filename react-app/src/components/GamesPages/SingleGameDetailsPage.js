@@ -34,7 +34,9 @@ const SingleGameDetailsPage = () => {
     const { game_images } = singleGameDetails
     if (!game_images || game_images.length === 0) return null
 
-    const previewImage = singleGameDetails.game_images.find(game => game.preview === true)
+    // const previewImage = singleGameDetails.game_images.find(game => game.preview === true)
+    const previewImage = singleGameDetails.preview
+    console.log('PREEVIEW', previewImage)
     const noPreview = singleGameDetails.game_images.find(game => game.preview === false)
     // const previewImage = singleGameDetails.preview
     // if (!previewImage.url || !noPreview.game_images.url) return null
@@ -60,16 +62,11 @@ const SingleGameDetailsPage = () => {
 
 
                     <h1>{singleGameDetails && singleGameDetails.name}</h1>
-
-                    {noPreview.url &&
-
-                        <img
-                            src={noPreview.url}
-                            // src={'https://e7.pngegg.com/pngimages/152/453/png-clipart-graphy-random-game-label.png'}
-                            alt='single-game-preview'
-                        />
-
-                    }
+                    {previewImage ? (
+                        <img src={previewImage} alt='preview-image' />
+                    ) : (
+                        <img src={noPreview.url} alt='preview-image' />
+                    )}
                     {/* {game_images.map((image) => {
                 return (
                     <img

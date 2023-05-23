@@ -56,15 +56,20 @@ def get_all_games():
 def get_single_game(id):
     game = Game.query.get(id)
     if not game:
-        return { "errors": "Game not found"}
-    # preview_image = game.game_images.filter_by(preview=True).first()
-    # preview_image_url = preview_image.url if preview_image else None
-    # return {
-    #     "id": game.id,
-    #     "title": game.title,
-    #     "preview_image": preview_image_url
-    # }
-    return game.to_dict()
+        return { "errors": "Game not found" }
+
+    preview_image = None
+    for image in game.game_images:
+        if image.preview:
+            preview_image = image
+            break
+
+    preview_image_url = preview_image.url if preview_image is not None else None
+
+    game_info = game.to_dict()
+    game_info["preview"] = preview_image_url
+
+    return game_info
 
 @games_routes.route('/new', methods=['POST'])
 @login_required
