@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getSingleGameThunk, updateGameThunk } from "../../store/games"
 import { useModal } from "../../context/Modal"
 import { useHistory } from "react-router-dom"
+import './UpdateGameDeveloperForm.css'
 
 const UpdateGameDeveloperForm = ({gameId}) => {
     const dispatch = useDispatch()
@@ -67,11 +68,11 @@ const UpdateGameDeveloperForm = ({gameId}) => {
     }, [dispatch, gameId])
 
     return (
-        <>
-            <div className='game-developer-form-container'>
+
+            <div className='game-developer-form-container2'>
                 <form onSubmit={submitHandler}>
                     <h1>Publish your game with us!</h1>
-                    <div className='form-row'>
+                    <div className='form-row2'>
                         <label>Your game name</label>
                         <input
                             id='gameName'
@@ -82,7 +83,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
-                    <div className='form-row'>
+                    <div className='form-row2'>
                         <label>Your developer name</label>
                         <input
                             id='gameName'
@@ -93,7 +94,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
-                    <div className='form-row'>
+                    <div className='form-row2'>
                         <label>Your publisher</label>
                         <input
                             id='gamePublisher'
@@ -104,7 +105,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
-                    <div className='form-row'>
+                    <div className='form-row2'>
                         <label>Your publisher</label>
                         <input
                             id='gameGenre'
@@ -115,7 +116,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
-                    <div className='form-row'>
+                    <div className='form-row2'>
                         <label>Price of your game</label>
                         <input
                             id='gamePrice'
@@ -126,7 +127,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
-                    <div className='form-row'>
+                    <div className='form-row2'>
                         <label>Write up a snazzy description for your game</label>
                         <textarea
                             id='gameDescription'
@@ -142,7 +143,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         value={releaseDate}
                         onChange={(e) => setReleaseDate(e.target.value)}
                     /> */}
-                    <div className='form-row'>
+                    <div className='form-row2'>
                         <label>Want your game promoted?</label>
                         <input
                             id='gamePromotion'
@@ -186,7 +187,6 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                     </div>
                 </form>
             </div>
-        </>
     )
 }
 

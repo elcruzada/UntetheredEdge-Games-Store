@@ -1,0 +1,54 @@
+.game-developer-form-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    border-radius: 0.25rem;
+    padding: 3rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /* margin-top: 1rem; */
+}
+
+.form-container2 {
+    max-width: 1500px;
+}
+
+
+.form-row2 input[type="text"],
+.form-row2 textarea {
+background-color: #f7f7f7;
+  width: 80%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.form-row2 textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+.form-row2 label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-bottom: .25rem;
+    margin-top: .5rem;
+  }
+
+
+  button[type='submit'] {
+      background-color: lightgoldenrodyellow;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 2px black;
+    }
+
+button[type="submit"]:hover {
+    background-color: rgb(198, 151, 73);
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px black;
+  }

@@ -21,7 +21,7 @@ function Navigation({ isLoaded }){
 				exact to='/developer'
 				style={{textDecoration: 'none', color: 'white', fontFamily: 'Segoe', fontWeight: 'light'}}
 				>
-					PUBLISH YOUR GAME WITH US TODAY
+					PUBLISH WITH US TODAY
 				</NavLink>
 			</li>
 			{isLoaded && (
