@@ -19,14 +19,29 @@ const GameDeveloperForm = () => {
     const [price, setPrice] = useState(0)
     const [releaseDate, setReleaseDate] = useState('')
     const [isPromoted, setIsPromoted] = useState(false)
-    const [imageURLs, setImageURLs] = useState([])
+    // const [imageURLs, setImageURLs] = useState([])
     // const [newURL, setNewURL] = useState('')
 
     const [errors, setErrors] = useState({})
 
+    useEffect(() => {
+        const errors = {}
+
+        if (!name) errors.name = "Title for your game is required"
+        if (!description) errors.description = "Game description required"
+        if (!developer) errors.developer = "Developer info required"
+        if (!publisher) errors.publisher = "Publisher info required"
+        if (!price) errors.price = "Price for your game is required"
+        if (!genre) errors.genre = "Genre is required"
+        if (!releaseDate) errors.releaseDate = "Release date is required"
+
+        setErrors(errors)
+    }, [name, description, developer, publisher, genre, releaseDate])
+
     const submitHandler = async (e) => {
         e.preventDefault()
         const formData = new FormData()
+
         if (!Object.values(errors).length) {
             formData.append('name', name)
             formData.append('description', description)
@@ -83,6 +98,19 @@ const GameDeveloperForm = () => {
     return (
         <>
             <div className='game-developer-form-container'>
+                <div className='game-developer-errors' style={{color: 'black', padding: '3rem'}}>
+
+                <ul>
+                    {errors.name && <li>{errors.name}</li>}
+                    {errors.description && <li>{errors.description}</li>}
+                    {errors.developer && <li>{errors.developer}</li>}
+                    {errors.publisher && <li>{errors.publisher}</li>}
+                    {errors.price && <li>{errors.price}</li>}
+                    {errors.genre && <li>{errors.genre}</li>}
+                    {errors.releaseDate && <li>{errors.releaseDate}</li>}
+
+                </ul>
+                </div>
                 <form onSubmit={submitHandler}>
                     <h1>Publish your game with us!</h1>
                     <div className='form-row'>
@@ -96,6 +124,7 @@ const GameDeveloperForm = () => {
                         >
                         </input>
                     </div>
+                    {/* {errors.name && <p>{errors.name}</p>} */}
                     <div className='form-row'>
                         <label>Your developer name</label>
                         <input
