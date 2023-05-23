@@ -66,6 +66,19 @@ const UpdateGameDeveloperForm = ({gameId}) => {
     }, [singleGame])
 
     useEffect(() => {
+        const errors = {}
+
+        if (!name) errors.name = "Title for your game is required"
+        if (!description) errors.description = "Game description required"
+        if (!developer) errors.developer = "Developer info required"
+        if (!publisher) errors.publisher = "Publisher info required"
+        if (!price) errors.price = "Price for your game is required"
+        if (!genre) errors.genre = "Genre is required"
+
+        setErrors(errors)
+    }, [name, description, developer, publisher, genre])
+
+    useEffect(() => {
         dispatch(getSingleGameThunk(gameId))
     }, [dispatch, gameId])
 
@@ -84,6 +97,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                             placeholder='Enter your game name here'
                         >
                         </input>
+                    {errors.name && <p>{errors.name}</p>}
                     </div>
                     <div className='form-row2'>
                         <label>Your developer name</label>
@@ -96,6 +110,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
+                    {errors.name && <p>{errors.developer}</p>}
                     <div className='form-row2'>
                         <label>Your publisher</label>
                         <input
@@ -107,8 +122,9 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
+                    {errors.name && <p>{errors.publisher}</p>}
                     <div className='form-row2'>
-                        <label>Your publisher</label>
+                        <label>Your genre</label>
                         <input
                             id='gameGenre'
                             type='text'
@@ -118,6 +134,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
+                    {errors.name && <p>{errors.genre}</p>}
                     <div className='form-row2'>
                         <label>Price of your game</label>
                         <input
@@ -129,6 +146,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </input>
                     </div>
+                    {errors.name && <p>{errors.price}</p>}
                     <div className='form-row2'>
                         <label>Write up a snazzy description for your game</label>
                         <textarea
@@ -139,6 +157,7 @@ const UpdateGameDeveloperForm = ({gameId}) => {
                         >
                         </textarea>
                     </div>
+                    {errors.name && <p>{errors.description}</p>}
                     {/* <input
                         id="gameReleaseDate"
                         type="date"
