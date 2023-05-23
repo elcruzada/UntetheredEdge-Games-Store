@@ -100,6 +100,11 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
         <div className='game-developer-form-container2'>
             <form onSubmit={submitHandler}>
                 <h1>Publish your game with us!</h1>
+                    {errors.name && <p>{errors.name}</p>}
+                    {errors.developer && <p>{errors.developer}</p>}
+                    {errors.publisher && <p>{errors.publisher}</p>}
+                    {errors.genre && <p>{errors.genre}</p>}
+                    {errors.description && <p>{errors.description}</p>}
                 <div className='form-row2'>
                     <label>Your game name</label>
                     <input
@@ -110,7 +115,6 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
                         placeholder='Enter your game name here'
                     >
                     </input>
-                    {errors.name && <p>{errors.name}</p>}
                 </div>
                 <div className='form-row2'>
                     <label>Your developer name</label>
@@ -122,7 +126,7 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
                         placeholder='Enter your developer name here'
                     >
                     </input>
-                    {errors.name && <p>{errors.developer}</p>}
+
                 </div>
                 <div className='form-row2'>
                     <label>Your publisher</label>
@@ -134,7 +138,7 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
                         placeholder='UntetheredEdge Interactive unless otherwise noted'
                     >
                     </input>
-                    {errors.name && <p>{errors.publisher}</p>}
+
                 </div>
                 <div className='form-row2'>
                     <label>Your genre</label>
@@ -146,7 +150,7 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
                         placeholder='i.e. Shooter, RPG, Puzzle, Platformer...'
                     >
                     </input>
-                    {errors.name && <p>{errors.genre}</p>}
+
                 </div>
                 <div className='form-row2'>
                     <label>Price of your game</label>
@@ -169,7 +173,7 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
                         placeholder='Enter a description here'
                     >
                     </textarea>
-                    {errors.name && <p>{errors.description}</p>}
+
                 </div>
                 {/* <input
                         id="gameReleaseDate"
