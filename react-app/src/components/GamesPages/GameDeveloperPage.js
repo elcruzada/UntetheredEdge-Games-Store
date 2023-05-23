@@ -25,7 +25,7 @@ const GameDeveloperPage = () => {
                 <NavLink exact to='/developer/portal'
                 style={{textDecoration: 'none', fontStyle: 'Calibri', fontSize: '4rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '2rem'}}
                 >
-                    Check out the games your developer portal
+                    Check out games in your developer portal
                 </NavLink>
             {/* </div> */}
             </div>

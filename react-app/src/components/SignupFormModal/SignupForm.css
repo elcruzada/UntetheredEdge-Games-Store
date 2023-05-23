@@ -1,0 +1,79 @@
+button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  button.disabled:hover {
+    background-color: gray;
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .modal h1 {
+    margin-top: 0;
+  }
+
+  .modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .modal label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .modal input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #272121;
+  }
+
+  .modal button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #65a4af;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #333;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    }
+
+  .modal button:hover {
+    background-color: #00becc;
+  }
+
+  .modal .error {
+    color: red;
+    margin-top: 10px;
+  }
+
+  .login-form-demo {
+    text-decoration: underline;
+    border-bottom: 1px solid rgb(206, 89, 89);
+    }
+
+
+
+.submit {
+    text-decoration: underline;
+border-bottom: 1px solid rgb(206, 89, 89);
+}

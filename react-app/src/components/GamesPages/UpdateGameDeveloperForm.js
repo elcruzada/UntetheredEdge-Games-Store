@@ -29,6 +29,8 @@ const UpdateGameDeveloperForm = ({gameId}) => {
     const [isPromoted, setIsPromoted] = useState('')
     const [errors, setErrors] = useState({})
 
+
+
     const submitHandler = async (e) => {
         e.preventDefault()
         const formData = new FormData()

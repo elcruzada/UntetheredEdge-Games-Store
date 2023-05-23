@@ -94,13 +94,15 @@ const SingleGameDetailsPage = () => {
                         singleGameDetails.comments
                         && singleGameDetails.comments.map(comment =>
                         (
-                            <li key={comment.id}>
+                            <li key={comment.id}
+                            style={{border: '1px solid white', width: '15rem'}}
+                            >
                                 <p>{new Date(comment.created_at).toLocaleDateString('en-US', {
                                     month: '2-digit',
                                     day: '2-digit',
                                     year: '2-digit'
                                 })}</p>
-                                <p>{comment.comment}</p>
+                                <p>{`"${comment.comment}"`}</p>
                                 {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
 
 

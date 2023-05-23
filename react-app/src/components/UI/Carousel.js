@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Carousel.css';
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images, homepage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPreviousSlide = () => {
@@ -17,6 +17,21 @@ const Carousel = ({ images }) => {
       <button className="carousel__prev-button" onClick={goToPreviousSlide}>
         &lt;
       </button>
+      {homepage ?
+      <div className="carousel__slide-container">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`carousel__slide ${index === currentIndex ? 'active' : ''}`}
+            style={{ backgroundImage: `url(${image.url})` }}
+          >
+            <img src={image.preview}
+            style={{height: '7rem', borderRadius: '10px'}}
+            />
+        </div>
+        ))}
+      </div>
+      :
       <div className="carousel__slide-container">
         {images.map((image, index) => (
           <div
@@ -30,6 +45,7 @@ const Carousel = ({ images }) => {
         </div>
         ))}
       </div>
+      }
       <button className="carousel__next-button" onClick={goToNextSlide}>
         &gt;
       </button>

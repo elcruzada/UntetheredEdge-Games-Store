@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import './GameDeveloperPage.css'
+import './GameDeveloperPortal.css'
 import { useEffect } from 'react'
 import { getAllGamesThunk } from '../../store/games'
 import DeveloperPortalGamesCard from '../UI/DeveloperPortalGamesCard'
@@ -23,13 +23,22 @@ const GameDeveloperPortal = () => {
     // console.log(developerPortalGames)
 
     return (
-        <>
+        <div className='game-developer-portal-outer-wrapper'>
+            <div className='game-developer-portal-inner-wrapper'>
+
+        {
+            !sessionUser ? <h1
+            style={{color: 'black'}}
+            >Create an account to see your developer portal!</h1>
+            :
         <div className='game-developer-portal-wrapper'>
             {developerPortalGames && developerPortalGames.map(game => {
                return <DeveloperPortalGamesCard game={game}/>
             })}
         </div>
-        </>
+        }
+            </div>
+        </div>
     )
 }
 
