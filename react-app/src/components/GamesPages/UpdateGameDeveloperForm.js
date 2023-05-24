@@ -10,6 +10,7 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
     const history = useHistory()
     //eventually you're going to pass in the id of the game instead of a hardcoded value
     const singleGame = useSelector(state => state.games.singleGame)
+    console.log('SSSINGLE', singleGame)
     const { closeModal } = useModal()
     // const hardcodedId = 3
 
@@ -70,7 +71,11 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
 
             closeModal()
             await dispatch(updateGameThunk(gameId, formData))
-            history.push(`/games/${gameId}`)
+            if (singleGame.game_images.length > 0) {
+                history.push(`/games/${gameId}`)
+            } else {
+                history.push(`/developer/portal`)
+            }
         }
 
     }

@@ -84,13 +84,18 @@ const SingleGameDetailsPage = () => {
                     <p>{singleGameDetails.price}</p>
                     <p>{releaseDateFormatting}</p>
 
-                    <hr style={{ color: 'black', backgroundColor: 'black', height: 1 }} />
+                    <div>
 
-                    {!sessionUser && <h2>Log in to leave a comment!</h2>}
+                    <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
+                    </div>
+
+                    {!sessionUser && <h2
+                    style={{border: '1px solid white', width: '20rem', padding: '1rem', color: 'black', backgroundColor: 'white', fontWeight: 'bold', borderRadius: '5px', textAlign: 'center'}}
+                    >Log in to leave a comment!</h2>}
 
                     {gameId && sessionUser &&
                         <OpenModalButton
-                            buttonText='Let the developer know what you think!'
+                            buttonText='CLICK TO LEAVE A COMMENT. LET THE DEVELOPER KNOW WHAT YOU THINK!'
                             modalComponent={<PostCommentModal gameId={gameId} />}
                         />
                     }

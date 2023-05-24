@@ -1,0 +1,27 @@
+.open-modal-button {
+    background-color: rgb(198, 151, 73);
+    box-shadow: 0 2px 4px black;
+    border: line;
+    color: black;
+    font-weight: bold;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.open-modal-button:hover {
+    background-color: beige;
+}
+
+.submit-new-application-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
