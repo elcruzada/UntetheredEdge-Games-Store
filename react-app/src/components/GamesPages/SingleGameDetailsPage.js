@@ -42,7 +42,9 @@ const SingleGameDetailsPage = () => {
     }
 
     const viewInCartHandler = async () => {
-        history.push(`/cart`)
+        if (sessionUser) {
+            history.push(`/cart`)
+        }
     }
 
     if (!singleGameDetails) return null
