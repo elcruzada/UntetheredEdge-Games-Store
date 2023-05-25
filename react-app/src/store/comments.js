@@ -1,4 +1,4 @@
-import { getAllGamesThunk } from "./games"
+import { getAllGamesThunk, getSingleGameThunk } from "./games"
 
 const GET_ALLCOMMENTS = "comments/GET_ALLCOMMENTS"
 const POST_COMMENT = "comments/POST_COMMENT"
@@ -72,6 +72,7 @@ export const deleteCommentThunk = (commentId) => async (dispatch) => {
 
     if (res.ok) {
         // const deletedComment = await res.json()
+        // dispatch(getSingleGameThunk(gameId))
         dispatch(deleteCommentAction(commentId))
         // return deletedComment
     }

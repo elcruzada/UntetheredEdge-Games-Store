@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 // import './DeleteComment.css'
 import { useDispatch } from 'react-redux'
-import { deleteGameThunk, getAllGamesThunk } from '../../store/games'
+import { deleteGameThunk, getAllGamesThunk, getSingleGameThunk } from '../../store/games'
 import { useModal } from '../../context/Modal'
 import { useHistory, useParams } from 'react-router-dom'
 import { deleteCommentThunk } from '../../store/comments'
@@ -19,12 +19,14 @@ const DeleteCommentModal = ({gameId, commentId}) => {
     }
 
 
-    const deleteCommentHandler = async (commentId) => {
-       await dispatch(deleteCommentThunk(commentId))
+    const deleteCommentHandler = async (gameId, commentId) => {
+        await dispatch(deleteCommentThunk(commentId))
+        await dispatch(getSingleGameThunk(gameId))
         // dispatch(getAllGamesThunk())
         closeModal()
-        forceRerender2()
-        history.push('/games')
+        // forceRerender2()
+        // history.push('/games')
+
         history.push(`/games/${gameId}`)
     }
 
@@ -37,7 +39,7 @@ const DeleteCommentModal = ({gameId, commentId}) => {
             onClick={() => cancelGameDeleteHandler()}
             >Cancel</button>
             <button
-            onClick={() => deleteCommentHandler(commentId)}
+            onClick={() => deleteCommentHandler(gameId, commentId)}
             >Delete</button>
         </div>
     )

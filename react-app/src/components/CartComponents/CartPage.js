@@ -39,6 +39,19 @@ const CartPage = () => {
         useEffect(() => {
             dispatch(getUserCartThunk())
         },[dispatch])
+
+        const cartOrderHandler = async () => {
+            try {
+                const res = await fetch(`/api/orders`, {
+                    method: 'POST'
+                })
+                if (res.ok) {
+                    const newCart = await res.json()
+                }
+            } catch (error) {
+                console.error('Cart error', error)
+            }
+        }
         // if (!cart) return null
     return (
 
@@ -50,10 +63,12 @@ const CartPage = () => {
                     <div className='cart-page-checkout'>
                         <h1>Games Summary</h1>
                         <p>Total {total} </p>
-                        <button>Checkout</button>
+                        <button
+                        onClick={cartOrderHandler}
+                        >Checkout</button>
                     </div>
                     <div className='cart-page-games-card-container'>
-                        {cart === undefined ?
+                        {cart.length === 0 ?
                             <NavLink exact to='/'
                             style={{textDecoration: 'none', fontSize: '3rem', border: '1px solid white', color: 'white', boxShadow: '5px 5px 5px gray'}}
                             >

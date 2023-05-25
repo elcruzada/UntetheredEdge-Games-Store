@@ -12,6 +12,7 @@ import SingleGameDetailsPage from "./components/GamesPages/SingleGameDetailsPage
 import GameDeveloperImages from "./components/GamesPages/GameDeveloperImages";
 import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 import CartPage from "./components/CartComponents/CartPage";
+import UserProfilePage from "./components/UserProfile/UserProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path='/cart'>
             <CartPage />
+          </Route>
+          <Route exact path='/profile'>
+            <UserProfilePage />
           </Route>
           <Route exact path='/developer'>
             <GameDeveloperPage />

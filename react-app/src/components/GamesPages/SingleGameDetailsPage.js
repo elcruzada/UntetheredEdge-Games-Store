@@ -152,6 +152,7 @@ const SingleGameDetailsPage = () => {
                                             <OpenModalButton
                                                 buttonText="Update"
                                                 modalComponent={<UpdateCommentModal
+                                                    comment={comment.comment}
                                                     commentId={comment.id}
                                                     gameId={gameId}
                                                 />}

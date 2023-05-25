@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom"
 import { updateCommentThunk } from "../../store/comments"
 
 
-const UpdateCommentModal = ({commentId, gameId}) => {
+const UpdateCommentModal = ({comment, commentId, gameId}) => {
     const dispatch = useDispatch()
     const { closeModal } = useModal()
     const [editComment, setEditComment] = useState('')
@@ -17,6 +17,10 @@ const UpdateCommentModal = ({commentId, gameId}) => {
         if (!editComment) errors.comment = "Comment is required"
         if (editComment.length < 10) errors.comment = "Comment must be longer than 10 characters"
     }, [editComment])
+
+    useEffect(() => {
+        setEditComment(comment)
+    }, [comment])
 
     const submitHandler = async (e) => {
         e.preventDefault()
