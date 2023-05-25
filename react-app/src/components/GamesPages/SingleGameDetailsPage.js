@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import './SingleGameDetailsPage.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { getSingleGameThunk } from '../../store/games'
 import { getAllCommentsThunk } from '../../store/comments'
 import OpenModalButton from '../OpenModalButton'
@@ -10,24 +10,40 @@ import PostCommentModal from '../CommentModals/PostComment'
 import UpdateCommentModal from '../CommentModals/UpdateComment'
 import Carousel from '../UI/Carousel'
 import './SingleGameDetailsPage.css'
+import { getUserCartThunk, postUserCartThunk } from '../../store/cart'
 
 const SingleGameDetailsPage = () => {
     const { gameId } = useParams()
     const dispatch = useDispatch()
+    const history = useHistory()
     const singleGameDetails = useSelector(state => state.games.singleGame)
     console.log('COMMMENTS', singleGameDetails.comments)
     const allGameComments = useSelector(state => state.comments)
     console.log(allGameComments)
     const sessionUser = useSelector(state => state.session.user)
 
+    const [cartAdded, setCartAdded] = useState(false)
     // console.log(singleGameDetails)
     useEffect(() => {
         dispatch(getSingleGameThunk(gameId))
     }, [dispatch, gameId])
 
+    useEffect(() => {
+        dispatch(getUserCartThunk())
+    }, [dispatch])
     // useEffect(() => {
     //     dispatch(getAllCommentsThunk(gameId))
     // }, [dispatch, gameId])
+
+    const addToCartHandler = async (gameId) => {
+        await dispatch(postUserCartThunk(gameId))
+        setCartAdded(true)
+        history.push(`/games/${gameId}`)
+    }
+
+    const viewInCartHandler = async () => {
+        history.push(`/cart`)
+    }
 
     if (!singleGameDetails) return null
 
@@ -84,7 +100,21 @@ const SingleGameDetailsPage = () => {
                     <p>{singleGameDetails.price}</p>
                     <p>{releaseDateFormatting}</p>
 
-                    <div>
+                    {
+                    !cartAdded ?
+                    <p
+                    onClick={() => addToCartHandler(gameId)}
+                    style={{cursor: 'pointer'}}
+                    >ADD TO CART</p>
+                    :
+                    <p
+                    onClick={viewInCartHandler}
+                    style={{cursor: 'pointer'}}
+                    >
+                    VIEW IN CART
+                    </p>
+                    }
+                        <div>
 
                     <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
                     </div>

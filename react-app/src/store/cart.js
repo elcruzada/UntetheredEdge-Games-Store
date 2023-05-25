@@ -62,8 +62,8 @@ export const getUserCartThunk = () => async (dispatch) => {
     }
 }
 
-export const postUserCartThunk = (cartId) => async (dispatch) => {
-    const res = await fetch(`/api/cart/${cartId}`, {
+export const postUserCartThunk = (gameId) => async (dispatch) => {
+    const res = await fetch(`/api/cart/${gameId}`, {
         method: 'POST',
     })
     if (res.ok) {
@@ -72,8 +72,8 @@ export const postUserCartThunk = (cartId) => async (dispatch) => {
     }
 }
 
-export const deleteUserCartThunk = (cartId) => async (dispatch) => {
-    const res = await fetch(`/api/cart/${cartId}`, {
+export const deleteUserCartThunk = (gameId) => async (dispatch) => {
+    const res = await fetch(`/api/cart/${gameId}`, {
         method: 'DELETE'
     })
 
