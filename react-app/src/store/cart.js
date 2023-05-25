@@ -72,6 +72,17 @@ export const postUserCartThunk = (cartId) => async (dispatch) => {
     }
 }
 
+export const deleteUserCartThunk = (cartId) => async (dispatch) => {
+    const res = await fetch(`/api/cart/${cartId}`, {
+        method: 'DELETE'
+    })
+
+    if (res.ok) {
+        const deletedCart = await res.json()
+        dispatch(deleteCartAction(deletedCart))
+    }
+}
+
 
 const initialState = {
     cart: {}
@@ -84,6 +95,9 @@ export default function cartReducer(state = initialState, action) {
         newCartState = { ...state, cart: { ...action.userCart } }
         return newCartState
         case POST_CART:
+            newCartState = { ...state, cart: { ...state.cart, ...action.cart } }
+            return newCartState
+        case DELETE_CART:
             newCartState = { ...state, cart: { ...state.cart, ...action.cart } }
             return newCartState
     default:
