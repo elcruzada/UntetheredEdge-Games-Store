@@ -42,6 +42,10 @@ const Homepage = () => {
                             style={{ color: 'white', fontFamily: 'Verdana' }}
                         >A gaming marketplace where you can buy games, leave your thoughts on them, and even publish your own!</p>
                         <h2
+                            style={{ color: 'white', fontFamily: 'Verdana', border: '1px solid white', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
+                            onClick={() => history.push(`/games/browse`)}
+                        >Browse</h2>
+                        <h2
                             style={{ color: 'white', fontFamily: 'Verdana', border: '1px solid white', width: '4rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
                             onClick={cartRedirectHandler}
                         >Cart</h2>

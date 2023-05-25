@@ -13,6 +13,7 @@ import GameDeveloperImages from "./components/GamesPages/GameDeveloperImages";
 import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 import CartPage from "./components/CartComponents/CartPage";
 import UserProfilePage from "./components/UserProfile/UserProfilePage";
+import BrowseGamesPages from "./components/GamesPages/BrowseGamesPages";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route exact path='/games/browse'>
+            <BrowseGamesPages />
           </Route>
           <Route exact path='/games/:gameId'>
             <SingleGameDetailsPage />

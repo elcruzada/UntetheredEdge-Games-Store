@@ -40,17 +40,21 @@ const CartPage = () => {
             dispatch(getUserCartThunk())
         },[dispatch])
 
-        const cartOrderHandler = async () => {
-            try {
-                const res = await fetch(`/api/orders`, {
-                    method: 'POST'
-                })
-                if (res.ok) {
-                    const newCart = await res.json()
-                }
-            } catch (error) {
-                console.error('Cart error', error)
-            }
+        // const cartOrderHandler = async () => {
+        //     try {
+        //         const res = await fetch(`/api/orders`, {
+        //             method: 'POST'
+        //         })
+        //         if (res.ok) {
+        //             const newCart = await res.json()
+        //         }
+        //     } catch (error) {
+        //         console.error('Cart error', error)
+        //     }
+        // }
+
+        const cartCheckoutHandler = () => {
+            window.alert("Feature coming soon!")
         }
         // if (!cart) return null
     return (
@@ -64,7 +68,7 @@ const CartPage = () => {
                         <h1>Games Summary</h1>
                         <p>Total {total} </p>
                         <button
-                        onClick={cartOrderHandler}
+                        onClick={cartCheckoutHandler}
                         >Checkout</button>
                     </div>
                     <div className='cart-page-games-card-container'>

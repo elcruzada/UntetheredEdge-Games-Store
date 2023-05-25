@@ -8,6 +8,7 @@ from ..forms.comment_form import CommentForm
 orders_routes = Blueprint('carts', __name__, url_prefix='/api/orders')
 
 @orders_routes.route('/', methods=['POST'])
+@login_required
 def make_current_user_order():
     current_cart_user = User.query.get(current_user.id)
 
