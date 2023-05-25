@@ -17,7 +17,7 @@ const SingleGameDetailsPage = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const singleGameDetails = useSelector(state => state.games.singleGame)
-    console.log('COMMMENTS', singleGameDetails.comments)
+    // console.log('COMMMENTS', singleGameDetails.comments)
     const allGameComments = useSelector(state => state.comments)
     console.log(allGameComments)
     const sessionUser = useSelector(state => state.session.user)
@@ -52,12 +52,12 @@ const SingleGameDetailsPage = () => {
 
     // const previewImage = singleGameDetails.game_images.find(game => game.preview === true)
     const previewImage = singleGameDetails.preview
-    console.log('PREEVIEW', previewImage)
+    // console.log('PREEVIEW', previewImage)
     const noPreview = singleGameDetails.game_images.find(game => game.preview === false)
     // const previewImage = singleGameDetails.preview
     // if (!previewImage.url || !noPreview.game_images.url) return null
 
-    console.log('NOOOOOO', noPreview)
+    // console.log('NOOOOOO', noPreview)
     const dateFormatting = new Date(singleGameDetails.release_date)
 
     const releaseDateFormatting = dateFormatting.toLocaleDateString('en-US', {
@@ -101,26 +101,26 @@ const SingleGameDetailsPage = () => {
                     <p>{releaseDateFormatting}</p>
 
                     {
-                    !cartAdded ?
-                    <p
-                    onClick={() => addToCartHandler(gameId)}
-                    style={{cursor: 'pointer'}}
-                    >ADD TO CART</p>
-                    :
-                    <p
-                    onClick={viewInCartHandler}
-                    style={{cursor: 'pointer'}}
-                    >
-                    VIEW IN CART
-                    </p>
+                        !cartAdded ?
+                            <p
+                                onClick={() => addToCartHandler(gameId)}
+                                style={{ cursor: 'pointer' }}
+                            >ADD TO CART</p>
+                            :
+                            <p
+                                onClick={viewInCartHandler}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                VIEW IN CART
+                            </p>
                     }
-                        <div>
+                    <div>
 
-                    <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
+                        <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
                     </div>
 
                     {!sessionUser && <h2
-                    style={{border: '1px solid white', width: '20rem', padding: '1rem', color: 'black', backgroundColor: 'white', fontWeight: 'bold', borderRadius: '5px', textAlign: 'center'}}
+                        style={{ border: '1px solid white', width: '20rem', padding: '1rem', color: 'black', backgroundColor: 'white', fontWeight: 'bold', borderRadius: '5px', textAlign: 'center' }}
                     >Log in to leave a comment!</h2>}
 
                     {gameId && sessionUser &&
