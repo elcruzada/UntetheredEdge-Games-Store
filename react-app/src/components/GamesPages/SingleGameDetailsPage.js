@@ -96,26 +96,26 @@ const SingleGameDetailsPage = () => {
                 )
             })} */}
                     <Carousel images={game_images} />
-                    <p>{singleGameDetails.description}</p>
-                    <p>{singleGameDetails.developer}</p>
-                    <p>{singleGameDetails.genre}</p>
-                    <p>{singleGameDetails.price}</p>
-                    <p>{releaseDateFormatting}</p>
 
                     {
                         !cartAdded ?
                             <p
                                 onClick={() => addToCartHandler(gameId)}
-                                style={{ cursor: 'pointer' }}
+                                style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem'}}
                             >ADD TO CART</p>
                             :
                             <p
                                 onClick={viewInCartHandler}
-                                style={{ cursor: 'pointer' }}
+                                style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
                             >
                                 VIEW IN CART
                             </p>
                     }
+                    <p>{singleGameDetails.developer}</p>
+                    <p>{singleGameDetails.genre}</p>
+                    <p>{singleGameDetails.price}</p>
+                    <p>{releaseDateFormatting}</p>
+                    <p>{singleGameDetails.description}</p>
                     <div>
 
                         <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
