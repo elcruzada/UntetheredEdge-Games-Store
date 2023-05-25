@@ -1,13 +1,45 @@
-import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink, useHistory } from 'react-router-dom'
 import './CartPage.css'
 import CartGamesCard from '../UI/CartGamesCard'
+import { useState, useEffect } from 'react'
+import { deleteUserCartThunk, getUserCartThunk } from '../../store/cart'
 
 const CartPage = () => {
-    const cart = useSelector(state => state.cart.cart.user_cart)
-    console.log('CAAART', cart)
-    // if (!cart) return null
+    const dispatch = useDispatch()
+    const history = useHistory()
+    // const cart = useSelector(state => state.cart.cart.user_cart)
+    const cartFetch = useSelector(state => state.cart.cart)
+    const cart = Object.values(cartFetch)
+    // console.log(newCart)
+    // let cart = []
+    // console.log('CAART', cart)
+    // const cartCopy = {...cart}
+    const [total, setTotal] = useState(0)
+    // console.log('CAAART', cart)
+    // const totalCost = cart.forEach(game => {
+        //     total += game.price
+        // })
+    const removeFromCartHandler = async (gameId) => {
+        await dispatch(deleteUserCartThunk(gameId))
+        await dispatch(getUserCartThunk())
+        history.push('/cart')
+    }
 
+        useEffect(() => {
+            let newTotal = 0
+            if (cart) {
+                cart.forEach(game => {
+                    newTotal += game.price
+                })
+            }
+            setTotal(newTotal)
+        },[cart])
+
+        useEffect(() => {
+            dispatch(getUserCartThunk())
+        },[dispatch])
+        // if (!cart) return null
     return (
 
 
@@ -17,8 +49,7 @@ const CartPage = () => {
 
                     <div className='cart-page-checkout'>
                         <h1>Games Summary</h1>
-                        <p>Price</p>
-                        <p>Total</p>
+                        <p>Total {total} </p>
                         <button>Checkout</button>
                     </div>
                     <div className='cart-page-games-card-container'>
@@ -32,7 +63,9 @@ const CartPage = () => {
                             cart.map(game => {
                                 return <CartGamesCard
                                     key={game.id}
-                                    game={game} />
+                                    game={game}
+                                    removeFromCartHandler={removeFromCartHandler}
+                                    />
                             })}
                     </div>
                 </div>

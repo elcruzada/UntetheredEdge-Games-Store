@@ -92,15 +92,17 @@ export default function cartReducer(state = initialState, action) {
     let newCartState;
     switch (action.type) {
         case GET_USERCART:
-        newCartState = { ...state, cart: { ...action.userCart } }
-        return newCartState
+            newCartState = { ...state, cart: { ...action.cart } }
+            // console.log('newCartState', action)
+            action.userCart.user_cart.forEach(game => newCartState.cart[game.id] = game)
+            return newCartState
         case POST_CART:
             newCartState = { ...state, cart: { ...state.cart, ...action.cart } }
             return newCartState
         case DELETE_CART:
             newCartState = { ...state, cart: { ...state.cart, ...action.cart } }
             return newCartState
-    default:
-        return state
+        default:
+            return state
     }
 }
