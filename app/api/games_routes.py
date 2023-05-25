@@ -268,3 +268,19 @@ def update_comment(id):
         db.session.commit()
         return comment_to_edit.to_dict()
     return { "errors": form.errors }
+
+# @games_routes.route("/<int:id>/cart", methods=['POST'])
+# @login_required
+# def add_to_cart(id):
+#     current_cart_user = User.query.get(current_user.id)
+#     game_to_add = Game.query.get(id)
+
+#     if not current_cart_user:
+#         return { "errors": "Cart not found" }
+
+#     if not game_to_add:
+#         return { "errors": "Game not found" }
+
+#     current_cart_user.cart_user.append(game_to_add)
+
+#     return { "success": "Added to cart" }

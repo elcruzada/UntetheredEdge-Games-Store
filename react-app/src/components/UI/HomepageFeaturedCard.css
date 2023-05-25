@@ -17,7 +17,7 @@
 }
 
 .featured-games-homepage-big-picture-left-column img:hover {
-    filter: brightness(1.2);
+    filter: brightness(0.9);
     cursor:pointer;
 }
 

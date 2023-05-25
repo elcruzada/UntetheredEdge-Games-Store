@@ -26,7 +26,11 @@ const Homepage = () => {
         <>
             <div className="global-outer-container">
                 <div className="global-inner-container">
-                    <div className="top-bar-homepage-container"></div>
+                    <div className="top-bar-homepage-container">
+                        <h2
+                        style={{color: 'white'}}
+                        >Cart</h2>
+                    </div>
                     <HomepageFeaturedCard allGames={allGames}/>
 
                     <Carousel images={convertedGames} homepage={homepage} />

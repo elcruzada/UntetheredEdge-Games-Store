@@ -42,5 +42,6 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'profile_image': self.profile_image,
-            'account_capital': self.account_capital
+            'account_capital': self.account_capital,
+            'orders': [order.to_dict() for order in self.orders]
         }
