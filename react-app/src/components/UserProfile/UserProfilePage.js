@@ -92,7 +92,7 @@ const UserProfilePage = () => {
                 <p>Game Name: {order.game_name}</p>
                 <p>Transaction ID: {order.order_id}</p>
                 <p>Game Price: {order.game_price}</p>
-                <p>Order Price: {order.order_price_total}</p>
+                <p>Order Total: {order.order_price_total}</p>
                 </div>
             ))}
             </div>

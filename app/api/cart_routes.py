@@ -75,36 +75,58 @@ def order_cart_items():
 
     return {'success': 'Order placed'}
 
+# @cart_routes.route('/orders', methods=['GET'])
+# @login_required
 @cart_routes.route('/orders', methods=['GET'])
 @login_required
 def get_game_order_info():
-    join_condition = orders_and_product.c.game_id == Game.id
-
-    query = db.session.query(Game, Order, Game.price).select_from(Game).join(
-        orders_and_product, orders_and_product.c.order_id == Order.id
-    ).filter(
-        join_condition,
+    query = db.session.query(Game, Order, Game.price).filter(
+        Game.id == orders_and_product.c.game_id,
+        Order.id == orders_and_product.c.order_id,
         Order.user_id == current_user.id
     )
 
     results = query.all()
 
-    game_order_info = []
-
-
-    for game, order, game_price in results:
-
-        game_order_dict = {
+    game_order_info = [
+        {
             'game_id': game.id,
             'game_name': game.name,
             'game_price': game_price,
             'order_id': order.id,
             'order_price_total': order.price_total
         }
+        for game, order, game_price in results
+    ]
 
-        
-        game_order_info.append(game_order_dict)
     return {'game_orders': game_order_info}
+# def get_game_order_info():
+#     join_condition = orders_and_product.c.game_id == Game.id
+
+#     query = db.session.query(Game, Order, Game.price).select_from(Game).join(
+#         orders_and_product, orders_and_product.c.order_id == Order.id
+#     ).filter(
+#         join_condition,
+#         Order.user_id == current_user.id
+#     )
+
+#     results = query.all()
+
+#     game_order_info = []
+
+
+#     for game, order, game_price in results:
+
+#         game_order_dict = {
+#             'game_id': game.id,
+#             'game_name': game.name,
+#             'game_price': game_price,
+#             'order_id': order.id,
+#             'order_price_total': order.price_total
+#         }
+
+
+#         game_order_info.append(game_order_dict)
     # join_condition = orders_and_product.c.game_id == Game.id
 
     # query = db.session.query(Game, Order).select_from(Game).join(
