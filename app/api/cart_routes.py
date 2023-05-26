@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import db, User, Game, cart
+from app.models import db, User, Game, Order, cart, orders_and_product
 from sqlalchemy import desc
 from datetime import date
 from ..forms.comment_form import CommentForm
@@ -43,3 +43,33 @@ def delete_game_from_cart(id):
 
     db.session.commit()
     return { "success": "Game deleted from cart!" }
+
+@cart_routes.route('/order', methods=['POST'])
+@login_required
+def order_cart_items():
+    current_cart_user = User.query.get(current_user.id)
+    cart_items = current_cart_user.cart_user
+
+    if not cart_items:
+        return {'error': 'Cart is empty'}
+
+    total_price = sum(item.price for item in cart_items)
+
+    new_order = Order(
+        user=current_cart_user,
+        price_total=total_price,
+        games=cart_items
+    )
+
+
+    current_cart_user.account_capital -= total_price
+
+
+    db.session.add(new_order)
+    db.session.commit()
+
+    current_cart_user.cart_user.clear()
+
+    db.session.commit()
+
+    return {'success': 'Order placed'}

@@ -104,3 +104,19 @@ export default function reducer(state = initialState, action) {
 			return state;
 	}
 }
+// export default function reducer(state = initialState, action) {
+// 	let newUserState
+// 	switch (action.type) {
+// 		case SET_USER:
+// 			newUserState = { user: action.payload }
+// 			console.log('NEWWWUSER', newUserState)
+// 			if (newUserState.orders && newUserState.orders.length) {
+// 				newUserState.orders.forEach(order => console.log(order))
+// 			}
+// 			return newUserState
+// 		case REMOVE_USER:
+// 			return { user: null };
+// 		default:
+// 			return state;
+// 	}
+// }

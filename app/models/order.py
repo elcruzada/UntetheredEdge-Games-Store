@@ -22,5 +22,6 @@ class Order (db.Model):
         return {
             'id': self.id,
             'user_id': self.user_id,
-            'price_total': self.price_total
+            'price_total': self.price_total,
+            'games': [game.to_dict() for game in self.games]
         }

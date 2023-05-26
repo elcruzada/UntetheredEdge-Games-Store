@@ -40,22 +40,22 @@ const CartPage = () => {
             dispatch(getUserCartThunk())
         },[dispatch])
 
-        // const cartOrderHandler = async () => {
-        //     try {
-        //         const res = await fetch(`/api/orders`, {
-        //             method: 'POST'
-        //         })
-        //         if (res.ok) {
-        //             const newCart = await res.json()
-        //         }
-        //     } catch (error) {
-        //         console.error('Cart error', error)
-        //     }
-        // }
-
-        const cartCheckoutHandler = () => {
-            window.alert("Feature coming soon!")
+        const cartCheckoutHandler = async () => {
+            try {
+                const res = await fetch(`/api/cart/order`, {
+                    method: 'POST'
+                })
+                if (res.ok) {
+                    const newCart = await res.json()
+                }
+            } catch (error) {
+                console.error('Cart error', error)
+            }
         }
+
+        // const cartCheckoutHandler = () => {
+        //     window.alert("Feature coming soon!")
+        // }
         // if (!cart) return null
     return (
 
