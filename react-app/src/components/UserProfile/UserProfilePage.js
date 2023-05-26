@@ -1,11 +1,20 @@
 import { useEffect, useState } from 'react';
 
 import './UserProfilePage.css'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllGamesThunk } from '../../store/games';
+import { getUserOrdersThunk } from '../../store/orders';
+import { useHistory } from 'react-router-dom';
+import { authenticate } from '../../store/session';
 
 const UserProfilePage = () => {
+    const dispatch = useDispatch()
+    const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser)
+    // console.log(sessionUser)
+    const userOrders = useSelector(state => state.orders.userOrders.game_orders)
+    console.log('USSSER', userOrders)
+
     const newOrders = {}
     if (sessionUser.orders && sessionUser.orders.length) {
         sessionUser.orders.forEach(order => {
@@ -13,7 +22,25 @@ const UserProfilePage = () => {
         })
     }
     const orders = Object.values(newOrders)
-    console.log(orders)
+
+
+    // console.log(orders)
+
+    // const allGames = useSelector(state => state.games.allGames)
+
+    useEffect(() => {
+        dispatch(getAllGamesThunk())
+        dispatch(authenticate())
+        dispatch(getUserOrdersThunk())
+    },[dispatch])
+
+
+    // if (gamesAndOrders && gamesAndOrders.orders) {
+
+    // }
+
+    // const gamesIterable = Object.values(allGames)
+    // console.log(gamesIterable)
     // const [orders, setOrders] = useState([]);
 
     // useEffect(() => {
@@ -37,35 +64,35 @@ const UserProfilePage = () => {
     //     fetchOrders();
     // }, []);
     // console.log('ORRDERS', orders)
+    if (!sessionUser) return null
+    if (!userOrders) return null
 
     return (
         <div className='user_profile_container'>
             <div className='user-profile-inner-container'>
-
+            <h1
+            style={{color:'white'}}
+            >{`You have $${sessionUser.account_capital} left in your wallet`}</h1>
             <h1
             style={{color: 'white'}}
             >Transaction History</h1>
-            {orders.map((order) => (
+            {sessionUser.orders && sessionUser.orders.length && sessionUser.orders.map((order) => (
                 <div key={order.id}
                 style={{color:'white'}}
                 >
                     <p>Order ID: {order.id}</p>
-                    <p>{order.price_total}</p>
-                    {order.games.forEach(game => {
-                        // console.log(game.name)
+                    <p>Order Total: {order.price_total}</p>
 
-                        return <p
-                        style={{color:'white'}}
-                        >hello</p>
-                        // <img
-                        //   src={game.game_images[0].url}
-
-                        // />
-
-                        // </p>
-
-                        })}
-
+                </div>
+            ))}
+            {userOrders.map(order => (
+                <div key={order.id}
+                style={{color: 'white', marginTop: '2rem'}}
+                >
+                <p>Game Name: {order.game_name}</p>
+                <p>Transaction ID: {order.order_id}</p>
+                <p>Game Price: {order.game_price}</p>
+                <p>Order Price: {order.order_price_total}</p>
                 </div>
             ))}
             </div>

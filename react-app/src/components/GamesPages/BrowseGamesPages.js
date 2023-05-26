@@ -25,7 +25,7 @@ const BrowseGamesPages = () => {
         <div className='browse-games-pages-outer'>
             <div className='browse-games-pages-inner'>
             {convertedGames && convertedGames.map(game => {
-                console.log('GAAAEM', game)
+                // console.log('GAAAEM', game)
                 return <BrowseGamesPagesCard
                 key={game.id}
                 game={game}/>

@@ -51,6 +51,14 @@ const CartPage = () => {
             } catch (error) {
                 console.error('Cart error', error)
             }
+
+            // setTimeout(() => {
+
+            //     history.push('/profile');
+
+            // }, 2000)
+            // history.push('/games')
+            history.push('/profile')
         }
 
         // const cartCheckoutHandler = () => {

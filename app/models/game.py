@@ -43,5 +43,6 @@ class Game(db.Model):
             'is_promoted': self.is_promoted,
             'is_on_sale': self.is_on_sale,
             'game_images' : [game_image.to_dict() for game_image in self.game_images],
-            'comments': [comment.to_dict() for comment in self.comments]
+            'comments': [comment.to_dict() for comment in self.comments],
+            # 'orders': [order.to_dict() for order in self.orders]
         }
