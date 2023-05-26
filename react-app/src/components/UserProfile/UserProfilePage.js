@@ -15,13 +15,13 @@ const UserProfilePage = () => {
     const userOrders = useSelector(state => state.orders.userOrders.game_orders)
     console.log('USSSER', userOrders)
 
-    const newOrders = {}
-    if (sessionUser.orders && sessionUser.orders.length) {
-        sessionUser.orders.forEach(order => {
-            newOrders[order.id] = order
-        })
-    }
-    const orders = Object.values(newOrders)
+    // const newOrders = {}
+    // if (sessionUser.orders && sessionUser.orders.length) {
+    //     sessionUser.orders.forEach(order => {
+    //         newOrders[order.id] = order
+    //     })
+    // }
+    // const orders = Object.values(newOrders)
 
 
     // console.log(orders)
