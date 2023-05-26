@@ -52,6 +52,14 @@ function ProfileButton({ user }) {
               >
                 Your Developer Portal
               </NavLink>
+              <li>
+
+              <NavLink exact to='/profile'
+              style={{color: 'white'}}
+              >
+                Your Profile
+              </NavLink>
+              </li>
             <li>{user.username}</li>
             <li>{user.email}</li>
             <li>

@@ -64,8 +64,8 @@ const UserProfilePage = () => {
     //     fetchOrders();
     // }, []);
     // console.log('ORRDERS', orders)
-    if (!sessionUser) return null
-    if (!userOrders) return null
+    // if (!sessionUser) return null
+    // if (!userOrders) return null
 
     return (
         <div className='user_profile_container'>
@@ -85,7 +85,7 @@ const UserProfilePage = () => {
 
                 </div>
             ))}
-            {userOrders.map(order => (
+            {userOrders && userOrders.map(order => (
                 <div key={order.id}
                 style={{color: 'white', marginTop: '2rem'}}
                 >
