@@ -36,13 +36,19 @@ const SingleGameDetailsPage = () => {
     // }, [dispatch, gameId])
 
     const addToCartHandler = async (gameId) => {
-        await dispatch(postUserCartThunk(gameId))
-        setCartAdded(true)
-        history.push(`/games/${gameId}`)
+        if (!sessionUser) {
+            window.alert('You must be logged in to add to your cart')
+        } else {
+            await dispatch(postUserCartThunk(gameId))
+            setCartAdded(true)
+            history.push(`/games/${gameId}`)
+        }
     }
 
     const viewInCartHandler = async () => {
-        if (sessionUser) {
+        if (!sessionUser) {
+            window.alert('You must be logged in to view your cart')
+        } else {
             history.push(`/cart`)
         }
     }
