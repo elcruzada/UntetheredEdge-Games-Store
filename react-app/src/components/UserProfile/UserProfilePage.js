@@ -15,13 +15,13 @@ const UserProfilePage = () => {
     const userOrders = useSelector(state => state.orders.userOrders.game_orders)
     console.log('USSSER', userOrders)
 
-    const newOrders = {}
-    if (sessionUser.orders && sessionUser.orders.length) {
-        sessionUser.orders.forEach(order => {
-            newOrders[order.id] = order
-        })
-    }
-    const orders = Object.values(newOrders)
+    // const newOrders = {}
+    // if (sessionUser.orders && sessionUser.orders.length) {
+    //     sessionUser.orders.forEach(order => {
+    //         newOrders[order.id] = order
+    //     })
+    // }
+    // const orders = Object.values(newOrders)
 
 
     // console.log(orders)
@@ -72,11 +72,11 @@ const UserProfilePage = () => {
             <div className='user-profile-inner-container'>
             <h1
             style={{color:'white'}}
-            >{`You have $${sessionUser.account_capital} left in your wallet`}</h1>
+            >{`You have $${sessionUser && sessionUser.account_capital} left in your wallet`}</h1>
             <h1
             style={{color: 'white'}}
             >Transaction History</h1>
-            {sessionUser.orders && sessionUser.orders.length && sessionUser.orders.map((order) => (
+            {sessionUser && sessionUser.orders && sessionUser.orders.length && sessionUser.orders.map((order) => (
                 <div key={order.id}
                 style={{color:'white'}}
                 >

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
@@ -10,6 +10,7 @@ import './ProfileButton.css'
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  // const sessionUser = useSelector(state => state.session.user)
   const ulRef = useRef();
 
   const openMenu = () => {
@@ -36,6 +37,12 @@ function ProfileButton({ user }) {
     dispatch(logout());
   };
 
+  const profileRedirectHandler = () => {
+    if (!user) {
+      window.alert("You must be logged in to access your profile")
+    }
+  }
+
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
   const closeMenu = () => setShowMenu(false);
 
@@ -56,6 +63,7 @@ function ProfileButton({ user }) {
 
               <NavLink exact to='/profile'
               style={{color: 'white'}}
+
               >
                 Your Profile
               </NavLink>
