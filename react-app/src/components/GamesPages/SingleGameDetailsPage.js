@@ -23,7 +23,7 @@ const SingleGameDetailsPage = () => {
     const sessionUser = useSelector(state => state.session.user)
 
     const [cartAdded, setCartAdded] = useState(false)
-    // console.log(singleGameDetails)
+    console.log('SIINGLE', singleGameDetails)
     useEffect(() => {
         dispatch(getSingleGameThunk(gameId))
     }, [dispatch, gameId])
@@ -53,18 +53,18 @@ const SingleGameDetailsPage = () => {
         }
     }
 
-    if (!singleGameDetails) return null
+    // if (!singleGameDetails) return null
 
     const { game_images } = singleGameDetails
-    if (!game_images || game_images.length === 0) return null
+    // if (!game_images || game_images.length === 0) return null
 
     // const previewImage = singleGameDetails.game_images.find(game => game.preview === true)
-    const previewImage = singleGameDetails.preview
+    // const previewImage = singleGameDetails.preview
     // console.log('PREEVIEW', previewImage)
-    const noPreview = singleGameDetails.game_images.find(game => game.preview === false)
+    // const noPreview = singleGameDetails.game_images.find(game => game.preview === false)
     // const previewImage = singleGameDetails.preview
     // if (!previewImage.url || !noPreview.game_images.url) return null
-
+    // console.log('SIIINGLE,' (singleGameDetails && singleGameDetails.game_images[0].url))
     // console.log('NOOOOOO', noPreview)
     const dateFormatting = new Date(singleGameDetails.release_date)
 
@@ -74,24 +74,33 @@ const SingleGameDetailsPage = () => {
         year: '2-digit'
     })
 
-
+    if (!singleGameDetails) return null
     // console.log('GAAAMEIMAGES', game_images)
     //deal with the preview images rendering
+
+
     return (
-        <>
-            <div className='single-details-page-wrapper'>
 
-                <div className='single-details-page-inner-wrapper'>
+        <div className='single-details-page-wrapper'>
+
+            <div className='single-details-page-inner-wrapper'>
 
 
 
-                    <h1>{singleGameDetails && singleGameDetails.name}</h1>
-                    {previewImage ? (
-                        <img src={previewImage} alt='preview-image' />
+                <h1>{singleGameDetails && singleGameDetails.name}</h1>
+                {singleGameDetails &&
+                    game_images &&
+                    game_images.length &&
+                    (singleGameDetails.preview ? (
+                        <img src={singleGameDetails.preview
+                            || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
                     ) : (
-                        <img src={noPreview.url} alt='preview-image' />
-                    )}
-                    {/* {game_images.map((image) => {
+                        <img src={
+                            // noPreview.url
+                            (game_images[0] && singleGameDetails.game_images[0].url)
+                            || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
+                    ))}
+                {/* {game_images.map((image) => {
                 return (
                     <img
                         src={image.url}
@@ -101,88 +110,90 @@ const SingleGameDetailsPage = () => {
                     </img>
                 )
             })} */}
+                {
+                    game_images && game_images.length &&
                     <Carousel images={game_images} />
+                }
 
-                    {
-                        !cartAdded ?
-                            <p
-                                onClick={() => addToCartHandler(gameId)}
-                                style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem'}}
-                            >ADD TO CART</p>
-                            :
-                            <p
-                                onClick={viewInCartHandler}
-                                style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
-                            >
-                                VIEW IN CART
-                            </p>
-                    }
-                    <p>{singleGameDetails.developer}</p>
-                    <p>{singleGameDetails.genre}</p>
-                    <p>{singleGameDetails.price}</p>
-                    <p>{releaseDateFormatting}</p>
-                    <p>{singleGameDetails.description}</p>
-                    <div>
+                {
+                    !cartAdded ?
+                        <p
+                            onClick={() => addToCartHandler(gameId)}
+                            style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
+                        >ADD TO CART</p>
+                        :
+                        <p
+                            onClick={viewInCartHandler}
+                            style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
+                        >
+                            VIEW IN CART
+                        </p>
+                }
+                <p>{singleGameDetails && singleGameDetails.developer}</p>
+                <p>{singleGameDetails && singleGameDetails.genre}</p>
+                <p>{singleGameDetails && singleGameDetails.price}</p>
+                <p>{singleGameDetails && releaseDateFormatting}</p>
+                <p>{singleGameDetails && singleGameDetails.description}</p>
+                <div>
 
-                        <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
-                    </div>
+                    <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
+                </div>
 
-                    {!sessionUser && <h2
-                        style={{ border: '1px solid white', width: '20rem', padding: '1rem', color: 'black', backgroundColor: 'white', fontWeight: 'bold', borderRadius: '5px', textAlign: 'center' }}
-                    >Log in to leave a comment!</h2>}
+                {!sessionUser && <h2
+                    style={{ border: '1px solid white', width: '20rem', padding: '1rem', color: 'black', backgroundColor: 'white', fontWeight: 'bold', borderRadius: '5px', textAlign: 'center' }}
+                >Log in to leave a comment!</h2>}
 
-                    {gameId && sessionUser &&
-                        <OpenModalButton
-                            buttonText='CLICK TO LEAVE A COMMENT. LET THE DEVELOPER KNOW WHAT YOU THINK!'
-                            modalComponent={<PostCommentModal gameId={gameId} />}
-                        />
-                    }
-                    <div className='comments-list'>
-                        <ul>
-                            {singleGameDetails &&
-                                singleGameDetails.comments
-                                && singleGameDetails.comments.map(comment =>
-                                (
-                                    <li key={comment.id}
-                                        style={{ border: '1px solid white', width: '15rem' }}
-                                    >
-                                        <p>{new Date(comment.created_at).toLocaleDateString('en-US', {
-                                            month: '2-digit',
-                                            day: '2-digit',
-                                            year: '2-digit'
-                                        })}</p>
-                                        <p>{`"${comment.comment}"`}</p>
-                                        {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
+                {gameId && sessionUser &&
+                    <OpenModalButton
+                        buttonText='CLICK TO LEAVE A COMMENT. LET THE DEVELOPER KNOW WHAT YOU THINK!'
+                        modalComponent={<PostCommentModal gameId={gameId} />}
+                    />
+                }
+                <div className='comments-list'>
+                    <ul>
+                        {singleGameDetails &&
+                            singleGameDetails.comments
+                            && singleGameDetails.comments.map(comment =>
+                            (
+                                <li key={comment.id}
+                                    style={{ border: '1px solid white', width: '15rem' }}
+                                >
+                                    <p>{new Date(comment.created_at).toLocaleDateString('en-US', {
+                                        month: '2-digit',
+                                        day: '2-digit',
+                                        year: '2-digit'
+                                    })}</p>
+                                    <p>{`"${comment.comment}"`}</p>
+                                    {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
 
 
-                                            <OpenModalButton
-                                                buttonText="Update"
-                                                modalComponent={<UpdateCommentModal
-                                                    comment={comment.comment}
-                                                    commentId={comment.id}
-                                                    gameId={gameId}
-                                                />}
-                                            />
-                                        }
+                                        <OpenModalButton
+                                            buttonText="Update"
+                                            modalComponent={<UpdateCommentModal
+                                                comment={comment.comment}
+                                                commentId={comment.id}
+                                                gameId={gameId}
+                                            />}
+                                        />
+                                    }
 
-                                        {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
-                                            <OpenModalButton
-                                                buttonText="Delete"
-                                                modalComponent={<DeleteCommentModal
-                                                    gameId={gameId}
-                                                    commentId={comment.id} />}
-                                            />
-                                        }
+                                    {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
+                                        <OpenModalButton
+                                            buttonText="Delete"
+                                            modalComponent={<DeleteCommentModal
+                                                gameId={gameId}
+                                                commentId={comment.id} />}
+                                        />
+                                    }
 
-                                    </li>
-                                )
-                                )
-                            }
-                        </ul>
-                    </div>
+                                </li>
+                            )
+                            )
+                        }
+                    </ul>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
