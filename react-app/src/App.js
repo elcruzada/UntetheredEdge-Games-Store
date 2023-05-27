@@ -14,6 +14,7 @@ import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 import CartPage from "./components/CartComponents/CartPage";
 import UserProfilePage from "./components/UserProfile/UserProfilePage";
 import BrowseGamesPages from "./components/GamesPages/BrowseGamesPages";
+// import './index.css'
 
 function App() {
   const dispatch = useDispatch();
