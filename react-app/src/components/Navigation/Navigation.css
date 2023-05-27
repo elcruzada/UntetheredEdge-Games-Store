@@ -1,21 +1,41 @@
 .navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
   height: 5rem;
   margin: none;
   background-color: rgb(115, 95, 50);
   color: white;
+  width: 100%;
+}
+
+.navbar-wrapper ul {
+  width: 100%;
 }
 
 .navbar-wrapper li {
   padding: .4rem;
 }
 
+.top-left-navbar {
+  display: flex;
+  align-items: center;
+}
+
+
 .profile-dropdown {
   /* position: absolute; */
-  margin-right: auto;
+  /* margin-right: auto; */
+}
+
+.profile-button-login-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .profile-button-wrapper {
-  position: absolute;
+  display: flex;
+  align-items: center;
+  /* position: absolute; */
   top: 4rem;
   right: 8rem;
 }

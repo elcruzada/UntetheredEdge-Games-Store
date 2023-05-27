@@ -86,56 +86,50 @@ const SingleGameDetailsPage = () => {
             <div className='single-details-page-inner-wrapper'>
 
 
-
                 <h1>{singleGameDetails && singleGameDetails.name}</h1>
-                {singleGameDetails &&
-                    game_images &&
-                    game_images.length &&
-                    (singleGameDetails.preview ? (
-                        <img src={singleGameDetails.preview
-                            || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
-                    ) : (
-                        <img src={
-                            // noPreview.url
-                            (game_images[0] && singleGameDetails.game_images[0].url)
-                            || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
-                    ))}
-                {/* {game_images.map((image) => {
-                return (
-                    <img
-                        src={image.url}
-                        alt={`Details page images ${image.id}`}
-                        style={{ maxHeight: '15rem' }}
-                    >
-                    </img>
-                )
-            })} */}
+                <div className='single-details-page-left-right-column'>
+                    <div className='single-details-page-left-column'>
+                        {singleGameDetails &&
+                            game_images &&
+                            game_images.length &&
+                            (singleGameDetails.preview ? (
+                                <img src={singleGameDetails.preview
+                                    || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
+                            ) : (
+                                <img src={
+                                    // noPreview.url
+                                    (game_images[0] && singleGameDetails.game_images[0].url)
+                                    || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
+                            ))}
+
+                    </div>
+                    <div className='single-game-details-right-column'>
+                        <p>{singleGameDetails && singleGameDetails.price}</p>
+                        {
+                            !cartAdded ?
+                                <p
+                                    onClick={() => addToCartHandler(gameId)}
+                                    style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
+                                >ADD TO CART</p>
+                                :
+                                <p
+                                    onClick={viewInCartHandler}
+                                    style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
+                                >
+                                    VIEW IN CART
+                                </p>
+                        }
+                        <p>{singleGameDetails && singleGameDetails.developer}</p>
+                        <p>{singleGameDetails && singleGameDetails.genre}</p>
+                        <p>{singleGameDetails && releaseDateFormatting}</p>
+                        <p>{singleGameDetails && singleGameDetails.description}</p>
+                    </div>
+                </div>
                 {
                     game_images && game_images.length &&
                     <Carousel images={game_images} />
                 }
-
-                {
-                    !cartAdded ?
-                        <p
-                            onClick={() => addToCartHandler(gameId)}
-                            style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
-                        >ADD TO CART</p>
-                        :
-                        <p
-                            onClick={viewInCartHandler}
-                            style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
-                        >
-                            VIEW IN CART
-                        </p>
-                }
-                <p>{singleGameDetails && singleGameDetails.developer}</p>
-                <p>{singleGameDetails && singleGameDetails.genre}</p>
-                <p>{singleGameDetails && singleGameDetails.price}</p>
-                <p>{singleGameDetails && releaseDateFormatting}</p>
-                <p>{singleGameDetails && singleGameDetails.description}</p>
-                <div>
-
+                <div className='game-comments-divider'>
                     <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
                 </div>
 

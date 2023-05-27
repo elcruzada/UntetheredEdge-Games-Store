@@ -19,13 +19,20 @@
     margin-top: 2rem;
 }
 
-.single-details-page-inner-wrapper > h1 {
-    margin-left: 10rem;
-}
-
 .single-details-page-inner-wrapper > img {
     margin-left: 5rem;
     border-radius: 10px;
     height: 25rem;
-    width: 30rem;
+    width: 100%;
+}
+
+.single-details-page-left-right-column {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.single-game-details-right-column {
+    display: flex;
+    flex-direction: column;
 }

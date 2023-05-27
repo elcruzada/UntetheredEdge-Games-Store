@@ -9,14 +9,19 @@ function Navigation({ isLoaded }){
 
 	return (
 		<div className='navbar-wrapper'>
-
 		<ul>
-			<li>
+			<div className='top-left-navbar'>
+
+			<li
+
+			>
 				<NavLink
 				style={{textDecoration: 'none', color: 'white', fontFamily: 'Segoe', fontWeight: 'light'}}
-				exact to="/">Home</NavLink>
+				exact to="/">HOME</NavLink>
 			</li>
-			<li>
+			<li
+
+			>
 				<NavLink
 				exact to='/developer'
 				style={{textDecoration: 'none', color: 'white', fontFamily: 'Segoe', fontWeight: 'light'}}
@@ -24,16 +29,13 @@ function Navigation({ isLoaded }){
 					PUBLISH WITH US TODAY
 				</NavLink>
 			</li>
+			</div>
+		</ul>
 			{isLoaded && (
-				<div className='profile-button-login-wrapper'
-				style={{marginRight: 'auto'}}
-				>
-				<li className="profile-button-wrapper">
+				<div className='profile-button-login-wrapper'>
 					<ProfileButton user={sessionUser} />
-				</li>
 				</div>
 			)}
-		</ul>
 		</div>
 	);
 }
