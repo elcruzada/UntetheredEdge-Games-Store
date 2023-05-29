@@ -42,3 +42,22 @@
     padding: 5px;
     cursor: pointer;
   }
+
+  .top-bar-homepage-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-bar-homepage-container-left-column {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    width: 50rem;
+  }
+
+  .top-bar-homepage-container-right-column {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
