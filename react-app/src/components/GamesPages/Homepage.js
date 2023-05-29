@@ -39,14 +39,20 @@ const Homepage = () => {
                 <div className="global-inner-container">
                     <div className="top-bar-homepage-container">
                         <p
-                            style={{ color: 'white', fontFamily: 'Verdana' }}
+                            style={{ color: 'white', paddingBottom: '3rem', display: 'flex', alignItems: 'center' }}
                         >A gaming marketplace where you can buy games, leave your thoughts on them, and even publish your own!</p>
+                        <div className="search-bar">
+                            <input type="text" placeholder="Feature coming soon" className="search-input" />
+                            <button className="search-button">
+                                <i className="fas fa-search"></i>
+                            </button>
+                        </div>
                         <h2
-                            style={{ color: 'white', fontFamily: 'Verdana', border: '1px solid white', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
+                            style={{ color: 'white', fontSize:'16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
                             onClick={() => history.push(`/games/browse`)}
                         >Browse</h2>
                         <h2
-                            style={{ color: 'white', fontFamily: 'Verdana', border: '1px solid white', width: '4rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
+                            style={{ color: 'white', fontSize:'16px', fontWeight: 'light', width: '4rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
                             onClick={cartRedirectHandler}
                         >Cart</h2>
                     </div>

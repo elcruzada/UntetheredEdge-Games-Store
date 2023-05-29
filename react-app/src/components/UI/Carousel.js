@@ -36,8 +36,9 @@ const Carousel = ({ images, homepage }) => {
                 style={{ backgroundImage: `url(${image.url})` }}
               >
                 <img
+                  className='single-game-details-page-carousel-image'
                   src={image.preview}
-                  style={{ height: '7rem', borderRadius: '10px' }}
+                  // style={{ height: '7rem', borderRadius: '10px' }}
                 />
               </div>
             ))}
@@ -55,8 +56,9 @@ const Carousel = ({ images, homepage }) => {
                 style={{ backgroundImage: `url(${image.url})` }}
               >
                 <img
+                  className='single-game-details-page-carousel-image'
                   src={image.url}
-                  style={{ height: '7rem', borderRadius: '10px' }}
+                  // style={{ height: '7rem', borderRadius: '10px' }}
                 />
               </div>
             ))}

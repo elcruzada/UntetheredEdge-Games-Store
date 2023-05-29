@@ -1,9 +1,9 @@
 .navbar-wrapper {
   display: flex;
   justify-content: space-between;
-  height: 5rem;
+  height: 7rem;
   margin: none;
-  background-color: rgb(115, 95, 50);
+  background-color: rgb(40, 42, 58);
   color: white;
   width: 100%;
 }
@@ -21,6 +21,10 @@
   align-items: center;
 }
 
+.top-left-navbar li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 
 .profile-dropdown {
   /* position: absolute; */

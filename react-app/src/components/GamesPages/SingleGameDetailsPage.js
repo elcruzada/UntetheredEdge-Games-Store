@@ -84,8 +84,6 @@ const SingleGameDetailsPage = () => {
         <div className='single-details-page-wrapper'>
 
             <div className='single-details-page-inner-wrapper'>
-
-
                 <h1>{singleGameDetails && singleGameDetails.name}</h1>
                 <div className='single-details-page-left-right-column'>
                     <div className='single-details-page-left-column'>
@@ -93,7 +91,8 @@ const SingleGameDetailsPage = () => {
                             game_images &&
                             game_images.length &&
                             (singleGameDetails.preview ? (
-                                <img src={singleGameDetails.preview
+                                <img
+                                    src={singleGameDetails.preview
                                     || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
                             ) : (
                                 <img src={
@@ -101,13 +100,16 @@ const SingleGameDetailsPage = () => {
                                     (game_images[0] && singleGameDetails.game_images[0].url)
                                     || 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'} alt='preview-image' />
                             ))}
-
                     </div>
                     <div className='single-game-details-right-column'>
+                        <div className='singleGameDetails-game-details'>
+                        <p className='singleGameDetails-game-details-tag'>Price</p>
                         <p>{singleGameDetails && singleGameDetails.price}</p>
+                        </div>
                         {
                             !cartAdded ?
                                 <p
+                                    className='add-to-cart'
                                     onClick={() => addToCartHandler(gameId)}
                                     style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
                                 >ADD TO CART</p>
@@ -119,16 +121,39 @@ const SingleGameDetailsPage = () => {
                                     VIEW IN CART
                                 </p>
                         }
+                        <div className='singleGameDetails-game-details'>
+                        <p className='singleGameDetails-game-details-tag'>Developer</p>
                         <p>{singleGameDetails && singleGameDetails.developer}</p>
-                        <p>{singleGameDetails && singleGameDetails.genre}</p>
+                        </div>
+                        <div className='singleGameDetails-game-details'>
+                        <p className='singleGameDetails-game-details-tag'>Publisher</p>
+                        <p>{singleGameDetails && singleGameDetails.publisher &&
+                        (singleGameDetails.publisher === 'UntetheredEdge Interactive'
+                            ?
+                        'UE Interactive'
+                        :
+                        singleGameDetails.publisher
+                        )
+                        }</p>
+                        </div>
+                        <div className='singleGameDetails-game-details'>
+                        <p className='singleGameDetails-game-details-tag'>Release Date</p>
                         <p>{singleGameDetails && releaseDateFormatting}</p>
-                        <p>{singleGameDetails && singleGameDetails.description}</p>
+                        </div>
+                        <div className='singleGameDetails-game-details'>
+                        <p className='singleGameDetails-game-details-tag'>Genre</p>
+                        <p>{singleGameDetails && singleGameDetails.genre}</p>
+                        </div>
                     </div>
                 </div>
                 {
                     game_images && game_images.length &&
                     <Carousel images={game_images} />
                 }
+                <p
+                style={{paddingTop:'2rem', paddingBottom: '2rem'}}
+                >{singleGameDetails && singleGameDetails.description}
+                </p>
                 <div className='game-comments-divider'>
                     <hr style={{ color: 'black', backgroundColor: 'white', height: 2 }} />
                 </div>
@@ -138,10 +163,15 @@ const SingleGameDetailsPage = () => {
                 >Log in to leave a comment!</h2>}
 
                 {gameId && sessionUser &&
+                    <>
+                    <h3>LET THE DEVELOPER KNOW WHAT YOU THINK</h3>
+                    <p>Loved the game? Couldn't stand it? Our developers value feedback from players like you! Help build our community by sharing your thoughts to our developers.
+                        </p>
                     <OpenModalButton
-                        buttonText='CLICK TO LEAVE A COMMENT. LET THE DEVELOPER KNOW WHAT YOU THINK!'
+                        buttonText='LEAVE A COMMENT'
                         modalComponent={<PostCommentModal gameId={gameId} />}
                     />
+                    </>
                 }
                 <div className='comments-list'>
                     <ul>
