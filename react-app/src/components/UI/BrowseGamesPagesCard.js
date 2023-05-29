@@ -20,6 +20,9 @@ const BrowseGamesPagesCard = ({game}) => {
 
             </div>
             <div className='browse-games-pages-card-bottom'>
+                <p
+                style={{fontSize: '12px', color: 'rgb(143, 126, 126)', marginTop: '.5rem'}}
+                >Base Game</p>
                 <p>{game.name}</p>
                 <p>{game.price}</p>
             </div>
