@@ -32,7 +32,7 @@ def seed_database():
         name='The Glitcher 3: Wild Bugs',
         description='Fizzle in and out in this open world adventure',
         release_date=date(2015, 6, 22),
-        creator_id=1,
+        creator_id=2,
         developer='CD Projekt Blue',
         publisher='UntetheredEdge Interactive',
         price=59.99,

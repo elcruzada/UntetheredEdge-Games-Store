@@ -71,10 +71,11 @@ const UserProfilePage = () => {
     return (
         <div className='user_profile_container'>
             <div className='user-profile-inner-container'>
+                {!sessionUser && <h3 style={{color: 'white'}}>Please sign in to view your transaction history</h3>}
                 <h1
                     style={{ color: 'white', paddingBottom: '1rem' }}
-                >{`You have $${sessionUser.account_capital} left in your wallet`}</h1>
-                {sessionUser.account_capital < 0 &&
+                >{`You have $${sessionUser ? sessionUser.account_capital : 'N/A'} left in your wallet`}</h1>
+                {sessionUser && sessionUser.account_capital < 0 &&
                 <p
                 style={{color: 'white', paddingBottom: '3rem'}}
                 >You have less than 0 dollars in your account. Pay your outstanding balance or UntetheredEdge Interactive will take action.</p>}
@@ -90,10 +91,10 @@ const UserProfilePage = () => {
 
                 </div>
             ))} */}
-                {sessionUser.orders && sessionUser.orders.length ? (
+                {sessionUser && sessionUser.orders && sessionUser.orders.length ? (
                     <TransactionTable orders={sessionUser.orders} />
                 ) : (
-                    <p>No orders found.</p>
+                    <p style={{color:'white'}}>No orders found.</p>
                 )}
 
                 <div style={{margin: '2rem'}}/>

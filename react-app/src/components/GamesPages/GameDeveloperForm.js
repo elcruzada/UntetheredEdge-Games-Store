@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, NavLink } from 'react-router-dom'
 
 import './GameDeveloperForm.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { createGameThunk } from '../../store/games'
 
 const GameDeveloperForm = () => {
     //only after the user has craeated the Game can you add images
+    const sessionUser = useSelector(state => state.session.user)
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -98,19 +99,13 @@ const GameDeveloperForm = () => {
     return (
         <>
             <div className='game-developer-form-container'>
-                {/* <ul>
-                    {errors.name && <li>{errors.name}</li>}
-                    {errors.description && <li>{errors.description}</li>}
-                    {errors.developer && <li>{errors.developer}</li>}
-                    {errors.publisher && <li>{errors.publisher}</li>}
-                    {errors.price && <li>{errors.price}</li>}
-                    {errors.genre && <li>{errors.genre}</li>}
-                    {errors.releaseDate && <li>{errors.releaseDate}</li>}
-
-                </ul> */}
+{/*
                 <div className='game-developer-errors' style={{color: 'black', padding: '3rem'}}>
 
-                </div>
+                </div> */}
+                {!sessionUser ?
+                <NavLink exact to='/login'><h1>Sign in to submit an application</h1></NavLink>
+                    :
                 <form onSubmit={submitHandler}>
                     <h1>Publish your game with us!</h1>
                     <div className='form-row'>
@@ -237,6 +232,7 @@ const GameDeveloperForm = () => {
                         <button type='submit'> Submit Game </button>
                     </div>
                 </form>
+                }
             </div>
         </>
     )
