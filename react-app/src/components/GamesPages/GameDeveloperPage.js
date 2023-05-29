@@ -20,14 +20,14 @@ const GameDeveloperPage = () => {
                 {
                     sessionUser ?
                         <NavLink exact to='/developer/form'
-                            style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '4rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '4rem' }}
+                            style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '3rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '4rem' }}
                         >
                             Submit a new game application today!
 
                         </NavLink>
                         :
                         <NavLink exact to='/login'
-                            style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '4rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '4rem' }}
+                            style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '3rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '4rem' }}
                         >
                             Log in to submit a new game application!
                         </NavLink>
@@ -36,7 +36,7 @@ const GameDeveloperPage = () => {
                 <p style={{ color: 'white', textAlign: 'center', fontSize: '18px' }}>Already a partner?</p>
                 {sessionUser ?
                     <NavLink exact to='/developer/portal'
-                        style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '4rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '2rem' }}
+                        style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '3rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '2rem' }}
                     >
                         Check out games in your developer portal
                     </NavLink>
