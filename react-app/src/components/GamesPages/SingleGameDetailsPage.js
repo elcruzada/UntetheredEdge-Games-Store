@@ -11,6 +11,7 @@ import UpdateCommentModal from '../CommentModals/UpdateComment'
 import Carousel from '../UI/Carousel'
 import './SingleGameDetailsPage.css'
 import { getUserCartThunk, postUserCartThunk } from '../../store/cart'
+import LowerNavBar from '../LowerNavBar/LowerNavBar'
 
 const SingleGameDetailsPage = () => {
     const { gameId } = useParams()
@@ -82,9 +83,11 @@ const SingleGameDetailsPage = () => {
     return (
 
         <div className='single-details-page-wrapper'>
-
             <div className='single-details-page-inner-wrapper'>
-                <h1>{singleGameDetails && singleGameDetails.name}</h1>
+                <LowerNavBar sessionUser={sessionUser}/>
+                <h1
+                    style={{marginTop: '2.5rem', marginBottom: '2.5rem'}}
+                >{singleGameDetails && singleGameDetails.name}</h1>
                 <div className='single-details-page-left-right-column'>
                     <div className='single-details-page-left-column'>
                         {singleGameDetails &&

@@ -50,7 +50,6 @@
 
   .top-bar-homepage-container-left-column {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     text-align: center;
     width: 50rem;
@@ -58,6 +57,5 @@
 
   .top-bar-homepage-container-right-column {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
   }

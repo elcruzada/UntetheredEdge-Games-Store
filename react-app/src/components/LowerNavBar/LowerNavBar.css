@@ -1,0 +1,16 @@
+.top-bar-homepage-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-bar-homepage-container-left-column {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 50rem;
+}
+
+.top-bar-homepage-container-right-column {
+    display: flex;
+    align-items: center;
+}

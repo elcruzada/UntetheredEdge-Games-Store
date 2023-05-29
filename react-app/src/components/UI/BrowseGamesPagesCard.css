@@ -1,26 +1,20 @@
 .browse-games-pages-card-outer {
     display: flex;
     justify-content: center;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    width: 15rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
 }
 
 .browse-games-pages-card-inner {
     display: flex;
-    align-items: center;
-    background-color: #735F32;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px darkslategrey;
+
+    flex-direction: column;
+    height: 10rem;
+    /* border-radius: 10px;
+    box-shadow: 0 2px 4px darkslategrey; */
 }
 
-.browse-games-pages-card-left-column {
-    margin-right: 2rem;
-  }
-  /* .developer-portal-update-delete-game-right-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 1rem;
-  } */
+.browse-games-pages-card-bottom {
+  color: white;
+}
