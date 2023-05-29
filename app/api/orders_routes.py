@@ -14,20 +14,16 @@ orders_routes = Blueprint('order', __name__, url_prefix='/api/orders')
 def get_game_order_info():
     join_condition = orders_and_product.c.game_id == Game.id
 
-    # Retrieve the game and order information from the association table
     query = db.session.query(Game, Order).select_from(Game).join(
         orders_and_product, orders_and_product.c.order_id == Order.id
     ).filter(join_condition)
 
-    # Execute the query and fetch the results
     results = query.all()
 
-    # Create a list to store the game and order information
     game_order_info = []
 
-    # Access the game and order information from each row of the result
     for game, order in results:
-        # Create a dictionary to hold the game and order attributes
+
         game_order_dict = {
             'game_id': game.id,
             'game_name': game.name,
@@ -35,7 +31,7 @@ def get_game_order_info():
             'order_price_total': order.price_total
         }
 
-        # Add the game and order information to the list
+        
         game_order_info.append(game_order_dict)
 
     return {'game_orders': game_order_info}

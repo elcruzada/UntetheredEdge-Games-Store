@@ -17,3 +17,45 @@
     border-radius: 3px;
     margin-top: 5.5rem;
 }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 15rem;
+    background-color:rgb(40, 42, 58);
+    border-radius: 10px;
+    padding: .5rem;
+  }
+
+  .search-input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 5px;
+  }
+
+  .search-button {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .top-bar-homepage-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-bar-homepage-container-left-column {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 50rem;
+  }
+
+  .top-bar-homepage-container-right-column {
+    display: flex;
+    align-items: center;
+  }

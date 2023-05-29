@@ -4,6 +4,8 @@ import { getAllCommentsThunk } from "../../store/comments"
 import { useHistory } from "react-router-dom"
 import BrowseGamesPagesCard from "../UI/BrowseGamesPagesCard"
 import { getAllGamesThunk } from "../../store/games"
+import './BrowseGamesPages.css'
+import LowerNavBar from "../LowerNavBar/LowerNavBar"
 
 
 const BrowseGamesPages = () => {
@@ -14,7 +16,8 @@ const BrowseGamesPages = () => {
 
     useEffect(() => {
         dispatch(getAllGamesThunk())
-    },[dispatch])
+    }, [dispatch])
+
 
     if (!allGames) return null
 
@@ -24,12 +27,15 @@ const BrowseGamesPages = () => {
     return (
         <div className='browse-games-pages-outer'>
             <div className='browse-games-pages-inner'>
-            {convertedGames && convertedGames.map(game => {
-                // console.log('GAAAEM', game)
-                return <BrowseGamesPagesCard
-                key={game.id}
-                game={game}/>
-            })}
+                <LowerNavBar sessionUser={sessionUser}/>
+                <div className='browse-games-pages-games'>
+                {convertedGames && convertedGames.map(game => {
+                    // console.log('GAAAEM', game)
+                    return <BrowseGamesPagesCard
+                        key={game.id}
+                        game={game} />
+                })}
+                </div>
             </div>
         </div>
     )

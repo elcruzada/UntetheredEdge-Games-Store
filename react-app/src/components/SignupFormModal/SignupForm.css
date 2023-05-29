@@ -45,7 +45,7 @@ button.disabled {
   .modal button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #65a4af;
+    background-color: black;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -58,7 +58,7 @@ button.disabled {
     }
 
   .modal button:hover {
-    background-color: #00becc;
+    background-color: rgb(40, 42, 58);
   }
 
   .modal .error {

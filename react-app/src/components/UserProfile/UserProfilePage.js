@@ -6,6 +6,7 @@ import { getAllGamesThunk } from '../../store/games';
 import { getUserOrdersThunk } from '../../store/orders';
 import { useHistory } from 'react-router-dom';
 import { authenticate } from '../../store/session';
+import {TransactionTable, UserOrdersTable} from '../UI/Table/TransactionTable';
 
 const UserProfilePage = () => {
     const dispatch = useDispatch()
@@ -32,7 +33,7 @@ const UserProfilePage = () => {
         dispatch(getAllGamesThunk())
         dispatch(authenticate())
         dispatch(getUserOrdersThunk())
-    },[dispatch])
+    }, [dispatch])
 
 
     // if (gamesAndOrders && gamesAndOrders.orders) {
@@ -70,13 +71,17 @@ const UserProfilePage = () => {
     return (
         <div className='user_profile_container'>
             <div className='user-profile-inner-container'>
-            <h1
-            style={{color:'white'}}
-            >{`You have $${sessionUser && sessionUser.account_capital} left in your wallet`}</h1>
-            <h1
-            style={{color: 'white'}}
-            >Transaction History</h1>
-            {sessionUser && sessionUser.orders && sessionUser.orders.length && sessionUser.orders.map((order) => (
+                <h1
+                    style={{ color: 'white', paddingBottom: '1rem' }}
+                >{`You have $${sessionUser.account_capital} left in your wallet`}</h1>
+                {sessionUser.account_capital < 0 &&
+                <p
+                style={{color: 'white', paddingBottom: '3rem'}}
+                >You have less than 0 dollars in your account. Pay your outstanding balance or UntetheredEdge Interactive will take action.</p>}
+                <h1
+                    style={{ color: 'white', paddingBottom: '1.5rem' }}
+                >Transaction History</h1>
+                {/* {sessionUser.orders && sessionUser.orders.length && sessionUser.orders.map((order) => (
                 <div key={order.id}
                 style={{color:'white'}}
                 >
@@ -84,17 +89,26 @@ const UserProfilePage = () => {
                     <p>Order Total: {order.price_total}</p>
 
                 </div>
-            ))}
-            {userOrders && userOrders.map(order => (
-                <div key={order.id}
-                style={{color: 'white', marginTop: '2rem'}}
-                >
-                <p>Game Name: {order.game_name}</p>
-                <p>Transaction ID: {order.order_id}</p>
-                <p>Game Price: {order.game_price}</p>
-                <p>Order Total: {order.order_price_total}</p>
-                </div>
-            ))}
+            ))} */}
+                {sessionUser.orders && sessionUser.orders.length ? (
+                    <TransactionTable orders={sessionUser.orders} />
+                ) : (
+                    <p>No orders found.</p>
+                )}
+
+                <div style={{margin: '2rem'}}/>
+
+                {userOrders && <UserOrdersTable userOrders={userOrders} />}
+                {/* {userOrders && userOrders.map(order => (
+                    <div key={order.id}
+                        style={{ color: 'white', marginTop: '2rem' }}
+                    >
+                        <p>Game Name: {order.game_name}</p>
+                        <p>Transaction ID: {order.order_id}</p>
+                        <p>Game Price: {order.game_price}</p>
+                        <p>Order Total: {order.order_price_total}</p>
+                    </div>
+                ))} */}
             </div>
         </div>
     )

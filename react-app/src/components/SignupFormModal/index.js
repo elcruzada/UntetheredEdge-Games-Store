@@ -32,6 +32,9 @@ function SignupFormModal() {
 	return (
 		<div className='modal'>
 			<h1>Sign Up</h1>
+			<p
+			style={{padding: '1rem'}}
+			>Join our community of untethered edgelords</p>
 			<form onSubmit={handleSubmit}>
 				<ul>
 					{errors.map((error, idx) => (

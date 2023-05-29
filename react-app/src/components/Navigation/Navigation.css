@@ -1,21 +1,45 @@
 .navbar-wrapper {
-  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  height: 7rem;
   margin: none;
-  background-color: rgb(115, 95, 50);
+  background-color: rgb(40, 42, 58);
   color: white;
+  width: 100%;
+}
+
+.navbar-wrapper ul {
+  width: 100%;
 }
 
 .navbar-wrapper li {
   padding: .4rem;
 }
 
+.top-left-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.top-left-navbar li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .profile-dropdown {
   /* position: absolute; */
-  margin-right: auto;
+  /* margin-right: auto; */
+}
+
+.profile-button-login-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .profile-button-wrapper {
-  position: absolute;
+  display: flex;
+  align-items: center;
+  /* position: absolute; */
   top: 4rem;
   right: 8rem;
 }

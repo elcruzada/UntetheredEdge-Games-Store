@@ -5,6 +5,7 @@ import './Homepage.css'
 import HomepageFeaturedCard from '../UI/HomepageFeaturedCard'
 import Carousel from '../UI/Carousel'
 import { useHistory } from 'react-router-dom'
+import LowerNavBar from '../LowerNavBar/LowerNavBar'
 //3 divs, possibly do flex-direction column
 const homepage = true
 
@@ -37,19 +38,7 @@ const Homepage = () => {
         <>
             <div className="global-outer-container">
                 <div className="global-inner-container">
-                    <div className="top-bar-homepage-container">
-                        <p
-                            style={{ color: 'white', fontFamily: 'Verdana' }}
-                        >A gaming marketplace where you can buy games, leave your thoughts on them, and even publish your own!</p>
-                        <h2
-                            style={{ color: 'white', fontFamily: 'Verdana', border: '1px solid white', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
-                            onClick={() => history.push(`/games/browse`)}
-                        >Browse</h2>
-                        <h2
-                            style={{ color: 'white', fontFamily: 'Verdana', border: '1px solid white', width: '4rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
-                            onClick={cartRedirectHandler}
-                        >Cart</h2>
-                    </div>
+                    <LowerNavBar sessionUser={sessionUser}/>
                     <HomepageFeaturedCard allGames={allGames} />
 
                     <Carousel images={convertedGames} homepage={homepage} />

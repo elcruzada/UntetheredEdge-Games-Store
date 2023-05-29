@@ -1,0 +1,30 @@
+.table {
+    width: 100%;
+    border-collapse: separate;
+    /* Use separate border model */
+    border-spacing: 0;
+    /* Set the spacing between cells to 0 */
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    /* Only show bottom border */
+}
+
+.table th:first-child,
+.table td:first-child {
+    border-left: none;
+    /* Remove left border for the first column */
+}
+
+.table th:last-child,
+.table td:last-child {
+    border-right: none;
+    /* Remove right border for the last column */
+}
+
+.table th {
+    background-color: #f0f0f0;
+}

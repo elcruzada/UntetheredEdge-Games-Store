@@ -11,7 +11,7 @@ const BrowseGamesPagesCard = ({game}) => {
         style={{cursor: 'pointer'}}
         >
             <div className='browse-games-pages-card-inner'>
-            <div className='browse-games-pages-card-left-column'>
+            <div className='browse-games-pages-card-top'>
             <img
             src={game.preview}
             style={{height: '10rem'}}
@@ -19,8 +19,12 @@ const BrowseGamesPagesCard = ({game}) => {
             </img>
 
             </div>
-            <div className='browse-games-pages-card-right-column'>
-                <h2>{game.name}</h2>
+            <div className='browse-games-pages-card-bottom'>
+                <p
+                style={{fontSize: '12px', color: 'rgb(143, 126, 126)', marginTop: '.5rem'}}
+                >Base Game</p>
+                <p>{game.name}</p>
+                <p>{game.price}</p>
             </div>
             </div>
         </div>

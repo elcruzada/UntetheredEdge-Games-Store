@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getSingleGameThunk, updateGameThunk } from "../../store/games"
+import { getAllGamesThunk, getSingleGameThunk, updateGameThunk } from "../../store/games"
 import { useModal } from "../../context/Modal"
 import { useHistory } from "react-router-dom"
 import './UpdateGameDeveloperForm.css'
@@ -74,6 +74,7 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
             if (singleGame.game_images.length > 0) {
                 history.push(`/games/${gameId}`)
             } else {
+                dispatch(getAllGamesThunk())
                 history.push(`/developer/portal`)
             }
         }
