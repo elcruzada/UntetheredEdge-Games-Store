@@ -1,0 +1,36 @@
+.three-games-card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+
+  .three-games-card {
+    width: calc(100% / 3);
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  .three-games-card img {
+
+  }
+
+  .three-games-card-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .three-games-card-name {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .three-games-card-price {
+    margin-top: 0.5rem;
+    font-size: .7rem;
+    color: white;
+  }

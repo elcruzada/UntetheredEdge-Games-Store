@@ -2,9 +2,10 @@
     display: grid;
     grid-template-columns: 5fr 1fr;
     grid-gap: .5rem;
-    width: 66rem;
+    width: 100%;
     height: 35rem;
-    padding: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 

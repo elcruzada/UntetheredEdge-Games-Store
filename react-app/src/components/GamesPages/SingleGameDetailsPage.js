@@ -167,8 +167,8 @@ const SingleGameDetailsPage = () => {
 
                 {gameId && sessionUser &&
                     <>
-                    <h3>LET THE DEVELOPER KNOW WHAT YOU THINK</h3>
-                    <p>Loved the game? Couldn't stand it? Our developers value feedback from players like you! Help build our community by sharing your thoughts to our developers.
+                    <h3 style={{marginTop: '1.5rem', marginBottom: '1rem'}}>LET THE DEVELOPER KNOW WHAT YOU THINK</h3>
+                    <p style={{marginBottom: '1rem'}}>Loved the game? Couldn't stand it? Our developers value feedback from players like you! Help build our community by sharing your thoughts to our developers.
                         </p>
                     <OpenModalButton
                         buttonText='LEAVE A COMMENT'

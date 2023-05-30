@@ -6,6 +6,7 @@ import HomepageFeaturedCard from '../UI/HomepageFeaturedCard'
 import Carousel from '../UI/Carousel'
 import { useHistory } from 'react-router-dom'
 import LowerNavBar from '../LowerNavBar/LowerNavBar'
+import SingleGameDetailsCardThreeGames from '../UI/SingleGameDetailsCardThreeGames'
 //3 divs, possibly do flex-direction column
 const homepage = true
 
@@ -31,6 +32,7 @@ const Homepage = () => {
 
 
     const convertedGames = Object.values(allGames)
+    console.log(convertedGames)
     // console.log(allGames)
     // console.log(promotedGames[0])
 
@@ -42,6 +44,7 @@ const Homepage = () => {
                     <HomepageFeaturedCard allGames={allGames} />
 
                     <Carousel images={convertedGames} homepage={homepage} />
+                    <SingleGameDetailsCardThreeGames convertedGames={convertedGames}/>
                     {/* <div className="homepage-bottom-scroll-bar">
                         <div></div>
                         <div></div>
