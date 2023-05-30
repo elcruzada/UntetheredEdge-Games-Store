@@ -7,6 +7,7 @@ import Carousel from '../UI/Carousel'
 import { useHistory } from 'react-router-dom'
 import LowerNavBar from '../LowerNavBar/LowerNavBar'
 import SingleGameDetailsCardThreeGames from '../UI/SingleGameDetailsCardThreeGames'
+import Footer from '../UI/Footer'
 //3 divs, possibly do flex-direction column
 const homepage = true
 
@@ -45,15 +46,10 @@ const Homepage = () => {
 
                     <Carousel images={convertedGames} homepage={homepage} />
                     <SingleGameDetailsCardThreeGames convertedGames={convertedGames}/>
-                    {/* <div className="homepage-bottom-scroll-bar">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div> */}
+
                 </div>
             </div>
+                <Footer />
         </>
     )
 }

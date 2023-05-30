@@ -1,7 +1,7 @@
 .game-developer-page-outer-wrapper {
     display: flex;
     justify-content: center;
-    min-height: 80rem;
+    min-height: 60rem;
     background-color: black;
     height: fit-content;
     border-radius: 3px;
@@ -12,7 +12,7 @@
     flex-direction: column;
     background-color: black;
     width: 70rem;
-    min-height: 80rem;
+    min-height: 60rem;
     height: fit-content;
     border-radius: 3px;
     margin-top: 5.5rem;

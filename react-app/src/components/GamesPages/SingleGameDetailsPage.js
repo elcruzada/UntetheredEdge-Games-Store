@@ -153,7 +153,7 @@ const SingleGameDetailsPage = () => {
                     <Carousel images={game_images} />
                 }
                 <p
-                style={{paddingTop:'2rem', paddingBottom: '2rem'}}
+                style={{paddingBottom: '2rem'}}
                 >{singleGameDetails && singleGameDetails.description}
                 </p>
                 <div className='game-comments-divider'>
@@ -182,14 +182,22 @@ const SingleGameDetailsPage = () => {
                             && singleGameDetails.comments.map(comment =>
                             (
                                 <li key={comment.id}
-                                    style={{ border: '1px solid white', borderRadius: '10px', width: '15rem', padding: '1rem', margin: '1rem' }}
+                                    style={{ border: '1px solid white', borderRadius: '10px', width: '15rem', paddingTop: '.5rem', paddingBottom: '.5rem', paddingLeft: '.5rem', paddingRight: '0rem', margin: '1rem' }}
                                 >
-                                    <p>{new Date(comment.created_at).toLocaleDateString('en-US', {
+                                    <p
+                                    style={{padding: '2px'}}
+                                    >{new Date(comment.created_at).toLocaleDateString('en-US', {
                                         month: '2-digit',
                                         day: '2-digit',
                                         year: '2-digit'
                                     })}</p>
-                                    <p>{`"${comment.comment}"`}</p>
+                                    <div
+                                    style={{padding: '1rem', fontSize: '14px'}}
+                                    >
+                                    <p
+                                    >{`"${comment.comment}"`}</p>
+
+                                    </div>
                                     {sessionUser && sessionUser.id && comment.user_id && sessionUser.id === comment.user_id &&
 
 
