@@ -1,7 +1,15 @@
 .carousel {
   position: relative;
   width: 70rem;
-  height: 5rem;
+  height: 25rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.carouse2l {
+  position: relative;
+  width: 70rem;
+  height: 20rem;
   overflow: hidden;
   margin-top: 1.5rem;
 }
@@ -10,53 +18,119 @@
 .carousel__next-button {
   position: absolute;
   top: 50%;
-  /* transform: translateY(-50%); */
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: black;
   color: white;
   font-size: 18px;
   border: none;
   padding: 6px;
+  margin-bottom: 2rem;
   cursor: pointer;
   z-index: 2;
 }
 
-.carousel__prev-button {
-  /* margin-left: auto; */
-  right: 8px;
+.carousel__prev-button:hover,
+.carousel__next-button:hover {
+  background-color: #282A3A;
+  z-index: 2;
+}
+.carouse2l__prev-button,
+.carouse2l__next-button {
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  margin-top: -15px;
-  margin-bottom: 5px;
-  /* margin-bottom: 1px; */
-  /* padding: 1rem; */
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 6px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carouse2l__prev-button:hover,
+.carouse2l__next-button:hover {
+  background-color: #282A3A;
+  z-index: 2;
+}
+
+.carousel__prev-button {
+  left: 10px;
 }
 
 .carousel__next-button {
-  right: 8px;
+  right: 10px;
+}
+.carouse2l__prev-button {
+  left: 10px;
+}
+
+.carouse2l__next-button {
+  right: 10px;
 }
 
 .carousel__slide-container {
   display: flex;
+  width: 70rem;
+  justify-content: space-between;
   transition: transform 0.3s ease-in-out;
-  gap: 2rem;
+  gap: .5rem;
   border-radius: 10px;
-  height: 5rem;
+  height: 25rem;
+}
+.carouse2l__slide-container {
+  display: flex;
+  width: 70rem;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+  gap: .5rem;
+  border-radius: 10px;
+  height: 25rem;
 }
 
 .carousel__slide {
-  flex: 0 0 80px;
-  height: 5rem;
+  flex: 0 0 calc(100% / 4);
+  height: 25rem;
   background-size: cover;
   background-position: center;
-  /* opacity: .3; */
+  /* opacity: 0.3; */
+  transition: opacity 0.5s ease-in-out;
+}
+.carouse2l__slide {
+  flex: 0 0 calc(100% / 4);
+  height: 25rem;
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.3; */
   transition: opacity 0.5s ease-in-out;
 }
 
 .carousel__slide.active {
   opacity: 1;
-  height: 5rem;
 }
 
+
 .single-game-details-page-carousel-image {
-  height: 5rem;
+  height: 15rem;
+  width: 18rem;
+  /* object-fit: contain; */
+}
+.homepage-details-page-carousel-image {
+  height: 20rem;
+  width: 100%;
+  /* object-fit: cover; */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.homepage-details-page-carousel-image:hover {
+  filter: brightness(120%);
+}
+.single-game-details-page-carousel-image:hover {
+  filter: brightness(120%);
+}
+
+.game-name,
+.game-price {
+  color: white;
+
 }

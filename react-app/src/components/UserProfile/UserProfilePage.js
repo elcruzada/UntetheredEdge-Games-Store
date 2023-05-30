@@ -6,7 +6,8 @@ import { getAllGamesThunk } from '../../store/games';
 import { getUserOrdersThunk } from '../../store/orders';
 import { useHistory } from 'react-router-dom';
 import { authenticate } from '../../store/session';
-import {TransactionTable, UserOrdersTable} from '../UI/Table/TransactionTable';
+import { TransactionTable, UserOrdersTable } from '../UI/Table/TransactionTable';
+import Footer from '../UI/Footer';
 
 const UserProfilePage = () => {
     const dispatch = useDispatch()
@@ -44,44 +45,25 @@ const UserProfilePage = () => {
     // console.log(gamesIterable)
     // const [orders, setOrders] = useState([]);
 
-    // useEffect(() => {
-    //     const fetchOrders = async () => {
-    //         try {
-    //             const response = await fetch('/api/users');
-    //             // console.log('REESS', RESSPONSE)
-    //             if (response.ok) {
-    //                 const data = await response.json();
-    //                 console.log('DAAATA', data)
-    //                 setOrders(data.orders);
-    //             } else {
-    //                 // Handle the error response here
-    //             }
-    //         } catch (error) {
-    //             console.error(error);
-    //             // Handle the error here
-    //         }
-    //     };
-
-    //     fetchOrders();
-    // }, []);
-    // console.log('ORRDERS', orders)
     // if (!sessionUser) return null
     // if (!userOrders) return null
 
     return (
-        <div className='user_profile_container'>
-            <div className='user-profile-inner-container'>
-                <h1
-                    style={{ color: 'white', paddingBottom: '1rem' }}
-                >{`You have $${sessionUser.account_capital} left in your wallet`}</h1>
-                {sessionUser.account_capital < 0 &&
-                <p
-                style={{color: 'white', paddingBottom: '3rem'}}
-                >You have less than 0 dollars in your account. Pay your outstanding balance or UntetheredEdge Interactive will take action.</p>}
-                <h1
-                    style={{ color: 'white', paddingBottom: '1.5rem' }}
-                >Transaction History</h1>
-                {/* {sessionUser.orders && sessionUser.orders.length && sessionUser.orders.map((order) => (
+        <>
+            <div className='user_profile_container'>
+                <div className='user-profile-inner-container'>
+                    {!sessionUser && <h3 style={{ color: 'white' }}>Please sign in to view your transaction history</h3>}
+                    <h1
+                        style={{ color: 'white', paddingBottom: '1rem' }}
+                    >{`You have $${sessionUser ? sessionUser.account_capital : 'N/A'} left in your wallet`}</h1>
+                    {sessionUser && sessionUser.account_capital < 0 &&
+                        <p
+                            style={{ color: 'white', paddingBottom: '3rem' }}
+                        >You have less than 0 dollars in your account. Pay your outstanding balance or UntetheredEdge Interactive will take action.</p>}
+                    <h1
+                        style={{ color: 'white', paddingBottom: '1.5rem' }}
+                    >Transaction History</h1>
+                    {/* {sessionUser.orders && sessionUser.orders.length && sessionUser.orders.map((order) => (
                 <div key={order.id}
                 style={{color:'white'}}
                 >
@@ -90,16 +72,16 @@ const UserProfilePage = () => {
 
                 </div>
             ))} */}
-                {sessionUser.orders && sessionUser.orders.length ? (
-                    <TransactionTable orders={sessionUser.orders} />
-                ) : (
-                    <p>No orders found.</p>
-                )}
+                    {sessionUser && sessionUser.orders && sessionUser.orders.length ? (
+                        <TransactionTable orders={sessionUser.orders} />
+                    ) : (
+                        <p style={{ color: 'white' }}>No orders found.</p>
+                    )}
 
-                <div style={{margin: '2rem'}}/>
+                    <div style={{ margin: '2rem' }} />
 
-                {userOrders && <UserOrdersTable userOrders={userOrders} />}
-                {/* {userOrders && userOrders.map(order => (
+                    {userOrders && <UserOrdersTable userOrders={userOrders} />}
+                    {/* {userOrders && userOrders.map(order => (
                     <div key={order.id}
                         style={{ color: 'white', marginTop: '2rem' }}
                     >
@@ -109,8 +91,10 @@ const UserProfilePage = () => {
                         <p>Order Total: {order.order_price_total}</p>
                     </div>
                 ))} */}
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     )
 }
 

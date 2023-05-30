@@ -48,16 +48,20 @@ function ProfileButton({ user }) {
 
   return (
    <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
-      </button>
+      <div onClick={openMenu}
+      style={{paddingTop: '3rem', paddingRight: '11.5rem'}}
+      >
+      <i className="fa-sharp fa-solid fa-user"
+         style={{fontSize: '1.5rem', color: '#C69749', backgroundColor: '#282A3A', padding: '0', cursor: 'pointer'}}
+      ></i>
+      </div>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
               <NavLink exact to='/developer/portal'
               style={{color: 'white'}}
               >
-                Your Developer Portal
+                Developer Portal
               </NavLink>
               <li>
 
@@ -65,7 +69,7 @@ function ProfileButton({ user }) {
               style={{color: 'white'}}
 
               >
-                Your Profile
+                Profile
               </NavLink>
               </li>
             <li>{user.username}</li>
@@ -93,6 +97,7 @@ function ProfileButton({ user }) {
         )}
       </ul>
       </>
+
   );
 }
 

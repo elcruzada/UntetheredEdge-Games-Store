@@ -6,6 +6,7 @@ import BrowseGamesPagesCard from "../UI/BrowseGamesPagesCard"
 import { getAllGamesThunk } from "../../store/games"
 import './BrowseGamesPages.css'
 import LowerNavBar from "../LowerNavBar/LowerNavBar"
+import Footer from "../UI/Footer"
 
 
 const BrowseGamesPages = () => {
@@ -25,19 +26,22 @@ const BrowseGamesPages = () => {
     console.log('CONVERTED', convertedGames)
 
     return (
-        <div className='browse-games-pages-outer'>
-            <div className='browse-games-pages-inner'>
-                <LowerNavBar sessionUser={sessionUser}/>
-                <div className='browse-games-pages-games'>
-                {convertedGames && convertedGames.map(game => {
-                    // console.log('GAAAEM', game)
-                    return <BrowseGamesPagesCard
-                        key={game.id}
-                        game={game} />
-                })}
+        <>
+            <div className='browse-games-pages-outer'>
+                <div className='browse-games-pages-inner'>
+                    <LowerNavBar sessionUser={sessionUser} browse={true} />
+                    <div className='browse-games-pages-games'>
+                        {convertedGames && convertedGames.map(game => {
+                            // console.log('GAAAEM', game)
+                            return <BrowseGamesPagesCard
+                                key={game.id}
+                                game={game} />
+                        })}
+                    </div>
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
     )
 }
 

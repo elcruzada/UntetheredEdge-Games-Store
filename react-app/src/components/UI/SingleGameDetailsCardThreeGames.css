@@ -1,0 +1,38 @@
+.three-games-card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4rem;
+    height: 25rem;
+  }
+
+  .three-games-card {
+    width: calc(100% / 2);
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  /* .three-games-card img {
+
+  } */
+
+  .three-games-card-image {
+      height: 18rem;
+      width: auto;
+    /* max-height: 200px; */
+    /* object-fit: cover; */
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .three-games-card-name {
+    margin-top: .2rem;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .three-games-card-price {
+    margin-top: 0.1rem;
+    font-size: 1rem;
+    color: white;
+  }

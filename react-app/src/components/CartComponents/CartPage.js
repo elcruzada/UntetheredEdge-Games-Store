@@ -81,7 +81,7 @@ const CartPage = () => {
                     </div>
                     <div className='cart-page-games-card-container'>
                         {cart.length === 0 ?
-                            <NavLink exact to='/'
+                            <NavLink exact to='/games/browse'
                             style={{textDecoration: 'none', fontSize: '3rem', border: '1px solid white', color: 'white', boxShadow: '5px 5px 5px gray'}}
                             >
                                 Your cart is empty. Add games to your cart!

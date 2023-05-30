@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, NavLink } from 'react-router-dom'
 
 import './GameDeveloperForm.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { createGameThunk } from '../../store/games'
 
 const GameDeveloperForm = () => {
     //only after the user has craeated the Game can you add images
+    const sessionUser = useSelector(state => state.session.user)
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -98,19 +99,13 @@ const GameDeveloperForm = () => {
     return (
         <>
             <div className='game-developer-form-container'>
+{/*
                 <div className='game-developer-errors' style={{color: 'black', padding: '3rem'}}>
 
-                <ul>
-                    {errors.name && <li>{errors.name}</li>}
-                    {errors.description && <li>{errors.description}</li>}
-                    {errors.developer && <li>{errors.developer}</li>}
-                    {errors.publisher && <li>{errors.publisher}</li>}
-                    {errors.price && <li>{errors.price}</li>}
-                    {errors.genre && <li>{errors.genre}</li>}
-                    {errors.releaseDate && <li>{errors.releaseDate}</li>}
-
-                </ul>
-                </div>
+                </div> */}
+                {!sessionUser ?
+                <NavLink exact to='/login'><h1>Sign in to submit an application</h1></NavLink>
+                    :
                 <form onSubmit={submitHandler}>
                     <h1>Publish your game with us!</h1>
                     <div className='form-row'>
@@ -123,6 +118,7 @@ const GameDeveloperForm = () => {
                             placeholder='Enter your game name here'
                         >
                         </input>
+                        {errors.name && <p>{errors.name}</p>}
                     </div>
                     {/* {errors.name && <p>{errors.name}</p>} */}
                     <div className='form-row'>
@@ -135,6 +131,7 @@ const GameDeveloperForm = () => {
                             placeholder='Enter your developer name here'
                         >
                         </input>
+                        {errors.developer && <p>{errors.developer}</p>}
                     </div>
                     <div className='form-row'>
                         <label>Your publisher</label>
@@ -146,9 +143,10 @@ const GameDeveloperForm = () => {
                             placeholder='UntetheredEdge Interactive unless otherwise noted'
                         >
                         </input>
+                        {errors.publisher && <p>{errors.publisher}</p>}
                     </div>
                     <div className='form-row'>
-                        <label>Your publisher</label>
+                        <label>Your Genre</label>
                         <input
                             id='gameGenre'
                             type='text'
@@ -157,6 +155,7 @@ const GameDeveloperForm = () => {
                             placeholder='i.e. Shooter, RPG, Puzzle, Platformer...'
                         >
                         </input>
+                        {errors.genre && <p>{errors.genre}</p>}
                     </div>
                     <div className='form-row'>
                         <label>Price of your game</label>
@@ -168,6 +167,7 @@ const GameDeveloperForm = () => {
                             onChange={(e) => setPrice(e.target.value)}
                         >
                         </input>
+                        {errors.price && <p>{errors.price}</p>}
                     </div>
                     <div className='form-row'>
                         <label>Write up a snazzy description for your game</label>
@@ -178,13 +178,17 @@ const GameDeveloperForm = () => {
                             placeholder='Enter a description here'
                         >
                         </textarea>
+                        {errors.description && <p>{errors.description}</p>}
                     </div>
+                    <div className='form-row'>
                     <input
                         id="gameReleaseDate"
                         type="date"
                         value={releaseDate}
                         onChange={(e) => setReleaseDate(e.target.value)}
                     />
+                    {errors.releaseDate && <p>{errors.releaseDate}</p>}
+                    </div>
                     <div className='form-row'>
                         <label>Want your game promoted?</label>
                         <input
@@ -228,6 +232,7 @@ const GameDeveloperForm = () => {
                         <button type='submit'> Submit Game </button>
                     </div>
                 </form>
+                }
             </div>
         </>
     )

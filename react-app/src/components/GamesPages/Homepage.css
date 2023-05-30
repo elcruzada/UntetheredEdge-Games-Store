@@ -1,7 +1,8 @@
 .global-outer-container {
     display: flex;
     justify-content: center;
-    min-height: 80rem;
+    /* flex-direction: column; */
+    min-height: 115rem;
     background-color: black;
     height: fit-content;
     border-radius: 3px;

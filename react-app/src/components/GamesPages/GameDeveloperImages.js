@@ -25,7 +25,7 @@ const GameDeveloperImages = ({gameId}) => {
             //     [newImageUrl]: false
             // })
             setNewImageUrl('');
-        }
+        } 
     };
 
     const handleRemoveImage = (index) => {

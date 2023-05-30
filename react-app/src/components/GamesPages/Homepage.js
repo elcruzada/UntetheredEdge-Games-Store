@@ -3,9 +3,12 @@ import { getAllGamesThunk } from '../../store/games'
 import { useDispatch, useSelector } from 'react-redux'
 import './Homepage.css'
 import HomepageFeaturedCard from '../UI/HomepageFeaturedCard'
-import Carousel from '../UI/Carousel'
+// import Carousel,
+import { HomepageCarousel } from '../UI/Carousel'
 import { useHistory } from 'react-router-dom'
 import LowerNavBar from '../LowerNavBar/LowerNavBar'
+import SingleGameDetailsCardThreeGames from '../UI/SingleGameDetailsCardThreeGames'
+import Footer from '../UI/Footer'
 //3 divs, possibly do flex-direction column
 const homepage = true
 
@@ -31,6 +34,7 @@ const Homepage = () => {
 
 
     const convertedGames = Object.values(allGames)
+    console.log(convertedGames)
     // console.log(allGames)
     // console.log(promotedGames[0])
 
@@ -38,19 +42,16 @@ const Homepage = () => {
         <>
             <div className="global-outer-container">
                 <div className="global-inner-container">
-                    <LowerNavBar sessionUser={sessionUser}/>
+                    <LowerNavBar sessionUser={sessionUser} homepage={homepage}/>
                     <HomepageFeaturedCard allGames={allGames} />
 
-                    <Carousel images={convertedGames} homepage={homepage} />
-                    {/* <div className="homepage-bottom-scroll-bar">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div> */}
+                    {/* <Carousel images={convertedGames} homepage={homepage} /> */}
+                    <HomepageCarousel images={convertedGames} homepage={homepage} />
+                    <SingleGameDetailsCardThreeGames convertedGames={convertedGames}/>
+
                 </div>
             </div>
+                <Footer />
         </>
     )
 }
