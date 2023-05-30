@@ -18,6 +18,7 @@ const DeleteGameModal = ({gameId}) => {
         dispatch(deleteGameThunk(gameId))
         closeModal()
         dispatch(getAllGamesThunk())
+        history.push('/developer')
         history.push('/developer/portal')
     }
 

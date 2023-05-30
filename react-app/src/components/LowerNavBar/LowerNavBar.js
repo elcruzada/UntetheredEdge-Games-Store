@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom'
 import './LowerNavBar.css'
 
-const LowerNavBar = ({sessionUser}) => {
+const LowerNavBar = ({sessionUser, homepage, browse}) => {
     const history = useHistory()
 
     const cartRedirectHandler = () => {
@@ -27,14 +27,30 @@ const LowerNavBar = ({sessionUser}) => {
                             <i className="fas fa-search"></i>
                         </button>
                     </div>
-                    <h2
-                        style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
-                        onClick={() => history.push(`/`)}
-                    >Discover</h2>
-                    <h2
-                        style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
-                        onClick={() => history.push(`/games/browse`)}
-                    >Browse</h2>
+                    {
+                        homepage ?
+                        <h2
+                            style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer', borderBottom: '1px solid gray', marginLeft: '1rem' }}
+                            onClick={() => history.push(`/`)}
+                        >Discover</h2>
+                        :
+                        <h2
+                            style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer', marginLeft: '1rem' }}
+                            onClick={() => history.push(`/`)}
+                        >Discover</h2>
+                    }
+                    {
+                        browse ?
+                        <h2
+                            style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer', borderBottom: '1px solid gray' }}
+                            onClick={() => history.push(`/games/browse`)}
+                        >Browse</h2>
+                        :
+                        <h2
+                            style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
+                            onClick={() => history.push(`/games/browse`)}
+                        >Browse</h2>
+                    }
                     <h2
                         style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '6rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
                         onClick={() => window.alert("Feature coming soon")}

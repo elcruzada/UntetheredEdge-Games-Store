@@ -35,6 +35,7 @@
 .single-details-page-left-column > img {
     border-radius: 10px;
     height: 30rem;
+    max-width: 52rem;
 }
 
 .single-game-details-right-column {

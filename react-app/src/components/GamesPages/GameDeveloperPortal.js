@@ -4,6 +4,7 @@ import './GameDeveloperPortal.css'
 import { useEffect } from 'react'
 import { getAllGamesThunk } from '../../store/games'
 import DeveloperPortalGamesCard from '../UI/DeveloperPortalGamesCard'
+import Footer from '../UI/Footer'
 
 const GameDeveloperPortal = () => {
     const dispatch = useDispatch()
@@ -28,38 +29,41 @@ const GameDeveloperPortal = () => {
     // console.log(developerPortalGames)
 
     return (
-        <div className='game-developer-portal-outer-wrapper'>
-            <div className='game-developer-portal-inner-wrapper'>
+        <>
+            <div className='game-developer-portal-outer-wrapper'>
+                <div className='game-developer-portal-inner-wrapper'>
 
-                {
-                    !sessionUser ?
-                        // <div className='game-developer-portal-title'>
-                        <NavLink exact to='/login'>
-                            <h1
-                                style={{ color: 'white' }}
-                            >Create an account to see your developer portal!</h1>
-                        </NavLink>
-                        // </div>
-                        :
-                        <div className='game-developer-portal-wrapper'
+                    {
+                        !sessionUser ?
+                            // <div className='game-developer-portal-title'>
+                            <NavLink exact to='/login'>
+                                <h1
+                                    style={{ color: 'white' }}
+                                >Create an account to see your developer portal!</h1>
+                            </NavLink>
+                            // </div>
+                            :
+                            <div className='game-developer-portal-wrapper'
 
-                        >
-                            <div className='submit-new-application-link'
-                                style={{ height: '15rem' }}
                             >
-                                <NavLink exact to='/developer/form'
-                                    style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '4rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray' }}
+                                <div className='submit-new-application-link'
+                                    style={{ height: '15rem' }}
                                 >
-                                    Submit a new game application!
-                                </NavLink>
+                                    <NavLink exact to='/developer/form'
+                                        style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '4rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray' }}
+                                    >
+                                        Submit a new game application!
+                                    </NavLink>
+                                </div>
+                                {developerPortalGames && developerPortalGames.map(game => {
+                                    return <DeveloperPortalGamesCard game={game} />
+                                })}
                             </div>
-                            {developerPortalGames && developerPortalGames.map(game => {
-                                return <DeveloperPortalGamesCard game={game} />
-                            })}
-                        </div>
-                }
+                    }
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     )
 }
 

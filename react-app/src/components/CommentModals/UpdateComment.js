@@ -14,8 +14,10 @@ const UpdateCommentModal = ({comment, commentId, gameId}) => {
     const [errors, setErrors] = useState({})
 
     useEffect(() => {
-        if (!editComment) errors.comment = "Comment is required"
-        if (editComment.length < 10) errors.comment = "Comment must be longer than 10 characters"
+        const err = {}
+        if (!editComment) err.comment = "Comment is required"
+        if (editComment.length < 10) err.comment = "Comment must be longer than 10 characters"
+        setErrors(err)
     }, [editComment])
 
     useEffect(() => {
@@ -50,7 +52,10 @@ const UpdateCommentModal = ({comment, commentId, gameId}) => {
                     value={editComment}
                     onChange={(e) => setEditComment(e.target.value)}
                 />
-                {errors && errors.comment && <p>{errors.comment}</p>}
+                {errors.comment &&
+                <p
+                style={{fontSize: '12px', paddingBottom: '.5rem'}}
+                >{errors.comment}</p>}
                 <button
                     className='post-comment-modal-button'
                     disabled={editComment.length < 10 ? true : false}

@@ -29,7 +29,7 @@ const BrowseGamesPages = () => {
         <>
             <div className='browse-games-pages-outer'>
                 <div className='browse-games-pages-inner'>
-                    <LowerNavBar sessionUser={sessionUser} />
+                    <LowerNavBar sessionUser={sessionUser} browse={true} />
                     <div className='browse-games-pages-games'>
                         {convertedGames && convertedGames.map(game => {
                             // console.log('GAAAEM', game)

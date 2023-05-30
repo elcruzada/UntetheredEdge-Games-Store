@@ -3,10 +3,11 @@
     justify-content: space-between;
     gap: 1rem;
     margin-top: 4rem;
+    height: 25rem;
   }
 
   .three-games-card {
-    width: calc(100% / 3);
+    width: calc(100% / 2);
     padding: 1rem;
     border-radius: 4px;
   }
@@ -16,11 +17,12 @@
   } */
 
   .three-games-card-image {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
+      height: 18rem;
+      width: auto;
+    /* max-height: 200px; */
+    /* object-fit: cover; */
     border-radius: 4px;
+    cursor: pointer;
   }
 
   .three-games-card-name {

@@ -3,7 +3,8 @@ import { getAllGamesThunk } from '../../store/games'
 import { useDispatch, useSelector } from 'react-redux'
 import './Homepage.css'
 import HomepageFeaturedCard from '../UI/HomepageFeaturedCard'
-import Carousel from '../UI/Carousel'
+// import Carousel,
+import { HomepageCarousel } from '../UI/Carousel'
 import { useHistory } from 'react-router-dom'
 import LowerNavBar from '../LowerNavBar/LowerNavBar'
 import SingleGameDetailsCardThreeGames from '../UI/SingleGameDetailsCardThreeGames'
@@ -41,10 +42,11 @@ const Homepage = () => {
         <>
             <div className="global-outer-container">
                 <div className="global-inner-container">
-                    <LowerNavBar sessionUser={sessionUser}/>
+                    <LowerNavBar sessionUser={sessionUser} homepage={homepage}/>
                     <HomepageFeaturedCard allGames={allGames} />
 
-                    <Carousel images={convertedGames} homepage={homepage} />
+                    {/* <Carousel images={convertedGames} homepage={homepage} /> */}
+                    <HomepageCarousel images={convertedGames} homepage={homepage} />
                     <SingleGameDetailsCardThreeGames convertedGames={convertedGames}/>
 
                 </div>
