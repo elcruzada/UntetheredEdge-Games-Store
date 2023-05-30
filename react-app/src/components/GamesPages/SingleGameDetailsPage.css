@@ -25,6 +25,7 @@
     justify-content: space-between;
     width: 100%;
     max-height: 30rem;
+    margin-bottom: 2rem;
 }
 
 .single-details-page-left-column {
@@ -47,6 +48,10 @@
     display: flex;
     justify-content: center;
     /* text-align: center; */
+}
+
+.add-to-cart:hover {
+    background-color: #282A3A;
 }
 
 .singleGameDetails-game-details {

@@ -4,14 +4,14 @@ import './Carousel.css';
 const Carousel = ({ images, homepage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToPreviousSlide = () => {
+  const prevSlidehandler = () => {
     setCurrentIndex((prevIndex) => {
       const newIndex = prevIndex - 4;
       return newIndex < 0 ? images.length - 1 : newIndex;
     });
   };
 
-  const goToNextSlide = () => {
+  const nextSlideHandler = () => {
     setCurrentIndex((prevIndex) => {
       const newIndex = prevIndex + 4;
       return newIndex >= images.length ? 0 : newIndex;
@@ -20,7 +20,7 @@ const Carousel = ({ images, homepage }) => {
 
   return (
     <div className="carousel">
-      <button className="carousel__prev-button" onClick={goToPreviousSlide}>
+      <button className="carousel__prev-button" onClick={prevSlidehandler}>
         &lt;
       </button>
       {homepage ? (
@@ -43,7 +43,7 @@ const Carousel = ({ images, homepage }) => {
                 <div className="game-details">
                 <p style={{color: 'gray', fontSize: '12px'}}>Base Game</p>
                 <p className="game-name">{image.name}</p>
-                <p className="game-price">{image.price}</p>
+                <p className="game-price">${image.price}</p>
               </div>
               </div>
             ))}
@@ -69,7 +69,7 @@ const Carousel = ({ images, homepage }) => {
             ))}
         </div>
       )}
-      <button className="carousel__next-button" onClick={goToNextSlide}>
+      <button className="carousel__next-button" onClick={nextSlideHandler}>
         &gt;
       </button>
     </div>

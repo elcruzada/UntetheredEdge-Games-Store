@@ -79,7 +79,6 @@ const SingleGameDetailsPage = () => {
     // console.log('GAAAMEIMAGES', game_images)
     //deal with the preview images rendering
 
-
     return (
 
         <div className='single-details-page-wrapper'>
@@ -162,7 +161,7 @@ const SingleGameDetailsPage = () => {
                 </div>
 
                 {!sessionUser && <h2
-                    style={{ border: '1px solid white', width: '20rem', padding: '1rem', color: 'black', backgroundColor: 'white', fontWeight: 'bold', borderRadius: '5px', textAlign: 'center' }}
+                    style={{ border: '1px solid white', width: '20rem', padding: '.5rem', color: 'black', backgroundColor: 'white', fontWeight: 'bold', borderRadius: '5px', textAlign: 'center', margin: '1rem'}}
                 >Log in to leave a comment!</h2>}
 
                 {gameId && sessionUser &&
@@ -183,7 +182,7 @@ const SingleGameDetailsPage = () => {
                             && singleGameDetails.comments.map(comment =>
                             (
                                 <li key={comment.id}
-                                    style={{ border: '1px solid white', width: '15rem' }}
+                                    style={{ border: '1px solid white', borderRadius: '10px', width: '15rem', padding: '1rem', margin: '1rem' }}
                                 >
                                     <p>{new Date(comment.created_at).toLocaleDateString('en-US', {
                                         month: '2-digit',

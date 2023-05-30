@@ -8,7 +8,6 @@ import { getAllCommentsThunk, postCommentThunk } from '../../store/comments'
 import { getAllGamesThunk } from '../../store/games'
 
 
-//need star rating
 const PostCommentModal = ({ gameId }) => {
     const dispatch = useDispatch()
     const comments = useSelector(state => state.comments)
@@ -19,8 +18,10 @@ const PostCommentModal = ({ gameId }) => {
     const { closeModal } = useModal()
 
     useEffect(() => {
-        if (!comment) errors.comment = "Comment is required"
-        if (comment.length < 10) errors.comment = "Comment must be longer than 10 characters"
+        const err = {}
+        if (!comment) err.comment = "Comment is required"
+        if (comment.length < 10) err.comment = "Comment must be longer than 10 characters"
+        setErrors(err)
     }, [comment])
 
     const submitHandler = async (e) => {
@@ -42,9 +43,10 @@ const PostCommentModal = ({ gameId }) => {
     }
 
     return (
-        <div>
+        <div
+        >
             <form
-                className="post-review-modal-container"
+            className="post-comment-modal-container"
                 onSubmit={submitHandler}
             >
 
@@ -57,9 +59,12 @@ const PostCommentModal = ({ gameId }) => {
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                 />
-                {errors && errors.comment && <p>{errors.comment}</p>}
+                {errors.comment &&
+                <p
+                style={{fontSize: '12px', paddingBottom: '.5rem'}}
+                >{errors.comment}</p>}
                 <button
-                    className='post-review-modal-button'
+                    className='post-comment-modal-button'
                     disabled={comment.length < 10 ? true : false}
                 >Post Comment</button>
             </form>

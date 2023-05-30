@@ -31,7 +31,7 @@ const DeleteCommentModal = ({gameId, commentId}) => {
     }
 
     return (
-        <div>
+        <div className='modal'>
             <h1>Are you sure you want to delete this game?</h1>
             <h2>This action cannot be reversed.</h2>
 

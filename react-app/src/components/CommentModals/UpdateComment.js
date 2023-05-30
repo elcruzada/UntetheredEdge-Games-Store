@@ -38,7 +38,7 @@ const UpdateCommentModal = ({comment, commentId, gameId}) => {
     return (
         <div>
             <form
-                className="post-review-modal-container"
+                className="post-comment-modal-container"
                 onSubmit={submitHandler}
             >
                 <h1 className='how-stay'>Thoughts?</h1>
@@ -52,7 +52,7 @@ const UpdateCommentModal = ({comment, commentId, gameId}) => {
                 />
                 {errors && errors.comment && <p>{errors.comment}</p>}
                 <button
-                    className='post-review-modal-button'
+                    className='post-comment-modal-button'
                     disabled={editComment.length < 10 ? true : false}
                 >Edit Comment</button>
             </form>

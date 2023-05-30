@@ -10,13 +10,19 @@
 .carousel__next-button {
   position: absolute;
   top: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: black;
   color: white;
   font-size: 18px;
   border: none;
   padding: 6px;
   margin-bottom: 2rem;
   cursor: pointer;
+  z-index: 2;
+}
+
+.carousel__prev-button:hover,
+.carousel__next-button:hover {
+  background-color: #282A3A;
   z-index: 2;
 }
 

@@ -10,8 +10,9 @@ const SingleGameDetailsCardThreeGames = ({convertedGames}) => {
           slicedGames.map((game, index) => (
             <div key={index} className="three-games-card">
               <img src={game.preview} alt={game.name} className="three-games-card-image" />
+              <p style={{fontSize: '12px', color: 'gray'}}>Base Game</p>
               <p className="three-games-card-name">{game.name}</p>
-              <p className="three-games-card-price">{game.price}</p>
+              <p className="three-games-card-price">${game.price}</p>
             </div>
           ))}
         </div>

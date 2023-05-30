@@ -11,9 +11,9 @@
     border-radius: 4px;
   }
 
-  .three-games-card img {
+  /* .three-games-card img {
 
-  }
+  } */
 
   .three-games-card-image {
     width: 100%;
@@ -24,13 +24,13 @@
   }
 
   .three-games-card-name {
-    margin-top: 1rem;
+    margin-top: .2rem;
     font-size: 1rem;
     color: white;
   }
 
   .three-games-card-price {
-    margin-top: 0.5rem;
-    font-size: .7rem;
+    margin-top: 0.1rem;
+    font-size: 1rem;
     color: white;
   }
