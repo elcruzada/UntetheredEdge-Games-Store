@@ -12,7 +12,7 @@ const Footer = () => {
                     <ul className="footer-links">
                         <li className="footer-link">
                             Support-A-Creator</li>
-                        <li className="footer-link">Distribute on Epic Games</li>
+                        <li className="footer-link">Distribute on UEI</li>
                         <li className="footer-link">Careers</li>
                         <li className="footer-link">Company</li>
                     </ul>
