@@ -44,8 +44,6 @@ const Homepage = () => {
                 <div className="global-inner-container">
                     <LowerNavBar sessionUser={sessionUser} homepage={homepage}/>
                     <HomepageFeaturedCard allGames={allGames} />
-
-                    {/* <Carousel images={convertedGames} homepage={homepage} /> */}
                     <HomepageCarousel images={convertedGames} homepage={homepage} />
                     <SingleGameDetailsCardThreeGames convertedGames={convertedGames}/>
 

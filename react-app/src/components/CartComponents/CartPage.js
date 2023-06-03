@@ -4,6 +4,7 @@ import './CartPage.css'
 import CartGamesCard from '../UI/CartGamesCard'
 import { useState, useEffect } from 'react'
 import { deleteUserCartThunk, getUserCartThunk } from '../../store/cart'
+import LowerNavBar from '../LowerNavBar/LowerNavBar'
 
 const CartPage = () => {
     const dispatch = useDispatch()
@@ -71,7 +72,9 @@ const CartPage = () => {
             <div className='cart-page-outer-wrapper'>
                 <div className='cart-page-inner-wrapper'>
 
+                    <LowerNavBar />
 
+                    <h1 style={{color: 'white', marginTop: '3rem', marginBottom: '3rem'}}>My Cart</h1>
                     <div className='cart-page-checkout'>
                         <h1>Games Summary</h1>
                         <p>Total {total} </p>

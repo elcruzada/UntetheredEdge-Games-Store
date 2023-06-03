@@ -20,7 +20,7 @@ const GameDeveloperPage = () => {
                     />
 
                     <h1
-                    style={{marginTop: '3rem', marginBottom: '2rem'}}
+                        style={{ marginTop: '3rem', marginBottom: '2rem' }}
                     >Publish with us!</h1>
                     {
                         sessionUser ?
