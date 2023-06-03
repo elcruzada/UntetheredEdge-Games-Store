@@ -8,6 +8,7 @@ const LowerNavBar = ({sessionUser, homepage, browse}) => {
     const [isDiscoverHover, setisDiscoverHover] = useState(false)
     const [isBrowseHover, setisBrowseHover] = useState(false)
     const [isNewsHover, setisNewsHover] = useState(false)
+    const [isCartHover, setIsCartHover] = useState(false)
 
     const cartRedirectHandler = () => {
         if (!sessionUser) {
@@ -88,10 +89,12 @@ const LowerNavBar = ({sessionUser, homepage, browse}) => {
                         onMouseLeave={() => setisNewsHover(false)}
                     >News</h2>
                 </div>
-                <div className="top-bar-homepage-container-right-column">
+                <div className="top-bar-homepage-container-right-column hover-effect">
                     <h2
-                        style={{ color: 'white', fontSize: '16px', fontWeight: 'light', width: '5rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
+                        style={{ color: isCartHover ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '5rem', textAlign: 'center', borderRadius: '10px', padding: ".5rem", cursor: 'pointer' }}
                         onClick={cartRedirectHandler}
+                        onMouseEnter={() => setIsCartHover(true)}
+                        onMouseLeave={() => setIsCartHover(false)}
                     >Cart</h2>
                 </div>
             </div>

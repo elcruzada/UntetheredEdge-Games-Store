@@ -1,4 +1,6 @@
-const HomepageFeaturedRightColumnCard = ({currentGameId, previewImage, title, alt, cardClickHandler, setGameIdHandler}) => {
+import './HomepageFeaturedRightColumnCard.css'
+
+const HomepageFeaturedRightColumnCard = ({currentGameId, previewImage, title, alt, cardClickHandler, setGameIdHandler, isClicked, setIsClicked}) => {
 
 
     return (
@@ -12,6 +14,8 @@ const HomepageFeaturedRightColumnCard = ({currentGameId, previewImage, title, al
                     <img
                         src={previewImage}
                         alt={alt}
+                        onTransitionEnd={() => setIsClicked(false)}
+                        className={`pop-image ${isClicked ? 'clicked' : ''}`}
                     />
                 </div>
                 <div className='featured-games-homepage-little-pictures-right-column-image-title-card-image-title'>
