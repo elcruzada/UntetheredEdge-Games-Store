@@ -136,18 +136,18 @@ const GameDeveloperPage = () => {
                             }
                         </div>
                     </div>
-                            <div class="column-container">
-                                <div class="column">
-                                    <div class="column-item">Column 1, Div 1</div>
-                                    <div class="column-item">Column 1, Div 2</div>
+                            <div class="developer-page-column-container">
+                                <div class="developer-page-column">
+                                    <div class="developer-column-item">Column 1, Div 1</div>
+                                    <div class="developer-column-item">Column 1, Div 2</div>
                                 </div>
-                                <div class="column">
-                                    <div class="column-item">Column 2, Div 1</div>
-                                    <div class="column-item">Column 2, Div 2</div>
+                                <div class="developer-page-column">
+                                    <div class="developer-column-item">Column 2, Div 1</div>
+                                    <div class="developer-column-item">Column 2, Div 2</div>
                                 </div>
-                                <div class="column">
-                                    <div class="column-item">Column 3, Div 1</div>
-                                    <div class="column-item">Column 3, Div 2</div>
+                                <div class="developer-page-column-column">
+                                    <div class="developer-column-item">Column 3, Div 1</div>
+                                    <div class="developer-column-item">Column 3, Div 2</div>
                                 </div>
                             </div>
                 </div>
