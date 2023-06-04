@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { getAllGamesThunk } from '../../store/games'
 import { useDispatch, useSelector } from 'react-redux'
 import './Homepage.css'
@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom'
 import LowerNavBar from '../LowerNavBar/LowerNavBar'
 import SingleGameDetailsCardThreeGames from '../UI/SingleGameDetailsCardThreeGames'
 import Footer from '../UI/Footer'
+import LoadingScreen from '../UI/Loading/LoadingScreen'
 //3 divs, possibly do flex-direction column
 const homepage = true
 
@@ -17,9 +18,12 @@ const Homepage = () => {
     const history = useHistory()
     const allGames = useSelector(state => state.games.allGames)
     const sessionUser = useSelector(state => state.session.user)
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        dispatch(getAllGamesThunk())
+        dispatch(getAllGamesThunk()).then(() => {
+            setLoading(false);
+        })
     }, [dispatch])
 
     const cartRedirectHandler = () => {
@@ -40,18 +44,21 @@ const Homepage = () => {
 
     return (
         <>
-            <div className="global-outer-container">
-                <div className="global-inner-container">
-                    <LowerNavBar sessionUser={sessionUser} homepage={homepage}/>
-                    <HomepageFeaturedCard allGames={allGames} />
+            {
+                loading ? <LoadingScreen /> :
+                    <div>
+                        <div className="global-outer-container">
+                            <div className="global-inner-container">
+                                <LowerNavBar sessionUser={sessionUser} homepage={homepage} />
+                                <HomepageFeaturedCard allGames={allGames} />
+                                <HomepageCarousel images={convertedGames} homepage={homepage} />
+                                <SingleGameDetailsCardThreeGames convertedGames={convertedGames} />
 
-                    {/* <Carousel images={convertedGames} homepage={homepage} /> */}
-                    <HomepageCarousel images={convertedGames} homepage={homepage} />
-                    <SingleGameDetailsCardThreeGames convertedGames={convertedGames}/>
-
-                </div>
-            </div>
-                <Footer />
+                            </div>
+                        </div>
+                        <Footer />
+                    </div>
+            }
         </>
     )
 }

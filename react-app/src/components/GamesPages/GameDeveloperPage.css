@@ -1,7 +1,7 @@
 .game-developer-page-outer-wrapper {
     display: flex;
     justify-content: center;
-    min-height: 60rem;
+    min-height: 100rem;
     background-color: black;
     height: fit-content;
     border-radius: 3px;
@@ -22,4 +22,72 @@
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+}
+
+.gif-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #282A3A;
+    margin-top: 3rem;
+}
+
+.gif-container img {
+    max-width: 65%;
+    border-radius: 5px;
+}
+
+.overlay-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #282A3A;
+    color: white;
+    /* padding: 2rem; */
+}
+
+.overlay-text a:hover {
+    background-color: #735F32;
+}
+
+.overlay-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.overlay-text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.overlay-text a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    box-shadow: 5px 5px 5px gray;
+    margin-bottom: 2rem;
+}
+
+.game-developer-page-button {
+    margin-bottom: 3rem;
+}
+
+.column-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+}
+
+.column-item {
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
 }

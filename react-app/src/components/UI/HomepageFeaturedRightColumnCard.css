@@ -1,1 +1,7 @@
+.pop-image {
+    transition: transform 0.2s;
+}
 
+.pop-image.clicked {
+    transform: scale(1.1);
+}

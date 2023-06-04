@@ -24,7 +24,7 @@ const BrowseGamesPagesCard = ({game}) => {
                 style={{fontSize: '12px', color: 'rgb(143, 126, 126)', marginTop: '.5rem'}}
                 >Base Game</p>
                 <p>{game.name}</p>
-                <p>{game.price}</p>
+                <p>${game.price}</p>
             </div>
             </div>
         </div>
