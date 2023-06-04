@@ -37,9 +37,9 @@ const GameDeveloperPortal = () => {
                         !sessionUser ?
                             // <div className='game-developer-portal-title'>
                             <NavLink exact to='/login'>
-                                <h1
-                                    style={{ color: 'white' }}
-                                >Create an account to see your developer portal!</h1>
+                                <h2
+                                    style={{ color: 'white', textAlign: 'center' }}
+                                >Log in or create an account to see your developer portal!</h2>
                             </NavLink>
                             // </div>
                             :
@@ -49,8 +49,12 @@ const GameDeveloperPortal = () => {
                                 <div className='submit-new-application-link'
                                     style={{ height: '15rem' }}
                                 >
+
+                                    {/* <h3
+                                    style={{color: 'white', marginBottom: '2rem'}}
+                                    >You currently have no games in your portal</h3> */}
                                     <NavLink exact to='/developer/form'
-                                        style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '4rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray' }}
+                                        style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '3rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', padding: '2rem' }}
                                     >
                                         Submit a new game application!
                                     </NavLink>
