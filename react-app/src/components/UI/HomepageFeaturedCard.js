@@ -15,9 +15,9 @@ const HomepageFeaturedCard = ({ allGames }) => {
   const [isClicked, setIsClicked] = useState(false)
 
   const firstPromotedGamePreview = promotedGames[0]
-    if (!firstPromotedGamePreview) return null
-      const previewImage = firstPromotedGamePreview.game_images.find(game => game.preview === true)
-      if (!previewImage.url) return null
+  if (!firstPromotedGamePreview) return null
+  const previewImage = firstPromotedGamePreview.game_images.find(game => game.preview === true)
+  if (!previewImage.url) return null
 
   const cardClickHandler = (previewImage) => {
     setPreviousPictureSource(currentPictureSource);
@@ -38,9 +38,9 @@ const HomepageFeaturedCard = ({ allGames }) => {
     }
   };
 
-//   useEffect(() => {
-//     console.log('BIIIIG', bigPictureSource);
-//   }, [bigPictureSource]);
+  //   useEffect(() => {
+  //     console.log('BIIIIG', bigPictureSource);
+  //   }, [bigPictureSource]);
 
   return (
     <>
@@ -54,7 +54,7 @@ const HomepageFeaturedCard = ({ allGames }) => {
           <img src={currentPictureSource || previewImage.url} alt='featured-current-picture-preview' />
         </div>
         <div className="featured-games-homepage-little-pictures-right-column">
-          {promotedGames && promotedGames.slice(0,6).map((game) => {
+          {promotedGames && promotedGames.slice(0, 6).map((game) => {
             // const previewImage = game.game_images.find((image) => image.preview);
             return (
               <HomepageFeaturedRightColumnCard

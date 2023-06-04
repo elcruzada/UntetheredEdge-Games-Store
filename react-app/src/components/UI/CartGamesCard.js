@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import './CartGamesCard.css'
 
 const CartGamesCard = ({game, removeFromCartHandler}) => {
-
+    const [isRemoveHover, setIsRemoveHover] = useState(false)
 
     return (
         <div className='cart-games-card-outer-wrapper'>
@@ -18,13 +19,15 @@ const CartGamesCard = ({game, removeFromCartHandler}) => {
             style={{textAlign: 'center', color: 'white', backgroundColor: 'gray', width: '7rem', borderRadius: '5px'}}
             >Base Game</p>
             </div>
-            <div className='cart-games-card-right-column'>
+            <div className='cart-games-card-right-column hover-effect'>
                 <p
                 style={{color: 'white'}}
                 >Price: ${game.price}</p>
                 <p
-                style={{color: 'gray', cursor: 'pointer', width: '4rem'}}
+                style={{color: isRemoveHover ? 'white' : 'gray', cursor: 'pointer', width: '4rem'}}
                 onClick={() => removeFromCartHandler(game.id)}
+                onMouseEnter={() => setIsRemoveHover(true)}
+                onMouseLeave={() => setIsRemoveHover(false)}
                 >Remove</p>
             </div>
         </div>
