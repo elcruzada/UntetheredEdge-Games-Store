@@ -27,16 +27,40 @@
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
+    width: 100%;
+    height: 15rem;
+    /* height: 30rem; */
+
 }
 
 .developer-page-column {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    height: 15rem;
+    /* flex: 1; */
 }
 
+/* .developer-page-column-item-container {
+    width: 70rem;
+} */
+
 .developer-column-item {
+    border: gray;
+    border-radius: 20px;
     background-color: lightgray;
-    padding: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    text-align: center;
+    height: 6rem;
+    padding: 1.3rem;
+    margin: 0;
+    height: 25rem;
+    /* margin-bottom: 10px; */
+}
+
+.developer-column-item i {
+    /* padding-top: 2.2rem; */
 }
