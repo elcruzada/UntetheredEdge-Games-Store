@@ -62,6 +62,7 @@
 
 // export default GameDeveloperPage
 import gamingGif from '../../images/aac_vtp_capacitor.gif'
+import UELogo from '../../images/UE_logo.png'
 import { NavLink } from "react-router-dom"
 import './GameDeveloperPage.css'
 import { useSelector } from 'react-redux'
@@ -83,53 +84,72 @@ const GameDeveloperPage = () => {
                             style={{ borderRadius: '5px', height: '25rem' }}
                         />
                         <div className="overlay-text">
-                            <h2 style={{marginBottom: '2rem'}}>Publish with us!</h2>
+                            <img
+                            src={UELogo}
+                            style={{height: '3rem', marginBottom: '2rem'}}
+                            alt='gamingLogo'
+                            ></img>
+                            <h2 style={{ marginBottom: '2rem' }}>Publish with us!</h2>
                             {
                                 sessionUser ?
-                                <div
-                                    className="game-developer-page-button"
+                                    <div
+                                        className="game-developer-page-button"
                                     // style={{ textDecoration: 'none', fontSize: '1rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '4rem' }}
-                                >
-                                    <NavLink exact to='/developer/form'
                                     >
-                                        Submit a new game application today!
-                                    </NavLink>
-                                </div>
+                                        <NavLink exact to='/developer/form'
+                                        >
+                                            Submit a new game application today!
+                                        </NavLink>
+                                    </div>
                                     :
                                     <div
-                                    className="game-developer-page-button"
-                                        // style={{ textDecoration: 'none', fontSize: '1rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '4rem' }}
+                                        className="game-developer-page-button"
+                                    // style={{ textDecoration: 'none', fontSize: '1rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '4rem' }}
                                     >
-                                    <NavLink exact to='/login'
-                                    >
-                                        Log in to submit a new game application!
-                                    </NavLink>
+                                        <NavLink exact to='/login'
+                                        >
+                                            Log in to submit a new game application!
+                                        </NavLink>
                                     </div>
                             }
                             <p style={{ color: 'white', textAlign: 'center', fontSize: '18px', marginBottom: '2rem' }}>Already a partner?</p>
                             {sessionUser ?
                                 <div
-                                className="game-developer-page-button"
+                                    className="game-developer-page-button"
                                 >
-                                <NavLink exact to='/developer/portal'
+                                    <NavLink exact to='/developer/portal'
                                     // style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '2rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '2rem' }}
                                     >
-                                    Check out games in your developer portal
-                                </NavLink>
+                                        Check out games in your developer portal
+                                    </NavLink>
                                 </div>
                                 :
                                 <div
-                                className="game-developer-page-button"
+                                    className="game-developer-page-button"
                                 >
-                                <NavLink exact to='/login'
+                                    <NavLink exact to='/login'
                                     // style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '2rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '2rem' }}
-                                >
-                                    Log in to see games in your portal
-                                </NavLink>
+                                    >
+                                        Log in to see games in your portal
+                                    </NavLink>
                                 </div>
                             }
                         </div>
                     </div>
+                            <div class="column-container">
+                                <div class="column">
+                                    <div class="column-item">Column 1, Div 1</div>
+                                    <div class="column-item">Column 1, Div 2</div>
+                                </div>
+                                <div class="column">
+                                    <div class="column-item">Column 2, Div 1</div>
+                                    <div class="column-item">Column 2, Div 2</div>
+                                </div>
+                                <div class="column">
+                                    <div class="column-item">Column 3, Div 1</div>
+                                    <div class="column-item">Column 3, Div 2</div>
+                                </div>
+                            </div>
                 </div>
             </div>
             <Footer />

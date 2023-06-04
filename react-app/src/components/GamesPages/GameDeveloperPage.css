@@ -77,42 +77,17 @@
     margin-bottom: 3rem;
 }
 
-/* .gif-container {
-    position: relative;
-}
-
-.overlay-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.column-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 2rem;
+    justify-content: space-between;
 }
 
-.overlay-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+.column {
+    flex: 1;
 }
 
-.overlay-text p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+.column-item {
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
 }
-
-.overlay-text a {
-    font-size: 2rem;
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;
-    padding: 0.5rem 1rem;
-    box-shadow: 5px 5px 5px gray;
-    margin-bottom: 1.5rem;
-} */
