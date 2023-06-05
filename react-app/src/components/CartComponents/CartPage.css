@@ -19,11 +19,17 @@
 }
 
 .cart-page-checkout {
-    background-color: #f2f2f2;
+    background-color: black;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-top: 1.5rem;
     margin-bottom: 20px;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .cart-page-checkout h1 {
@@ -32,7 +38,8 @@
   }
 
   .cart-page-checkout p {
-    margin-bottom: 5px;
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
 
   .cart-page-checkout button {
@@ -50,4 +57,15 @@
 
   .cart-page-checkout button:hover {
     background-color: #C69749;
+  }
+
+  .cart-page-games-checkout-game-card-container {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .cart-page-games-card-container {
+    width: 52.5rem;
+    border-radius: 5px;
   }
