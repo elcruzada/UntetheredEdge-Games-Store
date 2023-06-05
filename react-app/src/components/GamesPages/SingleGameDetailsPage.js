@@ -125,6 +125,7 @@ const SingleGameDetailsPage = () => {
                                             >ADD TO CART</p>
                                             :
                                             <p
+                                                className='add-to-cart'
                                                 onClick={viewInCartHandler}
                                                 style={{ cursor: 'pointer', border: '3px solid white', fontWeight: 'bold', padding: '1rem' }}
                                             >
