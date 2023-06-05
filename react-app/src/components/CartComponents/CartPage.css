@@ -51,3 +51,9 @@
   .cart-page-checkout button:hover {
     background-color: #C69749;
   }
+
+  .cart-page-games-checkout-game-card-container {
+    display: flex;
+    justify-content: space-between;
+    
+  }
