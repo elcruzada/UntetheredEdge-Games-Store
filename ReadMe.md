@@ -8,6 +8,7 @@ This website uses Epic Games Store as inspiration for the layout and features. U
 
 
 #Technologies
+---
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
@@ -36,8 +37,10 @@ This website uses Epic Games Store as inspiration for the layout and features. U
 ![ThirdPreviewImage](react-app/src/images/CartPagePreview.png)
 
 #Features
+---
 
 ##Games
+---
 
 *Users can browse the games in the store
 *Users can create a game by submitting a form
@@ -45,6 +48,7 @@ This website uses Epic Games Store as inspiration for the layout and features. U
 *Users can delete their game from the site through the developer portal
 
 ##Comments
+---
 
 *Users can write comments for each game on the game details page
 *Users can update comments through a modal form
@@ -52,6 +56,7 @@ This website uses Epic Games Store as inspiration for the layout and features. U
 *Users can delete their comments
 
 ##Cart and Orders
+---
 
 *Users can put games in their cart
 *Users can remove games from their cart
