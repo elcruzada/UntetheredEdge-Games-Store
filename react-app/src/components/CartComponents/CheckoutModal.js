@@ -1,9 +1,11 @@
+import { useHistory } from "react-router-dom"
 import { useModal } from "../../context/Modal"
 import { useEffect, useState } from "react"
 
-const CheckoutModal = ({ cart, cartCheckoutHandler }) => {
+const CheckoutModal = ({ cart }) => {
     // const cartFetch = useSelector(state => state.cart.cart)
     // const cart = Object.values(cartFetch)
+    const history = useHistory()
 
     const [cardNumber, setCardNumber] = useState('')
     const [expiration, setExpiration] = useState('')
@@ -13,6 +15,28 @@ const CheckoutModal = ({ cart, cartCheckoutHandler }) => {
     const [city, setCity] = useState('')
     const [errors, setErrors] = useState({})
     const { closeModal } = useModal()
+
+    const cartCheckoutHandler = async () => {
+        if (cart && cart.length === 0) {
+            window.alert('Cart must not be empty')
+            return
+        }
+
+        try {
+            const res = await fetch(`/api/cart/order`, {
+                method: 'POST'
+            })
+            if (res.ok) {
+                const newCart = await res.json()
+            }
+        } catch (error) {
+            console.error('Cart error', error)
+        }
+
+        history.push('/profile')
+        closeModal()
+    }
+
 
     useEffect(() => {
         const errors = {}
@@ -37,7 +61,7 @@ const CheckoutModal = ({ cart, cartCheckoutHandler }) => {
                             <img alt='credit-card-image'>
                             </img>
                         </div>
-                        <form onSubmit={cartCheckoutHandler}>
+                        <form >
                             <input
                                 id='card-number'
                                 type='text'
@@ -89,11 +113,11 @@ const CheckoutModal = ({ cart, cartCheckoutHandler }) => {
                     <p>By choosing to save your payment information, this payment method will be selected as the default for all purchases made using UntetheredEdge Games payment, including purchases in the UntetheredEdge Games Store.</p>
                 </div>
                 <div className='checkout-modal-wrapper-right-column'>
-                    {cart.length > 0 && cart.map(game =>
+                    {cart && cart.length > 0 && cart.map(game =>
                         <img src={game && game.game_images && game.game_images[0].url}
                             style={{ height: '3rem' }}
                         />)}
-                    <button>Place Order</button>
+                    <button onClick={cartCheckoutHandler}>Place Order</button>
                 </div>
             </div>
         </>

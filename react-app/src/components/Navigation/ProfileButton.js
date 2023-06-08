@@ -40,30 +40,30 @@ function ProfileButton({ user }) {
   const closeMenu = () => setShowMenu(false);
 
   return (
-   <>
+    <>
       <div onClick={openMenu}
-      style={{paddingTop: '3rem', paddingRight: '11.5rem'}}
+        style={{ paddingTop: '3rem', paddingRight: '11.5rem' }}
       >
-      <i className="fa-sharp fa-solid fa-user"
-         style={{fontSize: '1.5rem', color: '#C69749', backgroundColor: '#282A3A', padding: '0', cursor: 'pointer'}}
-      ></i>
+        <i className="fa-sharp fa-solid fa-user"
+          style={{ fontSize: '1.5rem', color: '#C69749', backgroundColor: '#282A3A', padding: '0', cursor: 'pointer' }}
+        ></i>
       </div>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-              <NavLink exact to='/developer/portal'
-              style={{color: 'white'}}
-              >
-                Developer Portal
-              </NavLink>
-              <li>
+            <NavLink exact to='/developer/portal'
+              style={{ color: 'white' }}
+            >
+              Developer Portal
+            </NavLink>
+            <li>
 
               <NavLink exact to='/profile'
-              style={{color: 'white'}}
+                style={{ color: 'white' }}
               >
                 Profile
               </NavLink>
-              </li>
+            </li>
             <li>{user.username}</li>
             <li>{user.email}</li>
             <li>
@@ -88,7 +88,7 @@ function ProfileButton({ user }) {
           </>
         )}
       </ul>
-      </>
+    </>
 
   );
 }

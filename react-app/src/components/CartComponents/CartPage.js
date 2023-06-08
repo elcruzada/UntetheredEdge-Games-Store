@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react'
 import { deleteUserCartThunk, getUserCartThunk } from '../../store/cart'
 import LowerNavBar from '../LowerNavBar/LowerNavBar'
 import LoadingScreen from '../UI/Loading/LoadingScreen'
+import OpenModalButton from '../OpenModalButton'
+import CheckoutModal from './CheckoutModal'
 
 const CartPage = () => {
     const dispatch = useDispatch()
@@ -111,9 +113,16 @@ const CartPage = () => {
                                         <p style={{ fontWeight: 'bold' }}>Total: </p>
                                         <p style={{ fontWeight: 'bold', color: '#C69749' }}>${total} </p>
                                     </div>
-                                    <button
+                                    {/* <button
                                         onClick={cartCheckoutHandler}
-                                    >CHECK OUT</button>
+                                    >CHECK OUT</button> */}
+                                    <OpenModalButton
+                                    buttonText="CHECK OUT"
+                                    modalComponent={<CheckoutModal
+                                    // cartCheckoutHandler={cartCheckoutHandler}
+
+                                    />}
+                                    />
                                 </div>
                             </div>
                         </div>
