@@ -391,9 +391,9 @@ def seed_database():
         url='https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/zp3qv3numkicphmwx4ta.jpg',
         preview=True
     )
-    # Add order instances to the session
+   
 
-    # Commit the changes to the database
+
     comment1 = Comment (
         game_id=1,
         user_id=2,

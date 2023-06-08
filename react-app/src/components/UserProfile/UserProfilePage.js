@@ -52,6 +52,31 @@ const UserProfilePage = () => {
         <>
             <div className='user_profile_container'>
                 <div className='user-profile-inner-container'>
+                    <div className='user-profile-information'>
+                        <div className='user-profile-information-left-column'>
+                        <img className='user-profile-image'></img>
+                        </div>
+                        <div className='user-profile-information-right-column'>
+                            <div className='user-profile-information-right-column-top'>
+                                <h1></h1>
+                            </div>
+                            <div className='user-profile-information-right-column-bottom'>
+                                <div className='user-profile-information-right-column-bottom-information'>
+                                    <p>Your Games</p>
+                                    <p></p>
+                                </div>
+                                <div className='user-profile-information-right-column-bottom-information'>
+                                    <p>Your Wallet</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className='user-profile-bottom-orders-installer-tab'>
+                        <div className='user-profile-bottom-orders-installer-tab-orders'>Orders</div>
+                        <div className='user-profile-bottom-orders-installer-tab-installer'>Installer</div>
+                    </div>
                     {!sessionUser && <h3 style={{ color: 'white' }}>Please sign in to view your transaction history</h3>}
                     <h1
                         style={{ color: 'white', paddingBottom: '1rem' }}
