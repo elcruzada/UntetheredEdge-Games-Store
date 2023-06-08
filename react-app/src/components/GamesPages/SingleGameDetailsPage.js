@@ -84,6 +84,13 @@ const SingleGameDetailsPage = () => {
     // console.log('GAAAMEIMAGES', game_images)
     //deal with the preview images rendering
 
+    let orderedComments;
+    if (singleGameDetails.comments) {
+        orderedComments = [...singleGameDetails.comments].reverse()
+    }
+
+
+
     return (
         <>
             {
@@ -187,23 +194,24 @@ const SingleGameDetailsPage = () => {
                                 </>
                             }
                             <div className='comments-list'>
-                                <ul>
+                                <ul style={{width:'15rem'}}>
                                     {singleGameDetails &&
-                                        singleGameDetails.comments
-                                        && singleGameDetails.comments.map(comment =>
+                                        singleGameDetails.comments &&
+                                        orderedComments
+                                        && orderedComments.map(comment =>
                                         (
                                             <li key={comment.id}
-                                                style={{ border: '1px solid white', borderRadius: '10px', width: '15rem', paddingTop: '.5rem', paddingBottom: '.5rem', paddingLeft: '.5rem', paddingRight: '0rem', margin: '1rem' }}
+                                                style={{ fontWeight: 'bold', border: '1px solid white', borderRadius: '10px', width: '40rem', paddingTop: '.5rem', paddingBottom: '.5rem', paddingLeft: '.5rem', paddingRight: '0rem', margin: '1rem', backgroundColor: 'rgb(40, 42, 58)'}}
                                             >
                                                 <p
-                                                    style={{ padding: '2px' }}
+                                                    style={{ padding: '2px', width: '40rem' }}
                                                 >{new Date(comment.created_at).toLocaleDateString('en-US', {
                                                     month: '2-digit',
                                                     day: '2-digit',
                                                     year: '2-digit'
                                                 })}</p>
                                                 <div
-                                                    style={{ padding: '1rem', fontSize: '14px' }}
+                                                    style={{ padding: '1rem', fontSize: '14px', width: '40rem' }}
                                                 >
                                                     <p
                                                     >{`"${comment.comment}"`}</p>
