@@ -1,0 +1,10 @@
+.games-installer-card-outer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem;
+}
+
+.games-installer-card-left-column {
+    width:20rem;
+}

@@ -45,11 +45,11 @@ const UserProfilePage = () => {
 
     // if (gamesAndOrders && gamesAndOrders.orders) {
 
-        // }
+    // }
     const orderGames = []
     if (userOrders) {
         // const orders = userOrders.forEach(order => {
-        const filteredOrders =  [...new Set(userOrders.map(order => order))]
+        const filteredOrders = [...new Set(userOrders.map(order => order))]
         console.log('FIIILTERED', filteredOrders)
 
         if (filteredOrders && allGames) {
@@ -137,31 +137,31 @@ const UserProfilePage = () => {
                                 setUserGames(true)
                                 setUserOrderHistory(false)
                             }}
-                            style={{backgroundColor: userGames ? '#282A3A' : 'black', borderRadius: '10px'}}
-                            >Your Games</h2>
+                            style={{ backgroundColor: userGames ? '#282A3A' : 'black', borderRadius: '10px' }}
+                        >Your Games</h2>
                         <h2
                             onClick={() => {
                                 setUserGames(false)
                                 setUserOrderHistory(true)
                             }}
-                            style={{backgroundColor: userOrderHistory ? '#282A3A' : 'black', borderRadius: '10px'}}
+                            style={{ backgroundColor: userOrderHistory ? '#282A3A' : 'black', borderRadius: '10px' }}
                         >Your Order History</h2>
                     </div>
                     <hr
-                    style={{ marginBottom: '3rem' }}
+                        style={{ marginBottom: '3rem' }}
                     />
                     {
                         userGames &&
                         userOrders &&
                         orderGames &&
                         [...new Set(orderGames.map(order => order))].map((game, index) => (
-                                            // <li key={index} style={{ textDecoration: 'none', color: 'beige', padding: '2px' }}>{gameName}</li>
-                        <div className='game-installer-information'
-                            //  key={index}
-                        >
-                            <GameInstallerCard game={game}/>
-                        </div>
-                                        ))
+                            // <li key={index} style={{ textDecoration: 'none', color: 'beige', padding: '2px' }}>{gameName}</li>
+
+                                <GameInstallerCard game={game}
+                                key={index}
+                                />
+                            
+                        ))
                     }
                     {
                         userOrderHistory &&
