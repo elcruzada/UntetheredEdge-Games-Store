@@ -23,7 +23,10 @@ const CheckoutModal = ({ cart }) => {
             return
         }
 
-        if (Object.values(errors).length > 0) return
+        if (Object.values(errors).length > 0) {
+            window.alert('Please fill out the information')
+            return
+        }
 
         try {
             const res = await fetch(`/api/cart/order`, {

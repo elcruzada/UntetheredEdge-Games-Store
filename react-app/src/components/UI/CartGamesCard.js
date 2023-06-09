@@ -19,6 +19,9 @@ const CartGamesCard = ({game, removeFromCartHandler}) => {
             style={{textAlign: 'center', color: 'white', backgroundColor: 'gray', width: '7rem', borderRadius: '5px'}}
             >Base Game</p>
             </div>
+            <img src='https://i.etsystatic.com/16213822/r/il/408855/1656610858/il_570xN.1656610858_oldj.jpg'
+            style={{width: '22rem', padding: '1rem'}}
+            alt='funny-yeet' />
             <div className='cart-games-card-right-column hover-effect'>
                 <p
                 style={{color: 'white'}}

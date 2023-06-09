@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 import { authenticate } from '../../store/session';
 import { TransactionTable, UserOrdersTable } from '../UI/Table/TransactionTable';
 import Footer from '../UI/Footer';
+import LowerNavBar from '../LowerNavBar/LowerNavBar';
 
 const UserProfilePage = () => {
     const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const UserProfilePage = () => {
     const sessionUser = useSelector(state => state.session.user)
     // console.log(sessionUser)
     const userOrders = useSelector(state => state.orders.userOrders.game_orders)
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
     console.log('USSSER', userOrders)
 
     // const newOrders = {}
@@ -40,7 +42,13 @@ const UserProfilePage = () => {
     // if (gamesAndOrders && gamesAndOrders.orders) {
 
     // }
+    if (userOrders) {
+        // const orders = userOrders.forEach(order => {
 
+        //     order.game_name
+        // })
+        // console.log('OOOORDERS', orders)
+    }
     // const gamesIterable = Object.values(allGames)
     // console.log(gamesIterable)
     // const [orders, setOrders] = useState([]);
@@ -52,22 +60,41 @@ const UserProfilePage = () => {
         <>
             <div className='user_profile_container'>
                 <div className='user-profile-inner-container'>
+                    <LowerNavBar />
                     <div className='user-profile-information'>
                         <div className='user-profile-information-left-column'>
-                        <img className='user-profile-image'></img>
+                            <img className='user-profile-image'
+                            src='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg'
+                            alt='gradient'
+                            style={{height: '15rem', width:'15rem', borderRadius: '50%'}}
+                            ></img>
                         </div>
                         <div className='user-profile-information-right-column'>
                             <div className='user-profile-information-right-column-top'>
-                                <h1></h1>
+                                <h1 style={{ color: 'white' }}>{sessionUser && sessionUser.username}</h1>
                             </div>
-                            <div className='user-profile-information-right-column-bottom'>
-                                <div className='user-profile-information-right-column-bottom-information'>
-                                    <p>Your Games</p>
-                                    <p></p>
+                            <div className='user-profile-information-right-column-bottom'
+                                style={{display: 'flex', justifyContent: 'space-between'}}
+                            >
+                                <div className='user-profile-information-right-column-bottom-information'
+                                >
+                                    <div
+                                        onClick={() => setDropdownOpen(!isDropdownOpen)}
+                                        style={{display: 'flex', cursor: 'pointer'}}
+                                    >
+                                    <h3 style={{ color: 'white', textDecoration: 'underline' }}
+                                    >Your Games</h3>
+                                    <i className="fa-solid fa-caret-down" style={{color: 'white', padding: '5px'}}></i>
+                                    </div>
+                                    {isDropdownOpen && <ul>
+                                        {userOrders && [...new Set(userOrders.map(order => order.game_name))].map((gameName, index) => (
+                                            <li key={index} style={{ textDecoration: 'none', color: 'white', padding: '2px' }}>{gameName}</li>
+                                        ))}
+                                    </ul>}
                                 </div>
                                 <div className='user-profile-information-right-column-bottom-information'>
-                                    <p>Your Wallet</p>
-                                    <p></p>
+                                    <h3 style={{color: 'white'}}>Your Wallet</h3>
+                                    <p style={{textDecoration: 'none', color: 'white', padding: '2px'}}>{sessionUser && sessionUser.account_capital}</p>
                                 </div>
                             </div>
                         </div>

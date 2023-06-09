@@ -1,7 +1,7 @@
 .user_profile_container {
     display: flex;
     justify-content: center;
-    min-height: 80rem;
+    min-height: 120rem;
     background-color: black;
     height: fit-content;
     border-radius: 3px;
@@ -16,4 +16,19 @@
     height: fit-content;
     border-radius: 3px;
     margin-top: 5.5rem;
+}
+
+.user-profile-information {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.user-profile-information-right-column {
+    width: 30rem;
+}
+
+.user-profile-information-right-column-bottom-information {
+    display: flex;
+    flex-direction: column;
 }
