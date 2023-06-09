@@ -51,6 +51,9 @@ const HomepageFeaturedCard = ({ allGames }) => {
           onClick={singleGameDetailsPageRedirect}
         >
           {/* <img src={previousPictureSource} alt='featured-previous-picture-preview' /> */}
+          <div className='featured-games-homepage-overlay'>
+            
+          </div>
           <img src={currentPictureSource || previewImage.url} alt='featured-current-picture-preview' />
         </div>
         <div className="featured-games-homepage-little-pictures-right-column">

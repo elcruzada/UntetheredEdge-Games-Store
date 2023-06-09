@@ -73,7 +73,7 @@
   width: 70rem;
   justify-content: space-between;
   transition: transform 0.3s ease-in-out;
-  gap: .5rem;
+  gap: 1rem;
   border-radius: 10px;
   height: 25rem;
 }
@@ -82,17 +82,17 @@
   width: 70rem;
   justify-content: space-between;
   transition: transform 0.3s ease-in-out;
-  gap: .5rem;
+  gap: 1rem;
   border-radius: 10px;
   height: 25rem;
 }
 
 .carousel__slide {
-  flex: 0 0 calc(100% / 4);
+  flex: 0 0 calc(100% / 5);
   height: 25rem;
   background-size: cover;
   background-position: center;
-  /* opacity: 0.3; */
+
   transition: opacity 0.5s ease-in-out;
 }
 .carouse2l__slide {
@@ -100,7 +100,7 @@
   height: 25rem;
   background-size: cover;
   background-position: center;
-  /* opacity: 0.3; */
+
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -111,14 +111,14 @@
 
 .single-game-details-page-carousel-image {
   height: 15rem;
-  width: 18rem;
-  /* object-fit: contain; */
+  width: 100%;
+
 }
 .homepage-details-page-carousel-image {
   height: 20rem;
-  width: 100%;
-  /* object-fit: cover; */
-  border-radius: 8px;
+  width: 15rem;
+
+  border-radius: 5px;
   cursor: pointer;
 }
 

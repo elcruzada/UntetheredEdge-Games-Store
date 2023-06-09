@@ -86,10 +86,10 @@ const GameDeveloperPage = () => {
                                 }
                             </div>
                         </div>
-                        <div class="developer-page-column-container">
-                            <div class="developer-page-column">
+                        <div className="developer-page-column-container">
+                            <div className="developer-page-column">
                                 {/* <div className='developer-page-column-item-container'> */}
-                                <div class="developer-column-item">
+                                <div className="developer-column-item">
 
                                     <i className="fa-solid fa-globe" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
                                     <h2>Reach a global audience</h2>
@@ -99,8 +99,8 @@ const GameDeveloperPage = () => {
                                 </div>
                                 {/* </div> */}
                             </div>
-                            <div class="developer-page-column">
-                                <div class="developer-column-item">
+                            <div className="developer-page-column">
+                                <div className="developer-column-item">
                                     <i className="fa-solid fa-money-check-dollar" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
                                     <h2>12%/88% Revenue Split</h2>
                                     <p>
@@ -110,8 +110,8 @@ const GameDeveloperPage = () => {
 
                                 </div>
                             </div>
-                            <div class="developer-page-column">
-                                <div class="developer-column-item">
+                            <div className="developer-page-column">
+                                <div className="developer-column-item">
                                     <i className="fa-sharp fa-solid fa-gamepad" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
                                     <h2>Drive Player Engagement</h2>
                                     <p>
@@ -122,12 +122,12 @@ const GameDeveloperPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="developer-page-column-container"
+                        <div className="developer-page-column-container"
                             style={{ marginTop: '1rem' }}
                         >
-                            <div class="developer-page-column">
+                            <div className="developer-page-column">
                                 {/* <div className='developer-page-column-item-container'> */}
-                                <div class="developer-column-item">
+                                <div className="developer-column-item">
                                     <i className="fa-solid fa-cart-plus" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
                                     <h2>Worldwide E-Commerce</h2>
                                     <p>
@@ -136,8 +136,8 @@ const GameDeveloperPage = () => {
                                 </div>
                                 {/* </div> */}
                             </div>
-                            <div class="developer-page-column">
-                                <div class="developer-column-item">
+                            <div className="developer-page-column">
+                                <div className="developer-column-item">
                                     <i className="fa-solid fa-wallet" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
                                     <h2>UE Wallet</h2>
                                     <p>
@@ -147,8 +147,8 @@ const GameDeveloperPage = () => {
 
                                 </div>
                             </div>
-                            <div class="developer-page-column">
-                                <div class="developer-column-item">
+                            <div className="developer-page-column">
+                                <div className="developer-column-item">
                                     <i className="fa-solid fa-person-circle-plus" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
                                     <h2>Additional Benefits</h2>
                                     <p>

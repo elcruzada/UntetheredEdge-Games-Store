@@ -14,7 +14,7 @@ const BrowseGamesPagesCard = ({game}) => {
             <div className='browse-games-pages-card-top'>
             <img
             src={game.preview}
-            style={{height: '10rem'}}
+            style={{height: '15rem', width: '12rem'}}
             >
             </img>
 

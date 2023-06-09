@@ -25,6 +25,8 @@ class User(db.Model, UserMixin):
         'Game', secondary=cart, back_populates='users_in_cart'
     )
 
+    # article = db.relationship('NewsArticle', back_populates='author')
+
     @property
     def password(self):
         return self.hashed_password

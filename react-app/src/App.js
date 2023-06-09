@@ -14,6 +14,8 @@ import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 import CartPage from "./components/CartComponents/CartPage";
 import UserProfilePage from "./components/UserProfile/UserProfilePage";
 import BrowseGamesPages from "./components/GamesPages/BrowseGamesPages";
+import Tetris from "./components/Tetris/Tetris";
+import NewsPage from "./components/NewsComponents/NewsPage";
 // import './index.css'
 
 function App() {
@@ -43,6 +45,7 @@ function App() {
           <Route exact path='/profile'>
             <UserProfilePage />
           </Route>
+          <NewsPage exact path='/news'/>
           <Route exact path='/developer'>
             <GameDeveloperPage />
           </Route>
@@ -60,6 +63,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path='/memoryGame'>
+            <Tetris />
           </Route>
         </Switch>
       )}
