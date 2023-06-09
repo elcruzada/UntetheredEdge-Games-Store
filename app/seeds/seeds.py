@@ -197,6 +197,71 @@ def seed_database():
         is_on_sale=False
     )
 
+    game14 = Game (
+        name='NewJeans: The Game',
+        description="Obviously better than Aespa",
+        release_date=date(2022, 12, 13),
+        creator_id=4,
+        developer='CalvinKlein',
+        publisher='UntetheredEdge Interactive',
+        price=231.99,
+        genre='Rhythm Game',
+        is_promoted=True,
+        is_on_sale=False
+    )
+
+    game15 = Game (
+        name='Super Waluigi Bros: Ultimate',
+        description="WA WA WA WA WA WA WA WA WA WA WA WA WA WA WA",
+        release_date=date(2021, 4, 11),
+        creator_id=3,
+        developer='Litendo',
+        publisher='UntetheredEdge Interactive',
+        price=99.99,
+        genre='Fighter',
+        is_promoted=True,
+        is_on_sale=False
+    )
+
+    game16 = Game (
+        name='Nimbus Angst',
+        description="A sprawling tale about a man's inner angst and a big sword",
+        release_date=date(2023, 9, 13),
+        creator_id=3,
+        developer='Circle Enix',
+        publisher='UntetheredEdge Interactive',
+        price=79.99,
+        genre='RPG',
+        is_promoted=True,
+        is_on_sale=False
+    )
+
+    game17 = Game (
+        name='Loot Purgatory 4',
+        description="There is no escape",
+        release_date=date(2018, 9, 13),
+        creator_id=4,
+        developer='Gizzard',
+        publisher='UntetheredEdge Interactive',
+        price=19.99,
+        genre='Action RPG',
+        is_promoted=True,
+        is_on_sale=False
+    )
+
+    game18 = Game (
+        name='Pink Buffness',
+        description="Stronger than Goku. Not a joke. Look it up",
+        release_date=date(2023, 5, 22),
+        creator_id=2,
+        developer='Litendo',
+        publisher='UntetheredEdge Interactive',
+        price=339.99,
+        genre='Fighter',
+        is_promoted=True,
+        is_on_sale=False
+    )
+
     game_image1preview = GameImage (
         game_id=1,
         url='https://i.ytimg.com/vi/J6Bgsqyyep0/sddefault.jpg',
@@ -391,44 +456,67 @@ def seed_database():
         url='https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/zp3qv3numkicphmwx4ta.jpg',
         preview=True
     )
-   
-
+    game14_image_preview = GameImage (
+        game_id=14,
+        url='https://cdn.tatlerasia.com/tatlerasia/i/2023/03/10122513-newjeans-kpop-danielle-hanni-hyein-minji-haerin-red-carpet-girl-group-y2k-fashion-outfits-style-photos-2023-gettyimages-1435304638-cropped_cover_1600x837.jpg',
+        preview=True
+    )
+    game15_image_preview = GameImage (
+        game_id=15,
+        url='https://i.redd.it/45z9v4al5na51.png',
+        preview=True
+    )
+    game16_image_preview = GameImage (
+        game_id=16,
+        url='https://nichegamer.com/wp-content/uploads/2021/12/final-fantasy-vii-intergrade-pc-port-12-21-21-1.jpg',
+        preview=True
+    )
+    game17_image_preview = GameImage (
+        game_id=17,
+        url='https://static1.thegamerimages.com/wordpress/wp-content/uploads/2023/03/diablo-4-12.jpg',
+        preview=True
+    )
+    game18_image_preview = GameImage (
+        game_id=18,
+        url='https://images.gamebanana.com/img/ss/mods/6282debe6b233.jpg',
+        preview=True
+    )
 
     comment1 = Comment (
         game_id=1,
         user_id=2,
         comment='OMG this game is just OMG wut OMG so good OMG',
-        created_at=date(2023, 4, 13)
+        created_at=date(1991, 4, 13)
     )
     comment2 = Comment (
         game_id=2,
         user_id=1,
         comment='WHOA this has never happend to WHOA omg this has never',
-        created_at=date(1991, 2, 16)
+        created_at=date(2018, 2, 16)
     )
     comment3 = Comment (
         game_id=3,
         user_id=2,
         comment='ARE you SERIOUS right now wut mate SERIOUS',
-        created_at=date(2020, 6, 13)
+        created_at=date(2019, 6, 13)
     )
     comment4 = Comment (
         game_id=4,
         user_id=3,
         comment='I mean come on just insane come on just insane come on',
-        created_at=date(2018, 12, 25)
+        created_at=date(2020, 12, 25)
     )
     comment5 = Comment (
         game_id=5,
         user_id=1,
         comment='Jeez, like wut goodness, jeez like WHOA WHOA WHOA',
-        created_at=date(2022, 5, 15)
+        created_at=date(2021, 5, 15)
     )
     comment6 = Comment (
         game_id=1,
         user_id=4,
         comment='LIKE JUST LIKE JUST WUT LIKE WHOA WHOA LIKE',
-        created_at=date(2021, 10, 23)
+        created_at=date(2022, 10, 23)
     )
     comment7 = Comment (
         game_id=1,
@@ -457,6 +545,11 @@ def seed_database():
     db.session.add(game11)
     db.session.add(game12)
     db.session.add(game13)
+    db.session.add(game14)
+    db.session.add(game15)
+    db.session.add(game16)
+    db.session.add(game17)
+    db.session.add(game18)
 
     db.session.add(game_image1preview)
     db.session.add(game_image2)
@@ -497,6 +590,11 @@ def seed_database():
     db.session.add(game11_image_preview)
     db.session.add(game12_image_preview)
     db.session.add(game13_image_preview)
+    db.session.add(game14_image_preview)
+    db.session.add(game15_image_preview)
+    db.session.add(game16_image_preview)
+    db.session.add(game17_image_preview)
+    db.session.add(game18_image_preview)
 
     db.session.add(comment1)
     db.session.add(comment2)

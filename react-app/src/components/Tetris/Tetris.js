@@ -10,22 +10,22 @@ const Tetris = () => {
 
   // Define the card data
   const cardData = [
-    { id: 1, value: 'YEET' },
+    { id: 1, value: 'YEEEET' },
     { id: 2, value: 'Squealize' },
-    { id: 3, value: 'DavidK' },
-    { id: 4, value: 'Congrats!' },
+    { id: 3, value: 'SleepyKim' },
+    { id: 4, value: 'CONGRATS!' },
     { id: 5, value: 'Boosted' },
     { id: 6, value: 'Andre2' },
-    { id: 7, value: 'Aespa' },
-    { id: 8, value: 'H' },
-    { id: 9, value: 'YEET' },
+    { id: 7, value: 'XG>NewJeans' },
+    { id: 8, value: 'Don Hector' },
+    { id: 9, value: 'YEEEET' },
     { id: 10, value: 'Squealize' },
-    { id: 11, value: 'DavidK' },
-    { id: 12, value: 'Congrats!' },
+    { id: 11, value: 'SleepyKim' },
+    { id: 12, value: 'CONGRATS!' },
     { id: 13, value: 'Boosted' },
     { id: 14, value: 'Andre2' },
-    { id: 15, value: 'Aespa' },
-    { id: 16, value: 'H' },
+    { id: 15, value: 'XG>NewJeans' },
+    { id: 16, value: 'Don Hector' },
   ];
 
   // Shuffle the card data
