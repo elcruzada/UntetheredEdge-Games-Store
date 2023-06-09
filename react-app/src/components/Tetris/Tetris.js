@@ -6,24 +6,25 @@ const Tetris = () => {
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [moves, setMoves] = useState(0);
+  const [gameWon, setGameWon] = useState(false);
 
   // Define the card data
   const cardData = [
     { id: 1, value: 'YEET' },
-    { id: 2, value: 'B' },
-    { id: 3, value: 'C' },
-    { id: 4, value: 'D' },
-    { id: 5, value: 'E' },
-    { id: 6, value: 'F' },
-    { id: 7, value: 'G' },
+    { id: 2, value: 'Squealize' },
+    { id: 3, value: 'DavidK' },
+    { id: 4, value: 'Congrats!' },
+    { id: 5, value: 'Boosted' },
+    { id: 6, value: 'Andre2' },
+    { id: 7, value: 'Aespa' },
     { id: 8, value: 'H' },
     { id: 9, value: 'YEET' },
-    { id: 10, value: 'B' },
-    { id: 11, value: 'C' },
-    { id: 12, value: 'D' },
-    { id: 13, value: 'E' },
-    { id: 14, value: 'F' },
-    { id: 15, value: 'G' },
+    { id: 10, value: 'Squealize' },
+    { id: 11, value: 'DavidK' },
+    { id: 12, value: 'Congrats!' },
+    { id: 13, value: 'Boosted' },
+    { id: 14, value: 'Andre2' },
+    { id: 15, value: 'Aespa' },
     { id: 16, value: 'H' },
   ];
 
@@ -52,10 +53,13 @@ const Tetris = () => {
       setMoves((prevMoves) => prevMoves + 1);
       if (flippedCards[0].value === card.value) {
         setMatchedCards((prevMatchedCards) => [...prevMatchedCards, card.id]);
+        if (matchedCards.length + 2 === cards.length) {
+            setGameWon(true);
+          }
       } else {
         setTimeout(() => {
           setFlippedCards([]);
-        }, 300);
+        }, 200);
       }
     }
   };
@@ -66,11 +70,13 @@ const Tetris = () => {
     setFlippedCards([]);
     setMatchedCards([]);
     setMoves(0);
+    setGameWon(false)
   };
 
   return (
     <div style={{textAlign: 'center'}}>
        <h1 style={{padding: '1rem'}}>Looks your game's server is down!</h1>
+        <img src='https://media.tenor.com/OWI_ai132b0AAAAC/wink-dog.gif' alt='doge' style={{height: '20rem'}}/>
        <h2 style={{padding: '1rem'}}>Don't worry. This is just as fun</h2>
       <h1 style={{padding: '1rem'}}>Memory Game</h1>
       <p style={{padding: '.5rem'}}>Moves: {moves}</p>
@@ -87,7 +93,12 @@ const Tetris = () => {
           </div>
         ))}
       </div>
-      <button onClick={resetGame}>Reset</button>
+      {gameWon && (
+      <div>
+        <p style={{color: 'black', marginTop: '2rem'}}>Congratulations! You won!</p>
+      </div>
+    )}
+    <button onClick={resetGame}>Play Again</button>
     </div>
   );
 };

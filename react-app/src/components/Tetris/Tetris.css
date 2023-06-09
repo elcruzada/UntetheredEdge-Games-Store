@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     height: 100px;
-    background-color: lightblue;
+    background-color: #C69749;
     border-radius: 5px;
     font-size: 24px;
     cursor: pointer;
@@ -23,7 +23,7 @@
 }
 
 .card.matched {
-    background-color: lightgreen;
+    background-color: #735F32;
     cursor: default;
 }
 
