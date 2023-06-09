@@ -10,6 +10,7 @@ import LowerNavBar from '../LowerNavBar/LowerNavBar'
 import SingleGameDetailsCardThreeGames from '../UI/SingleGameDetailsCardThreeGames'
 import Footer from '../UI/Footer'
 import LoadingScreen from '../UI/Loading/LoadingScreen'
+import HomepageRegularCard from '../UI/HomepageRegularCard'
 //3 divs, possibly do flex-direction column
 const homepage = true
 
@@ -51,9 +52,12 @@ const Homepage = () => {
                             <div className="global-inner-container">
                                 <LowerNavBar sessionUser={sessionUser} homepage={homepage} />
                                 <HomepageFeaturedCard allGames={allGames} />
+                                <h3 style={{color: 'beige'}}>MEGA-ULTRA Giga Special</h3>
                                 <HomepageCarousel images={convertedGames} homepage={homepage} />
+                                <h3 style={{color: 'beige', marginTop:'3rem'}}>Supertastic Sick Deals</h3>
                                 <SingleGameDetailsCardThreeGames convertedGames={convertedGames} />
-
+                                <h3 style={{color: 'beige', marginTop:'3rem'}}>Trending. . .</h3>
+                                <HomepageRegularCard convertedGames={convertedGames}/>
                             </div>
                         </div>
                         <Footer />

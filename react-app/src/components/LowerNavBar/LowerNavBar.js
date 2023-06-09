@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom'
 import './LowerNavBar.css'
 import { useState } from 'react'
 
-const LowerNavBar = ({ sessionUser, homepage, browse }) => {
+const LowerNavBar = ({ sessionUser, homepage, browse, news }) => {
     const history = useHistory()
     // const [isClicked, setIsClicked ] = useState(false)
     const [isDiscoverHover, setisDiscoverHover] = useState(false)
@@ -80,15 +80,28 @@ const LowerNavBar = ({ sessionUser, homepage, browse }) => {
                                 onMouseLeave={() => setisBrowseHover(false)}
                             >Browse</h2>
                     }
+                    {
+                    news ?
                     <h2
                         className='lower-nav-bar-homepage hover-effect'
-                        style={{ color: isNewsHover ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '10px', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer' }}
+                        style={{ color: (isNewsHover || news) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer', border: '2.5px solid white' }}
                         onClick={() => {
-                            window.alert("Feature coming soon")
+                            history.push('/news')
                         }}
                         onMouseEnter={() => setisNewsHover(true)}
                         onMouseLeave={() => setisNewsHover(false)}
                     >News</h2>
+                    :
+                    <h2
+                        className='lower-nav-bar-homepage hover-effect'
+                        style={{ color: (isNewsHover || news) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '10px', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer' }}
+                        onClick={() => {
+                            history.push('/news')
+                        }}
+                        onMouseEnter={() => setisNewsHover(true)}
+                        onMouseLeave={() => setisNewsHover(false)}
+                    >News</h2>
+                    }
                 </div>
                 <div className="top-bar-homepage-container-right-column hover-effect">
                     <h2

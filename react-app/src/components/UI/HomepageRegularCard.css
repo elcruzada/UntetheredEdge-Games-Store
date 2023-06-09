@@ -1,0 +1,15 @@
+.homepage-regular-card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+
+  .five-games-card {
+    width: 18%
+  }
+
+  .five-games-card-image {
+    width: 100%;
+    height: 18rem;
+    cursor: pointer;
+  }
