@@ -60,9 +60,17 @@ const Tetris = () => {
     }
   };
 
+  const resetGame = () => {
+    const shuffledCards = shuffleCards(cardData);
+    setCards(shuffledCards);
+    setFlippedCards([]);
+    setMatchedCards([]);
+    setMoves(0);
+  };
+
   return (
     <div style={{textAlign: 'center'}}>
-       <h1 style={{padding: '1rem'}}>Looks like the server is down!</h1>
+       <h1 style={{padding: '1rem'}}>Looks your game's server is down!</h1>
        <h2 style={{padding: '1rem'}}>Don't worry. This is just as fun</h2>
       <h1 style={{padding: '1rem'}}>Memory Game</h1>
       <p style={{padding: '.5rem'}}>Moves: {moves}</p>
@@ -79,6 +87,7 @@ const Tetris = () => {
           </div>
         ))}
       </div>
+      <button onClick={resetGame}>Reset</button>
     </div>
   );
 };
