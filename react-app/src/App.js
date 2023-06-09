@@ -14,6 +14,7 @@ import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 import CartPage from "./components/CartComponents/CartPage";
 import UserProfilePage from "./components/UserProfile/UserProfilePage";
 import BrowseGamesPages from "./components/GamesPages/BrowseGamesPages";
+import Tetris from "./components/Tetris/Tetris";
 // import './index.css'
 
 function App() {
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path='/tetris'>
+            <Tetris />
           </Route>
         </Switch>
       )}
