@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom'
 import './LowerNavBar.css'
 import { useState } from 'react'
 
-const LowerNavBar = ({sessionUser, homepage, browse}) => {
+const LowerNavBar = ({ sessionUser, homepage, browse }) => {
     const history = useHistory()
     // const [isClicked, setIsClicked ] = useState(false)
     const [isDiscoverHover, setisDiscoverHover] = useState(false)
@@ -35,49 +35,50 @@ const LowerNavBar = ({sessionUser, homepage, browse}) => {
                     </div>
                     {
                         homepage ?
-                        <h2
-                            className='lower-nav-bar-homepage hover-effect'
-                            style={{ color: (isDiscoverHover || homepage) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer', border: '2.5px solid white', marginLeft: '1rem' }}
-                            onClick={() => {
-                                history.push(`/`)
-                            }}
-                            onMouseEnter={() => setisDiscoverHover(true)}
-                            onMouseLeave={() => setisDiscoverHover(false)}
+                            <h2
+                                className='lower-nav-bar-homepage hover-effect'
+                                style={{ color: (isDiscoverHover || homepage) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer', border: '2.5px solid white', marginLeft: '1rem' }}
+                                onClick={() => {
+                                    history.push(`/`)
+                                }}
+                                onMouseEnter={() => setisDiscoverHover(true)}
+                                onMouseLeave={() => setisDiscoverHover(false)}
                             >Discover</h2>
                             :
                             <h2
-                            className='lower-nav-bar-homepage hover-effect'
-                            style={{ color: (isDiscoverHover || homepage) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer', marginLeft: '1rem' }}
-                            onClick={() => {
-                                history.push(`/`)
-                            }}
-                            onMouseEnter={() => setisDiscoverHover(true)}
-                            onMouseLeave={() => setisDiscoverHover(false)}
+                                className='lower-nav-bar-homepage hover-effect'
+                                style={{ color: (isDiscoverHover || homepage) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer', marginLeft: '1rem' }}
+                                onClick={() => {
+                                    history.push(`/`)
+                                }}
+                                onMouseEnter={() => setisDiscoverHover(true)}
+                                onMouseLeave={() => setisDiscoverHover(false)}
                             >Discover</h2>
-                        }
+                    }
                     {
                         browse ?
-                        <h2
-                        className='lower-nav-bar-homepage hover-effect'
-                        style={{ color: (isBrowseHover || browse) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer', border: '2.5px solid white' }}
-                        onClick={() => {
+                            <h2
+                                className='lower-nav-bar-homepage hover-effect'
+                                style={{ color: (isBrowseHover || browse) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer', border: '2.5px solid white' }}
+                                onClick={() => {
 
-                            history.push(`/games/browse`)}
-                        }
-                        onMouseEnter={() => setisBrowseHover(true)}
-                        onMouseLeave={() => setisBrowseHover(false)}
-                        >Browse</h2>
-                        :
-                        <h2
-                        className='lower-nav-bar-homepage hover-effect'
-                        style={{ color: (isBrowseHover || browse) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer' }}
-                        onClick={() => {
+                                    history.push(`/games/browse`)
+                                }
+                                }
+                                onMouseEnter={() => setisBrowseHover(true)}
+                                onMouseLeave={() => setisBrowseHover(false)}
+                            >Browse</h2>
+                            :
+                            <h2
+                                className='lower-nav-bar-homepage hover-effect'
+                                style={{ color: (isBrowseHover || browse) ? 'white' : 'gray', fontSize: '16px', fontWeight: 'light', width: '', textAlign: 'center', borderRadius: '', paddingTop: '.5rem', paddingBottom: ".5rem", paddingLeft: '1rem', paddingRight: '1rem', cursor: 'pointer' }}
+                                onClick={() => {
 
-                            history.push(`/games/browse`)
-                        }}
-                        onMouseEnter={() => setisBrowseHover(true)}
-                        onMouseLeave={() => setisBrowseHover(false)}
-                        >Browse</h2>
+                                    history.push(`/games/browse`)
+                                }}
+                                onMouseEnter={() => setisBrowseHover(true)}
+                                onMouseLeave={() => setisBrowseHover(false)}
+                            >Browse</h2>
                     }
                     <h2
                         className='lower-nav-bar-homepage hover-effect'

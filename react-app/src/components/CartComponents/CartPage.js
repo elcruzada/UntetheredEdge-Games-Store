@@ -119,6 +119,7 @@ const CartPage = () => {
                                     <OpenModalButton
                                     buttonText="CHECK OUT"
                                     modalComponent={<CheckoutModal
+                                    cart={cart}
                                     // cartCheckoutHandler={cartCheckoutHandler}
 
                                     />}
