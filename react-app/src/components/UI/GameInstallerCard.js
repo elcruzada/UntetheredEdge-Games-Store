@@ -62,7 +62,7 @@ const GameInstallerCard = ({ game }) => {
                 style={{ width: '5rem' }}
             >
                 <button onClick={() => setIsLoading(true)}
-
+                style={{padding: '.5rem', backgroundColor: 'white', cursor: 'pointer', fontWeight: 'bold'}}
                 >Install</button>
                 <p
                     style={{ color: isRemoveHover ? 'white' : 'gray', cursor: 'pointer', width: '4rem' }}
