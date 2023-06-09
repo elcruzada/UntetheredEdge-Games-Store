@@ -22,6 +22,7 @@
     display: flex;
     justify-content: space-between;
     width: 70%;
+    margin-top: 3rem
 }
 
 .user-profile-information-right-column {
@@ -31,4 +32,16 @@
 .user-profile-information-right-column-bottom-information {
     display: flex;
     flex-direction: column;
+}
+
+.installer-order-tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 30rem;
+}
+
+.installer-order-tabs h2 {
+    color: white;
+    cursor: pointer;
+    padding: 1.5rem;
 }
