@@ -22,10 +22,8 @@ const DeleteCommentModal = ({gameId, commentId}) => {
     const deleteCommentHandler = async (gameId, commentId) => {
         await dispatch(deleteCommentThunk(commentId))
         await dispatch(getSingleGameThunk(gameId))
-        // dispatch(getAllGamesThunk())
+        
         closeModal()
-        // forceRerender2()
-        // history.push('/games')
 
         history.push(`/games/${gameId}`)
     }

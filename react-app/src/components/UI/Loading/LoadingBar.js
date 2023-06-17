@@ -4,14 +4,12 @@ import { useHistory } from 'react-router-dom';
 const LoadingBar = ({handleClick, isLoading}) => {
   const [progress, setProgress] = useState(0);
   const history = useHistory()
-//   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     let intervalId;
 
     if (isLoading) {
       intervalId = setInterval(() => {
-        // setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
         setProgress((prevProgress) => {
             const nextProgress = prevProgress + 13;
             return nextProgress >= 100 ? 100 : nextProgress;

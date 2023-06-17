@@ -12,7 +12,7 @@ import LoadingScreen from '../UI/Loading/LoadingScreen'
 
 const BrowseGamesPages = () => {
     const dispatch = useDispatch()
-    const history = useHistory()
+
     const allGames = useSelector(state => state.games.allGames)
     const sessionUser = useSelector(state => state.session.user)
     const [loading, setLoading] = useState(true);
@@ -27,7 +27,7 @@ const BrowseGamesPages = () => {
     if (!allGames) return null
 
     const convertedGames = Object.values(allGames)
-    console.log('CONVERTED', convertedGames)
+    
 
     return (
         <> {

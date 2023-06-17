@@ -14,9 +14,10 @@ import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 import CartPage from "./components/CartComponents/CartPage";
 import UserProfilePage from "./components/UserProfile/UserProfilePage";
 import BrowseGamesPages from "./components/GamesPages/BrowseGamesPages";
-import Tetris from "./components/Tetris/Tetris";
+
 import NewsPage from "./components/NewsComponents/NewsPage";
-// import './index.css'
+import MemoryGame from "./components/MemoryGame/MemoryGame";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -65,7 +66,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route path='/memoryGame'>
-            <Tetris />
+            <MemoryGame />
           </Route>
         </Switch>
       )}

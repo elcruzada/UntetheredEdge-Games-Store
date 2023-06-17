@@ -109,7 +109,6 @@ const NewsPage = () => {
                             <div className='news-page-article-card-right-column'>
                                 <p
                                     style={{ marginBottom: '5rem' }}
-                                // style={{fontWeight: 'bold'}}
                                 >1Y Ago</p>
                                 <p
                                     style={{ fontWeight: 'bold' }}

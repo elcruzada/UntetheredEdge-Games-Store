@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './Tetris.css'
+import './MemoryGame.css'
+import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
-const Tetris = () => {
+const MemoryGame = () => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const [gameWon, setGameWon] = useState(false);
 
-  // Define the card data
   const cardData = [
     { id: 1, value: 'YEEEET' },
     { id: 2, value: 'Squealize' },
@@ -28,7 +28,7 @@ const Tetris = () => {
     { id: 16, value: 'Don Hector' },
   ];
 
-  // Shuffle the card data
+
   const shuffleCards = (cardData) => {
     for (let i = cardData.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -37,13 +37,12 @@ const Tetris = () => {
     return cardData;
   };
 
-  // Initialize the game
   useEffect(() => {
     const shuffledCards = shuffleCards(cardData);
     setCards(shuffledCards);
   }, []);
 
-  // Handle card click
+
   const handleCardClick = (card) => {
     if (flippedCards.length === 2 || matchedCards.includes(card.id)) return;
 
@@ -103,4 +102,4 @@ const Tetris = () => {
   );
 };
 
-export default Tetris;
+export default MemoryGame;

@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { useModal } from '../../context/Modal'
-
 import './PostComment.css'
-import { getAllCommentsThunk, postCommentThunk } from '../../store/comments'
+import { postCommentThunk } from '../../store/comments'
 import { getAllGamesThunk } from '../../store/games'
 
 
 const PostCommentModal = ({ gameId }) => {
     const dispatch = useDispatch()
-    const comments = useSelector(state => state.comments)
     const history = useHistory()
     const [comment, setComment] = useState('')
     const [errors, setErrors] = useState({})

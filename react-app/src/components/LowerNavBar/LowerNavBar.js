@@ -4,7 +4,6 @@ import { useState } from 'react'
 
 const LowerNavBar = ({ sessionUser, homepage, browse, news }) => {
     const history = useHistory()
-    // const [isClicked, setIsClicked ] = useState(false)
     const [isDiscoverHover, setisDiscoverHover] = useState(false)
     const [isBrowseHover, setisBrowseHover] = useState(false)
     const [isNewsHover, setisNewsHover] = useState(false)

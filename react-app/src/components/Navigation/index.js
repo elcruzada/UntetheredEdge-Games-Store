@@ -31,7 +31,6 @@ function Navigation({ isLoaded }){
 				exact to="/">HOME</NavLink>
 			</li>
 			<li
-			// style={{}}
 			>
 				<NavLink
 				exact to='/developer'

@@ -8,17 +8,8 @@ import './UpdateGameDeveloperForm.css'
 const UpdateGameDeveloperForm = ({ gameId }) => {
     const dispatch = useDispatch()
     const history = useHistory()
-    //eventually you're going to pass in the id of the game instead of a hardcoded value
     const singleGame = useSelector(state => state.games.singleGame)
-    console.log('SSSINGLE', singleGame)
     const { closeModal } = useModal()
-    // const hardcodedId = 3
-
-    // <OpenModalButton
-    //           buttonText="Log In"
-    //           onItemClick={closeMenu}
-    //           modalComponent={<LoginFormModal />}
-    //         />
 
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
@@ -62,7 +53,6 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
         } else {
             formData.append('name', name)
             formData.append('description', description)
-            // formData.append('release_date', releaseDate)
             formData.append('developer', developer)
             formData.append('publisher', publisher)
             formData.append('genre', genre)
@@ -179,12 +169,6 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
                     </textarea>
 
                 </div>
-                {/* <input
-                        id="gameReleaseDate"
-                        type="date"
-                        value={releaseDate}
-                        onChange={(e) => setReleaseDate(e.target.value)}
-                    /> */}
                 <div className='form-row2'>
                     <label>Want your game promoted?</label>
                     <input
@@ -195,35 +179,6 @@ const UpdateGameDeveloperForm = ({ gameId }) => {
                     >
                     </input>
                 </div>
-                {/* <label>Update Images</label>
-                    {imageURLs.map((imageURL, index) => {
-                        <div
-                            key={index}
-                            className='image-container'
-                        >
-                            <input
-                                type='text'
-                                value={imageURL}
-                                disabled
-                            >Your images</input>
-                            <button
-                                onClick={() => removeImageHandler(index)}
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    })}
-                    <input
-                        type='text'
-                        placeholder='Enter your image URL here'
-                        value={newURL}
-                        onChange={(e) => setNewURL(e.target.value)}
-                    />
-                    <button
-                        onClick={addImageHandler}
-                    >
-                        Add Image
-                    </button> */}
                 <div className='create-game-button'>
                     <button type='submit'> Submit Game </button>
                 </div>

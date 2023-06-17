@@ -13,19 +13,13 @@ import CheckoutModal from './CheckoutModal'
 const CartPage = () => {
     const dispatch = useDispatch()
     const history = useHistory()
-    // const cart = useSelector(state => state.cart.cart.user_cart)
+
     const cartFetch = useSelector(state => state.cart.cart)
     const cart = Object.values(cartFetch)
-    // console.log(newCart)
-    // let cart = []
-    // console.log('CAART', cart)
-    // const cartCopy = {...cart}
+
     const [total, setTotal] = useState(0)
     const [loading, setLoading] = useState(true);
-    // console.log('CAAART', cart)
-    // const totalCost = cart.forEach(game => {
-    //     total += game.price
-    // })
+
     const removeFromCartHandler = async (gameId) => {
         await dispatch(deleteUserCartThunk(gameId))
         await dispatch(getUserCartThunk())
@@ -68,10 +62,6 @@ const CartPage = () => {
         history.push('/profile')
     }
 
-    // const cartCheckoutHandler = () => {
-    //     window.alert("Feature coming soon!")
-    // }
-    // if (!cart) return null
     return (
         <>
             {
@@ -113,14 +103,10 @@ const CartPage = () => {
                                         <p style={{ fontWeight: 'bold' }}>Total: </p>
                                         <p style={{ fontWeight: 'bold', color: '#C69749' }}>${total} </p>
                                     </div>
-                                    {/* <button
-                                        onClick={cartCheckoutHandler}
-                                    >CHECK OUT</button> */}
                                     <OpenModalButton
                                     buttonText="CHECK OUT"
                                     modalComponent={<CheckoutModal
                                     cart={cart}
-                                    // cartCheckoutHandler={cartCheckoutHandler}
 
                                     />}
                                     />

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getSingleGameThunk, updateGameThunk } from "../../store/games"
 import { useModal } from "../../context/Modal"
 import { useHistory } from "react-router-dom"
 import { updateCommentThunk } from "../../store/comments"
