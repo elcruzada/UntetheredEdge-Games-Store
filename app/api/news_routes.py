@@ -54,3 +54,15 @@ def update_news(id):
             db.session.commit()
             return article_to_edit.to_dict()
     return { "errors": form.errors }
+
+@news_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_news(id):
+    news_to_delete = NewsArticle.query.get(id)
+
+    if news_to_delete.user_id != current_user.id:
+        return {"error": "You are not authorized to delete this article"}
+
+    db.session.delete(news_to_delete)
+    db.session.commit()
+    return { "success" : "Your article has been deleted"}

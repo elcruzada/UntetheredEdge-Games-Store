@@ -1,11 +1,7 @@
-from app.models import db, User, Game, GameImage, Comment, Order, environment, SCHEMA
+from app.models import db, User, Game, GameImage, Comment, NewsArticle, Order, environment, SCHEMA
 from sqlalchemy.sql import text
-from datetime import date
+from datetime import date, datetime
 
-# Define the start and end dates for the range
-
-
-# Adds a demo user, you can add other users here if you want
 def seed_database():
     demo = User(
         username='Demo', email='demo@aa.io', password='password',
@@ -525,7 +521,30 @@ def seed_database():
         created_at=date(2023, 1, 29)
     )
 
-    # Add OrderAndProduct instances to the session
+    news_article1 = NewsArticle (
+        user_id=2,
+        title='Final Fantasy 16 will knock your socks off',
+        preview_image='https://cdn.vox-cdn.com/thumbor/-7uaQ4eZbBC77FJZIviRRvVS-QE=/0x0:1920x1080/1400x788/filters:focal(960x540:961x541)/cdn.vox-cdn.com/uploads/chorus_asset/file/23647732/ffxviclive.png',
+        description='Grab the preorder today to feel completely fulfilled and happy with your life...',
+        content="In the spectacular world of gaming, there are certain franchises that have proven their mettle time and time again, crafting experiences that resonate deeply with their fanbases. One such titan of the industry is none other than Final Fantasy. With each entry, it expands its universe, adds depth to its characters, and refines gameplay mechanics, ensuring a mesmerizing adventure. As we brace ourselves for the newest entry into the franchise, Final Fantasy XVI, early glimpses suggest it's set to exceed expectations and, quite literally, knock your socks off. Final Fantasy XVI is developed and published by Square Enix, the creators that have never disappointed when it comes to delivering a vibrant mix of adventure, stunning graphics, engrossing storytelling, and strategic combat. This installment of the franchise promises to push the boundaries even further, building upon the legacy of its predecessors with groundbreaking features and innovative gameplay elements.",
+        created_at=date(2021, 5, 15)
+    )
+    news_article2 = NewsArticle (
+        user_id=3,
+        title='Two gamers get bloody in a bar',
+        preview_image='https://static.wikia.nocookie.net/8cf42a12-40e4-4d43-82db-a4c9244e5d8d',
+        description='Things got hairy when a no-deather tapped a speed runner in the shoulder...',
+        content="In a bizarre incident that is sure to become the stuff of gaming folklore, two gamers recently found themselves in an unfortunate confrontation at a local bar, leading to a brawl as wild as any virtual boss fight. As the dust settled, evidence of the scuffle, including broken bottles and spattered blood, painted a vivid picture of a heated disagreement turned violent. The unusual suspects? A celebrated speedrunner and a steadfast no-deather, both well-known in their respective gaming circles. The drama unfolded when the no-deather, known for completing video games without a single character death, gave a seemingly harmless tap on the shoulder of the speedrunner, who specializes in completing games as quickly as possible. In an atmosphere already buzzing with alcohol and high stakes rivalry, this light contact set off an unpredictable series of events. The speedrunner, reportedly startled, spun around to confront the no-deather. What started as a tense exchange of words soon escalated, turning a cozy gaming bar into a battleground. While the motives behind the confrontation remain unclear, the incident has sparked intense discussion within the gaming community, reminding us all that passions can run high when reality collides with the competitive world of gaming.",
+        created_at=date(2022, 10, 23)
+    )
+    news_article3 = NewsArticle (
+        user_id=4,
+        title='Two gamers get bloody in a bar',
+        preview_image='https://www.pcgamesn.com/wp-content/sites/pcgamesn/2023/02/hogwarts-legacy-mods-shrek-2-550x309.jpg',
+        description='Things got hairy when a no-deather tapped a speed runner in the shoulder...',
+        content='',
+        created_at=date(2023, 1, 29)
+    )
 
     db.session.add(demo)
     db.session.add(gahyeon)
@@ -604,6 +623,10 @@ def seed_database():
     db.session.add(comment6)
     db.session.add(comment7)
 
+    db.session.add(news_article1)
+    db.session.add(news_article2)
+    db.session.add(news_article3)
+
     db.session.commit()
 
 
@@ -619,11 +642,13 @@ def undo_database():
         db.session.execute(f"TRUNCATE table {SCHEMA}.games RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.game_images RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.comments RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.news_articles RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM users"))
         db.session.execute(text("DELETE FROM games"))
         db.session.execute(text("DELETE FROM game_images"))
         db.session.execute(text("DELETE FROM comments"))
+        db.session.execute(text("DELETE FROM news_articles"))
 
     db.session.commit()
 
