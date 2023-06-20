@@ -1,15 +1,24 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import LowerNavBar from '../LowerNavBar/LowerNavBar'
 import Footer from '../UI/Footer'
 import './NewsPage.css'
+import { useEffect } from 'react'
+import { getAllNewsThunk } from '../../store/news'
 
 const NewsPage = () => {
+    const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
+    const newsArticle = useSelector(state => state.news.allNews)
+
+    useEffect(() => {
+        dispatch(getAllNewsThunk())
+    },[dispatch])
 
     return (
         <>
             <div className='news-page-outer-wrapper'>
                 <div className='news-page-inner-wrapper'
+                style={{marginTop: '4rem'}}
                 >
                     <LowerNavBar sessionUser={sessionUser} news={true} />
                     <h2>Epic Games News</h2>

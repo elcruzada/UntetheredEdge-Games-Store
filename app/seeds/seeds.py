@@ -366,7 +366,7 @@ def seed_database():
 
     game6_image_preview = GameImage (
         game_id=6,
-        url='https://img.4gamers.com.tw/puku-clone-version/79c3bcfd5c42275da52e56220d2ce20df8b5ae61.jpg',
+        url='https://i.redd.it/ejiz7gr6ohf11.jpg',
         preview=True
     )
 
