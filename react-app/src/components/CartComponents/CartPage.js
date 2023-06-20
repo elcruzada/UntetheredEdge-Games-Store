@@ -69,7 +69,7 @@ const CartPage = () => {
                     <div className='cart-page-outer-wrapper'>
                         <div className='cart-page-inner-wrapper'>
 
-                            <LowerNavBar />
+                            <LowerNavBar cart={true}/>
                             <h1 style={{ color: 'white', marginTop: '3rem', marginBottom: '3rem' }}
                             >My Cart</h1>
                             <div className='cart-page-games-checkout-game-card-container'>

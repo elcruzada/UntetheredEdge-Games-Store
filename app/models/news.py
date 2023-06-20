@@ -21,6 +21,7 @@ class NewsArticle(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'description': self.description,
+            'preview_image': self.preview_image,
             'content': self.content,
             'created_at': self.created_at
         }
