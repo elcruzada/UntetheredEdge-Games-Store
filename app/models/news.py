@@ -20,6 +20,7 @@ class NewsArticle(db.Model):
         return {
             'id': self.id,
             'user_id': self.user_id,
+            'title': self.title,
             'description': self.description,
             'preview_image': self.preview_image,
             'content': self.content,

@@ -21,7 +21,7 @@ const UserProfilePage = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [userGames, setUserGames] = useState(true)
     const [userOrderHistory, setUserOrderHistory] = useState(false)
-    console.log('USSSER', userOrders)
+    // console.log('USSSER', userOrders)
 
     // const newOrders = {}
     // if (sessionUser.orders && sessionUser.orders.length) {
@@ -160,7 +160,7 @@ const UserProfilePage = () => {
                                 <GameInstallerCard game={game}
                                 key={index}
                                 />
-                            
+
                         ))
                     }
                     {

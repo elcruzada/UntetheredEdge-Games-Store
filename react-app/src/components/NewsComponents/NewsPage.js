@@ -9,6 +9,8 @@ const NewsPage = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const newsArticle = useSelector(state => state.news.allNews)
+    const convertedNews = Object.values(newsArticle)
+    console.log('NEWWWWWWS', convertedNews)
 
     useEffect(() => {
         dispatch(getAllNewsThunk())
@@ -28,14 +30,14 @@ const NewsPage = () => {
                     >
                         <div className='news-page-highlighted-wrapper-left-column'>
                             <img
-                                src='https://cdn.vox-cdn.com/thumbor/-7uaQ4eZbBC77FJZIviRRvVS-QE=/0x0:1920x1080/1400x788/filters:focal(960x540:961x541)/cdn.vox-cdn.com/uploads/chorus_asset/file/23647732/ffxviclive.png'
+                                src={convertedNews && convertedNews[0] && convertedNews[0].preview_image}
                                 style={{ height: '20rem' }}
                             ></img>
                             <h3
                                 style={{ marginBottom: '3rem', fontWeight: 'bold' }}
-                            >Final Fantasy 16 will knock your socks off</h3>
+                            >{convertedNews && convertedNews[0] && convertedNews[0].title}</h3>
                             <p
-                            >Grab the preorder today to feel completely fulfilled and happy with your life...</p>
+                            >{convertedNews && convertedNews[0] && convertedNews[0].description}</p>
                             <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                         </div>
                         <div className='news-page-highlighted-wrapper-right-column'>
