@@ -43,13 +43,13 @@ const NewsPage = () => {
                         <div className='news-page-highlighted-wrapper-right-column'>
                             <img
                                 style={{ height: '20rem' }}
-                                src='https://static.wikia.nocookie.net/8cf42a12-40e4-4d43-82db-a4c9244e5d8d'
+                                src={convertedNews && convertedNews[1] && convertedNews[1].preview_image}
                             ></img>
                             <h3
                                 style={{ marginBottom: '3rem', fontWeight: 'bold' }}
-                            >Two gamers get bloody in a bar</h3>
+                            >{convertedNews && convertedNews[1] && convertedNews[1].title}</h3>
                             <p
-                            >Things got hairy when a no-deather tapped a speed runner in the shoulder...</p>
+                            >{convertedNews && convertedNews[1] && convertedNews[1].description}</p>
                             <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ const NewsPage = () => {
                         <div className='news-page-article-card-wrapper'>
                             <div className='news-page-article-card-left-column'>
                                 <img
-                                    src='https://www.pcgamesn.com/wp-content/sites/pcgamesn/2023/02/hogwarts-legacy-mods-shrek-2-550x309.jpg'></img>
+                                    src={convertedNews && convertedNews[2] && convertedNews[2].preview_image}></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
                                 <p
@@ -71,17 +71,17 @@ const NewsPage = () => {
                                 <p
 
                                     style={{ fontWeight: 'bold' }}
-                                >Shrek has been added in the new Hogwarts DLC!</p>
+                                >{convertedNews && convertedNews[2] && convertedNews[2].title}</p>
                                 <p
                                 >
-                                    Hey all you Shrekkers. It's time to Shrek once more in this fabulous shrektastic shrekventure...</p>
+                                    {convertedNews && convertedNews[2] && convertedNews[2].description}</p>
                                 <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                             </div>
                         </div>
                         <div className='news-page-article-card-wrapper'>
                             <div className='news-page-article-card-left-column'>
                                 <img
-                                    src='https://gamingtrend.com/wp-content/uploads/2022/11/Dragon02.jpg'
+                                    src={convertedNews && convertedNews[3] && convertedNews[3].preview_image}
                                 ></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
@@ -89,15 +89,15 @@ const NewsPage = () => {
                                     style={{ marginBottom: '5rem' }}
                                 >2M Ago</p>
                                 <p
-                                    style={{ fontWeight: 'bold' }}>A group of tactics gamers simultaneously collapsed</p>
-                                <p>A new epidemic of fainting has occurred as the craziest new tactics game made tactics gamers even more...</p>
+                                    style={{ fontWeight: 'bold' }}>{convertedNews && convertedNews[3] && convertedNews[3].title}</p>
+                                <p> {convertedNews && convertedNews[3] && convertedNews[3].description}</p>
                                 <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                             </div>
                         </div>
                         <div className='news-page-article-card-wrapper'>
                             <div className='news-page-article-card-left-column'>
                                 <img
-                                    src='https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/12/29/d525d9bc-765b-41d2-9906-af2b72c54353/mario-gta'
+                                    src={convertedNews && convertedNews[4] && convertedNews[4].preview_image}
                                 ></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
@@ -106,15 +106,15 @@ const NewsPage = () => {
                                 >7M Ago</p>
                                 <p
                                     style={{ fontWeight: 'bold' }}
-                                >Mario's new growth spurt has everyone on edge</p>
-                                <p>Gamers all over the world are too used to their plumber friend being on the bit of the shorter side...</p>
+                                >{convertedNews && convertedNews[4] && convertedNews[4].title}</p>
+                                <p>{convertedNews && convertedNews[4] && convertedNews[4].description}</p>
                                 <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                             </div>
                         </div>
                         <div className='news-page-article-card-wrapper'>
                             <div className='news-page-article-card-left-column'>
                                 <img
-                                    src='https://ae01.alicdn.com/kf/H809dbedd1e694de38d6924c1c6acc91dC/POKEMON-Funny-Anime-Figures-15cm-Comical-Pikachu-Gengar-Bulbasaur-Charmander-Squirtle-Psyduck-Wretched-Expression-Model-Dolls.jpg'
+                                    src={convertedNews && convertedNews[5] && convertedNews[5].preview_image}
                                 ></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
@@ -123,8 +123,8 @@ const NewsPage = () => {
                                 >1Y Ago</p>
                                 <p
                                     style={{ fontWeight: 'bold' }}
-                                >Litendo makes a drastic change to the creatures' facial structure</p>
-                                <p>Some are loving it. Some hating it. The most polarizing move in the franchise's history has every gamer on edge...</p>
+                                >{convertedNews && convertedNews[5] && convertedNews[5].title}</p>
+                                <p>{convertedNews && convertedNews[5] && convertedNews[5].description}</p>
                                 <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                             </div>
                         </div>

@@ -561,7 +561,7 @@ def seed_database():
     news_article5 = NewsArticle (
         user_id=2,
         title="Mario's new growth spurt has everyone on edge",
-        preview_image='https://image-cdn.essentiallysports.com/wp-content/uploads/Hogwarts-Legacy-Voldemort-Sorting-hat-1110x903.jpg',
+        preview_image='https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/12/29/d525d9bc-765b-41d2-9906-af2b72c54353/mario-gta',
         description="Gamers all over the world are too used to their plumber friend being on the bit of the shorter side...",
         content="In an unexpected twist that has left the gaming world on edge, everyone's favorite Italian plumber has undergone a striking transformation. Mario, the iconic character from Nintendo's beloved franchise, has apparently experienced a sudden growth spurt in his latest gaming installment. This surprising alteration to Mario's character design has shocked fans worldwide, who have grown accustomed to their cheerful and somewhat short-statured hero. This dramatic change in Mario's appearance has caused quite a stir amongst the gaming community. Gamers around the globe, who are used to navigating the Mushroom Kingdom with a shorter and more familiar version of Mario, are now learning to adapt to his new towering presence. The shift not only adds an intriguing aesthetic change, but it also alters the gameplay dynamics significantly, forcing players to rethink their strategies and playstyles. As the gaming community comes to terms with this towering new version of Mario, it is clear that Nintendo continues to push boundaries and surprise its fans, redefining our expectations of even their most iconic characters.",
         created_at=date(2023, 4, 10)
