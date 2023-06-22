@@ -101,7 +101,7 @@ const CartPage = () => {
                                     >
 
                                         <p style={{ fontWeight: 'bold' }}>Total: </p>
-                                        <p style={{ fontWeight: 'bold', color: '#C69749' }}>${total} </p>
+                                        <p style={{ fontWeight: 'bold', color: '#C69749' }}>${total.toFixed(2)} </p>
                                     </div>
                                     <OpenModalButton
                                     buttonText="CHECK OUT"

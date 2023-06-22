@@ -61,7 +61,7 @@ const UserProfilePage = () => {
 
         }
 
-        console.log('OOOORDER', orderGames)
+
         //     order.game_name
         // })
         // console.log('OOOORDERS', orders)
@@ -109,6 +109,9 @@ const UserProfilePage = () => {
                                             <li key={index} style={{ textDecoration: 'none', color: 'beige', padding: '2px' }}>{gameName}</li>
                                         ))}
                                     </ul>}
+                                    {
+                                        isDropdownOpen && userOrders && userOrders.length === 0 && <p style={{ textDecoration: 'none', color: 'beige', padding: '2px' }}>You haven't bought any games!</p>
+                                    }
                                 </div>
                                 <div className='user-profile-information-right-column-bottom-information'>
                                     <h3 style={{ color: 'white' }}>Your Wallet</h3>
