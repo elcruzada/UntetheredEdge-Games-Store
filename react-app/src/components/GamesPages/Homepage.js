@@ -39,9 +39,6 @@ const Homepage = () => {
 
 
     const convertedGames = Object.values(allGames)
-    console.log(convertedGames)
-    // console.log(allGames)
-    // console.log(promotedGames[0])
 
     return (
         <>

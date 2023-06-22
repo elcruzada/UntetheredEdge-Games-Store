@@ -75,8 +75,6 @@ def order_cart_items():
 
     return {'success': 'Order placed'}
 
-# @cart_routes.route('/orders', methods=['GET'])
-# @login_required
 @cart_routes.route('/orders', methods=['GET'])
 @login_required
 def get_game_order_info():
@@ -100,66 +98,3 @@ def get_game_order_info():
     ]
 
     return {'game_orders': game_order_info}
-# def get_game_order_info():
-#     join_condition = orders_and_product.c.game_id == Game.id
-
-#     query = db.session.query(Game, Order, Game.price).select_from(Game).join(
-#         orders_and_product, orders_and_product.c.order_id == Order.id
-#     ).filter(
-#         join_condition,
-#         Order.user_id == current_user.id
-#     )
-
-#     results = query.all()
-
-#     game_order_info = []
-
-
-#     for game, order, game_price in results:
-
-#         game_order_dict = {
-#             'game_id': game.id,
-#             'game_name': game.name,
-#             'game_price': game_price,
-#             'order_id': order.id,
-#             'order_price_total': order.price_total
-#         }
-
-
-#         game_order_info.append(game_order_dict)
-    # join_condition = orders_and_product.c.game_id == Game.id
-
-    # query = db.session.query(Game, Order).select_from(Game).join(
-    #     orders_and_product, orders_and_product.c.order_id == Order.id
-    # ).filter(join_condition)
-
-    # results = query.all()
-
-    # game_order_info = []
-
-    # for game, order, price in results:
-    #     game_order_dict = {
-    #         'game_id': game.id,
-    #         'game_name': game.name,
-    #         'game_price': price,
-    #         'order_id': order.id,
-    #         'order_price_total': order.price_total
-    #     }
-
-    #     game_order_info.append(game_order_dict)
-
-    # return {'game_orders': game_order_info}
-# def get_current_user_orders():
-#     user = User.query.get(current_user.id)
-
-#     user_orders = Order.query.filter_by(user=user).all()
-
-#     user_games = []
-#     for order in user_orders:
-#         games = order.games
-#         games_to_dict = [game.to_dict() for game in games]
-#         user_games.append(games_to_dict)
-
-#     return { "user_orders": [order.to_dict() for order in user_orders],
-#              "user_games": user_games
-#             }

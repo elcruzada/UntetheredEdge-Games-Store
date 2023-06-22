@@ -5,13 +5,15 @@ import gamesReducer from './games';
 import commentsReducer from './comments';
 import cartReducer from './cart';
 import orderReducer from './orders';
+import newsReducer from './news';
 
 const rootReducer = combineReducers({
   session,
   games: gamesReducer,
   comments: commentsReducer,
   cart: cartReducer,
-  orders: orderReducer
+  orders: orderReducer,
+  news: newsReducer
 });
 
 

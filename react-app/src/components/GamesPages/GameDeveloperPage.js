@@ -68,7 +68,7 @@ const GameDeveloperPage = () => {
                                         className="game-developer-page-button"
                                     >
                                         <NavLink exact to='/developer/portal'
-                                        // style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '2rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '2rem' }}
+
                                         >
                                             Check out games in your developer portal
                                         </NavLink>
@@ -78,7 +78,7 @@ const GameDeveloperPage = () => {
                                         className="game-developer-page-button"
                                     >
                                         <NavLink exact to='/login'
-                                        // style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '2rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', marginBottom: '2rem' }}
+
                                         >
                                             Log in to see games in your portal
                                         </NavLink>
@@ -88,7 +88,7 @@ const GameDeveloperPage = () => {
                         </div>
                         <div className="developer-page-column-container">
                             <div className="developer-page-column">
-                                {/* <div className='developer-page-column-item-container'> */}
+
                                 <div className="developer-column-item">
 
                                     <i className="fa-solid fa-globe" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
@@ -126,7 +126,7 @@ const GameDeveloperPage = () => {
                             style={{ marginTop: '1rem' }}
                         >
                             <div className="developer-page-column">
-                                {/* <div className='developer-page-column-item-container'> */}
+
                                 <div className="developer-column-item">
                                     <i className="fa-solid fa-cart-plus" style={{ fontSize: '3.5rem', color: '#C69749', marginBottom: '1rem' }}></i>
                                     <h2>Worldwide E-Commerce</h2>
@@ -134,7 +134,7 @@ const GameDeveloperPage = () => {
                                         UEI's payment service supports 1 payment method with no regional currencies.
                                     </p>
                                 </div>
-                                {/* </div> */}
+                                
                             </div>
                             <div className="developer-page-column">
                                 <div className="developer-column-item">

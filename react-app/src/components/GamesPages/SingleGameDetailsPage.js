@@ -20,9 +20,7 @@ const SingleGameDetailsPage = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const singleGameDetails = useSelector(state => state.games.singleGame)
-    // console.log('COMMMENTS', singleGameDetails.comments)
     const allGameComments = useSelector(state => state.comments)
-    console.log(allGameComments)
     const sessionUser = useSelector(state => state.session.user)
     const [loading, setLoading] = useState(true);
 
@@ -37,9 +35,6 @@ const SingleGameDetailsPage = () => {
     useEffect(() => {
         dispatch(getUserCartThunk())
     }, [dispatch])
-    // useEffect(() => {
-    //     dispatch(getAllCommentsThunk(gameId))
-    // }, [dispatch, gameId])
 
     const addToCartHandler = async (gameId) => {
         if (!sessionUser) {
@@ -59,19 +54,7 @@ const SingleGameDetailsPage = () => {
         }
     }
 
-    // if (!singleGameDetails) return null
-
     const { game_images } = singleGameDetails
-    // if (!game_images || game_images.length === 0) return null
-
-    // const previewImage = singleGameDetails.game_images.find(game => game.preview === true)
-    // const previewImage = singleGameDetails.preview
-    // console.log('PREEVIEW', previewImage)
-    // const noPreview = singleGameDetails.game_images.find(game => game.preview === false)
-    // const previewImage = singleGameDetails.preview
-    // if (!previewImage.url || !noPreview.game_images.url) return null
-    // console.log('SIIINGLE,' (singleGameDetails && singleGameDetails.game_images[0].url))
-    // console.log('NOOOOOO', noPreview)
     const dateFormatting = new Date(singleGameDetails.release_date)
 
     const releaseDateFormatting = dateFormatting.toLocaleDateString('en-US', {
@@ -81,8 +64,6 @@ const SingleGameDetailsPage = () => {
     })
 
     if (!singleGameDetails) return null
-    // console.log('GAAAMEIMAGES', game_images)
-    //deal with the preview images rendering
 
     let orderedComments;
     if (singleGameDetails.comments) {
@@ -166,7 +147,6 @@ const SingleGameDetailsPage = () => {
                             </div>
                             {
                                 game_images && game_images.length &&
-                                // <Carousel images={game_images} />
                                 <SingleGameCarousel images={game_images} />
                             }
                             <p

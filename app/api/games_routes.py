@@ -9,22 +9,6 @@ from ..forms.comment_form import CommentForm
 
 games_routes = Blueprint('games', __name__, url_prefix='/api/games')
 
-# @games_routes.route('/')
-# def get_all_games():
-#     games = Game.query.all()
-#     # games_info = []
-
-#     # for game in games:
-#     #     preview_image = game.game_images.filter_by(preview=True).first()
-#     #     other_image = game.game_images.first()
-#     #     preview_image_url = preview_image.url if preview_image else None
-
-#     #     game_info = game.to_dict()
-#     #     game_info["preview_image"] = preview_image_url
-#     #     games_info.append(game_info)
-
-#     # return { 'games': games_info }
-#     return { "games": [game.to_dict() for game in games] }
 @games_routes.route('/')
 def get_all_games():
     games = Game.query.order_by(desc(Game.release_date)).all()
@@ -40,9 +24,6 @@ def get_all_games():
                 preview_image = game_image
                 break
 
-        # other_image = game.game_images.filter_by(preview=False).first()
-        # print('OOOTHER', other_image)
-        # preview_image_url = preview_image.url if preview_image else other_image.url if other_image else None
         preview_image_url = preview_image.url if preview_image else None
 
         game_info = game.to_dict()
@@ -131,27 +112,6 @@ def delete_game(id):
     db.session.commit()
     return { "success": "Your game has been deleted from the store" }
 
-# @games_routes.route('/<int:id>/images', methods=['POST'])
-# @login_required
-# def add_images(id):
-#     form = GameImagesForm()
-
-#     game_to_add_image = Game.query.get(id)
-#     if not game_to_add_image:
-#         return { "errors": "Game does not exist" }
-
-#     if form.validate_on_submit:
-#         new_game_image = GameImage (
-#             game_id=game_to_add_image.id,
-#             url=form.data['url'],
-#             preview=form.data['preview']
-#         )
-
-#         db.session.add(new_game_image)
-#         db.session.commit()
-#         return new_game_image.to_dict()
-#     return { "errors": form.errors }
-
 @games_routes.route('/<int:id>/images', methods=['POST'])
 @login_required
 def add_images(id):
@@ -191,34 +151,6 @@ def delete_image(id, image_id):
     db.session.commit()
 
     return { "deletedImage": image.to_dict() }
-
-# @games_routes.route('/images', methods=['POST'])
-# @login_required
-# def add_images():
-#     form = GameImagesForm()
-
-
-#     if form.validate_on_submit:
-#         game_id=request.form['game_id']
-#         game_to_add_image = Game.query.get(game_id)
-#         if not game_to_add_image:
-#             return {"errors": "Game does not exist"}
-#         new_game_image = GameImage (
-#             game_id=game_to_add_image.id,
-#             url=form.data['url'],
-#             preview=form.data['preview']
-#         )
-
-#         db.session.add(new_game_image)
-#         db.session.commit()
-#         return new_game_image.to_dict()
-#     return { "errors": form.errors }
-
-# @games_routes.route('/<int:id>/comments', methods=['GET'])
-# def get_game_comments():
-#     game = Game.query.get(id)
-#     if not game:
-#         return { "errors": "Game does not exist" }
 
 @games_routes.route('/<int:id>/comments', methods=['POST'])
 @login_required
@@ -268,19 +200,3 @@ def update_comment(id):
         db.session.commit()
         return comment_to_edit.to_dict()
     return { "errors": form.errors }
-
-# @games_routes.route("/<int:id>/cart", methods=['POST'])
-# @login_required
-# def add_to_cart(id):
-#     current_cart_user = User.query.get(current_user.id)
-#     game_to_add = Game.query.get(id)
-
-#     if not current_cart_user:
-#         return { "errors": "Cart not found" }
-
-#     if not game_to_add:
-#         return { "errors": "Game not found" }
-
-#     current_cart_user.cart_user.append(game_to_add)
-
-#     return { "success": "Added to cart" }

@@ -26,11 +26,6 @@
   margin-right: 1rem;
 }
 
-.profile-dropdown {
-  /* position: absolute; */
-  /* margin-right: auto; */
-}
-
 .profile-button-login-wrapper {
   display: flex;
   align-items: center;
@@ -39,7 +34,6 @@
 .profile-button-wrapper {
   display: flex;
   align-items: center;
-  /* position: absolute; */
   top: 4rem;
   right: 8rem;
 }
