@@ -10,7 +10,6 @@ const NewsPage = () => {
     const sessionUser = useSelector(state => state.session.user)
     const newsArticle = useSelector(state => state.news.allNews)
     const convertedNews = Object.values(newsArticle)
-    console.log('NEWWWWWWS', convertedNews)
 
     useEffect(() => {
         dispatch(getAllNewsThunk())
@@ -25,7 +24,7 @@ const NewsPage = () => {
                     <LowerNavBar sessionUser={sessionUser} news={true} />
                     <h2>Epic Games News</h2>
                     <div className='news-page-highlighted-wrapper-left-right-column'
-                        onClick={() => window.alert('Articles unavailable')}
+                        onClick={() => window.alert('Articles coming soon')}
 
                     >
                         <div className='news-page-highlighted-wrapper-left-column'>
@@ -54,7 +53,7 @@ const NewsPage = () => {
                         </div>
                     </div>
                     <div className='new-page-bottom-news-list-wrapper'
-                        onClick={() => window.alert('Articles unavailable')}
+                        onClick={() => window.alert('Articles coming soon')}
                         style={{ maginTop: '2rem' }}
                     >
 
