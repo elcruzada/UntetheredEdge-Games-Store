@@ -15,10 +15,19 @@ def get_all_news():
 @news_routes.route('/<int:id>', methods=['GET'])
 def get_single_article(id):
     news = NewsArticle.query.get(id)
+
     if not news:
         return { "errors": "Article not found" }
 
-    return news.to_dict()
+    news_author = news.author
+
+    # news['author'] = news_author.username
+
+    news_info = news.to_dict()
+    news_info['writer'] = news_author.username
+
+    # print(news_info)
+    return news_info
 
 @news_routes.route('/new', methods=['POST'])
 @login_required

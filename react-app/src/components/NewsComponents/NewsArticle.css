@@ -9,9 +9,10 @@
 .news-article-inner-container {
     display: flex;
     flex-direction: column;
-    width: 70rem;
+    width: 100rem;
     min-height: 80rem;
     height: fit-content;
     border-radius: 3px;
-    margin-top: 5.5rem;
+    gap: 2rem;
+    /* margin-top: 5.5rem; */
 }

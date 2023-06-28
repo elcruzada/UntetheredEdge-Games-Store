@@ -4,30 +4,37 @@ import Footer from '../UI/Footer'
 import './NewsPage.css'
 import { useEffect } from 'react'
 import { getAllNewsThunk } from '../../store/news'
+import { useHistory } from 'react-router-dom'
 
 const NewsPage = () => {
+    const history = useHistory()
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const newsArticle = useSelector(state => state.news.allNews)
-    const convertedNews = Object.values(newsArticle)
+    const convertedNews = Object.values(newsArticle).reverse()
 
     useEffect(() => {
         dispatch(getAllNewsThunk())
-    },[dispatch])
+    }, [dispatch])
+
+    const newsRedirectHandler = (id) => {
+        history.push(`/news/${id}`)
+    }
 
     return (
         <>
             <div className='news-page-outer-wrapper'>
                 <div className='news-page-inner-wrapper'
-                style={{marginTop: '4rem'}}
+                    style={{ marginTop: '4rem' }}
                 >
                     <LowerNavBar sessionUser={sessionUser} news={true} />
                     <h2>Epic Games News</h2>
                     <div className='news-page-highlighted-wrapper-left-right-column'
-                        onClick={() => window.alert('Articles coming soon')}
 
                     >
-                        <div className='news-page-highlighted-wrapper-left-column'>
+                        <div className='news-page-highlighted-wrapper-left-column'
+                            onClick={() => newsRedirectHandler(convertedNews[0].id)}
+                        >
                             <img
                                 src={convertedNews && convertedNews[0] && convertedNews[0].preview_image}
                                 style={{ height: '20rem' }}
@@ -39,7 +46,9 @@ const NewsPage = () => {
                             >{convertedNews && convertedNews[0] && convertedNews[0].description}</p>
                             <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                         </div>
-                        <div className='news-page-highlighted-wrapper-right-column'>
+                        <div className='news-page-highlighted-wrapper-right-column'
+                            onClick={() => newsRedirectHandler(convertedNews[1].id)}
+                        >
                             <img
                                 style={{ height: '20rem' }}
                                 src={convertedNews && convertedNews[1] && convertedNews[1].preview_image}
@@ -53,13 +62,15 @@ const NewsPage = () => {
                         </div>
                     </div>
                     <div className='new-page-bottom-news-list-wrapper'
-                        onClick={() => window.alert('Articles coming soon')}
                         style={{ maginTop: '2rem' }}
                     >
 
 
-                        <div className='news-page-article-card-wrapper'>
-                            <div className='news-page-article-card-left-column'>
+                        <div className='news-page-article-card-wrapper'
+                            onClick={() => newsRedirectHandler(convertedNews[2].id)}
+                        >
+                            <div className='news-page-article-card-left-column'
+                            >
                                 <img
                                     src={convertedNews && convertedNews[2] && convertedNews[2].preview_image}></img>
                             </div>
@@ -77,8 +88,11 @@ const NewsPage = () => {
                                 <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                             </div>
                         </div>
-                        <div className='news-page-article-card-wrapper'>
-                            <div className='news-page-article-card-left-column'>
+                        <div className='news-page-article-card-wrapper'
+                            onClick={() => newsRedirectHandler(convertedNews[3].id)}
+                        >
+                            <div className='news-page-article-card-left-column'
+                            >
                                 <img
                                     src={convertedNews && convertedNews[3] && convertedNews[3].preview_image}
                                 ></img>
@@ -93,7 +107,9 @@ const NewsPage = () => {
                                 <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                             </div>
                         </div>
-                        <div className='news-page-article-card-wrapper'>
+                        <div className='news-page-article-card-wrapper'
+                            onClick={() => newsRedirectHandler(convertedNews[4].id)}
+                        >
                             <div className='news-page-article-card-left-column'>
                                 <img
                                     src={convertedNews && convertedNews[4] && convertedNews[4].preview_image}
@@ -110,7 +126,9 @@ const NewsPage = () => {
                                 <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
                             </div>
                         </div>
-                        <div className='news-page-article-card-wrapper'>
+                        <div className='news-page-article-card-wrapper'
+                            onClick={() => newsRedirectHandler(convertedNews[5].id)}
+                        >
                             <div className='news-page-article-card-left-column'>
                                 <img
                                     src={convertedNews && convertedNews[5] && convertedNews[5].preview_image}
