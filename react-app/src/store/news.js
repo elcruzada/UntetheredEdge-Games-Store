@@ -43,6 +43,7 @@ export const getSingleNewsThunk = (newsId) => async (dispatch) => {
     if (res.ok) {
         const singleNewsData = await res.json()
         dispatch(getSingleNewsAction(singleNewsData))
+        return singleNewsData
     }
 }
 

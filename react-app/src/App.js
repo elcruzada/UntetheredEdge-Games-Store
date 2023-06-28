@@ -17,6 +17,7 @@ import BrowseGamesPages from "./components/GamesPages/BrowseGamesPages";
 
 import NewsPage from "./components/NewsComponents/NewsPage";
 import MemoryGame from "./components/MemoryGame/MemoryGame";
+import NewsArticle from "./components/NewsComponents/NewsArticle";
 
 
 function App() {
@@ -46,7 +47,12 @@ function App() {
           <Route exact path='/profile'>
             <UserProfilePage />
           </Route>
-          <NewsPage exact path='/news'/>
+          <Route exact path='/news'>
+            <NewsPage  />
+          </Route>
+          <Route exact path='/news/:newsId'>
+            <NewsArticle />
+          </Route>
           <Route exact path='/developer'>
             <GameDeveloperPage />
           </Route>

@@ -12,6 +12,14 @@ def get_all_news():
     news = NewsArticle.query.order_by(desc(NewsArticle.created_at)).all()
     return { 'news': [n.to_dict() for n in news] }
 
+@news_routes.route('/<int:id>', methods=['GET'])
+def get_single_article(id):
+    news = NewsArticle.query.get(id)
+    if not news:
+        return { "errors": "Article not found" }
+
+    return news.to_dict()
+
 @news_routes.route('/new', methods=['POST'])
 @login_required
 def create_news():

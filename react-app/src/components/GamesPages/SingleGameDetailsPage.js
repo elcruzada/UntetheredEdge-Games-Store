@@ -25,7 +25,7 @@ const SingleGameDetailsPage = () => {
     const [loading, setLoading] = useState(true);
 
     const [cartAdded, setCartAdded] = useState(false)
-    console.log('SIINGLE', singleGameDetails)
+    // console.log('SIINGLE', singleGameDetails)
     useEffect(() => {
         dispatch(getSingleGameThunk(gameId)).then(() => {
             setLoading(false);
