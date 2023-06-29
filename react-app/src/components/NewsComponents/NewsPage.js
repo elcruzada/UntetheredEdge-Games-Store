@@ -38,32 +38,43 @@ const NewsPage = () => {
 
                     >
                         <div className='news-page-highlighted-wrapper-left-column'
-                            onClick={() => newsRedirectHandler(convertedNews[0].id)}
                         >
                             <img
                                 src={convertedNews && convertedNews[0] && convertedNews[0].preview_image}
                                 style={{ height: '20rem' }}
-                            ></img>
+                                onClick={() => newsRedirectHandler(convertedNews[0].id)}
+                                ></img>
+                            <p
+                            style={{marginBottom: '.5rem'}}
+                            >{(new Date(convertedNews && convertedNews[0] && convertedNews[0].created_at).getMonth() + 1) + "." + new Date(convertedNews && convertedNews[0] && convertedNews[0].created_at).getDate() + "." + new Date(convertedNews && convertedNews[0] && convertedNews[0].created_at).getFullYear()}</p>
                             <h3
                                 style={{ marginBottom: '3rem', fontWeight: 'bold' }}
-                            >{convertedNews && convertedNews[0] && convertedNews[0].title}</h3>
+                                >{convertedNews && convertedNews[0] && convertedNews[0].title}</h3>
                             <p
                             >{convertedNews && convertedNews[0] && convertedNews[0].description}</p>
-                            <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
+                            <p style={{ marginTop: '1rem', color: 'gray', cursor: 'pointer' }}
+                            onClick={() => newsRedirectHandler(convertedNews[0].id)}
+
+                            >Read More</p>
                         </div>
                         <div className='news-page-highlighted-wrapper-right-column'
-                            onClick={() => newsRedirectHandler(convertedNews[1].id)}
                         >
                             <img
                                 style={{ height: '20rem' }}
                                 src={convertedNews && convertedNews[1] && convertedNews[1].preview_image}
+                                onClick={() => newsRedirectHandler(convertedNews[1].id)}
                             ></img>
+                            <p
+                            style={{marginBottom: '.5rem'}}
+                            >{(new Date(convertedNews && convertedNews[1] && convertedNews[1].created_at).getMonth() + 1) + "." + new Date(convertedNews && convertedNews[1] && convertedNews[1].created_at).getDate() + "." + new Date(convertedNews && convertedNews[1] && convertedNews[1].created_at).getFullYear()}</p>
                             <h3
                                 style={{ marginBottom: '3rem', fontWeight: 'bold' }}
                             >{convertedNews && convertedNews[1] && convertedNews[1].title}</h3>
                             <p
                             >{convertedNews && convertedNews[1] && convertedNews[1].description}</p>
-                            <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
+                            <p style={{ marginTop: '1rem', color: 'gray', cursor: 'pointer' }}
+                            onClick={() => newsRedirectHandler(convertedNews[1].id)}
+                            >Read More</p>
                         </div>
                     </div>
                     <div className='new-page-bottom-news-list-wrapper'
@@ -72,12 +83,14 @@ const NewsPage = () => {
 
 
                         <div className='news-page-article-card-wrapper'
-                            onClick={() => newsRedirectHandler(convertedNews[2].id)}
+
                         >
                             <div className='news-page-article-card-left-column'
                             >
                                 <img
-                                    src={convertedNews && convertedNews[2] && convertedNews[2].preview_image}></img>
+                                    src={convertedNews && convertedNews[2] && convertedNews[2].preview_image}
+                                    onClick={() => newsRedirectHandler(convertedNews[2].id)}
+                                    ></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
                                 <p
@@ -90,16 +103,19 @@ const NewsPage = () => {
                                 <p
                                 >
                                     {convertedNews && convertedNews[2] && convertedNews[2].description}</p>
-                                <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
+                                    <p style={{ marginTop: '1rem', color: 'gray', cursor: 'pointer' }}
+                                    onClick={() => newsRedirectHandler(convertedNews[2].id)}
+                                    >Read More</p>
                             </div>
                         </div>
                         <div className='news-page-article-card-wrapper'
-                            onClick={() => newsRedirectHandler(convertedNews[3].id)}
+
                         >
                             <div className='news-page-article-card-left-column'
                             >
                                 <img
                                     src={convertedNews && convertedNews[3] && convertedNews[3].preview_image}
+                                    onClick={() => newsRedirectHandler(convertedNews[3].id)}
                                 ></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
@@ -109,15 +125,18 @@ const NewsPage = () => {
                                 <p
                                     style={{ fontWeight: 'bold' }}>{convertedNews && convertedNews[3] && convertedNews[3].title}</p>
                                 <p> {convertedNews && convertedNews[3] && convertedNews[3].description}</p>
-                                <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
+                                <p style={{ marginTop: '1rem', color: 'gray', cursor: 'pointer' }}
+                                onClick={() => newsRedirectHandler(convertedNews[3].id)}
+                                >Read More</p>
                             </div>
                         </div>
                         <div className='news-page-article-card-wrapper'
-                            onClick={() => newsRedirectHandler(convertedNews[4].id)}
+
                         >
                             <div className='news-page-article-card-left-column'>
                                 <img
                                     src={convertedNews && convertedNews[4] && convertedNews[4].preview_image}
+                                    onClick={() => newsRedirectHandler(convertedNews[4].id)}
                                 ></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
@@ -128,15 +147,18 @@ const NewsPage = () => {
                                     style={{ fontWeight: 'bold' }}
                                 >{convertedNews && convertedNews[4] && convertedNews[4].title}</p>
                                 <p>{convertedNews && convertedNews[4] && convertedNews[4].description}</p>
-                                <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
+                                <p style={{ marginTop: '1rem', color: 'gray', cursor: 'pointer' }}
+                                onClick={() => newsRedirectHandler(convertedNews[4].id)}
+                                >Read More</p>
                             </div>
                         </div>
                         <div className='news-page-article-card-wrapper'
-                            onClick={() => newsRedirectHandler(convertedNews[5].id)}
+
                         >
                             <div className='news-page-article-card-left-column'>
                                 <img
                                     src={convertedNews && convertedNews[5] && convertedNews[5].preview_image}
+                                    onClick={() => newsRedirectHandler(convertedNews[5].id)}
                                 ></img>
                             </div>
                             <div className='news-page-article-card-right-column'>
@@ -147,7 +169,9 @@ const NewsPage = () => {
                                     style={{ fontWeight: 'bold' }}
                                 >{convertedNews && convertedNews[5] && convertedNews[5].title}</p>
                                 <p>{convertedNews && convertedNews[5] && convertedNews[5].description}</p>
-                                <p style={{ marginTop: '1rem', color: 'gray' }}>Read More</p>
+                                <p style={{ marginTop: '1rem', color: 'gray', cursor: 'pointer' }}
+                                onClick={() => newsRedirectHandler(convertedNews[5].id)}
+                                >Read More</p>
                             </div>
                         </div>
                     </div>

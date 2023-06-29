@@ -42,7 +42,7 @@ const WriterPortal = () => {
                                     style={{ height: '15rem' }}
                                 >
 
-                                    <NavLink exact to='/author/form'
+                                    <NavLink exact to='/writer/form'
                                         style={{ textDecoration: 'none', fontStyle: 'Calibri', fontSize: '3rem', textAlign: 'center', color: 'white', border: '1px solid white', boxShadow: '5px 5px 5px gray', padding: '2rem' }}
                                     >
                                         Submit a new article application!

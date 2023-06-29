@@ -15,7 +15,6 @@ const ArticleUpdateForm = () => {
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [previewImage, setPreviewImage] = useState('')
     const [content, setContent] = useState('')
 
     const [errors, setErrors] = useState({})
@@ -28,7 +27,6 @@ const ArticleUpdateForm = () => {
         if (singleArticle) {
             setTitle(singleArticle.title)
             setDescription(singleArticle.description)
-            setPreviewImage(singleArticle.preview_image)
             setContent(singleArticle.content)
         }
     }, [])
@@ -41,7 +39,7 @@ const ArticleUpdateForm = () => {
         if (!content) errors.content = "Publisher info required"
 
         setErrors(errors)
-    }, [title, description, previewImage, content])
+    }, [title, description, content])
 
     const submitHandler = async (e) => {
         e.preventDefault()
@@ -52,7 +50,7 @@ const ArticleUpdateForm = () => {
             formData.append('description', description)
             formData.append('content', content)
 
-            await dispatch(updateNewsThunk(formData))
+            await dispatch(updateNewsThunk(newsId, formData))
             history.push('/news')
         }
 
@@ -66,7 +64,7 @@ const ArticleUpdateForm = () => {
                     <NavLink exact to='/login'><h1>Sign in to Create an Article</h1></NavLink>
                     :
                     <form onSubmit={submitHandler}>
-                        <h1>Enter the following fields to publish your article</h1>
+                        <h1>Enter the following fields to edit your article</h1>
                         <div className='form-row'>
                             <label>Your article's title</label>
                             <input
