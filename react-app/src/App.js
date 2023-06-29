@@ -14,11 +14,12 @@ import GameDeveloperPortal from "./components/GamesPages/GameDeveloperPortal";
 import CartPage from "./components/CartComponents/CartPage";
 import UserProfilePage from "./components/UserProfile/UserProfilePage";
 import BrowseGamesPages from "./components/GamesPages/BrowseGamesPages";
-
 import NewsPage from "./components/NewsComponents/NewsPage";
 import MemoryGame from "./components/MemoryGame/MemoryGame";
 import NewsArticle from "./components/NewsComponents/NewsArticle";
 import NewsArticleForm from "./components/NewsComponents/NewsArticleForm";
+import WriterPortal from "./components/NewsComponents/WriterPortal";
+
 
 
 function App() {
@@ -51,8 +52,11 @@ function App() {
           <Route exact path='/news'>
             <NewsPage  />
           </Route>
-          <Route exact path='/news/form'>
+          <Route exact path='/writer/form'>
             <NewsArticleForm />
+          </Route>
+          <Route exact path='/writer/portal'>
+            <WriterPortal />
           </Route>
           <Route exact path='/news/:newsId'>
             <NewsArticle />
