@@ -19,6 +19,7 @@ import MemoryGame from "./components/MemoryGame/MemoryGame";
 import NewsArticle from "./components/NewsComponents/NewsArticle";
 import NewsArticleForm from "./components/NewsComponents/NewsArticleForm";
 import WriterPortal from "./components/NewsComponents/WriterPortal";
+import ArticleUpdateForm from "./components/NewsComponents/ArticleUpdateForm";
 
 
 
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route exact path='/news/:newsId'>
             <NewsArticle />
+          </Route>
+          <Route exact path='/news/:newsId/update'>
+            <ArticleUpdateForm />
           </Route>
           <Route exact path='/developer'>
             <GameDeveloperPage />

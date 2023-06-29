@@ -25,9 +25,11 @@ const WriterPortalArticleCard = ({ article }) => {
                     </div>
                     <div className='developer-portal-update-delete-game-right-column'>
                         <h3>{article.title}</h3>
-                        <NavLink exact to='/writer'>Update your Article</NavLink>
+                        <NavLink exact to={`/news/${article.id}/update`}
+                        style={{color: 'white'}}
+                        >Update your Article</NavLink>
                         <OpenModalButton
-                            buttonText="Delete your game"
+                            buttonText="Delete your article"
                             modalComponent={<DeleteArticleModal article={article.id} />}
                         />
                     </div>

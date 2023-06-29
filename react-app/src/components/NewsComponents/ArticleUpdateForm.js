@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react'
 import './NewsArticleForm.css'
 import { useHistory, NavLink } from 'react-router-dom/'
 import { useDispatch, useSelector } from 'react-redux'
-import { createNewsThunk } from '../../store/news'
+import { getAllNewsThunk, getSingleNewsThunk, updateNewsThunk } from '../../store/news'
+import { useParams } from 'react-router-dom'
 
-const NewsArticleForm = () => {
+const ArticleUpdateForm = () => {
+    const { newsId } = useParams()
     const sessionUser = useSelector(state => state.session.user)
+    const singleArticle = useSelector(state => state.news.singleNews)
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -18,11 +21,23 @@ const NewsArticleForm = () => {
     const [errors, setErrors] = useState({})
 
     useEffect(() => {
+        dispatch(getSingleNewsThunk(newsId))
+    }, [dispatch])
+
+    useEffect(() => {
+        if (singleArticle) {
+            setTitle(singleArticle.title)
+            setDescription(singleArticle.description)
+            setPreviewImage(singleArticle.preview_image)
+            setContent(singleArticle.content)
+        }
+    }, [])
+
+    useEffect(() => {
         const errors = {}
 
         if (!title) errors.title = "Title for your game is required"
         if (!description) errors.description = "Game description required"
-        if (!previewImage) errors.previewImage = "Preview Image required"
         if (!content) errors.content = "Publisher info required"
 
         setErrors(errors)
@@ -35,10 +50,9 @@ const NewsArticleForm = () => {
         if (!Object.values(errors).length) {
             formData.append('title', title)
             formData.append('description', description)
-            formData.append('preview_image', previewImage)
             formData.append('content', content)
 
-            await dispatch(createNewsThunk(formData))
+            await dispatch(updateNewsThunk(formData))
             history.push('/news')
         }
 
@@ -77,20 +91,8 @@ const NewsArticleForm = () => {
                             </input>
                             {errors.title && <p>{errors.description}</p>}
                         </div>
-
-                        <div className='form-row'>
-                            <label>Your article's preview image url here</label>
-                            <input
-                                id='previewImage'
-                                type='text'
-                                value={previewImage}
-                                onChange={(e) => setPreviewImage(e.target.value)}
-                                placeholder='Enter your preview image here'
-                            >
-                            </input>
-                            {errors.description && <p>{errors.previewImage}</p>}
-                        </div>
-                        <div className='form-row'>
+                        <div className='form-row'
+                        >
                             <label>Your article's content</label>
                             <textarea
                                 style={{ height: '25rem' }}
@@ -113,4 +115,4 @@ const NewsArticleForm = () => {
     )
 }
 
-export default NewsArticleForm
+export default ArticleUpdateForm
