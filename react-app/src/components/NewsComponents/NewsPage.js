@@ -21,6 +21,11 @@ const NewsPage = () => {
         history.push(`/news/${id}`)
     }
 
+    const date = new Date(convertedNews && convertedNews.created_at);
+    // const formattedDate = (date.getMonth() + 1) + "." + date.getDate() + "." + date.getFullYear();
+    const formattedDate = (new Date(convertedNews && convertedNews[2] && convertedNews[2].created_at).getMonth() + 1) + "." + new Date(convertedNews && convertedNews[2] && convertedNews[2].created_at).getDate() + "." + new Date(convertedNews && convertedNews[2] && convertedNews[2].created_at).getFullYear();
+
+
     return (
         <>
             <div className='news-page-outer-wrapper'>
@@ -77,7 +82,7 @@ const NewsPage = () => {
                             <div className='news-page-article-card-right-column'>
                                 <p
                                     style={{ marginBottom: '5rem' }}
-                                >2D Ago</p>
+                                >{(new Date(convertedNews && convertedNews[2] && convertedNews[2].created_at).getMonth() + 1) + "." + new Date(convertedNews && convertedNews[2] && convertedNews[2].created_at).getDate() + "." + new Date(convertedNews && convertedNews[2] && convertedNews[2].created_at).getFullYear()}</p>
                                 <p
 
                                     style={{ fontWeight: 'bold' }}
@@ -100,7 +105,7 @@ const NewsPage = () => {
                             <div className='news-page-article-card-right-column'>
                                 <p
                                     style={{ marginBottom: '5rem' }}
-                                >2M Ago</p>
+                                >{(new Date(convertedNews && convertedNews[3] && convertedNews[3].created_at).getMonth() + 1) + "." + new Date(convertedNews && convertedNews[3] && convertedNews[3].created_at).getDate() + "." + new Date(convertedNews && convertedNews[3] && convertedNews[3].created_at).getFullYear()}</p>
                                 <p
                                     style={{ fontWeight: 'bold' }}>{convertedNews && convertedNews[3] && convertedNews[3].title}</p>
                                 <p> {convertedNews && convertedNews[3] && convertedNews[3].description}</p>
@@ -118,7 +123,7 @@ const NewsPage = () => {
                             <div className='news-page-article-card-right-column'>
                                 <p
                                     style={{ marginBottom: '5rem' }}
-                                >7M Ago</p>
+                                >{(new Date(convertedNews && convertedNews[4] && convertedNews[4].created_at).getMonth() + 1) + "." + new Date(convertedNews && convertedNews[4] && convertedNews[4].created_at).getDate() + "." + new Date(convertedNews && convertedNews[4] && convertedNews[4].created_at).getFullYear()}</p>
                                 <p
                                     style={{ fontWeight: 'bold' }}
                                 >{convertedNews && convertedNews[4] && convertedNews[4].title}</p>
@@ -137,7 +142,7 @@ const NewsPage = () => {
                             <div className='news-page-article-card-right-column'>
                                 <p
                                     style={{ marginBottom: '5rem' }}
-                                >1Y Ago</p>
+                                >{(new Date(convertedNews && convertedNews[5] && convertedNews[5].created_at).getMonth() + 1) + "." + new Date(convertedNews && convertedNews[5] && convertedNews[5].created_at).getDate() + "." + new Date(convertedNews && convertedNews[5] && convertedNews[5].created_at).getFullYear()}</p>
                                 <p
                                     style={{ fontWeight: 'bold' }}
                                 >{convertedNews && convertedNews[5] && convertedNews[5].title}</p>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './NewsArticleForm.css'
 import { useHistory, NavLink } from 'react-router-dom/'
 import { useDispatch, useSelector } from 'react-redux'
-import { createGameThunk } from '../../store/games'
+import { createNewsThunk } from '../../store/news'
 
 const NewsArticleForm = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -22,6 +22,7 @@ const NewsArticleForm = () => {
 
         if (!title) errors.title = "Title for your game is required"
         if (!description) errors.description = "Game description required"
+        if (!previewImage) errors.previewImage = "Preview Image required"
         if (!content) errors.content = "Publisher info required"
 
         setErrors(errors)
@@ -37,7 +38,7 @@ const NewsArticleForm = () => {
             formData.append('preview_image', previewImage)
             formData.append('content', content)
 
-            const res = await dispatch(createGameThunk(formData))
+            await dispatch(createNewsThunk(formData))
             history.push('/news')
         }
 
@@ -51,7 +52,7 @@ const NewsArticleForm = () => {
                     <NavLink exact to='/login'><h1>Sign in to Create an Article</h1></NavLink>
                     :
                     <form onSubmit={submitHandler}>
-                        <h1>Enter to publish your article</h1>
+                        <h1>Enter the following fields to publish your article</h1>
                         <div className='form-row'>
                             <label>Your article's title</label>
                             <input
@@ -78,7 +79,7 @@ const NewsArticleForm = () => {
                         </div>
 
                         <div className='form-row'>
-                            <label>Your article's preview image</label>
+                            <label>Your article's preview image url here</label>
                             <input
                                 id='previewImage'
                                 type='text'
@@ -91,14 +92,14 @@ const NewsArticleForm = () => {
                         </div>
                         <div className='form-row'>
                             <label>Your article's content</label>
-                            <input
+                            <textarea
                                 id='gamePublisher'
-                                type='textArea'
+                                type='text'
                                 value={content}
                                 onChange={(e) => setContent(e.target.value)}
                                 placeholder='Enter the content of your article here'
-                            >
-                            </input>
+                            />
+
                             {errors.content && <p>{errors.content}</p>}
                         </div>
                         <div className='create-game-button'>

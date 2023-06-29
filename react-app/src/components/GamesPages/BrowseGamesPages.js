@@ -27,7 +27,7 @@ const BrowseGamesPages = () => {
     if (!allGames) return null
 
     const convertedGames = Object.values(allGames)
-    
+
 
     return (
         <> {
@@ -40,7 +40,7 @@ const BrowseGamesPages = () => {
                             <LowerNavBar sessionUser={sessionUser} browse={true} />
                             <div className='browse-games-pages-games'>
                                 {convertedGames && convertedGames.reverse().map(game => {
-                                    // console.log('GAAAEM', game)
+                                    
                                     return <BrowseGamesPagesCard
                                         key={game.id}
                                         game={game} />

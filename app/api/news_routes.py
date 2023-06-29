@@ -64,7 +64,6 @@ def update_news(id):
     if article_to_edit:
         if form.validate_on_submit():
             article_to_edit.title=form.title['title']
-            article_to_edit.preview_image=form.data['preview_image']
             article_to_edit.description=form.data['preview_image']
             article_to_edit.content=form.data['content']
 

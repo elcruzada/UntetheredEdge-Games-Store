@@ -101,7 +101,7 @@ export default function newsReducer(state = initialState, action) {
             return newNewsState
         case CREATE_NEWS:
             newNewsState = { ...state,  allNews: {...state.allNews} }
-            newNewsState.singleNews[action.newsInputs.id] = action.newsInputs
+            newNewsState.singleNews[action.userInputs.id] = action.userInputs
             return newNewsState
         case DELETE_NEWS:
             newNewsState = { ...state, allNews: {...state.allNews} }

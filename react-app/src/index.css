@@ -10,3 +10,7 @@
 img {
     object-fit: cover;
 }
+
+.form-row p {
+    color: red;
+}

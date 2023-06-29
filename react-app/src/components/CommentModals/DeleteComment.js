@@ -7,7 +7,6 @@ import { useHistory, useParams } from 'react-router-dom'
 import { deleteCommentThunk } from '../../store/comments'
 
 const DeleteCommentModal = ({gameId, commentId}) => {
-    // const { gameId } = useParams()
     const dispatch = useDispatch()
     const history = useHistory()
     const { closeModal } = useModal()
@@ -22,7 +21,7 @@ const DeleteCommentModal = ({gameId, commentId}) => {
     const deleteCommentHandler = async (gameId, commentId) => {
         await dispatch(deleteCommentThunk(commentId))
         await dispatch(getSingleGameThunk(gameId))
-        
+
         closeModal()
 
         history.push(`/games/${gameId}`)
