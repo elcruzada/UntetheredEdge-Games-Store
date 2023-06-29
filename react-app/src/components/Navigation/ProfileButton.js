@@ -58,6 +58,15 @@ function ProfileButton({ user }) {
             </NavLink>
             <li>
 
+            <NavLink exact to='/writer/portal'
+            style={{ color: 'white' }}
+            >
+              Writer Portal
+            </NavLink>
+            </li>
+
+            <li>
+
               <NavLink exact to='/profile'
                 style={{ color: 'white' }}
               >
@@ -66,8 +75,7 @@ function ProfileButton({ user }) {
             </li>
             <li>{user.username}</li>
             <li>{user.email}</li>
-            <li>
-            </li>
+
             <li>
               <button onClick={handleLogout}>Log Out</button>
             </li>
