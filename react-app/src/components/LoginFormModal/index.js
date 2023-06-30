@@ -17,6 +17,11 @@ function LoginFormModal() {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
+      setErrors(data.map(err => {
+        let field = err.split(":")[0]
+        field = field.charAt(0).toUpperCase() + field.slice(1)
+        return `${field} is required.`
+      }));
     } else {
         closeModal()
     }
@@ -33,11 +38,11 @@ function LoginFormModal() {
 
   return (
     <div className='modal'>
-      <h1>Log In</h1>
+      <h1 style={{marginBottom: '1rem'}}>Log In</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <li key={idx} style={{color: 'red'}}>{error}</li>
           ))}
         </ul>
         <label>

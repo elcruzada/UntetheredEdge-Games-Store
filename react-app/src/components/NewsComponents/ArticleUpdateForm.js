@@ -34,9 +34,9 @@ const ArticleUpdateForm = () => {
     useEffect(() => {
         const errors = {}
 
-        if (!title) errors.title = "Title for your game is required"
-        if (!description) errors.description = "Game description required"
-        if (!content) errors.content = "Publisher info required"
+        if (!title) errors.title = "Title for your article is required"
+        if (!description) errors.description = "Article description required"
+        if (!content) errors.content = "Content for your article is required"
 
         setErrors(errors)
     }, [title, description, content])

@@ -41,7 +41,9 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <div onClick={openMenu}
+      <div
+
+        onClick={openMenu}
         style={{ paddingTop: '3rem', paddingRight: '11.5rem' }}
       >
         <i className="fa-sharp fa-solid fa-user"
@@ -77,7 +79,9 @@ function ProfileButton({ user }) {
             <li>{user.email}</li>
 
             <li>
-              <button onClick={handleLogout}>Log Out</button>
+              <button onClick={handleLogout}
+              style={{padding: '.75rem', cursor: 'pointer', borderRadius: '5px', fontWeight: 'bold'}}
+              >Log Out</button>
             </li>
           </>
         ) : (

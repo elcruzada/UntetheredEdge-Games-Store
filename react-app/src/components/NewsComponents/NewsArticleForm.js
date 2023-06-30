@@ -20,10 +20,10 @@ const NewsArticleForm = () => {
     useEffect(() => {
         const errors = {}
 
-        if (!title) errors.title = "Title for your game is required"
-        if (!description) errors.description = "Game description required"
+        if (!title) errors.title = "Title for your article is required"
+        if (!description) errors.description = "Article description required"
         if (!previewImage) errors.previewImage = "Preview Image required"
-        if (!content) errors.content = "Publisher info required"
+        if (!content) errors.content = "Content required"
 
         setErrors(errors)
     }, [title, description, previewImage, content])
