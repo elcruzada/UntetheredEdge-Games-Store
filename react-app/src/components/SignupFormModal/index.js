@@ -19,6 +19,11 @@ function SignupFormModal() {
 			const data = await dispatch(signUp(username, email, password));
 			if (data) {
 				setErrors(data);
+				setErrors(data.map(err => {
+					let field = err.split(":")[0]
+					field = field.charAt(0).toUpperCase() + field.slice(1)
+					return `${field} is required.`
+				}));
 			} else {
 				closeModal();
 			}
@@ -38,7 +43,7 @@ function SignupFormModal() {
 			<form onSubmit={handleSubmit}>
 				<ul>
 					{errors.map((error, idx) => (
-						<li key={idx}>{error}</li>
+						<li key={idx} style={{color: 'red'}}>{error}</li>
 					))}
 				</ul>
 				<label>

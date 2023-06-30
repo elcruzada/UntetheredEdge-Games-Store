@@ -50,7 +50,7 @@ const UserProfilePage = () => {
     if (userOrders) {
         // const orders = userOrders.forEach(order => {
         const filteredOrders = [...new Set(userOrders.map(order => order))]
-        console.log('FIIILTERED', filteredOrders)
+        // console.log('FIIILTERED', filteredOrders)
 
         if (filteredOrders && allGames) {
             for (let order of filteredOrders) {

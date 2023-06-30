@@ -12,6 +12,23 @@ def get_all_news():
     news = NewsArticle.query.order_by(desc(NewsArticle.created_at)).all()
     return { 'news': [n.to_dict() for n in news] }
 
+@news_routes.route('/<int:id>', methods=['GET'])
+def get_single_article(id):
+    news = NewsArticle.query.get(id)
+
+    if not news:
+        return { "errors": "Article not found" }
+
+    news_author = news.author
+
+    # news['author'] = news_author.username
+
+    news_info = news.to_dict()
+    news_info['writer'] = news_author.username
+
+    # print(news_info)
+    return news_info
+
 @news_routes.route('/new', methods=['POST'])
 @login_required
 def create_news():
@@ -46,9 +63,8 @@ def update_news(id):
 
     if article_to_edit:
         if form.validate_on_submit():
-            article_to_edit.title=form.title['title']
-            article_to_edit.preview_image=form.data['preview_image']
-            article_to_edit.description=form.data['preview_image']
+            article_to_edit.title=form.data['title']
+            article_to_edit.description=form.data['description']
             article_to_edit.content=form.data['content']
 
             db.session.commit()

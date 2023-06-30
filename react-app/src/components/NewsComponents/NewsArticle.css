@@ -1,0 +1,18 @@
+.news-article-outer-container {
+    display: flex;
+    justify-content: center;
+    min-height: 150rem;
+    height: fit-content;
+    border-radius: 3px;
+}
+
+.news-article-inner-container {
+    display: flex;
+    flex-direction: column;
+    width: 100rem;
+    min-height: 80rem;
+    height: fit-content;
+    border-radius: 3px;
+    gap: 2rem;
+    /* margin-top: 5.5rem; */
+}

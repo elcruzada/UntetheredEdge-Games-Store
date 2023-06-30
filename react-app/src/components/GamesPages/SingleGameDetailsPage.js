@@ -25,7 +25,7 @@ const SingleGameDetailsPage = () => {
     const [loading, setLoading] = useState(true);
 
     const [cartAdded, setCartAdded] = useState(false)
-    console.log('SIINGLE', singleGameDetails)
+    // console.log('SIINGLE', singleGameDetails)
     useEffect(() => {
         dispatch(getSingleGameThunk(gameId)).then(() => {
             setLoading(false);
@@ -102,7 +102,7 @@ const SingleGameDetailsPage = () => {
                                 <div className='single-game-details-right-column'>
                                     <div className='singleGameDetails-game-details'>
                                         <p className='singleGameDetails-game-details-tag'>Price</p>
-                                        <p>{singleGameDetails && singleGameDetails.price}</p>
+                                        <p>${singleGameDetails && singleGameDetails.price}</p>
                                     </div>
                                     {
                                         !cartAdded ?
@@ -167,10 +167,13 @@ const SingleGameDetailsPage = () => {
                                     <p style={{ marginBottom: '.25rem' }}>Loved the game? Couldn't stand it? Our developers value feedback from players like you! </p>
                                     <p style={{ marginBottom: '1rem' }}>Help build our community by sharing your thoughts to our developers.
                                     </p>
+                                    <div style={{width: '5rem'}}>
+
                                     <OpenModalButton
                                         buttonText='LEAVE A COMMENT'
                                         modalComponent={<PostCommentModal gameId={gameId} />}
                                     />
+                                    </div>
                                 </>
                             }
                             <div className='comments-list'>

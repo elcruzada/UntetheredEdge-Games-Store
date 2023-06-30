@@ -5,7 +5,6 @@ import DeleteGameModal from "../GamesPages/DeleteGameModal"
 import { useSelector } from "react-redux"
 import GameDeveloperImages from "../GamesPages/GameDeveloperImages"
 import './DeveloperPortalGamesCard.css'
-import Footer from "./Footer"
 
 const DeveloperPortalGamesCard = ({ game }) => {
     //game image will be at the left

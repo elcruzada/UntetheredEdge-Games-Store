@@ -31,7 +31,7 @@ const GameDeveloperPage = () => {
                             <img
                                 src={gamingGif}
                                 alt='gamingGif'
-                                style={{ borderRadius: '5px', height: '25rem' }}
+                                style={{ borderRadius: '5px', height: '32rem' }}
                             />
                             <div className="overlay-text">
                                 <img
@@ -84,6 +84,28 @@ const GameDeveloperPage = () => {
                                         </NavLink>
                                     </div>
                                 }
+                                <p style={{ color: 'white', textAlign: 'center', fontSize: '18px', marginBottom: '2rem' }}>Are you an author?</p>
+                                {sessionUser ?
+                                    <div
+                                        className="game-developer-page-button"
+                                    >
+                                        <NavLink exact to='/writer/portal'
+
+                                        >
+                                            Check out the articles in your author portal
+                                        </NavLink>
+                                    </div>
+                                    :
+                                    <div
+                                        className="game-developer-page-button"
+                                    >
+                                        <NavLink exact to='/login'
+
+                                        >
+                                            Log in to see the articles in your portal
+                                        </NavLink>
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div className="developer-page-column-container">
@@ -97,7 +119,7 @@ const GameDeveloperPage = () => {
                                         Direct distribution to over 23 users across 1 country with 1 language supported.
                                     </p>
                                 </div>
-                                {/* </div> */}
+
                             </div>
                             <div className="developer-page-column">
                                 <div className="developer-column-item">
@@ -134,7 +156,7 @@ const GameDeveloperPage = () => {
                                         UEI's payment service supports 1 payment method with no regional currencies.
                                     </p>
                                 </div>
-                                
+
                             </div>
                             <div className="developer-page-column">
                                 <div className="developer-column-item">

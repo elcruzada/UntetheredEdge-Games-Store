@@ -20,7 +20,8 @@
 }
 
 .news-page-inner-wrapper img {
-  height: '10rem'
+  height: '10rem';
+  cursor: pointer;
 }
 
 .news-page-inner-wrapper h2 {
