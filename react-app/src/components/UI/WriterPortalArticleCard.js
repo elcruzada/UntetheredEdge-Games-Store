@@ -30,7 +30,7 @@ const WriterPortalArticleCard = ({ article }) => {
                         >Update your Article</NavLink>
                         <OpenModalButton
                             buttonText="Delete your article"
-                            modalComponent={<DeleteArticleModal article={article.id} />}
+                            modalComponent={<DeleteArticleModal newsId={article.id} />}
                         />
                     </div>
                 </div>

@@ -74,7 +74,7 @@ export const updateNewsThunk = (newsId, newsInputs) => async (dispatch) => {
 }
 
 export const deleteNewsThunk = (newsId) => async (dispatch) => {
-    const res = await fetch(`/api/games/${newsId}`, {
+    const res = await fetch(`/api/news/${newsId}`, {
         method: 'DELETE',
         body: newsId
     })
