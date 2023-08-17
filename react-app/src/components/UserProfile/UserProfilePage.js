@@ -82,7 +82,7 @@ const UserProfilePage = () => {
                     <div className='user-profile-information'>
                         <div className='user-profile-information-left-column'>
                             <img className='user-profile-image'
-                                src='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg'
+                                src='https://as1.ftcdn.net/jpg/03/46/83/96/220_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'
                                 alt='gradient'
                                 style={{ height: '15rem', width: '15rem', borderRadius: '50%' }}
                             ></img>
