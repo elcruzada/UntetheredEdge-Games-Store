@@ -43,7 +43,7 @@ def seed_database():
     )
 
     game2 = Game (
-        name='Elden Nosering',
+        name='Elden Things',
         description='Best game of all time. All factual. No opinions here',
         release_date=date(2022, 1, 22),
         creator_id=3,
@@ -56,7 +56,7 @@ def seed_database():
     )
 
     game3 = Game (
-        name='CyberShrek 2077',
+        name='Cyberpunks',
         description='A new shrekkening in a new era awaits you in a dystopian world',
         release_date=date(2077, 9, 19),
         creator_id=3,
