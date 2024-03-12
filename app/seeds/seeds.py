@@ -469,7 +469,7 @@ def seed_database():
     )
     game16_image_preview = GameImage (
         game_id=16,
-        url='https://picsum.photos/id/1006/1000/1000',
+        url='https://picsum.photos/id/177/1000/1000',
         preview=True
     )
     game17_image_preview = GameImage (
@@ -529,7 +529,7 @@ def seed_database():
     news_article1 = NewsArticle (
         user_id=2,
         title='First Fantastical 37 will knock your socks off',
-        preview_image='https://cdn.vox-cdn.com/thumbor/-7uaQ4eZbBC77FJZIviRRvVS-QE=/0x0:1920x1080/1400x788/filters:focal(960x540:961x541)/cdn.vox-cdn.com/uploads/chorus_asset/file/23647732/ffxviclive.png',
+        preview_image='https://picsum.photos/id/401/1000/1000',
         description='Grab the preorder today to feel completely fulfilled and happy with your life...',
         content="In the spectacular world of gaming, there are certain franchises that have proven their mettle time and time again, crafting experiences that resonate deeply with their fanbases. One such titan of the industry is none other than First Fantastical. With each entry, it expands its universe, adds depth to its characters, and refines gameplay mechanics, ensuring a mesmerizing adventure. As we brace ourselves for the newest entry into the franchise, First Fantastical 37, early glimpses suggest it's set to exceed expectations and, quite literally, knock your socks off. First Fantastical 37 is developed and published by Circle Phoenix, the creators that have never disappointed when it comes to delivering a vibrant mix of adventure, stunning graphics, engrossing storytelling, and strategic combat. This installment of the franchise promises to push the boundaries even further, building upon the legacy of its predecessors with groundbreaking features and innovative gameplay elements.",
         created_at=date(2021, 5, 15)
@@ -537,7 +537,7 @@ def seed_database():
     news_article2 = NewsArticle (
         user_id=3,
         title='Two gamers get bloody in a bar',
-        preview_image='https://static.wikia.nocookie.net/8cf42a12-40e4-4d43-82db-a4c9244e5d8d',
+        preview_image='https://picsum.photos/id/395/1000/1000',
         description='Things got hairy when a no-deather tapped a speed runner on the shoulder...',
         content="In a bizarre incident that is sure to become the stuff of gaming folklore, two gamers recently found themselves in an unfortunate confrontation at a local bar, leading to a brawl as wild as any virtual boss fight. As the dust settled, evidence of the scuffle, including broken bottles and spattered blood, painted a vivid picture of a heated disagreement turned violent. The unusual suspects? A celebrated speedrunner and a steadfast no-deather, both well-known in their respective gaming circles. The drama unfolded when the no-deather, known for completing video games without a single character death, gave a seemingly harmless tap on the shoulder of the speedrunner, who specializes in completing games as quickly as possible. In an atmosphere already buzzing with alcohol and high stakes rivalry, this light contact set off an unpredictable series of events. The speedrunner, reportedly startled, spun around to confront the no-deather. What started as a tense exchange of words soon escalated, turning a cozy gaming bar into a battleground. While the motives behind the confrontation remain unclear, the incident has sparked intense discussion within the gaming community, reminding us all that passions can run high when reality collides with the competitive world of gaming.",
         created_at=date(2022, 10, 23)
@@ -545,7 +545,7 @@ def seed_database():
     news_article3 = NewsArticle (
         user_id=4,
         title='Moldyvort has been added in the new Pigpimple DLC!',
-        preview_image='https://image-cdn.essentiallysports.com/wp-content/uploads/Hogwarts-Legacy-Voldemort-Sorting-hat-1110x903.jpg',
+        preview_image='https://picsum.photos/id/824/1000/1000',
         description="Hey all you Fiddle fans. Moldyvort is now a playable character in this new DLC",
         content="In an unprecedented move that's set the wizarding world abuzz, He Who Must Be Called Out has been announced as a playable character in the latest Pigpimple game DLC. That's right, Lord Moldyvort, the feared nemesis of Gary Ceramic, will be joining the magical roster, inviting players to experience the world of Pigpimple through the eyes of the Dark Lord himself. This bold addition represents an exciting twist for fans of the franchise, promising a unique exploration of the Pigpimple universe that contrasts with the traditionally heroic narratives. If you've ever wondered what it's like to don the cloak of the Dark Sciences, this update is for you. Fiddle fans will now have the opportunity to delve into the shadowy depths of Moldyvort's journey, casting spells, devising cunning strategies, and even engaging in epic duels. Moldyvort's notorious ruthlessness and power will bring an unprecedented level of challenge and depth to the game's mechanics. With the addition of this iconic character, Pigpimple game has taken a daring step into unexplored territories of storytelling and character development. Prepare to tread the line between darkness and power, as you navigate the familiar corridors of Pigpimple with the infamous Moldyvort.",
         created_at=date(2023, 2, 22)
@@ -553,7 +553,7 @@ def seed_database():
     news_article4 = NewsArticle (
         user_id=4,
         title='A group of tactics gamers simultaneously collapsed',
-        preview_image='https://gamingtrend.com/wp-content/uploads/2022/11/Dragon02.jpg',
+        preview_image='https://picsum.photos/id/407/1000/1000',
         description="A new epidemic of fainting has occurred as the craziest new tactics game made tactics gamers even more...",
         content="In a development that has sent shockwaves through the gaming community, a group of tactics gamers was reported to have simultaneously collapsed during a recent gaming session. The cause? The release of a new and wildly intense tactics game, which, due to its complexity and strategic depth, has apparently overwhelmed its audience. This unusual incident has been dubbed as a new epidemic of fainting, marking a bizarre footnote in gaming history. In a world where gamers constantly seek more intricate, challenging, and mind-bending experiences, the introduction of this new tactics game has cranked up the intensity to unforeseen levels. The strategy game, praised for its intricate mechanics and strategic depth, demands a level of concentration, tactical planning, and split-second decision-making that apparently pushed its audience beyond their limits. It has led to an unexpected epidemic of fainting amongst its players, causing concern in the gaming community and raising questions about the physical impacts of high-intensity gaming. As investigations continue and the developers address this extraordinary event, tactics gamers everywhere are left to wonder: just how intense can gaming become before it becomes too much?",
         created_at=date(2023, 3, 15)
@@ -561,17 +561,17 @@ def seed_database():
     news_article5 = NewsArticle (
         user_id=2,
         title="Oiram's new growth spurt has everyone on edge",
-        preview_image='https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/12/29/d525d9bc-765b-41d2-9906-af2b72c54353/mario-gta',
+        preview_image='https://picsum.photos/id/473/1000/1000',
         description="Gamers all over the world are too used to their plumber friend being on the bit of the shorter side...",
-        content="In an unexpected twist that has left the gaming world on edge, everyone's favorite Italian plumber has undergone a striking transformation. Oiram, the iconic character from Litendo's beloved franchise, has apparently experienced a sudden growth spurt in his latest gaming installment. This surprising alteration to Oiram's character design has shocked fans worldwide, who have grown accustomed to their cheerful and somewhat short-statured hero. This dramatic change in Oiram's appearance has caused quite a stir amongst the gaming community. Gamers around the globe, who are used to navigating the Mushroom Kingdom with a shorter and more familiar version of Oiram, are now learning to adapt to his new towering presence. The shift not only adds an intriguing aesthetic change, but it also alters the gameplay dynamics significantly, forcing players to rethink their strategies and playstyles. As the gaming community comes to terms with this towering new version of Mario, it is clear that Litendo continues to push boundaries and surprise its fans, redefining our expectations of even their most iconic characters.",
+        content="In an unexpected twist that has left the gaming world on edge, everyone's favorite plumber has undergone a striking transformation. Oiram, the iconic character from Litendo's beloved franchise, has apparently experienced a sudden growth spurt in his latest gaming installment. This surprising alteration to Oiram's character design has shocked fans worldwide, who have grown accustomed to their cheerful and somewhat short-statured hero. This dramatic change in Oiram's appearance has caused quite a stir amongst the gaming community. Gamers around the globe, who are used to navigating the Funghi Princedom with a shorter and more familiar version of Oiram, are now learning to adapt to his new towering presence. The shift not only adds an intriguing aesthetic change, but it also alters the gameplay dynamics significantly, forcing players to rethink their strategies and playstyles. As the gaming community comes to terms with this towering new version of Mario, it is clear that Litendo continues to push boundaries and surprise its fans, redefining our expectations of even their most iconic characters.",
         created_at=date(2023, 4, 10)
     )
     news_article6 = NewsArticle (
         user_id=3,
-        title="Litendo Gamerz decides that turtle monsters should have Grown Up Regular Warrior Turtle weapons",
-        preview_image='https://static1.thegamerimages.com/wordpress/wp-content/uploads/2018/11/1-Wallpaper-Abyss-1.jpg',
+        title="Litendo decides that turtle monsters should have Grown Up Regular Warrior Turtle weapons",
+        preview_image='https://picsum.photos/id/611/1000/1000',
         description="Turtle monsters now come with all new weapons based on another beloved cartoon",
-        content="In an exciting and nostalgic crossover that fans could only dream of, Litendo has recently announced that Turtle Monsters, the lovable aqua creature, will now be armed with weapons inspired by the iconic Grown Up Regular Warrior Turtle. This novel integration seeks to blend two distinct universes, combining the classic charm of Turtle Monsters with the high-energy action of the Grown Up Turtles, giving players an entirely new perspective on these beloved characters. The familiar TMNT arsenal, including Teonardo's halberd, Taphael's greatsword, Tichelangelo's crossbow, and Tonatello's wizard staff, are now at the disposal of the playful Turtle Monsters. With these new weapons in their tiny hands, Turtle Monsters will deliver unique gameplay experiences as they swing, jab, and twirl their way through battles. This innovative decision by Litendo not only creates a fascinating mash-up of two cherished franchises, but also provides a fresh take on Turtle Monster battling dynamics. As anticipation builds, fans around the globe eagerly await the opportunity to embark on this one-of-a-kind adventure, guiding their armed Turtle Monsters in a gaming experience that promises to be as exciting as it is nostalgic.",
+        content="In an exciting and nostalgic crossover that fans could only dream of, Litendo has recently announced that Turtle Monsters, the lovable aqua creature, will now be armed with weapons inspired by the iconic Grown Up Regular Warrior Turtle. This novel integration seeks to blend two distinct universes, combining the classic charm of Turtle Monsters with the high-energy action of the Grown Up Turtles, giving players an entirely new perspective on these beloved characters. The familiar Grown Up Turtles arsenal, including Teonardo's halberd, Taphael's greatsword, Tichelangelo's crossbow, and Tonatello's wizard staff, are now at the disposal of the playful Turtle Monsters. With these new weapons in their tiny hands, Turtle Monsters will deliver unique gameplay experiences as they swing, jab, and twirl their way through battles. This innovative decision by Litendo not only creates a fascinating mash-up of two cherished franchises, but also provides a fresh take on Turtle Monster battling dynamics. As anticipation builds, fans around the globe eagerly await the opportunity to embark on this one-of-a-kind adventure, guiding their armed Turtle Monsters in a gaming experience that promises to be as exciting as it is nostalgic.",
         created_at=date(2023, 6, 11)
     )
 
