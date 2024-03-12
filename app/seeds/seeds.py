@@ -8,7 +8,7 @@ def seed_database():
         profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
         account_capital=1133.77
         )
-    gahyeon = User(
+    awesome = User(
         username='awesome', email='awesome@aa.io', password='password',
         profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
         account_capital=1133.77
@@ -31,10 +31,10 @@ def seed_database():
 
     game1 = Game (
         name='The Glitcher',
-        description='Fizzle in and out in this open world adventure',
+        description='Fizzle in and out in this open world adventure.',
         release_date=date(2015, 6, 22),
         creator_id=2,
-        developer='Projekt Blue',
+        developer='Tape Project Blue',
         publisher='UntetheredEdge Interactive',
         price=59.99,
         genre='RPG',
@@ -44,7 +44,7 @@ def seed_database():
 
     game2 = Game (
         name='Elden Things',
-        description='Best game of all time. All factual. No opinions here',
+        description='Best game of all time. All factual. No opinions here.',
         release_date=date(2022, 1, 22),
         creator_id=3,
         developer='Wonder Lambs',
@@ -56,11 +56,11 @@ def seed_database():
     )
 
     game3 = Game (
-        name='CyberShrek 2077',
-        description='A new era awaits you in a dystopian world',
+        name='Cyberfunk 3088',
+        description='A depressive era awaits you in this utopian world.',
         release_date=date(2077, 9, 19),
         creator_id=3,
-        developer='Projekt Blue',
+        developer='Tape Project Blue',
         publisher='UntetheredEdge Interactive',
         price=20.77,
         genre='Open World',
@@ -70,10 +70,10 @@ def seed_database():
 
     game4 = Game (
         name='Ruined friendships 3',
-        description='You thought you had a party, but the party came to you',
+        description='You thought you had a party, but the party came to you.',
         release_date=date(2005, 5, 13),
         creator_id=4,
-        developer='Litendo',
+        developer='Litendo Gamerz',
         publisher='UntetheredEdge Interactive',
         price=109.99,
         genre='Party',
@@ -83,7 +83,7 @@ def seed_database():
 
     game5 = Game (
         name='The Rowers',
-        description='Merrily, merrily, merrily, life is but a dream',
+        description='Merrily, merrily, merrily, life is but a dream.',
         release_date=date(2023, 5, 13),
         creator_id=4,
         developer='Cool Gaming Company',
@@ -96,10 +96,10 @@ def seed_database():
 
     game6 = Game (
         name='Really Cool',
-        description='Searching for meaning in a meaningful world',
+        description='Searching for meaning in a meaningful world.',
         release_date=date(2023, 7, 17),
         creator_id=4,
-        developer='Litendo',
+        developer='Litendo Gamerz',
         publisher='UntetheredEdge Interactive',
         price=777.99,
         genre='First-Person Shooter',
@@ -109,7 +109,7 @@ def seed_database():
 
     game7 = Game (
         name='Halo Kitty',
-        description='When cuddly creatures have the ability to shape the planet',
+        description='When cuddly creatures have the ability to shape the planet.',
         release_date=date(2010, 3, 17),
         creator_id=3,
         developer='YContainer Studios',
@@ -135,10 +135,10 @@ def seed_database():
 
     game9 = Game (
         name='Resident Ring',
-        description='My precious',
+        description='The precious ring is way too valuable to give to zombies.',
         release_date=date(2009, 9, 12),
         creator_id=2,
-        developer='Nocap Com',
+        developer='Nocap Communication Gaming',
         publisher='UntetheredEdge Interactive',
         price=11.11,
         genre='Horror',
@@ -148,7 +148,7 @@ def seed_database():
 
     game10 = Game (
         name='Retail 13 Manager',
-        description="Just when you thought you couldn't simulate working under your old boss",
+        description="Just when you thought you couldn't simulate working under your old boss.",
         release_date=date(2018, 12, 25),
         creator_id=3,
         developer='Circle Phoenix',
@@ -161,7 +161,7 @@ def seed_database():
 
     game11 = Game (
         name='Creature Trainer',
-        description="A sprawling open world where you can race big birds",
+        description="A sprawling open world where you can race big birds.",
         release_date=date(2013, 12, 13),
         creator_id=4,
         developer='Circle Phoenix',
@@ -174,10 +174,10 @@ def seed_database():
 
     game12 = Game (
         name='League of Guardians',
-        description="The best game using a mouse ever",
+        description="The best game using a mouse. Ever.",
         release_date=date(2019, 10, 8),
         creator_id=4,
-        developer='Rito',
+        developer='Rito Rumblings',
         publisher='UntetheredEdge Interactive',
         price=49.99,
         genre='MOBA',
@@ -186,11 +186,11 @@ def seed_database():
     )
 
     game13 = Game (
-        name='Shrekken',
-        description="The manliest fighting game ever created, no doubt",
+        name='Punching and Kicking and Stuff',
+        description="The greatest fighting game ever created, no doubt.",
         release_date=date(2018, 9, 13),
         creator_id=2,
-        developer='Rito ',
+        developer='Rito Rumblings',
         publisher='UntetheredEdge Interactive',
         price=49.99,
         genre='Fighter',
@@ -199,8 +199,8 @@ def seed_database():
     )
 
     game14 = Game (
-        name='NewJeans: The Game',
-        description="Proof of ",
+        name='Fresh Pants: The Game',
+        description="Proof that they are indeed the biggest trend.",
         release_date=date(2022, 12, 13),
         creator_id=4,
         developer='AlvinLime',
@@ -212,11 +212,11 @@ def seed_database():
     )
 
     game15 = Game (
-        name='Super Waluigi Bros: Ultimate',
-        description="WA WA WA WA WA WA WA WA WA WA WA WA WA WA WA",
+        name='Minute Dario Siblings: Ultimate',
+        description="Every litendo character ever created, even ones decades ago, able to fight.",
         release_date=date(2021, 4, 11),
         creator_id=3,
-        developer='Litendo',
+        developer='Litendo Gamerz',
         publisher='UntetheredEdge Interactive',
         price=99.99,
         genre='Fighter',
@@ -226,10 +226,10 @@ def seed_database():
 
     game16 = Game (
         name='Nimbus Angst',
-        description="A sprawling tale about a man's inner angst",
+        description="A sprawling tale about inner angst",
         release_date=date(2023, 9, 13),
         creator_id=3,
-        developer='Circle Enix',
+        developer='Circle Phoenix',
         publisher='UntetheredEdge Interactive',
         price=79.99,
         genre='RPG',
@@ -251,11 +251,11 @@ def seed_database():
     )
 
     game18 = Game (
-        name='Pink Buffness',
-        description="Stronger than Goku. Not a joke. Look it up",
+        name='Pink Coolness',
+        description="Feel chill in this adventure",
         release_date=date(2023, 5, 22),
         creator_id=2,
-        developer='Litendo',
+        developer='Litendo Gamerz',
         publisher='UntetheredEdge Interactive',
         price=339.99,
         genre='Fighter',
@@ -528,10 +528,10 @@ def seed_database():
 
     news_article1 = NewsArticle (
         user_id=2,
-        title='Final Fantasy 16 will knock your socks off',
+        title='First Fantastical 37 will knock your socks off',
         preview_image='https://cdn.vox-cdn.com/thumbor/-7uaQ4eZbBC77FJZIviRRvVS-QE=/0x0:1920x1080/1400x788/filters:focal(960x540:961x541)/cdn.vox-cdn.com/uploads/chorus_asset/file/23647732/ffxviclive.png',
         description='Grab the preorder today to feel completely fulfilled and happy with your life...',
-        content="In the spectacular world of gaming, there are certain franchises that have proven their mettle time and time again, crafting experiences that resonate deeply with their fanbases. One such titan of the industry is none other than Final Fantasy. With each entry, it expands its universe, adds depth to its characters, and refines gameplay mechanics, ensuring a mesmerizing adventure. As we brace ourselves for the newest entry into the franchise, Final Fantasy XVI, early glimpses suggest it's set to exceed expectations and, quite literally, knock your socks off. Final Fantasy XVI is developed and published by Square Enix, the creators that have never disappointed when it comes to delivering a vibrant mix of adventure, stunning graphics, engrossing storytelling, and strategic combat. This installment of the franchise promises to push the boundaries even further, building upon the legacy of its predecessors with groundbreaking features and innovative gameplay elements.",
+        content="In the spectacular world of gaming, there are certain franchises that have proven their mettle time and time again, crafting experiences that resonate deeply with their fanbases. One such titan of the industry is none other than First Fantastical. With each entry, it expands its universe, adds depth to its characters, and refines gameplay mechanics, ensuring a mesmerizing adventure. As we brace ourselves for the newest entry into the franchise, First Fantastical 37, early glimpses suggest it's set to exceed expectations and, quite literally, knock your socks off. First Fantastical 37 is developed and published by Circle Phoenix, the creators that have never disappointed when it comes to delivering a vibrant mix of adventure, stunning graphics, engrossing storytelling, and strategic combat. This installment of the franchise promises to push the boundaries even further, building upon the legacy of its predecessors with groundbreaking features and innovative gameplay elements.",
         created_at=date(2021, 5, 15)
     )
     news_article2 = NewsArticle (
@@ -544,10 +544,10 @@ def seed_database():
     )
     news_article3 = NewsArticle (
         user_id=4,
-        title='Voldemort has been added in the new Hogwarts DLC!',
+        title='Moldyvort has been added in the new Pigpimple DLC!',
         preview_image='https://image-cdn.essentiallysports.com/wp-content/uploads/Hogwarts-Legacy-Voldemort-Sorting-hat-1110x903.jpg',
-        description="Hey all you Riddle fans. Voldemort is now a playable character in this new DLC",
-        content="In an unprecedented move that's set the wizarding world abuzz, He Who Must Not Be Named has been announced as a playable character in the latest Hogwarts game DLC. That's right, Lord Voldemort, the feared nemesis of Harry Potter, will be joining the magical roster, inviting players to experience the world of Hogwarts through the eyes of the Dark Lord himself. This bold addition represents an exciting twist for fans of the franchise, promising a unique exploration of the Hogwarts universe that contrasts with the traditionally heroic narratives. If you've ever wondered what it's like to don the cloak of the Dark Arts, this update is for you. Riddle fans will now have the opportunity to delve into the shadowy depths of Voldemort's journey, casting spells, devising cunning strategies, and even engaging in epic duels. Voldemort's notorious ruthlessness and power will bring an unprecedented level of challenge and depth to the game's mechanics. With the addition of this iconic character, Hogwarts game has taken a daring step into unexplored territories of storytelling and character development. Prepare to tread the line between darkness and power, as you navigate the familiar corridors of Hogwarts with the infamous Voldemort.",
+        description="Hey all you Fiddle fans. Moldyvort is now a playable character in this new DLC",
+        content="In an unprecedented move that's set the wizarding world abuzz, He Who Must Be Called Out has been announced as a playable character in the latest Pigpimple game DLC. That's right, Lord Moldyvort, the feared nemesis of Gary Ceramic, will be joining the magical roster, inviting players to experience the world of Pigpimple through the eyes of the Dark Lord himself. This bold addition represents an exciting twist for fans of the franchise, promising a unique exploration of the Pigpimple universe that contrasts with the traditionally heroic narratives. If you've ever wondered what it's like to don the cloak of the Dark Sciences, this update is for you. Fiddle fans will now have the opportunity to delve into the shadowy depths of Moldyvort's journey, casting spells, devising cunning strategies, and even engaging in epic duels. Moldyvort's notorious ruthlessness and power will bring an unprecedented level of challenge and depth to the game's mechanics. With the addition of this iconic character, Pigpimple game has taken a daring step into unexplored territories of storytelling and character development. Prepare to tread the line between darkness and power, as you navigate the familiar corridors of Pigpimple with the infamous Moldyvort.",
         created_at=date(2023, 2, 22)
     )
     news_article4 = NewsArticle (
@@ -560,23 +560,23 @@ def seed_database():
     )
     news_article5 = NewsArticle (
         user_id=2,
-        title="Mario's new growth spurt has everyone on edge",
+        title="Oiram's new growth spurt has everyone on edge",
         preview_image='https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/12/29/d525d9bc-765b-41d2-9906-af2b72c54353/mario-gta',
         description="Gamers all over the world are too used to their plumber friend being on the bit of the shorter side...",
-        content="In an unexpected twist that has left the gaming world on edge, everyone's favorite Italian plumber has undergone a striking transformation. Mario, the iconic character from Nintendo's beloved franchise, has apparently experienced a sudden growth spurt in his latest gaming installment. This surprising alteration to Mario's character design has shocked fans worldwide, who have grown accustomed to their cheerful and somewhat short-statured hero. This dramatic change in Mario's appearance has caused quite a stir amongst the gaming community. Gamers around the globe, who are used to navigating the Mushroom Kingdom with a shorter and more familiar version of Mario, are now learning to adapt to his new towering presence. The shift not only adds an intriguing aesthetic change, but it also alters the gameplay dynamics significantly, forcing players to rethink their strategies and playstyles. As the gaming community comes to terms with this towering new version of Mario, it is clear that Nintendo continues to push boundaries and surprise its fans, redefining our expectations of even their most iconic characters.",
+        content="In an unexpected twist that has left the gaming world on edge, everyone's favorite Italian plumber has undergone a striking transformation. Oiram, the iconic character from Litendo's beloved franchise, has apparently experienced a sudden growth spurt in his latest gaming installment. This surprising alteration to Oiram's character design has shocked fans worldwide, who have grown accustomed to their cheerful and somewhat short-statured hero. This dramatic change in Oiram's appearance has caused quite a stir amongst the gaming community. Gamers around the globe, who are used to navigating the Mushroom Kingdom with a shorter and more familiar version of Oiram, are now learning to adapt to his new towering presence. The shift not only adds an intriguing aesthetic change, but it also alters the gameplay dynamics significantly, forcing players to rethink their strategies and playstyles. As the gaming community comes to terms with this towering new version of Mario, it is clear that Litendo continues to push boundaries and surprise its fans, redefining our expectations of even their most iconic characters.",
         created_at=date(2023, 4, 10)
     )
     news_article6 = NewsArticle (
         user_id=3,
-        title="Litendo decides that squirtles should have Teenage Mutant Ninja Turtle weapons",
+        title="Litendo Entertainment decides that turtle monsters should have Grown Up Regular Warrior Turtle weapons",
         preview_image='https://static1.thegamerimages.com/wordpress/wp-content/uploads/2018/11/1-Wallpaper-Abyss-1.jpg',
-        description="Squirtles now come with all new weapons based on another beloved cartoon",
-        content="In an exciting and nostalgic crossover that fans could only dream of, Litendo has recently announced that Squirtles, the lovable water-type Pokémon, will now be armed with weapons inspired by the iconic Teenage Mutant Ninja Turtles (TMNT). This novel integration seeks to blend two distinct universes, combining the classic charm of Squirtles with the high-energy action of the TMNT, giving players an entirely new perspective on these beloved characters. The familiar TMNT arsenal, including Leonardo's katanas, Raphael's sais, Michelangelo's nunchaku, and Donatello's bo staff, are now at the disposal of the playful Squirtles. With these new weapons in their tiny hands, Squirtles will deliver unique gameplay experiences as they swing, jab, and twirl their way through battles. This innovative decision by Litendo not only creates a fascinating mash-up of two cherished franchises, but also provides a fresh take on Squirtles' battling dynamics. As anticipation builds, fans around the globe eagerly await the opportunity to embark on this one-of-a-kind adventure, guiding their armed Squirtles in a gaming experience that promises to be as exciting as it is nostalgic.",
+        description="Turtle monsters now come with all new weapons based on another beloved cartoon",
+        content="In an exciting and nostalgic crossover that fans could only dream of, Litendo has recently announced that Turtle Monsters, the lovable aqua creature, will now be armed with weapons inspired by the iconic Grown Up Regular Warrior Turtle. This novel integration seeks to blend two distinct universes, combining the classic charm of Turtle Monsters with the high-energy action of the Grown Up Turtles, giving players an entirely new perspective on these beloved characters. The familiar TMNT arsenal, including Teonardo's halberd, Taphael's greatsword, Tichelangelo's crossbow, and Tonatello's wizard staff, are now at the disposal of the playful Turtle Monsters. With these new weapons in their tiny hands, Turtle Monsters will deliver unique gameplay experiences as they swing, jab, and twirl their way through battles. This innovative decision by Litendo not only creates a fascinating mash-up of two cherished franchises, but also provides a fresh take on Turtle Monster battling dynamics. As anticipation builds, fans around the globe eagerly await the opportunity to embark on this one-of-a-kind adventure, guiding their armed Turtle Monsters in a gaming experience that promises to be as exciting as it is nostalgic.",
         created_at=date(2023, 6, 11)
     )
 
     db.session.add(demo)
-    db.session.add(gahyeon)
+    db.session.add(awesome)
     db.session.add(bobbie)
     db.session.add(godmode)
     db.session.add(marnz)
