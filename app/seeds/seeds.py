@@ -9,7 +9,7 @@ def seed_database():
         account_capital=1133.77
         )
     gahyeon = User(
-        username='gahyeon', email='gahyeon@aa.io', password='password',
+        username='awesome', email='awesome@aa.io', password='password',
         profile_image='https://64.media.tumblr.com/2bac2857b1e074484f6ccc583bc35718/d77e58046f6fa9ba-20/s1280x1920/6120b7884a03a4ca88a47590def094cf61627931.jpg',
         account_capital=1133.77
         )
@@ -43,11 +43,11 @@ def seed_database():
     )
 
     game2 = Game (
-        name='Elden Nosering',
+        name='Elden Things',
         description='Best game of all time. All factual. No opinions here',
         release_date=date(2022, 1, 22),
         creator_id=3,
-        developer='Nandai Spamco',
+        developer='Wonder Lambs',
         publisher='UntetheredEdge Interactive',
         price=89.99,
         genre='RPG',
@@ -57,10 +57,10 @@ def seed_database():
 
     game3 = Game (
         name='CyberShrek 2077',
-        description='A new shrekkening in a new era awaits you in a dystopian world',
+        description='A new era awaits you in a dystopian world',
         release_date=date(2077, 9, 19),
         creator_id=3,
-        developer='CD Projekt Orange',
+        developer='Projekt Blue',
         publisher='UntetheredEdge Interactive',
         price=20.77,
         genre='Open World',
@@ -82,11 +82,11 @@ def seed_database():
     )
 
     game5 = Game (
-        name='Saints Rowers',
-        description='You thought it was over but no it is never over mate',
+        name='The Rowers',
+        description='Merrily, merrily, merrily, life is but a dream',
         release_date=date(2023, 5, 13),
         creator_id=4,
-        developer='Brony',
+        developer='Cool Gaming Company',
         publisher='UntetheredEdge Interactive',
         price=109.99,
         genre='Party',
@@ -95,8 +95,8 @@ def seed_database():
     )
 
     game6 = Game (
-        name='Poke Hunter',
-        description='How do you think they ate meat in the Pokemon series?',
+        name='Really Cool',
+        description='Searching for meaning in a meaningful world',
         release_date=date(2023, 7, 17),
         creator_id=4,
         developer='Litendo',
@@ -109,10 +109,10 @@ def seed_database():
 
     game7 = Game (
         name='Halo Kitty',
-        description='When kitties have the ability to shape the planet',
+        description='When cuddly creatures have the ability to shape the planet',
         release_date=date(2010, 3, 17),
         creator_id=3,
-        developer='YBox Game Studios',
+        developer='YContainer Studios',
         publisher='UntetheredEdge Interactive',
         price=49.99,
         genre='First-Person Shooter',
@@ -122,7 +122,7 @@ def seed_database():
 
     game8 = Game (
         name='Ogrewatch',
-        description='This shooter will give you a shrekking good time.',
+        description='This shooter will put you on the ogre map.',
         release_date=date(2020, 3, 17),
         creator_id=2,
         developer='Gizzard',
@@ -134,11 +134,11 @@ def seed_database():
     )
 
     game9 = Game (
-        name='Resident Smeagol',
-        description='My preciouuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuus',
+        name='Resident Ring',
+        description='My precious',
         release_date=date(2009, 9, 12),
         creator_id=2,
-        developer='Nocapcom',
+        developer='Nocap Com',
         publisher='UntetheredEdge Interactive',
         price=11.11,
         genre='Horror',
@@ -151,7 +151,7 @@ def seed_database():
         description="Just when you thought you couldn't simulate working under your old boss",
         release_date=date(2018, 12, 25),
         creator_id=3,
-        developer='Circle enix',
+        developer='Circle Phoenix',
         publisher='UntetheredEdge Interactive',
         price=299.99,
         genre='Life Simulator',
@@ -160,11 +160,11 @@ def seed_database():
     )
 
     game11 = Game (
-        name='Chocobo Trainer',
-        description="Why play a sprawling open world when you can race big birds?",
+        name='Creature Trainer',
+        description="A sprawling open world where you can race big birds",
         release_date=date(2013, 12, 13),
         creator_id=4,
-        developer='Circle enix',
+        developer='Circle Phoenix',
         publisher='UntetheredEdge Interactive',
         price=99.99,
         genre='Racing',
@@ -173,8 +173,8 @@ def seed_database():
     )
 
     game12 = Game (
-        name='League of Sailor Guardians',
-        description="Why play a toxic game when you can play another toxic game with a Sailor Moon theme",
+        name='League of Guardians',
+        description="The best game using a mouse ever",
         release_date=date(2019, 10, 8),
         creator_id=4,
         developer='Rito',
@@ -190,7 +190,7 @@ def seed_database():
         description="The manliest fighting game ever created, no doubt",
         release_date=date(2018, 9, 13),
         creator_id=2,
-        developer='Rito',
+        developer='Rito ',
         publisher='UntetheredEdge Interactive',
         price=49.99,
         genre='Fighter',
@@ -200,10 +200,10 @@ def seed_database():
 
     game14 = Game (
         name='NewJeans: The Game',
-        description="Obviously better than Aespa",
+        description="Proof of ",
         release_date=date(2022, 12, 13),
         creator_id=4,
-        developer='CalvinKlein',
+        developer='AlvinLime',
         publisher='UntetheredEdge Interactive',
         price=231.99,
         genre='Rhythm Game',
@@ -226,7 +226,7 @@ def seed_database():
 
     game16 = Game (
         name='Nimbus Angst',
-        description="A sprawling tale about a man's inner angst and a big sword",
+        description="A sprawling tale about a man's inner angst",
         release_date=date(2023, 9, 13),
         creator_id=3,
         developer='Circle Enix',
@@ -486,43 +486,43 @@ def seed_database():
     comment1 = Comment (
         game_id=1,
         user_id=2,
-        comment='OMG this game is just OMG wut OMG so good OMG',
+        comment='This game is insane!',
         created_at=date(1991, 4, 13)
     )
     comment2 = Comment (
         game_id=2,
         user_id=1,
-        comment='WHOA this has never happend to WHOA omg this has never',
+        comment='WHOA. I love it!',
         created_at=date(2018, 2, 16)
     )
     comment3 = Comment (
         game_id=3,
         user_id=2,
-        comment='ARE you SERIOUS right now wut mate SERIOUS',
+        comment='ARE you SERIOUS right now?',
         created_at=date(2019, 6, 13)
     )
     comment4 = Comment (
         game_id=4,
         user_id=3,
-        comment='I mean come on just insane come on just insane come on',
+        comment='Amazing!',
         created_at=date(2020, 12, 25)
     )
     comment5 = Comment (
         game_id=5,
         user_id=1,
-        comment='Jeez, like wut goodness, jeez like WHOA WHOA WHOA',
+        comment='Playing this game feels amazing.',
         created_at=date(2021, 5, 15)
     )
     comment6 = Comment (
         game_id=1,
         user_id=4,
-        comment='LIKE JUST LIKE JUST WUT LIKE WHOA WHOA LIKE',
+        comment='Wow!',
         created_at=date(2022, 10, 23)
     )
     comment7 = Comment (
         game_id=1,
         user_id=3,
-        comment='You have GOT TO BE just GOT TO BE just GOT',
+        comment='You have to be kidding me!',
         created_at=date(2023, 1, 29)
     )
 
