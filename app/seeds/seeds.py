@@ -30,11 +30,11 @@ def seed_database():
         )
 
     game1 = Game (
-        name='The Glitcher 3: Wild Bugs',
+        name='The Glitcher',
         description='Fizzle in and out in this open world adventure',
         release_date=date(2015, 6, 22),
         creator_id=2,
-        developer='CD Projekt Blue',
+        developer='Projekt Blue',
         publisher='UntetheredEdge Interactive',
         price=59.99,
         genre='RPG',
@@ -265,221 +265,221 @@ def seed_database():
 
     game_image1preview = GameImage (
         game_id=1,
-        url='https://i.ytimg.com/vi/J6Bgsqyyep0/sddefault.jpg',
+        url='https://picsum.photos/id/345/1000/1000',
         preview=True
     )
 
     game_image2 = GameImage (
         game_id=1,
-        url='https://www.trustedreviews.com/wp-content/uploads/sites/54/2015/05/The-Witcher-3-Wild-Hunt-They-call-this-civilization-I-feel-safer-in-the-woods-1.png',
+        url='https://picsum.photos/id/321/1000/1000',
         preview=False
     )
 
     game_image3 = GameImage (
         game_id=1,
-        url='https://cdn.wccftech.com/wp-content/uploads/2023/01/The-Witcher-3-Benis-Lighting-Mod-scaled.jpg',
+        url='https://picsum.photos/id/331/1000/1000',
         preview=False
     )
 
     game_image4 = GameImage (
         game_id=1,
-        url='https://uploads-ssl.webflow.com/5a33f05fcb37b70001e76674/63b349eff481e4aa896495ee_witchy2.jpg',
+        url='https://picsum.photos/id/339/1000/1000',
         preview=False
     )
 
     game_image5 = GameImage (
         game_id=1,
-        url='https://images.pushsquare.com/57f26986881c7/the-witcher-3-wild-hunt-ps4-playstation-4-combat-guide.large.jpg',
+        url='https://picsum.photos/id/349/1000/1000',
         preview=False
     )
 
     game2_image_preview = GameImage (
         game_id=2,
-        url='https://www.dreadxp.com/wp-content/uploads/2022/03/Elden-Header.jpg',
+        url='https://picsum.photos/id/340/1000/1000',
         preview=True
     )
 
     game2_image_2 = GameImage (
         game_id=2,
-        url='https://cdn.mos.cms.futurecdn.net/DgDC66z4vyvH629Ng3fNv.png',
+        url='https://picsum.photos/id/343/1000/1000',
         preview=False
     )
 
     game2_image_3 = GameImage (
         game_id=2,
-        url='https://cdn.mos.cms.futurecdn.net/tnk229NQH3hSUPXLDBKNUA.jpg',
+        url='https://picsum.photos/id/317/1000/1000',
         preview=False
     )
     game2_image_4 = GameImage (
         game_id=2,
-        url='https://staticg.sportskeeda.com/editor/2022/03/0fd61-16481282293603-1920.jpg',
+        url='https://picsum.photos/id/271/1000/1000',
         preview=False
     )
 
     game2_image_5 = GameImage (
         game_id=2,
-        url='https://eldenring.wiki.fextralife.com/file/Elden-Ring/omen_2_enemies_elden_ring_wiki_600px.jpg',
+        url='https://picsum.photos/id/343/1000/1000',
         preview=False
     )
 
     game3_image_preview = GameImage (
         game_id=3,
-        url='https://static0.gamerantimages.com/wordpress/wp-content/uploads/2020/06/Cyberpunk-Memes.jpg',
+        url='https://picsum.photos/id/22/1000/1000',
         preview=True
     )
 
     game3_image_2 = GameImage (
         game_id=3,
-        url='https://pbs.twimg.com/media/EpQU6xmUcAIJRa-.jpg',
+        url='https://picsum.photos/id/97/1000/1000',
         preview=False
     )
 
     game3_image_3 = GameImage (
         game_id=3,
-        url='https://cyberpunk.city/uploads/default/optimized/2X/f/fb05bede9eb88133ee15bea3224e4cf93566de95_2_690x454.png',
+        url='https://picsum.photos/id/129/1000/1000',
         preview=False
     )
 
     game3_image_4 = GameImage (
         game_id=3,
-        url='https://cdn.mos.cms.futurecdn.net/Mg4NoAZwmjUDTYBpf5hULn.jpg',
+        url='https://picsum.photos/id/129/1000/1000',
         preview=False
     )
 
     game3_image_5 = GameImage (
         game_id=3,
-        url='https://assets.xboxservices.com/assets/1e/2f/1e2fd29e-cede-4bec-b7a8-35f78d53bfad.jpg?n=Cyberpunk-2077_Sneaky-Slider-1084_Edgerunners-Update_1600x675_02.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game4_image_preview = GameImage (
         game_id=4,
-        url='https://laughingsquid.com/wp-content/uploads/2014/06/10357642_1488398131374574_8483691325398290806_o.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
     game5_image_preview = GameImage (
         game_id=5,
-        url='https://cdn.mos.cms.futurecdn.net/QkAeiVRy7kbZESKoVPg9vV.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
     game6_image_preview = GameImage (
         game_id=6,
-        url='https://i.redd.it/ejiz7gr6ohf11.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
     game7_image_preview = GameImage (
         game_id=7,
-        url='https://external-preview.redd.it/JhKaZ9TrokOq8JEiSrEqHLmDJEImCLiNBeDS4lwkP3c.jpg?auto=webp&s=76bef8dde8afc7098312d2d2513be564ecd4be00',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
     game7_image_2 = GameImage (
         game_id=7,
-        url='https://cdn.vox-cdn.com/thumbor/rLO1f9sCiD47DuboyPP6WUyzkRA=/1400x1400/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/23120097/Screenshot__634_.png',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game7_image_3 = GameImage (
         game_id=7,
-        url='https://64.media.tumblr.com/58f5cda3d5c6a96402e175b49d2a31d7/tumblr_p5tlvb91MP1tdtz92o1_1280.png',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game7_image_4 = GameImage (
         game_id=7,
-        url='https://live.staticflickr.com/2922/14853210513_de48c0caaf_b.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game7_image_5 = GameImage (
         game_id=7,
-        url='https://www.thetechgame.com/images/news/article/df5abc4c62.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game8_image_preview = GameImage (
         game_id=8,
-        url='https://i.chzbgr.com/full/8804529408/hBF54E19E/a-game-with-layers',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
     game8_image_2 = GameImage (
         game_id=8,
-        url='https://bloximages.newyork1.vip.townnews.com/dailyemerald.com/content/tncms/assets/v3/editorial/8/73/87346b56-0210-53c0-9c3d-ef62ec11ed2c/5ba530ba6db24.image.jpg?resize=889%2C500',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game8_image_3 = GameImage (
         game_id=8,
-        url='https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iuHoL7F21xko/v1/-1x-1.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game8_image_4 = GameImage (
         game_id=8,
-        url='https://cdn.tempostorm.com/articles/multigenre0.large.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game8_image_5 = GameImage (
         game_id=8,
-        url='https://i.ytimg.com/vi/o52PDBdWwdo/maxresdefault.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=False
     )
 
     game9_image_preview = GameImage (
         game_id=9,
-        url='https://imgix.ranker.com/user_node_img/50058/1001143032/original/g-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
     game10_image_preview = GameImage (
         game_id=10,
-        url='https://m0.her.ie/wp-content/uploads/2013/12/20131212-16074213-4.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
     game11_image_preview = GameImage (
         game_id=11,
-        url='https://static1.thegamerimages.com/wordpress/wp-content/uploads/2020/04/Final_Fantasy_XV_Chocobo-1.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
     game12_image_preview = GameImage (
         game_id=12,
-        url='https://cdn.oneesports.gg/cdn-data/2022/07/LeagueofLegends_StarGuardians2022Group_SplashArt_Wallpaper.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
     game13_image_preview = GameImage (
         game_id=13,
-        url='https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/zp3qv3numkicphmwx4ta.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
     game14_image_preview = GameImage (
         game_id=14,
-        url='https://cdn.tatlerasia.com/tatlerasia/i/2023/03/10122513-newjeans-kpop-danielle-hanni-hyein-minji-haerin-red-carpet-girl-group-y2k-fashion-outfits-style-photos-2023-gettyimages-1435304638-cropped_cover_1600x837.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
     game15_image_preview = GameImage (
         game_id=15,
-        url='https://i.redd.it/45z9v4al5na51.png',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
     game16_image_preview = GameImage (
         game_id=16,
-        url='https://nichegamer.com/wp-content/uploads/2021/12/final-fantasy-vii-intergrade-pc-port-12-21-21-1.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
     game17_image_preview = GameImage (
         game_id=17,
-        url='https://static1.thegamerimages.com/wordpress/wp-content/uploads/2023/03/diablo-4-12.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
     game18_image_preview = GameImage (
         game_id=18,
-        url='https://images.gamebanana.com/img/ss/mods/6282debe6b233.jpg',
+        url='https://picsum.photos/seed/picsum/1000/1000',
         preview=True
     )
 
