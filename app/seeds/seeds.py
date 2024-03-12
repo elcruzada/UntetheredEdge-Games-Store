@@ -342,25 +342,25 @@ def seed_database():
 
     game3_image_4 = GameImage (
         game_id=3,
-        url='https://picsum.photos/id/129/1000/1000',
+        url='https://picsum.photos/id/209/1000/1000',
         preview=False
     )
 
     game3_image_5 = GameImage (
         game_id=3,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/274/1000/1000',
         preview=False
     )
 
     game4_image_preview = GameImage (
         game_id=4,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/274/1000/1000',
         preview=True
     )
 
     game5_image_preview = GameImage (
         game_id=5,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/211/1000/1000',
         preview=True
     )
 
@@ -372,43 +372,43 @@ def seed_database():
 
     game7_image_preview = GameImage (
         game_id=7,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/679/1000/1000',
         preview=True
     )
 
     game7_image_2 = GameImage (
         game_id=7,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/683/1000/1000',
         preview=False
     )
 
     game7_image_3 = GameImage (
         game_id=7,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/825/1000/1000',
         preview=False
     )
 
     game7_image_4 = GameImage (
         game_id=7,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/828/1000/1000',
         preview=False
     )
 
     game7_image_5 = GameImage (
         game_id=7,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='http://placekitten.com/1000/1000',
         preview=False
     )
 
     game8_image_preview = GameImage (
         game_id=8,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/159/1000/1000',
         preview=True
     )
 
     game8_image_2 = GameImage (
         game_id=8,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/169/1000/1000',
         preview=False
     )
 
@@ -432,54 +432,54 @@ def seed_database():
 
     game9_image_preview = GameImage (
         game_id=9,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/505/1000/1000',
         preview=True
     )
 
     game10_image_preview = GameImage (
         game_id=10,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/428/1000/1000',
         preview=True
     )
 
     game11_image_preview = GameImage (
         game_id=11,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/477/1000/1000',
         preview=True
     )
     game12_image_preview = GameImage (
         game_id=12,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/501/1000/1000',
         preview=True
     )
     game13_image_preview = GameImage (
         game_id=13,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/477/1000/1000',
         preview=True
     )
     game14_image_preview = GameImage (
         game_id=14,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/604/1000/1000',
         preview=True
     )
     game15_image_preview = GameImage (
         game_id=15,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/791/1000/1000',
         preview=True
     )
     game16_image_preview = GameImage (
         game_id=16,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/1006/1000/1000',
         preview=True
     )
     game17_image_preview = GameImage (
         game_id=17,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/883/1000/1000',
         preview=True
     )
     game18_image_preview = GameImage (
         game_id=18,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://picsum.photos/id/888/1000/1000',
         preview=True
     )
 
