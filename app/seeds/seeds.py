@@ -95,7 +95,7 @@ def seed_database():
     )
 
     game6 = Game (
-        name='Really Cool',
+        name='Some Thoughts: The Game',
         description='Searching for meaning in a meaningful world.',
         release_date=date(2023, 7, 17),
         creator_id=4,

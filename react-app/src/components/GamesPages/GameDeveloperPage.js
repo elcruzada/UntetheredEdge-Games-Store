@@ -29,7 +29,7 @@ const GameDeveloperPage = () => {
                         <LowerNavBar sessionUser={sessionUser} />
                         <div className="gif-container">
                             <img
-                                src={gamingGif}
+                                src='https://picsum.photos/id/528/1000/1000'
                                 alt='gamingGif'
                                 style={{ borderRadius: '5px', height: '32rem' }}
                             />

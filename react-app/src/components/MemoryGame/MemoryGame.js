@@ -74,7 +74,7 @@ const MemoryGame = () => {
 
   return (
     <div style={{textAlign: 'center'}}>
-       <h1 style={{padding: '1rem'}}>Looks your game's server is down!</h1>
+       <h1 style={{padding: '1rem'}}>Looks like your game's server is down!</h1>
         <img src='https://media.tenor.com/OWI_ai132b0AAAAC/wink-dog.gif' alt='doge' style={{height: '20rem'}}/>
        <h2 style={{padding: '1rem'}}>Don't worry. This is just as fun</h2>
       <h1 style={{padding: '1rem'}}>Memory Game</h1>
