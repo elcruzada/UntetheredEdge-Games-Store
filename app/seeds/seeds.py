@@ -444,22 +444,22 @@ def seed_database():
 
     game11_image_preview = GameImage (
         game_id=11,
-        url='https://images.unsplash.com/photo-1615790469537-7c9d8e95c047?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        url='https://images.unsplash.com/photo-1635321856214-b0ad8fb2ff45?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game12_image_preview = GameImage (
         game_id=12,
-        url='https://images.unsplash.com/photo-1679228237885-97aa68417887?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        url='https://images.unsplash.com/photo-1635321856129-af8531379f4b?q=80&w=2256&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game13_image_preview = GameImage (
         game_id=13,
-        url='https://picsum.photos/id/477/1000/1000',
+        url='https://images.unsplash.com/photo-1615790469537-7c9d8e95c047?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game14_image_preview = GameImage (
         game_id=14,
-        url='https://picsum.photos/id/604/1000/1000',
+        url='https://images.unsplash.com/photo-1615790469537-7c9d8e95c047?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game15_image_preview = GameImage (
