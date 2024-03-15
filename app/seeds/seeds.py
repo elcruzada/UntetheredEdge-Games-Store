@@ -265,7 +265,7 @@ def seed_database():
 
     game_image1preview = GameImage (
         game_id=1,
-        url='https://picsum.photos/id/345/1000/1000',
+        url='https://images.unsplash.com/photo-1635323979696-a0279890cf25?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
@@ -295,7 +295,7 @@ def seed_database():
 
     game2_image_preview = GameImage (
         game_id=2,
-        url='https://picsum.photos/id/340/1000/1000',
+        url='https://images.unsplash.com/photo-1681198643373-604e60c42c5a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
@@ -324,7 +324,7 @@ def seed_database():
 
     game3_image_preview = GameImage (
         game_id=3,
-        url='https://picsum.photos/id/22/1000/1000',
+        url='https://images.unsplash.com/photo-1635243824676-e2f0f45a88e8?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
@@ -354,25 +354,25 @@ def seed_database():
 
     game4_image_preview = GameImage (
         game_id=4,
-        url='https://picsum.photos/id/274/1000/1000',
+        url='https://images.unsplash.com/photo-1705518648497-e4ea72bcb27d?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
     game5_image_preview = GameImage (
         game_id=5,
-        url='https://picsum.photos/id/211/1000/1000',
+        url='https://images.unsplash.com/photo-1684287937031-af6fb25edf78?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
     game6_image_preview = GameImage (
         game_id=6,
-        url='https://picsum.photos/seed/picsum/1000/1000',
+        url='https://images.unsplash.com/photo-1633153010796-6cf54b5daebb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
     game7_image_preview = GameImage (
         game_id=7,
-        url='https://picsum.photos/id/679/1000/1000',
+        url='https://images.unsplash.com/photo-1635323961704-80bb08c1c6fe?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
@@ -402,7 +402,7 @@ def seed_database():
 
     game8_image_preview = GameImage (
         game_id=8,
-        url='https://picsum.photos/id/159/1000/1000',
+        url='https://images.unsplash.com/photo-1650563145915-beb1a2ed4558?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
@@ -432,34 +432,34 @@ def seed_database():
 
     game9_image_preview = GameImage (
         game_id=9,
-        url='https://picsum.photos/id/505/1000/1000',
+        url='https://images.unsplash.com/photo-1693495430456-25c0a37ec5dc?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
     game10_image_preview = GameImage (
         game_id=10,
-        url='https://picsum.photos/id/428/1000/1000',
+        url='https://images.unsplash.com/photo-1690993660127-1a7cdd87ec9e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
 
     game11_image_preview = GameImage (
         game_id=11,
-        url='https://picsum.photos/id/477/1000/1000',
+        url='https://images.unsplash.com/photo-1635321856214-b0ad8fb2ff45?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game12_image_preview = GameImage (
         game_id=12,
-        url='https://picsum.photos/id/501/1000/1000',
+        url='https://images.unsplash.com/photo-1635321856129-af8531379f4b?q=80&w=2256&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game13_image_preview = GameImage (
         game_id=13,
-        url='https://picsum.photos/id/477/1000/1000',
+        url='https://images.unsplash.com/photo-1615790469537-7c9d8e95c047?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game14_image_preview = GameImage (
         game_id=14,
-        url='https://picsum.photos/id/604/1000/1000',
+        url='https://images.unsplash.com/photo-1615790469537-7c9d8e95c047?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         preview=True
     )
     game15_image_preview = GameImage (
