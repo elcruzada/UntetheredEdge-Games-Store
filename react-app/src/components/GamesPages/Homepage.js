@@ -45,7 +45,8 @@ const Homepage = () => {
             {
                 loading ? <LoadingScreen /> :
                     <div>
-                        <div className="global-outer-container">
+                        <div className="global-outer-container"
+                        >
                             <div className="global-inner-container">
                                 <LowerNavBar sessionUser={sessionUser} homepage={homepage} />
                                 <HomepageFeaturedCard allGames={allGames} />
