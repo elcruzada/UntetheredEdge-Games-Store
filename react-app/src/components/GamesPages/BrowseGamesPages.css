@@ -23,3 +23,17 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
 }
+@media only screen and (max-width: 680px) {
+    .browse-games-pages-inner {
+        width: 23rem;
+    }
+    .browse-games-pages-games {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3px;
+    }
+    .browse-games-pages-games img {
+        height: 50%;
+        width: 50%
+    }
+  }
