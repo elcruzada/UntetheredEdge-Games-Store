@@ -134,3 +134,26 @@
   color: white;
 
 }
+
+
+@media only screen and (max-width: 680px) {
+  .carousel img {
+    width: 50%;
+  }
+  .carousel__slide {
+   height: 40%;
+   width: 40%;
+  }
+
+  .carousel {
+    width: 23rem;
+  }
+
+  .carousel__slide-container {
+    width: 23rem;
+  }
+
+  .carouse2l__slide-container {
+    width: 23rem;
+  }
+}

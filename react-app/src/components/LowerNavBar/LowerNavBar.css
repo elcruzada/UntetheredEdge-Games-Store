@@ -18,3 +18,25 @@
 .hover-effect:hover {
     color: white;
 }
+
+@media only screen and (max-width: 680px) {
+    .search-bar {
+        display: none;
+    }
+    .top-bar-homepage-container {
+        display: flex;
+        justify-content: space-between;
+        width: 23rem;
+    }
+    .top-bar-homepage-container-left-column {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 15rem;
+    }
+    .gaming-marketplace-container {
+        font-size: .45rem;
+        margin-left: 24.5rem;
+    }
+
+}

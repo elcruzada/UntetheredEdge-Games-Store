@@ -49,9 +49,8 @@ function ProfileButton({ user }) {
   return (
     <>
       <div
-
+        className="profile-icon-button"
         onClick={openMenu}
-        style={{ paddingTop: '3rem', paddingRight: '11.5rem' }}
       >
         <i className="fa-sharp fa-solid fa-user"
           style={{ fontSize: '1.5rem', color: '#C69749', backgroundColor: '#282A3A', padding: '0', cursor: 'pointer' }}

@@ -19,9 +19,11 @@ const LowerNavBar = ({ sessionUser, homepage, browse, news, cart }) => {
 
     return (
         <>
+        <div className="gaming-marketplace-container">
             <p
                 style={{ color: 'white', paddingBottom: '3rem', display: 'flex', alignItems: 'center' }}
-            >A gaming marketplace where you can buy games, leave your thoughts, and publish your own!</p>
+            >Gaming marketplace where you can buy games, leave your thoughts, and publish your own!</p>
+        </div>
             <div className="top-bar-homepage-container">
                 <div className="top-bar-homepage-container-left-column">
                     <div className="search-bar">
