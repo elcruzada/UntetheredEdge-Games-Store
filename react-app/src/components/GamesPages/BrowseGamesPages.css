@@ -31,9 +31,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 3px;
+
     }
     .browse-games-pages-games img {
-        height: 50%;
-        width: 50%
+        height: 40%;
+        width: 40%
     }
   }
