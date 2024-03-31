@@ -69,3 +69,10 @@
     width: 52.5rem;
     border-radius: 5px;
   }
+
+  @media only screen and (max-width: 680px) {
+    .cart-page-inner-wrapper {
+      width: 23rem;
+    }
+
+  }
