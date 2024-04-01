@@ -57,13 +57,13 @@ const CheckoutModal = ({ cart }) => {
 
     return (
         <>
-            <div className='checkout-modal-wrapper' style={{ display: 'flex', justifyContent: 'space-between', border: '10px solid #282A3A', height: 'fit-content', width: '50rem', padding: '2rem' }}>
+            <div className='checkout-modal-wrapper'>
                 <div className='checkout-modal-wrapper-left-column'
                     style={{ width: '40rem' }}
                 >
                     <div className='checkout-modal-credit-card-wrapper'>
                         <div className='card-details-credit-card-details-image-wrapper'
-                        style={{display: 'flex', justifyContent: 'space-between'}}
+
                         >
                             <p style={{ fontSize: '30px', fontWeight: 'bold', marginBottom: '1.5rem' }}>Card Details</p>
                             <img alt='credit-card-image' src='https://user-images.githubusercontent.com/52581/44384465-5e312780-a570-11e8-9336-7b54978a9e64.png' style={{ height: '3rem' }} />
@@ -78,7 +78,7 @@ const CheckoutModal = ({ cart }) => {
                                 style={{ marginBottom: '10px', padding: '10px' }}
                             />
                             {errors.cardNumber && <p>{errors.cardNumber}</p>}
-                            <div className='expiration-cvv-container' style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <div className='expiration-cvv-container'>
                                 <div>
                                     <input
                                         id='expiration'
@@ -86,7 +86,7 @@ const CheckoutModal = ({ cart }) => {
                                         value={expiration}
                                         onChange={(e) => setExpiration(e.target.value)}
                                         placeholder='Expiration'
-                                        style={{ width: 'calc(50% - 5px)', marginBottom: '10px', padding: '10px' }}
+
                                     />
                                     {errors.expiration && <p>{errors.expiration}</p>}
                                 </div>
@@ -103,7 +103,6 @@ const CheckoutModal = ({ cart }) => {
                                 </div>
                             </div>
                             <div className='zip-code-state-city-container'
-                                style={{ display: 'flex', justifyContent: 'space-between' }}
                             >
                                 <div>
 
@@ -143,6 +142,7 @@ const CheckoutModal = ({ cart }) => {
                         </form>
                     </div>
                     <p
+                        className='payment-information'
                         style={{ fontSize: '10px', color: 'gray', marginTop: '1rem' }}
                     >By choosing to save your payment information, this payment method will be selected as the default for all purchases made using UntetheredEdge Games payment, including purchases in the UntetheredEdge Games Store.</p>
                 </div>
