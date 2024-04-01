@@ -145,6 +145,11 @@
     }
 
     .news-page-highlighted-wrapper-left-right-column {
-      
+
+    }
+
+    .news-page-inner-wrapper {
+      margin-left: 5rem;
+      width: 23rem;
     }
   }
