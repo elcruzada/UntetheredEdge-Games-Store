@@ -95,7 +95,7 @@
     justify-content: space-between;
   }
 
- 
+
 
   #expiration {
     width: calc(50% - 5px);
@@ -139,5 +139,12 @@
     }
     .zip-code-state-city-container {
       display: block;
+    }
+    .payment-information {
+      width: 40%;
+    }
+
+    .news-page-highlighted-wrapper-left-right-column {
+      
     }
   }
