@@ -50,9 +50,9 @@ const Homepage = () => {
                             <div className="global-inner-container">
                                 <LowerNavBar sessionUser={sessionUser} homepage={homepage} />
                                 <HomepageFeaturedCard allGames={allGames} />
-                                <h3 style={{color: 'beige'}}>MEGA-ULTRA Giga Special</h3>
+                                <h3 style={{color: 'beige'}}>Mega Special</h3>
                                 <HomepageCarousel images={convertedGames} homepage={homepage} />
-                                <h3 style={{color: 'beige', marginTop:'3rem'}}>Supertastic Sick Deals</h3>
+                                <h3 style={{color: 'beige', marginTop:'3rem'}}>Incredible Deals</h3>
                                 <SingleGameDetailsCardThreeGames convertedGames={convertedGames} />
                                 <h3 style={{color: 'beige', marginTop:'3rem'}}>Trending. . .</h3>
                                 <HomepageRegularCard convertedGames={convertedGames}/>
