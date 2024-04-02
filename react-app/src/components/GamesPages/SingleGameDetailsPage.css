@@ -64,3 +64,9 @@
 .singleGameDetails-game-details-tag {
     color: rgb(143, 126, 126);
 }
+
+@media only screen and (max-width: 680px) {
+    .single-details-page-inner-wrapper {
+        width: 23rem;
+    }
+}
