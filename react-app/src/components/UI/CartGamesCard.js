@@ -13,6 +13,7 @@ const CartGamesCard = ({game, removeFromCartHandler}) => {
             style={{height: '8rem'}}
             ></img>
             <p
+            className='cart-games-card-classification'
             style={{textAlign: 'center', color: 'white', backgroundColor: 'gray', width: '7rem', borderRadius: '5px'}}
             >Base Game</p>
             </div>

@@ -119,6 +119,10 @@
       border-radius: 10px;
       transition: filter 0.3s;
     }
+    .featured-games-homepage-little-pictures-right-column {
+      margin-left: 10rem;
+      
+    }
     /* You may need additional adjustments for specific elements */
     /* Example: */
     /* .item {

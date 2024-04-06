@@ -69,3 +69,87 @@
     width: 52.5rem;
     border-radius: 5px;
   }
+
+  .checkout-modal-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border: 10px solid #282A3A;
+    height: fit-content;
+    width: 50rem;
+    padding: 2rem;
+
+  }
+
+  .card-details-credit-card-details-image-wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .expiration-cvv-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .zip-code-state-city-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+
+  #expiration {
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    .cart-page-games-checkout-game-card-container {
+      display: block;
+    }
+    .cart-page-outer-wrapper {
+      width: 100%;
+    }
+
+    .cart-games-card-outer-wrapper {
+      width: 20rem;
+    }
+
+
+    .cart-page-inner-wrapper {
+      width: 23rem;
+    }
+    .cart-page-games-card-container {
+
+    }
+    .cart-games-card-classification {
+      display: none;
+    }
+    .checkout-modal-wrapper {
+      display: block;
+      width: 100%;
+    }
+
+    .card-details-credit-card-details-image-wrapper {
+      display: block;
+    }
+    .expiration-cvv-container {
+      display: block;
+      width: 70%;
+    }
+    .zip-code-state-city-container {
+      display: block;
+    }
+    .payment-information {
+      width: 40%;
+    }
+
+    .news-page-highlighted-wrapper-left-right-column {
+
+    }
+
+    .news-page-inner-wrapper {
+      margin-left: 5rem;
+      width: 23rem;
+    }
+  }

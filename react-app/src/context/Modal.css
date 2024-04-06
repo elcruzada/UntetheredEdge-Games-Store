@@ -22,3 +22,13 @@
   position: absolute;
   background-color:white;
 }
+
+@media only screen and (max-width: 680px) {
+  #modal {
+    width: 80%;
+  }
+  #modal-content {
+    width: 50%;
+    margin-right: 15rem;
+  }
+}

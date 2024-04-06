@@ -84,3 +84,10 @@
 .new-page-bottom-news-list-wrapper {
   margin-top: 7rem;
 }
+
+@media only screen and (max-width: 680px) {
+  .news-page-article-card-wrapper {
+    display: block;
+  }
+
+}

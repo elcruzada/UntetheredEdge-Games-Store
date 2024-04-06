@@ -64,3 +64,28 @@
 .singleGameDetails-game-details-tag {
     color: rgb(143, 126, 126);
 }
+
+@media only screen and (max-width: 680px) {
+    .single-details-page-inner-wrapper {
+        width: 23rem;
+    }
+    .carouse2l {
+        display: none;
+    }
+
+    .single-details-page-left-column > img {
+        max-width: 10rem;
+    }
+
+    .single-game-details-right-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 20rem;
+        margin-right: 1rem;
+    }
+
+    .singleGameDetails-game-details-tag{
+        font-size: .8rem;
+    }
+}

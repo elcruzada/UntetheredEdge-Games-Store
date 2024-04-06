@@ -92,3 +92,9 @@
     padding: 10px;
     margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 680px) {
+    .gif-container img {
+        display: none;
+    }
+  }

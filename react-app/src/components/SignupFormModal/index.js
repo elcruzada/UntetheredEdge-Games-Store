@@ -39,7 +39,7 @@ function SignupFormModal() {
 			<h1>Sign Up</h1>
 			<p
 			style={{padding: '1rem'}}
-			>Join our community of untethered edgelords</p>
+			>Join our community of untethered players!</p>
 			<form onSubmit={handleSubmit}>
 				<ul>
 					{errors.map((error, idx) => (

@@ -23,7 +23,6 @@ const Footer = () => {
                         <li className="footer-link">Community Rules</li>
                         <li className="footer-link">Fanart policy</li>
                         <li className="footer-link">UX Research</li>
-                        <li className="footer-link">Trolling addict?</li>
                     </ul>
                 </div>
                 <div className="footer-column">
