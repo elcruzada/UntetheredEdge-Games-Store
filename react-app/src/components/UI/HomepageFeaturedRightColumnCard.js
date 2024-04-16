@@ -1,6 +1,14 @@
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import './HomepageFeaturedRightColumnCard.css'
 
+
 const HomepageFeaturedRightColumnCard = ({currentGameId, previewImage, title, alt, cardClickHandler, setGameIdHandler, isClicked, setIsClicked}) => {
+    const history = useHistory()
+    const homepageFeaturedRightRedirect = () => {
+        if (currentGameId) {
+            history.push(`/games/${currentGameId}`);
+          }
+    }
 
 
     return (
@@ -14,6 +22,7 @@ const HomepageFeaturedRightColumnCard = ({currentGameId, previewImage, title, al
                     <img
                         src={previewImage}
                         alt={alt}
+                        onClick={homepageFeaturedRightRedirect}
                         onTransitionEnd={() => setIsClicked(false)}
                         className={`pop-image ${isClicked ? 'clicked' : ''}`}
                     />
